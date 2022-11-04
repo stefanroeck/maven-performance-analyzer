@@ -1,6 +1,5 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Maven Performance Analyzer",
   "icons": [
     {
       "src": "favicon.ico",

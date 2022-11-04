@@ -1,4 +1,4 @@
-import { Box, Button, FormControlLabel, FormGroup, FormHelperText, Switch, TextField, Typography } from "@mui/material";
+import { Box, Button, Chip, FormControlLabel, FormGroup, FormHelperText, IconButton, Switch, TextField, Typography } from "@mui/material";
 import { ChangeEvent, useState } from "react";
 
 type InputType = "file" | "text";
@@ -18,17 +18,19 @@ export const InputSelector = () => {
     return (<>
         <FormGroup>
             <FormControlLabel control={switchComp} label={inputType === "file" ? "Upload Log File" : "Enter as text"} />
-            <Box hidden={inputType !== "text"} >
-                <TextField variant="outlined" minRows={4} maxRows={4} multiline fullWidth />
-            </Box>
-            <Box hidden={inputType !== "file"}>
-                <Button variant="outlined" component="label" color="secondary" fullWidth>
-                    Select File
-                    <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
-                </Button>
-                <FormHelperText>{selectedFile?.name}</FormHelperText>
-            </Box>
         </FormGroup>
+        <Box hidden={inputType !== "text"} >
+            <TextField variant="outlined" minRows={4} maxRows={4} multiline fullWidth />
+        </Box>
+        <Box hidden={inputType !== "file"}>
+            <Button variant="outlined" component="label" color="secondary" fullWidth>
+                Select File
+                <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
+            </Button>
+            {selectedFile ?
+                <Chip sx={{ marginTop: "10px" }} label={selectedFile?.name} onDelete={() => setSelectedFile(undefined)} />
+                : null}
+        </Box>
     </>
     );
 }

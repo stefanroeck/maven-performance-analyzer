@@ -11,7 +11,7 @@ export const InputCard = () => {
 
             </CardContent>
             <CardActions>
-                <Button variant="contained" color="primary" sx={{ marginLeft: "auto" }}>Analyze</Button>
+                <Button variant="contained" color="primary" sx={{ marginLeft: "auto", marginRight: "10px" }}>Analyze</Button>
             </CardActions>
         </Card>
 
