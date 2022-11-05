@@ -2,31 +2,30 @@ import { Box, Card, CardActions, CardContent, CardHeader, IconButton } from '@mu
 import CloseIcon from '@mui/icons-material/Close';
 import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
+import { AnalyzerRow } from '../analyzer/analyzer';
 
 interface Props {
     onClose: () => void;
+    data: AnalyzerRow[];
 }
-
 
 export interface DataWithDuration extends BarDatum {
     label: string;
     duration: number;
 }
 
-export const TotalDurationCard: FunctionComponent<Props> = ({ onClose }) => {
-    const barData: DataWithDuration[] = [{
-        label: "maven-compiler",
-        duration: 40
-    }, {
-        label: "surefire",
-        duration: 140
-    }, {
-        label: "jrebel",
-        duration: 10
-    }, {
-        label: "maven-jar",
-        duration: 133
-    }];
+export const TotalDurationCard: FunctionComponent<Props> = ({ data, onClose }) => {
+
+    const barData = data.reduce((arr, curr) => {
+        const existing = arr.find(e => e.label === curr.plugin);
+        if (existing) {
+            existing.duration += curr.duration;
+        } else {
+            arr.push({ label: curr.plugin, duration: curr.duration });
+        }
+        return arr;
+    }, [] as DataWithDuration[]);
+
     return (
         <Card>
             <CardHeader title="Maven Goals" subheader="Total execution time per maven plugin" action={

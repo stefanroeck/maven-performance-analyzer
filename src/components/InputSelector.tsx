@@ -1,11 +1,17 @@
 import { Box, Button, Chip, FormControlLabel, FormGroup, Switch, TextField } from "@mui/material";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
 
 type InputType = "file" | "text";
 
-export const InputSelector = () => {
+interface Props {
+    onSelected: (content: string) => void;
+}
+
+export const InputSelector: FC<Props> = ({ onSelected }) => {
     const [inputType, setInputType] = useState<InputType>("text");
+
     const [selectedFile, setSelectedFile] = useState<File | undefined>(undefined);
+    const [textFieldInput, setTextFieldInput] = useState("");
 
     const switchComp = <Switch defaultChecked onChange={() => setInputType((old) => old === "file" ? "text" : "file")} />
     const handleSelectedFile = (event: ChangeEvent<HTMLInputElement>) => {
@@ -15,12 +21,17 @@ export const InputSelector = () => {
         }
     }
 
+    const textFieldChange = (event: ChangeEvent<HTMLInputElement>) => {
+        setTextFieldInput(event.target.value);
+        onSelected(event.target.value);
+    }
+
     return (<>
-        <FormGroup>
+        <FormGroup sx={{ marginBottom: "10px" }}>
             <FormControlLabel control={switchComp} label={inputType === "file" ? "Upload Log File" : "Enter as text"} />
         </FormGroup>
         <Box hidden={inputType !== "text"} >
-            <TextField variant="outlined" minRows={4} maxRows={4} multiline fullWidth />
+            <TextField variant="outlined" minRows={4} maxRows={4} multiline fullWidth label="Maven Log File Output" value={textFieldInput} onChange={textFieldChange} />
         </Box>
         <Box hidden={inputType !== "file"}>
             <Button variant="outlined" component="label" color="secondary" fullWidth>
