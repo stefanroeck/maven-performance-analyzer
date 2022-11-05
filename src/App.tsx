@@ -7,8 +7,10 @@ import { Header } from './Header';
 import { DurationPerModuleCard } from './components/DurationPerModuleCard';
 import { parse } from './analyzer/parser';
 import { analyze, AnalyzerRow } from './analyzer/analyzer';
+import { TimelineCard } from './components/TimelineCard';
 
 function MainApp() {
+  const [showTimeline, setShowTimeline] = useState(false);
   const [showTotalDuration, setShowTotalDuration] = useState(false);
   const [showDurationPerModule, setDurationPerModule] = useState(false);
   const [data, setData] = useState<AnalyzerRow[]>([]);
@@ -19,6 +21,7 @@ function MainApp() {
     if (result.length > 0) {
       setShowTotalDuration(true);
       setDurationPerModule(true);
+      setShowTimeline(true);
     }
   };
 
@@ -28,9 +31,11 @@ function MainApp() {
       <Box sx={{ margin: "20px" }}>
         <InputCard onAnalyze={onAnalyze} />
         <Divider sx={{ margin: "20px" }} />
-        {showTotalDuration && <TotalDurationCard data={data} onClose={() => setShowTotalDuration(false)} />}
+        {showTimeline && <TimelineCard data={data} />}
         <Divider sx={{ margin: "20px" }} />
-        {showDurationPerModule && <DurationPerModuleCard data={data} onClose={() => setDurationPerModule(false)} />}
+        {showDurationPerModule && <DurationPerModuleCard data={data} />}
+        <Divider sx={{ margin: "20px" }} />
+        {showTotalDuration && <TotalDurationCard data={data} />}
       </Box>
     </Box >
   );

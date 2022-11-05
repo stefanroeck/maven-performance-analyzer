@@ -1,11 +1,10 @@
-import { Box, Card, CardActions, CardContent, CardHeader, IconButton } from '@mui/material';
-import CloseIcon from '@mui/icons-material/Close';
+import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { AnalyzerRow } from '../analyzer/analyzer';
+import { ExpandableCard } from './ExpandableCard';
 
 interface Props {
-    onClose: () => void;
     data: AnalyzerRow[];
 }
 
@@ -14,7 +13,7 @@ export interface DataWithDuration extends BarDatum {
     duration: number;
 }
 
-export const TotalDurationCard: FunctionComponent<Props> = ({ data, onClose }) => {
+export const TotalDurationCard: FunctionComponent<Props> = ({ data }) => {
 
     const barData = data.reduce((arr, curr) => {
         const existing = arr.find(e => e.label === curr.plugin);
@@ -27,31 +26,23 @@ export const TotalDurationCard: FunctionComponent<Props> = ({ data, onClose }) =
     }, [] as DataWithDuration[]);
 
     return (
-        <Card>
-            <CardHeader title="Maven Goals" subheader="Total execution time per maven plugin" action={
-                <IconButton onClick={onClose}><CloseIcon /></IconButton>
-            } />
-            <CardContent>
-                <Box sx={{ height: "400px" }}>
-                    <ResponsiveBar
-                        data={barData.sort((a, b) => a.duration - b.duration)}
-                        keys={[
-                            "duration",
-                        ]}
-                        indexBy="label"
-                        layout="horizontal"
-                        margin={{ top: 40, right: 40, bottom: 40, left: 120 }}
-                        padding={0.3}
-                        colors={{ scheme: 'blues' }}
-                        colorBy="indexValue"
-                        enableGridX={true}
-                        enableGridY={false}
-                    />
-                </Box>
-            </CardContent>
-            <CardActions >
-            </CardActions>
-        </Card>
-
+        <ExpandableCard title="Maven Goals" subheader="Total execution time per maven plugin">
+            <Box sx={{ height: "400px" }}>
+                <ResponsiveBar
+                    data={barData.sort((a, b) => a.duration - b.duration)}
+                    keys={[
+                        "duration",
+                    ]}
+                    indexBy="label"
+                    layout="horizontal"
+                    margin={{ top: 40, right: 40, bottom: 40, left: 120 }}
+                    padding={0.3}
+                    colors={{ scheme: 'blues' }}
+                    colorBy="indexValue"
+                    enableGridX={true}
+                    enableGridY={false}
+                />
+            </Box>
+        </ExpandableCard>
     );
 }

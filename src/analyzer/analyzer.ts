@@ -36,6 +36,26 @@ export const analyze = (parserResult: ParserResult[]): AnalyzerRow[] => {
         duration: 190,
     },
     {
+        module: "server",
+        plugin: "maven-jar",
+        duration: 39,
+    },
+    {
+        module: "server",
+        plugin: "maven-ear",
+        duration: 49,
+    },
+    {
+        module: "server",
+        plugin: "maven-compiler",
+        duration: 149,
+    },
+    {
+        module: "server",
+        plugin: "jasper",
+        duration: 29,
+    },
+    {
         module: "client",
         plugin: "maven-compiler",
         duration: 142,
