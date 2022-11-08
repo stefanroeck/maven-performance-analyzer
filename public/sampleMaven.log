@@ -1,833 +1,833 @@
-2022-11-08 18:58:43 [INFO] Scanning for projects...
-2022-11-08 18:58:43 [INFO] ------------------------------------------------------------------------
-2022-11-08 18:58:43 [INFO] Reactor Build Order:
-2022-11-08 18:58:43 [INFO] 
-2022-11-08 18:58:43 [INFO] Apache HttpComponents Core Parent                                  [pom]
-2022-11-08 18:58:43 [INFO] Apache HttpComponents Core HTTP/1.1                                [jar]
-2022-11-08 18:58:43 [INFO] Apache HttpComponents Core HTTP/2                                  [jar]
-2022-11-08 18:58:43 [INFO] Apache HttpComponents Core Reactive Extensions                     [jar]
-2022-11-08 18:58:43 [INFO] Apache HttpComponents Core Integration Tests                       [jar]
-2022-11-08 18:58:43 [INFO] 
-2022-11-08 18:58:43 [INFO] ----------< org.apache.httpcomponents.core5:httpcore5-parent >----------
-2022-11-08 18:58:43 [INFO] Building Apache HttpComponents Core Parent 5.2.1-SNAPSHOT          [1/5]
-2022-11-08 18:58:43 [INFO] --------------------------------[ pom ]---------------------------------
-2022-11-08 18:58:44 [INFO] 
-2022-11-08 18:58:44 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-parent ---
-2022-11-08 18:58:45 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/target
-2022-11-08 18:58:45 [INFO] 
-2022-11-08 18:58:45 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-parent ---
-2022-11-08 18:58:47 [INFO] 
-2022-11-08 18:58:47 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-parent ---
-2022-11-08 18:58:47 [INFO] 
-2022-11-08 18:58:47 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-parent ---
-2022-11-08 18:58:50 [INFO] 
-2022-11-08 18:58:50 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-parent ---
-2022-11-08 18:58:50 [INFO] 
-2022-11-08 18:58:50 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-parent ---
-2022-11-08 18:58:50 [INFO] 
-2022-11-08 18:58:50 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-parent ---
-2022-11-08 18:58:51 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
-2022-11-08 18:58:52 [INFO] Copying 3 resources from 1 bundle.
-2022-11-08 18:58:52 [INFO] 
-2022-11-08 18:58:52 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-parent ---
-2022-11-08 18:58:52 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
-2022-11-08 18:58:53 [INFO] 
-2022-11-08 18:58:53 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-parent ---
-2022-11-08 18:58:55 [INFO] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
-2022-11-08 18:58:55 [INFO] 
-2022-11-08 18:58:55 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-parent ---
-2022-11-08 18:58:55 [INFO] Skipping execution because parameter 'skipPomModules' was set to true and this is artifact is of type pom.
-2022-11-08 18:58:55 [INFO] 
-2022-11-08 18:58:55 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-parent ---
-2022-11-08 18:58:56 [INFO] Enabled default license matchers.
-2022-11-08 18:58:56 [INFO] Will parse SCM ignores for exclusions...
-2022-11-08 18:58:56 [INFO] Parsing exclusions from /Users/Stefan/git/apache-httpcomponents/.gitignore
-2022-11-08 18:58:56 [INFO] Finished adding exclusions from SCM ignore files.
-2022-11-08 18:58:56 [INFO] 74 implicit excludes.
-2022-11-08 18:58:56 [INFO] 11 explicit excludes.
-2022-11-08 18:58:56 [INFO] 17 resources included
-2022-11-08 18:58:57 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 12 licenses.
-2022-11-08 18:58:57 [INFO] 
-2022-11-08 18:58:57 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-parent ---
-2022-11-08 18:58:57 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-parent/5.2.1-SNAPSHOT/httpcore5-parent-5.2.1-SNAPSHOT.pom
-2022-11-08 18:58:58 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/target/httpcore5-parent-5.2.1-SNAPSHOT-site.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-parent/5.2.1-SNAPSHOT/httpcore5-parent-5.2.1-SNAPSHOT-site.xml
-2022-11-08 18:58:58 [INFO] 
-2022-11-08 18:58:58 [INFO] -------------< org.apache.httpcomponents.core5:httpcore5 >--------------
-2022-11-08 18:58:58 [INFO] Building Apache HttpComponents Core HTTP/1.1 5.2.1-SNAPSHOT        [2/5]
-2022-11-08 18:58:58 [INFO] --------------------------------[ jar ]---------------------------------
-2022-11-08 18:58:58 [INFO] 
-2022-11-08 18:58:58 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5 ---
-2022-11-08 18:58:58 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5/target
-2022-11-08 18:58:58 [INFO] 
-2022-11-08 18:58:58 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5 ---
-2022-11-08 18:58:58 [INFO] 
-2022-11-08 18:58:58 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5 ---
-2022-11-08 18:58:58 [INFO] 
-2022-11-08 18:58:58 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5 ---
-2022-11-08 18:58:58 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 18:59:13 [INFO] Beginne Prüfung...
+2022-11-08 20:39:06,063 [INFO] Scanning for projects...
+2022-11-08 20:39:06,412 [INFO] ------------------------------------------------------------------------
+2022-11-08 20:39:06,413 [INFO] Reactor Build Order:
+2022-11-08 20:39:06,413 [INFO] 
+2022-11-08 20:39:06,414 [INFO] Apache HttpComponents Core Parent                                  [pom]
+2022-11-08 20:39:06,415 [INFO] Apache HttpComponents Core HTTP/1.1                                [jar]
+2022-11-08 20:39:06,415 [INFO] Apache HttpComponents Core HTTP/2                                  [jar]
+2022-11-08 20:39:06,415 [INFO] Apache HttpComponents Core Reactive Extensions                     [jar]
+2022-11-08 20:39:06,416 [INFO] Apache HttpComponents Core Integration Tests                       [jar]
+2022-11-08 20:39:06,428 [INFO] 
+2022-11-08 20:39:06,428 [INFO] ----------< org.apache.httpcomponents.core5:httpcore5-parent >----------
+2022-11-08 20:39:06,429 [INFO] Building Apache HttpComponents Core Parent 5.2.1-SNAPSHOT          [1/5]
+2022-11-08 20:39:06,429 [INFO] --------------------------------[ pom ]---------------------------------
+2022-11-08 20:39:07,014 [INFO] 
+2022-11-08 20:39:07,014 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-parent ---
+2022-11-08 20:39:07,253 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/target
+2022-11-08 20:39:07,270 [INFO] 
+2022-11-08 20:39:07,271 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-parent ---
+2022-11-08 20:39:08,135 [INFO] 
+2022-11-08 20:39:08,136 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-parent ---
+2022-11-08 20:39:08,174 [INFO] 
+2022-11-08 20:39:08,175 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-parent ---
+2022-11-08 20:39:10,614 [INFO] 
+2022-11-08 20:39:10,614 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-parent ---
+2022-11-08 20:39:10,621 [INFO] 
+2022-11-08 20:39:10,621 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-parent ---
+2022-11-08 20:39:11,042 [INFO] 
+2022-11-08 20:39:11,043 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-parent ---
+2022-11-08 20:39:12,106 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-08 20:39:12,275 [INFO] Copying 3 resources from 1 bundle.
+2022-11-08 20:39:12,416 [INFO] 
+2022-11-08 20:39:12,417 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-parent ---
+2022-11-08 20:39:12,734 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-08 20:39:14,374 [INFO] 
+2022-11-08 20:39:14,375 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-parent ---
+2022-11-08 20:39:17,199 [INFO] Attaching 'src/site/site.xml' site descriptor with classifier 'site'.
+2022-11-08 20:39:17,203 [INFO] 
+2022-11-08 20:39:17,203 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-parent ---
+2022-11-08 20:39:18,036 [INFO] Skipping execution because parameter 'skipPomModules' was set to true and this is artifact is of type pom.
+2022-11-08 20:39:18,036 [INFO] 
+2022-11-08 20:39:18,037 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-parent ---
+2022-11-08 20:39:18,327 [INFO] Enabled default license matchers.
+2022-11-08 20:39:18,331 [INFO] Will parse SCM ignores for exclusions...
+2022-11-08 20:39:18,333 [INFO] Parsing exclusions from /Users/Stefan/git/apache-httpcomponents/.gitignore
+2022-11-08 20:39:18,379 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-08 20:39:18,380 [INFO] 74 implicit excludes.
+2022-11-08 20:39:18,380 [INFO] 11 explicit excludes.
+2022-11-08 20:39:18,923 [INFO] 17 resources included
+2022-11-08 20:39:20,328 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 12 licenses.
+2022-11-08 20:39:20,329 [INFO] 
+2022-11-08 20:39:20,329 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-parent ---
+2022-11-08 20:39:20,516 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-parent/5.2.1-SNAPSHOT/httpcore5-parent-5.2.1-SNAPSHOT.pom
+2022-11-08 20:39:20,555 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/target/httpcore5-parent-5.2.1-SNAPSHOT-site.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-parent/5.2.1-SNAPSHOT/httpcore5-parent-5.2.1-SNAPSHOT-site.xml
+2022-11-08 20:39:20,563 [INFO] 
+2022-11-08 20:39:20,563 [INFO] -------------< org.apache.httpcomponents.core5:httpcore5 >--------------
+2022-11-08 20:39:20,563 [INFO] Building Apache HttpComponents Core HTTP/1.1 5.2.1-SNAPSHOT        [2/5]
+2022-11-08 20:39:20,563 [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-08 20:39:20,815 [INFO] 
+2022-11-08 20:39:20,816 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5 ---
+2022-11-08 20:39:20,818 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5/target
+2022-11-08 20:39:21,232 [INFO] 
+2022-11-08 20:39:21,234 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5 ---
+2022-11-08 20:39:21,236 [INFO] 
+2022-11-08 20:39:21,237 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5 ---
+2022-11-08 20:39:21,238 [INFO] 
+2022-11-08 20:39:21,238 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5 ---
+2022-11-08 20:39:21,258 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:39:35,319 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 18:59:14 [INFO] 
-2022-11-08 18:59:14 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5 ---
-2022-11-08 18:59:14 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 18:59:17 [INFO] Beginne Prüfung...
+2022-11-08 20:39:35,653 [INFO] 
+2022-11-08 20:39:35,653 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5 ---
+2022-11-08 20:39:35,663 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:39:41,042 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 18:59:17 [INFO] 
-2022-11-08 18:59:17 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5 ---
-2022-11-08 18:59:17 [INFO] 
-2022-11-08 18:59:17 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5 ---
-2022-11-08 18:59:17 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
-2022-11-08 18:59:17 [INFO] Copying 3 resources from 1 bundle.
-2022-11-08 18:59:17 [INFO] 
-2022-11-08 18:59:17 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5 ---
-2022-11-08 18:59:18 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 18:59:18 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 18:59:18 [INFO] Copying 1 resource
-2022-11-08 18:59:18 [INFO] Copying 3 resources
-2022-11-08 18:59:18 [INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
-2022-11-08 18:59:18 [INFO] 
-2022-11-08 18:59:18 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5 ---
-2022-11-08 18:59:18 [INFO] Changes detected - recompiling the module!
-2022-11-08 18:59:18 [INFO] Compiling 515 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5/target/classes
-2022-11-08 18:59:27 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 18:59:27 [INFO] 
-2022-11-08 18:59:27 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5 ---
-2022-11-08 18:59:27 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 18:59:27 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 18:59:27 [INFO] Copying 6 resources
-2022-11-08 18:59:27 [INFO] Copying 3 resources
-2022-11-08 18:59:27 [INFO] 
-2022-11-08 18:59:27 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5 ---
-2022-11-08 18:59:27 [INFO] Changes detected - recompiling the module!
-2022-11-08 18:59:27 [INFO] Compiling 153 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5/target/test-classes
-2022-11-08 18:59:34 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 18:59:34 [WARNING] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/ssl/DummyProvider.java:[44,9] Provider(java.lang.String,double,java.lang.String) in java.security.Provider has been deprecated
-2022-11-08 18:59:34 [INFO] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/reactor/TestAbstractIOSessionPool.java: Some input files use unchecked or unsafe operations.
-2022-11-08 18:59:34 [INFO] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/reactor/TestAbstractIOSessionPool.java: Recompile with -Xlint:unchecked for details.
-2022-11-08 18:59:34 [INFO] 
-2022-11-08 18:59:34 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5 ---
-2022-11-08 18:59:34 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
-2022-11-08 18:59:34 [INFO] 
-2022-11-08 18:59:34 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5 ---
-2022-11-08 18:59:34 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-2022-11-08 18:59:35 [INFO] 
-2022-11-08 18:59:35 [INFO] -------------------------------------------------------
-2022-11-08 18:59:35 [INFO]  T E S T S
-2022-11-08 18:59:35 [INFO] -------------------------------------------------------
-2022-11-08 18:59:37 [INFO] Running org.apache.hc.core5.ssl.TestSSLContextBuilder
-2022-11-08 18:59:43 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.794 s - in org.apache.hc.core5.ssl.TestSSLContextBuilder
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.ssl.SSLContextsTest
-2022-11-08 18:59:43 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.ssl.SSLContextsTest
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestPercentCodec
-2022-11-08 18:59:43 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.net.TestPercentCodec
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestURIBuilder
-2022-11-08 18:59:43 [INFO] Tests run: 74, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.168 s - in org.apache.hc.core5.net.TestURIBuilder
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestWWWFormCodec
-2022-11-08 18:59:43 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.net.TestWWWFormCodec
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestHost
-2022-11-08 18:59:43 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.04 s - in org.apache.hc.core5.net.TestHost
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestURIAuthority
-2022-11-08 18:59:43 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.hc.core5.net.TestURIAuthority
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.net.TestInetAddressUtils
-2022-11-08 18:59:43 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.net.TestInetAddressUtils
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.util.TestTimeoutValueException
-2022-11-08 18:59:43 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.util.TestTimeoutValueException
-2022-11-08 18:59:43 [INFO] Running org.apache.hc.core5.util.TestTimeValue
-2022-11-08 18:59:44 [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.util.TestTimeValue
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestDeadlineTimeoutException
-2022-11-08 18:59:44 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.util.TestDeadlineTimeoutException
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestTokenizer
-2022-11-08 18:59:44 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in org.apache.hc.core5.util.TestTokenizer
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestCharArrayBuffer
-2022-11-08 18:59:44 [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.apache.hc.core5.util.TestCharArrayBuffer
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestByteArrayBuffer
-2022-11-08 18:59:44 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.apache.hc.core5.util.TestByteArrayBuffer
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestTextUtils
-2022-11-08 18:59:44 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.util.TestTextUtils
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestArgs
-2022-11-08 18:59:44 [INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.096 s - in org.apache.hc.core5.util.TestArgs
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestDeadline
-2022-11-08 18:59:44 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.apache.hc.core5.util.TestDeadline
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestLangUtils
-2022-11-08 18:59:44 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.util.TestLangUtils
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestTimeout
-2022-11-08 18:59:44 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.util.TestTimeout
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.util.TestAsserts
-2022-11-08 18:59:44 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.util.TestAsserts
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.annotation.ThreadingBehaviorTest
-2022-11-08 18:59:44 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.annotation.ThreadingBehaviorTest
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.IncomingEntityDetailsTest
-2022-11-08 18:59:44 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.http.impl.IncomingEntityDetailsTest
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.TestDefaultConnectionReuseStrategy
-2022-11-08 18:59:44 [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 s - in org.apache.hc.core5.http.impl.TestDefaultConnectionReuseStrategy
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.io.TestIdentityInputStream
-2022-11-08 18:59:44 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http.impl.io.TestIdentityInputStream
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.io.TestIdentityOutputStream
-2022-11-08 18:59:44 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.impl.io.TestIdentityOutputStream
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.io.TestMessageParser
-2022-11-08 18:59:44 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.impl.io.TestMessageParser
-2022-11-08 18:59:44 [INFO] Running org.apache.hc.core5.http.impl.io.TestHttpService
-2022-11-08 18:59:47 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.842 s - in org.apache.hc.core5.http.impl.io.TestHttpService
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestResponseParser
-2022-11-08 18:59:47 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.http.impl.io.TestResponseParser
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestDefaultBHttpClientConnection
-2022-11-08 18:59:47 [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.224 s - in org.apache.hc.core5.http.impl.io.TestDefaultBHttpClientConnection
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestContentLengthOutputStream
-2022-11-08 18:59:47 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.impl.io.TestContentLengthOutputStream
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestContentLengthInputStream
-2022-11-08 18:59:47 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.impl.io.TestContentLengthInputStream
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestDefaultBHttpServerConnection
-2022-11-08 18:59:47 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 s - in org.apache.hc.core5.http.impl.io.TestDefaultBHttpServerConnection
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestRequestParser
-2022-11-08 18:59:47 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.impl.io.TestRequestParser
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestBHttpConnectionBase
-2022-11-08 18:59:47 [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in org.apache.hc.core5.http.impl.io.TestBHttpConnectionBase
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestSessionInOutBuffers
-2022-11-08 18:59:47 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 s - in org.apache.hc.core5.http.impl.io.TestSessionInOutBuffers
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestChunkCoding
-2022-11-08 18:59:47 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.049 s - in org.apache.hc.core5.http.impl.io.TestChunkCoding
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestMonitoringResponseOutOfOrderStrategy
-2022-11-08 18:59:47 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in org.apache.hc.core5.http.impl.io.TestMonitoringResponseOutOfOrderStrategy
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.io.TestHttpRequestExecutor
-2022-11-08 18:59:47 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in org.apache.hc.core5.http.impl.io.TestHttpRequestExecutor
-2022-11-08 18:59:47 [INFO] Running org.apache.hc.core5.http.impl.TestEnglishReasonPhraseCatalog
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.http.impl.TestEnglishReasonPhraseCatalog
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestChunkEncoder
-2022-11-08 18:59:48 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in org.apache.hc.core5.http.impl.nio.TestChunkEncoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestExpandableBuffer
-2022-11-08 18:59:48 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http.impl.nio.TestExpandableBuffer
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestChunkDecoder
-2022-11-08 18:59:48 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.apache.hc.core5.http.impl.nio.TestChunkDecoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestIdentityDecoder
-2022-11-08 18:59:48 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.apache.hc.core5.http.impl.nio.TestIdentityDecoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestSessionInOutBuffers
-2022-11-08 18:59:48 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.hc.core5.http.impl.nio.TestSessionInOutBuffers
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestLengthDelimitedEncoder
-2022-11-08 18:59:48 [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.174 s - in org.apache.hc.core5.http.impl.nio.TestLengthDelimitedEncoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestAbstractHttp1StreamDuplexerCapacityWindow
-2022-11-08 18:59:48 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.106 s - in org.apache.hc.core5.http.impl.nio.TestAbstractHttp1StreamDuplexerCapacityWindow
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestLengthDelimitedDecoder
-2022-11-08 18:59:48 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.064 s - in org.apache.hc.core5.http.impl.nio.TestLengthDelimitedDecoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.nio.TestIdentityEncoder
-2022-11-08 18:59:48 [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s - in org.apache.hc.core5.http.impl.nio.TestIdentityEncoder
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.impl.TestDefaultContentLengthStrategy
-2022-11-08 18:59:48 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.impl.TestDefaultContentLengthStrategy
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.ssl.TestTlsCiphers
-2022-11-08 18:59:48 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.ssl.TestTlsCiphers
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.ssl.TLSTest
-2022-11-08 18:59:48 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.ssl.TLSTest
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.ssl.TestTlsVersionParser
-2022-11-08 18:59:48 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.ssl.TestTlsVersionParser
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.config.TestNamedElementChain
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.apache.hc.core5.http.config.TestNamedElementChain
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.config.TestRegistry
-2022-11-08 18:59:48 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.config.TestRegistry
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.TestContentType
-2022-11-08 18:59:48 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.apache.hc.core5.http.TestContentType
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.TestEofSensorInputStream
-2022-11-08 18:59:48 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s - in org.apache.hc.core5.http.io.TestEofSensorInputStream
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestInputStreamEntity
-2022-11-08 18:59:48 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.io.entity.TestInputStreamEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestPathEntity
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.http.io.entity.TestPathEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestHttpEntityWrapper
-2022-11-08 18:59:48 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.io.entity.TestHttpEntityWrapper
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestEntityUtils
-2022-11-08 18:59:48 [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.http.io.entity.TestEntityUtils
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestSerializableEntity
-2022-11-08 18:59:48 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.io.entity.TestSerializableEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestByteBufferEntity
-2022-11-08 18:59:48 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.io.entity.TestByteBufferEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestByteArrayEntity
-2022-11-08 18:59:48 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.io.entity.TestByteArrayEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestBasicHttpEntity
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.io.entity.TestBasicHttpEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestFileEntity
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.io.entity.TestFileEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestStringEntity
-2022-11-08 18:59:48 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.io.entity.TestStringEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestBufferedHttpEntity
-2022-11-08 18:59:48 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.io.entity.TestBufferedHttpEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.entity.TestNullEntity
-2022-11-08 18:59:48 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.io.entity.TestNullEntity
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.support.ClassicResponseBuilderTest
-2022-11-08 18:59:48 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.io.support.ClassicResponseBuilderTest
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.io.support.ClassicRequestBuilderTest
-2022-11-08 18:59:48 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in org.apache.hc.core5.http.io.support.ClassicRequestBuilderTest
-2022-11-08 18:59:48 [INFO] Running org.apache.hc.core5.http.message.TestNameValuePair
-2022-11-08 18:59:49 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http.message.TestNameValuePair
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeader
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http.message.TestBasicHeader
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicLineParser
-2022-11-08 18:59:49 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in org.apache.hc.core5.http.message.TestBasicLineParser
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.HttpResponseWrapperTest
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.message.HttpResponseWrapperTest
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicTokenIterator
-2022-11-08 18:59:49 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.message.TestBasicTokenIterator
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicMessages
-2022-11-08 18:59:49 [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.apache.hc.core5.http.message.TestBasicMessages
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderValueFormatter
-2022-11-08 18:59:49 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in org.apache.hc.core5.http.message.TestBasicHeaderValueFormatter
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBufferedHeader
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.http.message.TestBufferedHeader
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestHeaderElement
-2022-11-08 18:59:49 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http.message.TestHeaderElement
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderIterator
-2022-11-08 18:59:49 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.message.TestBasicHeaderIterator
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicStatusLine
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http.message.TestBasicStatusLine
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestMessageSupport
-2022-11-08 18:59:49 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.message.TestMessageSupport
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderValueParser
-2022-11-08 18:59:49 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.message.TestBasicHeaderValueParser
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestHeaderGroup
-2022-11-08 18:59:49 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in org.apache.hc.core5.http.message.TestHeaderGroup
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.HttpRequestWrapperTest
-2022-11-08 18:59:49 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.message.HttpRequestWrapperTest
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderElementIterator
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.message.TestBasicHeaderElementIterator
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestHeader
-2022-11-08 18:59:49 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.message.TestHeader
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.message.TestBasicLineFormatter
-2022-11-08 18:59:49 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.message.TestBasicLineFormatter
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.TestHttpVersion
-2022-11-08 18:59:49 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.TestHttpVersion
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternType
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.protocol.TestUriPatternType
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestRequestHandlerRegistry
-2022-11-08 18:59:49 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.protocol.TestRequestHandlerRegistry
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestUriRegexMatcher
-2022-11-08 18:59:49 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.protocol.TestUriRegexMatcher
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestChainBuilder
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 s - in org.apache.hc.core5.http.protocol.TestChainBuilder
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestStandardInterceptors
-2022-11-08 18:59:49 [INFO] Tests run: 79, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.191 s - in org.apache.hc.core5.http.protocol.TestStandardInterceptors
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternMatcher
-2022-11-08 18:59:49 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.protocol.TestUriPatternMatcher
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestHttpExecutionContext
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.protocol.TestHttpExecutionContext
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternOrderedMatcher
-2022-11-08 18:59:49 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.http.protocol.TestUriPatternOrderedMatcher
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.TestProtocolVersion
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0 s - in org.apache.hc.core5.http.TestProtocolVersion
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.support.TestBasicMessageBuilders
-2022-11-08 18:59:49 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.http.support.TestBasicMessageBuilders
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.ssl.BasicServerTlsStrategyTest
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.http.nio.ssl.BasicServerTlsStrategyTest
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.ssl.BasicClientTlsStrategyTest
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.nio.ssl.BasicClientTlsStrategyTest
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestPathEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.hc.core5.http.nio.entity.TestPathEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityConsumer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityConsumer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestStringAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.apache.hc.core5.http.nio.entity.TestStringAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestPathAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.nio.entity.TestPathAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestFileAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.nio.entity.TestFileAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestFileEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.nio.entity.TestFileEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestDigestingEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.nio.entity.TestDigestingEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityConsumer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityConsumer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestDigestingEntityConsumer
-2022-11-08 18:59:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.nio.entity.TestDigestingEntityConsumer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAsyncEntityProducers
-2022-11-08 18:59:49 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http.nio.entity.TestAsyncEntityProducers
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.entity.TestBasicAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.nio.entity.TestBasicAsyncEntityProducer
-2022-11-08 18:59:49 [INFO] Running org.apache.hc.core5.http.nio.support.classic.TestSharedInputBuffer
-2022-11-08 18:59:51 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.655 s - in org.apache.hc.core5.http.nio.support.classic.TestSharedInputBuffer
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.http.nio.support.classic.TestSharedOutputBuffer
-2022-11-08 18:59:51 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.238 s - in org.apache.hc.core5.http.nio.support.classic.TestSharedOutputBuffer
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.http.TestHttpHost
-2022-11-08 18:59:51 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.TestHttpHost
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.http.TestHttpExceptions
-2022-11-08 18:59:51 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.TestHttpExceptions
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.concurrent.TestCompletedFuture
-2022-11-08 18:59:51 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.concurrent.TestCompletedFuture
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.concurrent.DefaultThreadFactoryTest
-2022-11-08 18:59:51 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.concurrent.DefaultThreadFactoryTest
-2022-11-08 18:59:51 [INFO] Running org.apache.hc.core5.concurrent.TestBasicFuture
-2022-11-08 18:59:52 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.345 s - in org.apache.hc.core5.concurrent.TestBasicFuture
-2022-11-08 18:59:52 [INFO] Running org.apache.hc.core5.concurrent.TestComplexFuture
-2022-11-08 18:59:52 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.concurrent.TestComplexFuture
-2022-11-08 18:59:52 [INFO] Running org.apache.hc.core5.concurrent.TestComplexCancellable
-2022-11-08 18:59:52 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.concurrent.TestComplexCancellable
-2022-11-08 18:59:52 [INFO] Running org.apache.hc.core5.pool.TestStrictConnPool
-2022-11-08 18:59:52 [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.792 s - in org.apache.hc.core5.pool.TestStrictConnPool
-2022-11-08 18:59:52 [INFO] Running org.apache.hc.core5.pool.TestPoolEntry
-2022-11-08 18:59:52 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.pool.TestPoolEntry
-2022-11-08 18:59:52 [INFO] Running org.apache.hc.core5.pool.TestLaxConnPool
-2022-11-08 18:59:53 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.755 s - in org.apache.hc.core5.pool.TestLaxConnPool
-2022-11-08 18:59:53 [INFO] Running org.apache.hc.core5.reactor.IOWorkersTest
-2022-11-08 18:59:53 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s - in org.apache.hc.core5.reactor.IOWorkersTest
-2022-11-08 18:59:53 [INFO] Running org.apache.hc.core5.reactor.TestAbstractIOSessionPool
-2022-11-08 18:59:53 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s - in org.apache.hc.core5.reactor.TestAbstractIOSessionPool
-2022-11-08 18:59:53 [INFO] Running org.apache.hc.core5.reactor.IOReactorConfigTest
-2022-11-08 18:59:53 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.hc.core5.reactor.IOReactorConfigTest
-2022-11-08 18:59:53 [INFO] 
-2022-11-08 18:59:53 [INFO] Results:
-2022-11-08 18:59:53 [INFO] 
-2022-11-08 18:59:53 [INFO] Tests run: 1126, Failures: 0, Errors: 0, Skipped: 0
-2022-11-08 18:59:53 [INFO] 
-2022-11-08 18:59:53 [INFO] 
-2022-11-08 18:59:53 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5 ---
-2022-11-08 18:59:54 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT.jar
-2022-11-08 18:59:54 [INFO] 
-2022-11-08 18:59:54 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5 ---
-2022-11-08 18:59:54 [INFO] Skipping because packaging 'jar' is not pom.
-2022-11-08 18:59:54 [INFO] 
-2022-11-08 18:59:54 [INFO] --- maven-jar-plugin:3.2.2:test-jar (default) @ httpcore5 ---
-2022-11-08 18:59:54 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT-tests.jar
-2022-11-08 18:59:54 [INFO] 
-2022-11-08 18:59:54 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5 ---
-2022-11-08 18:59:56 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.diff'.
-2022-11-08 18:59:58 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.xml'.
-2022-11-08 18:59:58 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.html'.
-2022-11-08 18:59:58 [INFO] 
-2022-11-08 18:59:58 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5 ---
-2022-11-08 18:59:58 [INFO] Enabled default license matchers.
-2022-11-08 18:59:58 [INFO] Will parse SCM ignores for exclusions...
-2022-11-08 18:59:58 [INFO] Finished adding exclusions from SCM ignore files.
-2022-11-08 18:59:58 [INFO] 62 implicit excludes.
-2022-11-08 18:59:58 [INFO] 11 explicit excludes.
-2022-11-08 18:59:58 [INFO] 671 resources included
-2022-11-08 19:00:01 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 671 licenses.
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5 ---
-2022-11-08 19:00:01 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT.jar
-2022-11-08 19:00:01 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT.pom
-2022-11-08 19:00:01 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT-tests.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT-tests.jar
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] ------------< org.apache.httpcomponents.core5:httpcore5-h2 >------------
-2022-11-08 19:00:01 [INFO] Building Apache HttpComponents Core HTTP/2 5.2.1-SNAPSHOT          [3/5]
-2022-11-08 19:00:01 [INFO] --------------------------------[ jar ]---------------------------------
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-h2 ---
-2022-11-08 19:00:01 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-h2 ---
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-h2 ---
-2022-11-08 19:00:01 [INFO] 
-2022-11-08 19:00:01 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-h2 ---
-2022-11-08 19:00:01 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:03 [INFO] Beginne Prüfung...
+2022-11-08 20:39:41,131 [INFO] 
+2022-11-08 20:39:41,132 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5 ---
+2022-11-08 20:39:41,134 [INFO] 
+2022-11-08 20:39:41,135 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5 ---
+2022-11-08 20:39:41,142 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-08 20:39:41,155 [INFO] Copying 3 resources from 1 bundle.
+2022-11-08 20:39:41,498 [INFO] 
+2022-11-08 20:39:41,499 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5 ---
+2022-11-08 20:39:41,712 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:39:41,712 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:39:41,733 [INFO] Copying 1 resource
+2022-11-08 20:39:41,796 [INFO] Copying 3 resources
+2022-11-08 20:39:41,814 [INFO] The encoding used to copy filtered properties files have not been set. This means that the same encoding will be used to copy filtered properties files as when copying other filtered resources. This might not be what you want! Run your build with --debug to see which files might be affected. Read more at https://maven.apache.org/plugins/maven-resources-plugin/examples/filtering-properties-files.html
+2022-11-08 20:39:41,814 [INFO] 
+2022-11-08 20:39:41,814 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5 ---
+2022-11-08 20:39:42,182 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:39:42,199 [INFO] Compiling 515 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5/target/classes
+2022-11-08 20:39:54,550 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:39:54,553 [INFO] 
+2022-11-08 20:39:54,554 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5 ---
+2022-11-08 20:39:54,565 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:39:54,566 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:39:54,570 [INFO] Copying 6 resources
+2022-11-08 20:39:54,597 [INFO] Copying 3 resources
+2022-11-08 20:39:54,611 [INFO] 
+2022-11-08 20:39:54,612 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5 ---
+2022-11-08 20:39:54,640 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:39:54,642 [INFO] Compiling 153 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5/target/test-classes
+2022-11-08 20:40:03,634 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:03,636 [WARNING] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/ssl/DummyProvider.java:[44,9] Provider(java.lang.String,double,java.lang.String) in java.security.Provider has been deprecated
+2022-11-08 20:40:03,636 [INFO] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/reactor/TestAbstractIOSessionPool.java: Some input files use unchecked or unsafe operations.
+2022-11-08 20:40:03,636 [INFO] /Users/Stefan/git/apache-httpcomponents/httpcore5/src/test/java/org/apache/hc/core5/reactor/TestAbstractIOSessionPool.java: Recompile with -Xlint:unchecked for details.
+2022-11-08 20:40:03,636 [INFO] 
+2022-11-08 20:40:03,636 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5 ---
+2022-11-08 20:40:03,639 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-08 20:40:04,166 [INFO] 
+2022-11-08 20:40:04,167 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5 ---
+2022-11-08 20:40:04,523 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2022-11-08 20:40:04,921 [INFO] 
+2022-11-08 20:40:04,921 [INFO] -------------------------------------------------------
+2022-11-08 20:40:04,921 [INFO]  T E S T S
+2022-11-08 20:40:04,921 [INFO] -------------------------------------------------------
+2022-11-08 20:40:07,874 [INFO] Running org.apache.hc.core5.ssl.TestSSLContextBuilder
+2022-11-08 20:40:15,185 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.303 s - in org.apache.hc.core5.ssl.TestSSLContextBuilder
+2022-11-08 20:40:15,193 [INFO] Running org.apache.hc.core5.ssl.SSLContextsTest
+2022-11-08 20:40:15,212 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 s - in org.apache.hc.core5.ssl.SSLContextsTest
+2022-11-08 20:40:15,221 [INFO] Running org.apache.hc.core5.net.TestPercentCodec
+2022-11-08 20:40:15,265 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.apache.hc.core5.net.TestPercentCodec
+2022-11-08 20:40:15,266 [INFO] Running org.apache.hc.core5.net.TestURIBuilder
+2022-11-08 20:40:15,530 [INFO] Tests run: 74, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.237 s - in org.apache.hc.core5.net.TestURIBuilder
+2022-11-08 20:40:15,530 [INFO] Running org.apache.hc.core5.net.TestWWWFormCodec
+2022-11-08 20:40:15,542 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.net.TestWWWFormCodec
+2022-11-08 20:40:15,543 [INFO] Running org.apache.hc.core5.net.TestHost
+2022-11-08 20:40:15,575 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.net.TestHost
+2022-11-08 20:40:15,576 [INFO] Running org.apache.hc.core5.net.TestURIAuthority
+2022-11-08 20:40:15,601 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.apache.hc.core5.net.TestURIAuthority
+2022-11-08 20:40:15,602 [INFO] Running org.apache.hc.core5.net.TestInetAddressUtils
+2022-11-08 20:40:15,620 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.net.TestInetAddressUtils
+2022-11-08 20:40:15,620 [INFO] Running org.apache.hc.core5.util.TestTimeoutValueException
+2022-11-08 20:40:15,627 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.util.TestTimeoutValueException
+2022-11-08 20:40:15,627 [INFO] Running org.apache.hc.core5.util.TestTimeValue
+2022-11-08 20:40:15,668 [INFO] Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 s - in org.apache.hc.core5.util.TestTimeValue
+2022-11-08 20:40:15,668 [INFO] Running org.apache.hc.core5.util.TestDeadlineTimeoutException
+2022-11-08 20:40:15,692 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.util.TestDeadlineTimeoutException
+2022-11-08 20:40:15,692 [INFO] Running org.apache.hc.core5.util.TestTokenizer
+2022-11-08 20:40:15,717 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.util.TestTokenizer
+2022-11-08 20:40:15,717 [INFO] Running org.apache.hc.core5.util.TestCharArrayBuffer
+2022-11-08 20:40:15,771 [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in org.apache.hc.core5.util.TestCharArrayBuffer
+2022-11-08 20:40:15,772 [INFO] Running org.apache.hc.core5.util.TestByteArrayBuffer
+2022-11-08 20:40:15,826 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.047 s - in org.apache.hc.core5.util.TestByteArrayBuffer
+2022-11-08 20:40:15,826 [INFO] Running org.apache.hc.core5.util.TestTextUtils
+2022-11-08 20:40:15,843 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.util.TestTextUtils
+2022-11-08 20:40:15,844 [INFO] Running org.apache.hc.core5.util.TestArgs
+2022-11-08 20:40:15,941 [INFO] Tests run: 41, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 s - in org.apache.hc.core5.util.TestArgs
+2022-11-08 20:40:15,941 [INFO] Running org.apache.hc.core5.util.TestDeadline
+2022-11-08 20:40:15,960 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.util.TestDeadline
+2022-11-08 20:40:15,960 [INFO] Running org.apache.hc.core5.util.TestLangUtils
+2022-11-08 20:40:15,976 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.util.TestLangUtils
+2022-11-08 20:40:15,977 [INFO] Running org.apache.hc.core5.util.TestTimeout
+2022-11-08 20:40:15,983 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.apache.hc.core5.util.TestTimeout
+2022-11-08 20:40:15,984 [INFO] Running org.apache.hc.core5.util.TestAsserts
+2022-11-08 20:40:15,998 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 s - in org.apache.hc.core5.util.TestAsserts
+2022-11-08 20:40:15,998 [INFO] Running org.apache.hc.core5.annotation.ThreadingBehaviorTest
+2022-11-08 20:40:16,008 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.annotation.ThreadingBehaviorTest
+2022-11-08 20:40:16,008 [INFO] Running org.apache.hc.core5.http.impl.IncomingEntityDetailsTest
+2022-11-08 20:40:16,029 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.http.impl.IncomingEntityDetailsTest
+2022-11-08 20:40:16,030 [INFO] Running org.apache.hc.core5.http.impl.TestDefaultConnectionReuseStrategy
+2022-11-08 20:40:16,086 [INFO] Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.059 s - in org.apache.hc.core5.http.impl.TestDefaultConnectionReuseStrategy
+2022-11-08 20:40:16,086 [INFO] Running org.apache.hc.core5.http.impl.io.TestIdentityInputStream
+2022-11-08 20:40:16,101 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.http.impl.io.TestIdentityInputStream
+2022-11-08 20:40:16,101 [INFO] Running org.apache.hc.core5.http.impl.io.TestIdentityOutputStream
+2022-11-08 20:40:16,113 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.impl.io.TestIdentityOutputStream
+2022-11-08 20:40:16,114 [INFO] Running org.apache.hc.core5.http.impl.io.TestMessageParser
+2022-11-08 20:40:16,137 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.apache.hc.core5.http.impl.io.TestMessageParser
+2022-11-08 20:40:16,139 [INFO] Running org.apache.hc.core5.http.impl.io.TestHttpService
+2022-11-08 20:40:19,523 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.375 s - in org.apache.hc.core5.http.impl.io.TestHttpService
+2022-11-08 20:40:19,524 [INFO] Running org.apache.hc.core5.http.impl.io.TestResponseParser
+2022-11-08 20:40:19,541 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 s - in org.apache.hc.core5.http.impl.io.TestResponseParser
+2022-11-08 20:40:19,549 [INFO] Running org.apache.hc.core5.http.impl.io.TestDefaultBHttpClientConnection
+2022-11-08 20:40:19,812 [INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.255 s - in org.apache.hc.core5.http.impl.io.TestDefaultBHttpClientConnection
+2022-11-08 20:40:19,812 [INFO] Running org.apache.hc.core5.http.impl.io.TestContentLengthOutputStream
+2022-11-08 20:40:19,819 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.impl.io.TestContentLengthOutputStream
+2022-11-08 20:40:19,819 [INFO] Running org.apache.hc.core5.http.impl.io.TestContentLengthInputStream
+2022-11-08 20:40:19,825 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.impl.io.TestContentLengthInputStream
+2022-11-08 20:40:19,825 [INFO] Running org.apache.hc.core5.http.impl.io.TestDefaultBHttpServerConnection
+2022-11-08 20:40:19,882 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 s - in org.apache.hc.core5.http.impl.io.TestDefaultBHttpServerConnection
+2022-11-08 20:40:19,882 [INFO] Running org.apache.hc.core5.http.impl.io.TestRequestParser
+2022-11-08 20:40:19,892 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.impl.io.TestRequestParser
+2022-11-08 20:40:19,892 [INFO] Running org.apache.hc.core5.http.impl.io.TestBHttpConnectionBase
+2022-11-08 20:40:20,005 [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 s - in org.apache.hc.core5.http.impl.io.TestBHttpConnectionBase
+2022-11-08 20:40:20,006 [INFO] Running org.apache.hc.core5.http.impl.io.TestSessionInOutBuffers
+2022-11-08 20:40:20,104 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in org.apache.hc.core5.http.impl.io.TestSessionInOutBuffers
+2022-11-08 20:40:20,105 [INFO] Running org.apache.hc.core5.http.impl.io.TestChunkCoding
+2022-11-08 20:40:20,200 [INFO] Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 s - in org.apache.hc.core5.http.impl.io.TestChunkCoding
+2022-11-08 20:40:20,200 [INFO] Running org.apache.hc.core5.http.impl.io.TestMonitoringResponseOutOfOrderStrategy
+2022-11-08 20:40:20,300 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 s - in org.apache.hc.core5.http.impl.io.TestMonitoringResponseOutOfOrderStrategy
+2022-11-08 20:40:20,300 [INFO] Running org.apache.hc.core5.http.impl.io.TestHttpRequestExecutor
+2022-11-08 20:40:20,406 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in org.apache.hc.core5.http.impl.io.TestHttpRequestExecutor
+2022-11-08 20:40:20,407 [INFO] Running org.apache.hc.core5.http.impl.TestEnglishReasonPhraseCatalog
+2022-11-08 20:40:20,488 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.08 s - in org.apache.hc.core5.http.impl.TestEnglishReasonPhraseCatalog
+2022-11-08 20:40:20,489 [INFO] Running org.apache.hc.core5.http.impl.nio.TestChunkEncoder
+2022-11-08 20:40:20,638 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.151 s - in org.apache.hc.core5.http.impl.nio.TestChunkEncoder
+2022-11-08 20:40:20,639 [INFO] Running org.apache.hc.core5.http.impl.nio.TestExpandableBuffer
+2022-11-08 20:40:20,646 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http.impl.nio.TestExpandableBuffer
+2022-11-08 20:40:20,646 [INFO] Running org.apache.hc.core5.http.impl.nio.TestChunkDecoder
+2022-11-08 20:40:21,012 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.364 s - in org.apache.hc.core5.http.impl.nio.TestChunkDecoder
+2022-11-08 20:40:21,012 [INFO] Running org.apache.hc.core5.http.impl.nio.TestIdentityDecoder
+2022-11-08 20:40:21,125 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.11 s - in org.apache.hc.core5.http.impl.nio.TestIdentityDecoder
+2022-11-08 20:40:21,126 [INFO] Running org.apache.hc.core5.http.impl.nio.TestSessionInOutBuffers
+2022-11-08 20:40:21,213 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 s - in org.apache.hc.core5.http.impl.nio.TestSessionInOutBuffers
+2022-11-08 20:40:21,213 [INFO] Running org.apache.hc.core5.http.impl.nio.TestLengthDelimitedEncoder
+2022-11-08 20:40:21,473 [INFO] Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.258 s - in org.apache.hc.core5.http.impl.nio.TestLengthDelimitedEncoder
+2022-11-08 20:40:21,474 [INFO] Running org.apache.hc.core5.http.impl.nio.TestAbstractHttp1StreamDuplexerCapacityWindow
+2022-11-08 20:40:21,593 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.119 s - in org.apache.hc.core5.http.impl.nio.TestAbstractHttp1StreamDuplexerCapacityWindow
+2022-11-08 20:40:21,593 [INFO] Running org.apache.hc.core5.http.impl.nio.TestLengthDelimitedDecoder
+2022-11-08 20:40:21,694 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in org.apache.hc.core5.http.impl.nio.TestLengthDelimitedDecoder
+2022-11-08 20:40:21,715 [INFO] Running org.apache.hc.core5.http.impl.nio.TestIdentityEncoder
+2022-11-08 20:40:21,901 [INFO] Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 s - in org.apache.hc.core5.http.impl.nio.TestIdentityEncoder
+2022-11-08 20:40:21,901 [INFO] Running org.apache.hc.core5.http.impl.TestDefaultContentLengthStrategy
+2022-11-08 20:40:21,921 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 s - in org.apache.hc.core5.http.impl.TestDefaultContentLengthStrategy
+2022-11-08 20:40:21,922 [INFO] Running org.apache.hc.core5.http.ssl.TestTlsCiphers
+2022-11-08 20:40:21,954 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s - in org.apache.hc.core5.http.ssl.TestTlsCiphers
+2022-11-08 20:40:21,957 [INFO] Running org.apache.hc.core5.http.ssl.TLSTest
+2022-11-08 20:40:22,002 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.http.ssl.TLSTest
+2022-11-08 20:40:22,002 [INFO] Running org.apache.hc.core5.http.ssl.TestTlsVersionParser
+2022-11-08 20:40:22,071 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 s - in org.apache.hc.core5.http.ssl.TestTlsVersionParser
+2022-11-08 20:40:22,071 [INFO] Running org.apache.hc.core5.http.config.TestNamedElementChain
+2022-11-08 20:40:22,102 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.apache.hc.core5.http.config.TestNamedElementChain
+2022-11-08 20:40:22,103 [INFO] Running org.apache.hc.core5.http.config.TestRegistry
+2022-11-08 20:40:22,125 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.http.config.TestRegistry
+2022-11-08 20:40:22,125 [INFO] Running org.apache.hc.core5.http.TestContentType
+2022-11-08 20:40:22,209 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 s - in org.apache.hc.core5.http.TestContentType
+2022-11-08 20:40:22,210 [INFO] Running org.apache.hc.core5.http.io.TestEofSensorInputStream
+2022-11-08 20:40:22,297 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.076 s - in org.apache.hc.core5.http.io.TestEofSensorInputStream
+2022-11-08 20:40:22,299 [INFO] Running org.apache.hc.core5.http.io.entity.TestInputStreamEntity
+2022-11-08 20:40:22,314 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.http.io.entity.TestInputStreamEntity
+2022-11-08 20:40:22,314 [INFO] Running org.apache.hc.core5.http.io.entity.TestPathEntity
+2022-11-08 20:40:22,338 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.http.io.entity.TestPathEntity
+2022-11-08 20:40:22,339 [INFO] Running org.apache.hc.core5.http.io.entity.TestHttpEntityWrapper
+2022-11-08 20:40:22,349 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.io.entity.TestHttpEntityWrapper
+2022-11-08 20:40:22,349 [INFO] Running org.apache.hc.core5.http.io.entity.TestEntityUtils
+2022-11-08 20:40:22,394 [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 s - in org.apache.hc.core5.http.io.entity.TestEntityUtils
+2022-11-08 20:40:22,394 [INFO] Running org.apache.hc.core5.http.io.entity.TestSerializableEntity
+2022-11-08 20:40:22,401 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.io.entity.TestSerializableEntity
+2022-11-08 20:40:22,402 [INFO] Running org.apache.hc.core5.http.io.entity.TestByteBufferEntity
+2022-11-08 20:40:22,411 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.io.entity.TestByteBufferEntity
+2022-11-08 20:40:22,412 [INFO] Running org.apache.hc.core5.http.io.entity.TestByteArrayEntity
+2022-11-08 20:40:22,470 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.056 s - in org.apache.hc.core5.http.io.entity.TestByteArrayEntity
+2022-11-08 20:40:22,470 [INFO] Running org.apache.hc.core5.http.io.entity.TestBasicHttpEntity
+2022-11-08 20:40:22,478 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.io.entity.TestBasicHttpEntity
+2022-11-08 20:40:22,479 [INFO] Running org.apache.hc.core5.http.io.entity.TestFileEntity
+2022-11-08 20:40:22,493 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.io.entity.TestFileEntity
+2022-11-08 20:40:22,494 [INFO] Running org.apache.hc.core5.http.io.entity.TestStringEntity
+2022-11-08 20:40:22,504 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.io.entity.TestStringEntity
+2022-11-08 20:40:22,505 [INFO] Running org.apache.hc.core5.http.io.entity.TestBufferedHttpEntity
+2022-11-08 20:40:22,518 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.io.entity.TestBufferedHttpEntity
+2022-11-08 20:40:22,518 [INFO] Running org.apache.hc.core5.http.io.entity.TestNullEntity
+2022-11-08 20:40:22,535 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.http.io.entity.TestNullEntity
+2022-11-08 20:40:22,535 [INFO] Running org.apache.hc.core5.http.io.support.ClassicResponseBuilderTest
+2022-11-08 20:40:22,565 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 s - in org.apache.hc.core5.http.io.support.ClassicResponseBuilderTest
+2022-11-08 20:40:22,565 [INFO] Running org.apache.hc.core5.http.io.support.ClassicRequestBuilderTest
+2022-11-08 20:40:22,598 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.http.io.support.ClassicRequestBuilderTest
+2022-11-08 20:40:22,599 [INFO] Running org.apache.hc.core5.http.message.TestNameValuePair
+2022-11-08 20:40:22,617 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s - in org.apache.hc.core5.http.message.TestNameValuePair
+2022-11-08 20:40:22,617 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeader
+2022-11-08 20:40:22,624 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.message.TestBasicHeader
+2022-11-08 20:40:22,624 [INFO] Running org.apache.hc.core5.http.message.TestBasicLineParser
+2022-11-08 20:40:22,650 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.hc.core5.http.message.TestBasicLineParser
+2022-11-08 20:40:22,651 [INFO] Running org.apache.hc.core5.http.message.HttpResponseWrapperTest
+2022-11-08 20:40:22,658 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.message.HttpResponseWrapperTest
+2022-11-08 20:40:22,658 [INFO] Running org.apache.hc.core5.http.message.TestBasicTokenIterator
+2022-11-08 20:40:22,670 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.message.TestBasicTokenIterator
+2022-11-08 20:40:22,670 [INFO] Running org.apache.hc.core5.http.message.TestBasicMessages
+2022-11-08 20:40:22,693 [INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 s - in org.apache.hc.core5.http.message.TestBasicMessages
+2022-11-08 20:40:22,693 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderValueFormatter
+2022-11-08 20:40:22,707 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.message.TestBasicHeaderValueFormatter
+2022-11-08 20:40:22,708 [INFO] Running org.apache.hc.core5.http.message.TestBufferedHeader
+2022-11-08 20:40:22,757 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.051 s - in org.apache.hc.core5.http.message.TestBufferedHeader
+2022-11-08 20:40:22,758 [INFO] Running org.apache.hc.core5.http.message.TestHeaderElement
+2022-11-08 20:40:22,764 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.message.TestHeaderElement
+2022-11-08 20:40:22,764 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderIterator
+2022-11-08 20:40:22,777 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.message.TestBasicHeaderIterator
+2022-11-08 20:40:22,777 [INFO] Running org.apache.hc.core5.http.message.TestBasicStatusLine
+2022-11-08 20:40:22,783 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.message.TestBasicStatusLine
+2022-11-08 20:40:22,784 [INFO] Running org.apache.hc.core5.http.message.TestMessageSupport
+2022-11-08 20:40:22,818 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.apache.hc.core5.http.message.TestMessageSupport
+2022-11-08 20:40:22,819 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderValueParser
+2022-11-08 20:40:22,826 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.message.TestBasicHeaderValueParser
+2022-11-08 20:40:22,826 [INFO] Running org.apache.hc.core5.http.message.TestHeaderGroup
+2022-11-08 20:40:22,836 [INFO] Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http.message.TestHeaderGroup
+2022-11-08 20:40:22,836 [INFO] Running org.apache.hc.core5.http.message.HttpRequestWrapperTest
+2022-11-08 20:40:22,847 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.message.HttpRequestWrapperTest
+2022-11-08 20:40:22,848 [INFO] Running org.apache.hc.core5.http.message.TestBasicHeaderElementIterator
+2022-11-08 20:40:22,854 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.message.TestBasicHeaderElementIterator
+2022-11-08 20:40:22,854 [INFO] Running org.apache.hc.core5.http.message.TestHeader
+2022-11-08 20:40:22,861 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.message.TestHeader
+2022-11-08 20:40:22,862 [INFO] Running org.apache.hc.core5.http.message.TestBasicLineFormatter
+2022-11-08 20:40:22,868 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.message.TestBasicLineFormatter
+2022-11-08 20:40:22,868 [INFO] Running org.apache.hc.core5.http.TestHttpVersion
+2022-11-08 20:40:22,880 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.http.TestHttpVersion
+2022-11-08 20:40:22,880 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternType
+2022-11-08 20:40:22,899 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.apache.hc.core5.http.protocol.TestUriPatternType
+2022-11-08 20:40:22,903 [INFO] Running org.apache.hc.core5.http.protocol.TestRequestHandlerRegistry
+2022-11-08 20:40:22,921 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.protocol.TestRequestHandlerRegistry
+2022-11-08 20:40:22,922 [INFO] Running org.apache.hc.core5.http.protocol.TestUriRegexMatcher
+2022-11-08 20:40:22,929 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.protocol.TestUriRegexMatcher
+2022-11-08 20:40:22,929 [INFO] Running org.apache.hc.core5.http.protocol.TestChainBuilder
+2022-11-08 20:40:22,942 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.apache.hc.core5.http.protocol.TestChainBuilder
+2022-11-08 20:40:22,942 [INFO] Running org.apache.hc.core5.http.protocol.TestStandardInterceptors
+2022-11-08 20:40:23,185 [INFO] Tests run: 79, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.229 s - in org.apache.hc.core5.http.protocol.TestStandardInterceptors
+2022-11-08 20:40:23,185 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternMatcher
+2022-11-08 20:40:23,210 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 s - in org.apache.hc.core5.http.protocol.TestUriPatternMatcher
+2022-11-08 20:40:23,210 [INFO] Running org.apache.hc.core5.http.protocol.TestHttpExecutionContext
+2022-11-08 20:40:23,220 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http.protocol.TestHttpExecutionContext
+2022-11-08 20:40:23,221 [INFO] Running org.apache.hc.core5.http.protocol.TestUriPatternOrderedMatcher
+2022-11-08 20:40:23,246 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s - in org.apache.hc.core5.http.protocol.TestUriPatternOrderedMatcher
+2022-11-08 20:40:23,246 [INFO] Running org.apache.hc.core5.http.TestProtocolVersion
+2022-11-08 20:40:23,252 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.hc.core5.http.TestProtocolVersion
+2022-11-08 20:40:23,252 [INFO] Running org.apache.hc.core5.http.support.TestBasicMessageBuilders
+2022-11-08 20:40:23,287 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in org.apache.hc.core5.http.support.TestBasicMessageBuilders
+2022-11-08 20:40:23,295 [INFO] Running org.apache.hc.core5.http.nio.ssl.BasicServerTlsStrategyTest
+2022-11-08 20:40:23,325 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.apache.hc.core5.http.nio.ssl.BasicServerTlsStrategyTest
+2022-11-08 20:40:23,325 [INFO] Running org.apache.hc.core5.http.nio.ssl.BasicClientTlsStrategyTest
+2022-11-08 20:40:23,332 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.nio.ssl.BasicClientTlsStrategyTest
+2022-11-08 20:40:23,332 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityProducer
+2022-11-08 20:40:23,342 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityProducer
+2022-11-08 20:40:23,342 [INFO] Running org.apache.hc.core5.http.nio.entity.TestPathEntityProducer
+2022-11-08 20:40:23,369 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 s - in org.apache.hc.core5.http.nio.entity.TestPathEntityProducer
+2022-11-08 20:40:23,369 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityConsumer
+2022-11-08 20:40:23,374 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.nio.entity.TestAbstractBinAsyncEntityConsumer
+2022-11-08 20:40:23,374 [INFO] Running org.apache.hc.core5.http.nio.entity.TestStringAsyncEntityProducer
+2022-11-08 20:40:23,386 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 s - in org.apache.hc.core5.http.nio.entity.TestStringAsyncEntityProducer
+2022-11-08 20:40:23,386 [INFO] Running org.apache.hc.core5.http.nio.entity.TestPathAsyncEntityProducer
+2022-11-08 20:40:23,395 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.http.nio.entity.TestPathAsyncEntityProducer
+2022-11-08 20:40:23,395 [INFO] Running org.apache.hc.core5.http.nio.entity.TestFileAsyncEntityProducer
+2022-11-08 20:40:23,407 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.nio.entity.TestFileAsyncEntityProducer
+2022-11-08 20:40:23,407 [INFO] Running org.apache.hc.core5.http.nio.entity.TestFileEntityProducer
+2022-11-08 20:40:23,415 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 s - in org.apache.hc.core5.http.nio.entity.TestFileEntityProducer
+2022-11-08 20:40:23,415 [INFO] Running org.apache.hc.core5.http.nio.entity.TestDigestingEntityProducer
+2022-11-08 20:40:23,422 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http.nio.entity.TestDigestingEntityProducer
+2022-11-08 20:40:23,422 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityConsumer
+2022-11-08 20:40:23,427 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityConsumer
+2022-11-08 20:40:23,427 [INFO] Running org.apache.hc.core5.http.nio.entity.TestDigestingEntityConsumer
+2022-11-08 20:40:23,434 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http.nio.entity.TestDigestingEntityConsumer
+2022-11-08 20:40:23,434 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityProducer
+2022-11-08 20:40:23,440 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http.nio.entity.TestAbstractCharAsyncEntityProducer
+2022-11-08 20:40:23,440 [INFO] Running org.apache.hc.core5.http.nio.entity.TestAsyncEntityProducers
+2022-11-08 20:40:23,451 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http.nio.entity.TestAsyncEntityProducers
+2022-11-08 20:40:23,452 [INFO] Running org.apache.hc.core5.http.nio.entity.TestBasicAsyncEntityProducer
+2022-11-08 20:40:23,457 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.nio.entity.TestBasicAsyncEntityProducer
+2022-11-08 20:40:23,457 [INFO] Running org.apache.hc.core5.http.nio.support.classic.TestSharedInputBuffer
+2022-11-08 20:40:25,100 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.638 s - in org.apache.hc.core5.http.nio.support.classic.TestSharedInputBuffer
+2022-11-08 20:40:25,100 [INFO] Running org.apache.hc.core5.http.nio.support.classic.TestSharedOutputBuffer
+2022-11-08 20:40:25,358 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 s - in org.apache.hc.core5.http.nio.support.classic.TestSharedOutputBuffer
+2022-11-08 20:40:25,358 [INFO] Running org.apache.hc.core5.http.TestHttpHost
+2022-11-08 20:40:25,373 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http.TestHttpHost
+2022-11-08 20:40:25,373 [INFO] Running org.apache.hc.core5.http.TestHttpExceptions
+2022-11-08 20:40:25,380 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http.TestHttpExceptions
+2022-11-08 20:40:25,380 [INFO] Running org.apache.hc.core5.concurrent.TestCompletedFuture
+2022-11-08 20:40:25,385 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.concurrent.TestCompletedFuture
+2022-11-08 20:40:25,385 [INFO] Running org.apache.hc.core5.concurrent.DefaultThreadFactoryTest
+2022-11-08 20:40:25,394 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.concurrent.DefaultThreadFactoryTest
+2022-11-08 20:40:25,394 [INFO] Running org.apache.hc.core5.concurrent.TestBasicFuture
+2022-11-08 20:40:25,726 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.338 s - in org.apache.hc.core5.concurrent.TestBasicFuture
+2022-11-08 20:40:25,726 [INFO] Running org.apache.hc.core5.concurrent.TestComplexFuture
+2022-11-08 20:40:25,733 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.concurrent.TestComplexFuture
+2022-11-08 20:40:25,733 [INFO] Running org.apache.hc.core5.concurrent.TestComplexCancellable
+2022-11-08 20:40:25,736 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.concurrent.TestComplexCancellable
+2022-11-08 20:40:25,736 [INFO] Running org.apache.hc.core5.pool.TestStrictConnPool
+2022-11-08 20:40:26,539 [INFO] Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.797 s - in org.apache.hc.core5.pool.TestStrictConnPool
+2022-11-08 20:40:26,539 [INFO] Running org.apache.hc.core5.pool.TestPoolEntry
+2022-11-08 20:40:26,545 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.pool.TestPoolEntry
+2022-11-08 20:40:26,545 [INFO] Running org.apache.hc.core5.pool.TestLaxConnPool
+2022-11-08 20:40:27,306 [INFO] Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.761 s - in org.apache.hc.core5.pool.TestLaxConnPool
+2022-11-08 20:40:27,306 [INFO] Running org.apache.hc.core5.reactor.IOWorkersTest
+2022-11-08 20:40:27,388 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 s - in org.apache.hc.core5.reactor.IOWorkersTest
+2022-11-08 20:40:27,388 [INFO] Running org.apache.hc.core5.reactor.TestAbstractIOSessionPool
+2022-11-08 20:40:27,471 [INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 s - in org.apache.hc.core5.reactor.TestAbstractIOSessionPool
+2022-11-08 20:40:27,471 [INFO] Running org.apache.hc.core5.reactor.IOReactorConfigTest
+2022-11-08 20:40:27,477 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in org.apache.hc.core5.reactor.IOReactorConfigTest
+2022-11-08 20:40:27,538 [INFO] 
+2022-11-08 20:40:27,539 [INFO] Results:
+2022-11-08 20:40:27,539 [INFO] 
+2022-11-08 20:40:27,539 [INFO] Tests run: 1126, Failures: 0, Errors: 0, Skipped: 0
+2022-11-08 20:40:27,539 [INFO] 
+2022-11-08 20:40:27,547 [INFO] 
+2022-11-08 20:40:27,547 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5 ---
+2022-11-08 20:40:28,105 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:28,436 [INFO] 
+2022-11-08 20:40:28,436 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5 ---
+2022-11-08 20:40:28,437 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-08 20:40:28,438 [INFO] 
+2022-11-08 20:40:28,438 [INFO] --- maven-jar-plugin:3.2.2:test-jar (default) @ httpcore5 ---
+2022-11-08 20:40:28,475 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT-tests.jar
+2022-11-08 20:40:28,560 [INFO] 
+2022-11-08 20:40:28,560 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5 ---
+2022-11-08 20:40:29,782 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.diff'.
+2022-11-08 20:40:32,588 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.xml'.
+2022-11-08 20:40:32,588 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5/target/japicmp/japicmp.html'.
+2022-11-08 20:40:32,608 [INFO] 
+2022-11-08 20:40:32,609 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5 ---
+2022-11-08 20:40:32,614 [INFO] Enabled default license matchers.
+2022-11-08 20:40:32,614 [INFO] Will parse SCM ignores for exclusions...
+2022-11-08 20:40:32,620 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-08 20:40:32,620 [INFO] 62 implicit excludes.
+2022-11-08 20:40:32,620 [INFO] 11 explicit excludes.
+2022-11-08 20:40:32,766 [INFO] 671 resources included
+2022-11-08 20:40:35,077 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 671 licenses.
+2022-11-08 20:40:35,078 [INFO] 
+2022-11-08 20:40:35,078 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5 ---
+2022-11-08 20:40:35,093 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:35,102 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT.pom
+2022-11-08 20:40:35,111 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5/target/httpcore5-5.2.1-SNAPSHOT-tests.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5/5.2.1-SNAPSHOT/httpcore5-5.2.1-SNAPSHOT-tests.jar
+2022-11-08 20:40:35,116 [INFO] 
+2022-11-08 20:40:35,117 [INFO] ------------< org.apache.httpcomponents.core5:httpcore5-h2 >------------
+2022-11-08 20:40:35,117 [INFO] Building Apache HttpComponents Core HTTP/2 5.2.1-SNAPSHOT          [3/5]
+2022-11-08 20:40:35,117 [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-08 20:40:35,165 [INFO] 
+2022-11-08 20:40:35,165 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-h2 ---
+2022-11-08 20:40:35,166 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target
+2022-11-08 20:40:35,311 [INFO] 
+2022-11-08 20:40:35,312 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-h2 ---
+2022-11-08 20:40:35,313 [INFO] 
+2022-11-08 20:40:35,313 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-h2 ---
+2022-11-08 20:40:35,314 [INFO] 
+2022-11-08 20:40:35,314 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-h2 ---
+2022-11-08 20:40:35,319 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:37,097 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:03 [INFO] 
-2022-11-08 19:00:03 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-h2 ---
-2022-11-08 19:00:03 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:04 [INFO] Beginne Prüfung...
+2022-11-08 20:40:37,142 [INFO] 
+2022-11-08 20:40:37,142 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-h2 ---
+2022-11-08 20:40:37,147 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:37,931 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:04 [INFO] 
-2022-11-08 19:00:04 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-h2 ---
-2022-11-08 19:00:04 [INFO] 
-2022-11-08 19:00:04 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-h2 ---
-2022-11-08 19:00:04 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
-2022-11-08 19:00:04 [INFO] Copying 3 resources from 1 bundle.
-2022-11-08 19:00:04 [INFO] 
-2022-11-08 19:00:04 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-h2 ---
-2022-11-08 19:00:04 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:04 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:04 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/src/main/resources
-2022-11-08 19:00:04 [INFO] Copying 3 resources
-2022-11-08 19:00:04 [INFO] 
-2022-11-08 19:00:04 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-h2 ---
-2022-11-08 19:00:04 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:04 [INFO] Compiling 113 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/classes
-2022-11-08 19:00:05 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:05 [INFO] 
-2022-11-08 19:00:05 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-h2 ---
-2022-11-08 19:00:05 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:05 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:05 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/src/test/resources
-2022-11-08 19:00:05 [INFO] Copying 3 resources
-2022-11-08 19:00:05 [INFO] 
-2022-11-08 19:00:05 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-h2 ---
-2022-11-08 19:00:05 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:05 [INFO] Compiling 27 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/test-classes
-2022-11-08 19:00:06 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:06 [INFO] 
-2022-11-08 19:00:06 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-h2 ---
-2022-11-08 19:00:06 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
-2022-11-08 19:00:07 [INFO] 
-2022-11-08 19:00:07 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-h2 ---
-2022-11-08 19:00:07 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-2022-11-08 19:00:07 [INFO] 
-2022-11-08 19:00:07 [INFO] -------------------------------------------------------
-2022-11-08 19:00:07 [INFO]  T E S T S
-2022-11-08 19:00:07 [INFO] -------------------------------------------------------
-2022-11-08 19:00:08 [INFO] Running org.apache.hc.core5.http2.impl.TestDefaultH2ResponseConverter
-2022-11-08 19:00:08 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.207 s - in org.apache.hc.core5.http2.impl.TestDefaultH2ResponseConverter
-2022-11-08 19:00:08 [INFO] Running org.apache.hc.core5.http2.impl.io.TestFrameInOutBuffers
-2022-11-08 19:00:08 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in org.apache.hc.core5.http2.impl.io.TestFrameInOutBuffers
-2022-11-08 19:00:08 [INFO] Running org.apache.hc.core5.http2.impl.TestDefaultH2RequestConverter
-2022-11-08 19:00:08 [INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.107 s - in org.apache.hc.core5.http2.impl.TestDefaultH2RequestConverter
-2022-11-08 19:00:08 [INFO] Running org.apache.hc.core5.http2.impl.nio.TestFrameInOutBuffers
-2022-11-08 19:00:09 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 s - in org.apache.hc.core5.http2.impl.nio.TestFrameInOutBuffers
-2022-11-08 19:00:09 [INFO] Running org.apache.hc.core5.http2.impl.nio.TestAbstractH2StreamMultiplexer
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.084 s - in org.apache.hc.core5.http2.impl.nio.TestAbstractH2StreamMultiplexer
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.ssl.ConscryptClientTlsStrategyTest
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.292 s - in org.apache.hc.core5.http2.ssl.ConscryptClientTlsStrategyTest
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.hpack.TestHPackCoding
-2022-11-08 19:00:10 [INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 s - in org.apache.hc.core5.http2.hpack.TestHPackCoding
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.hpack.TestInboundDynamicTable
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http2.hpack.TestInboundDynamicTable
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.hpack.TestFifoBuffer
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 s - in org.apache.hc.core5.http2.hpack.TestFifoBuffer
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.hpack.TestOutboundDynamicTable
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http2.hpack.TestOutboundDynamicTable
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.hpack.TestFifoLinkedList
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http2.hpack.TestFifoLinkedList
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.config.H2ConfigTest
-2022-11-08 19:00:10 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 s - in org.apache.hc.core5.http2.config.H2ConfigTest
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.frame.TestH2Settings
-2022-11-08 19:00:10 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http2.frame.TestH2Settings
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.frame.TestFrameFlag
-2022-11-08 19:00:10 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http2.frame.TestFrameFlag
-2022-11-08 19:00:10 [INFO] Running org.apache.hc.core5.http2.frame.TestDefaultFrameFactory
-2022-11-08 19:00:10 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.http2.frame.TestDefaultFrameFactory
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] Results:
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] Tests run: 117, Failures: 0, Errors: 0, Skipped: 0
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-h2 ---
-2022-11-08 19:00:10 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/httpcore5-h2-5.2.1-SNAPSHOT.jar
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-h2 ---
-2022-11-08 19:00:10 [INFO] Skipping because packaging 'jar' is not pom.
-2022-11-08 19:00:10 [INFO] 
-2022-11-08 19:00:10 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-h2 ---
-2022-11-08 19:00:11 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.diff'.
-2022-11-08 19:00:11 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.xml'.
-2022-11-08 19:00:11 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.html'.
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-h2 ---
-2022-11-08 19:00:11 [INFO] Enabled default license matchers.
-2022-11-08 19:00:11 [INFO] Will parse SCM ignores for exclusions...
-2022-11-08 19:00:11 [INFO] Finished adding exclusions from SCM ignore files.
-2022-11-08 19:00:11 [INFO] 62 implicit excludes.
-2022-11-08 19:00:11 [INFO] 11 explicit excludes.
-2022-11-08 19:00:11 [INFO] 141 resources included
-2022-11-08 19:00:11 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 141 licenses.
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-h2 ---
-2022-11-08 19:00:11 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/httpcore5-h2-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.1-SNAPSHOT/httpcore5-h2-5.2.1-SNAPSHOT.jar
-2022-11-08 19:00:11 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.1-SNAPSHOT/httpcore5-h2-5.2.1-SNAPSHOT.pom
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] ---------< org.apache.httpcomponents.core5:httpcore5-reactive >---------
-2022-11-08 19:00:11 [INFO] Building Apache HttpComponents Core Reactive Extensions 5.2.1-SNAPSHOT [4/5]
-2022-11-08 19:00:11 [INFO] --------------------------------[ jar ]---------------------------------
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-reactive ---
-2022-11-08 19:00:11 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-reactive ---
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-reactive ---
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-reactive ---
-2022-11-08 19:00:11 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:11 [INFO] Beginne Prüfung...
+2022-11-08 20:40:37,971 [INFO] 
+2022-11-08 20:40:37,971 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-h2 ---
+2022-11-08 20:40:37,975 [INFO] 
+2022-11-08 20:40:37,975 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-h2 ---
+2022-11-08 20:40:37,978 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-08 20:40:37,987 [INFO] Copying 3 resources from 1 bundle.
+2022-11-08 20:40:38,082 [INFO] 
+2022-11-08 20:40:38,083 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-h2 ---
+2022-11-08 20:40:38,084 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:38,085 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:38,085 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/src/main/resources
+2022-11-08 20:40:38,085 [INFO] Copying 3 resources
+2022-11-08 20:40:38,093 [INFO] 
+2022-11-08 20:40:38,093 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-h2 ---
+2022-11-08 20:40:38,100 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:38,102 [INFO] Compiling 113 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/classes
+2022-11-08 20:40:39,896 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:39,896 [INFO] 
+2022-11-08 20:40:39,896 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-h2 ---
+2022-11-08 20:40:39,898 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:39,898 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:39,898 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/src/test/resources
+2022-11-08 20:40:39,899 [INFO] Copying 3 resources
+2022-11-08 20:40:39,903 [INFO] 
+2022-11-08 20:40:39,903 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-h2 ---
+2022-11-08 20:40:39,908 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:39,909 [INFO] Compiling 27 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/test-classes
+2022-11-08 20:40:41,488 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:41,489 [INFO] 
+2022-11-08 20:40:41,489 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-h2 ---
+2022-11-08 20:40:41,491 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-08 20:40:42,113 [INFO] 
+2022-11-08 20:40:42,113 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-h2 ---
+2022-11-08 20:40:42,124 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2022-11-08 20:40:42,155 [INFO] 
+2022-11-08 20:40:42,155 [INFO] -------------------------------------------------------
+2022-11-08 20:40:42,155 [INFO]  T E S T S
+2022-11-08 20:40:42,155 [INFO] -------------------------------------------------------
+2022-11-08 20:40:44,353 [INFO] Running org.apache.hc.core5.http2.impl.TestDefaultH2ResponseConverter
+2022-11-08 20:40:44,597 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.243 s - in org.apache.hc.core5.http2.impl.TestDefaultH2ResponseConverter
+2022-11-08 20:40:44,598 [INFO] Running org.apache.hc.core5.http2.impl.io.TestFrameInOutBuffers
+2022-11-08 20:40:44,652 [INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 s - in org.apache.hc.core5.http2.impl.io.TestFrameInOutBuffers
+2022-11-08 20:40:44,654 [INFO] Running org.apache.hc.core5.http2.impl.TestDefaultH2RequestConverter
+2022-11-08 20:40:44,783 [INFO] Tests run: 30, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.117 s - in org.apache.hc.core5.http2.impl.TestDefaultH2RequestConverter
+2022-11-08 20:40:44,783 [INFO] Running org.apache.hc.core5.http2.impl.nio.TestFrameInOutBuffers
+2022-11-08 20:40:44,819 [INFO] Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s - in org.apache.hc.core5.http2.impl.nio.TestFrameInOutBuffers
+2022-11-08 20:40:44,819 [INFO] Running org.apache.hc.core5.http2.impl.nio.TestAbstractH2StreamMultiplexer
+2022-11-08 20:40:46,432 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.604 s - in org.apache.hc.core5.http2.impl.nio.TestAbstractH2StreamMultiplexer
+2022-11-08 20:40:46,437 [INFO] Running org.apache.hc.core5.http2.ssl.ConscryptClientTlsStrategyTest
+2022-11-08 20:40:47,125 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.691 s - in org.apache.hc.core5.http2.ssl.ConscryptClientTlsStrategyTest
+2022-11-08 20:40:47,128 [INFO] Running org.apache.hc.core5.http2.hpack.TestHPackCoding
+2022-11-08 20:40:47,368 [INFO] Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.228 s - in org.apache.hc.core5.http2.hpack.TestHPackCoding
+2022-11-08 20:40:47,369 [INFO] Running org.apache.hc.core5.http2.hpack.TestInboundDynamicTable
+2022-11-08 20:40:47,388 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http2.hpack.TestInboundDynamicTable
+2022-11-08 20:40:47,388 [INFO] Running org.apache.hc.core5.http2.hpack.TestFifoBuffer
+2022-11-08 20:40:47,397 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http2.hpack.TestFifoBuffer
+2022-11-08 20:40:47,398 [INFO] Running org.apache.hc.core5.http2.hpack.TestOutboundDynamicTable
+2022-11-08 20:40:47,405 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s - in org.apache.hc.core5.http2.hpack.TestOutboundDynamicTable
+2022-11-08 20:40:47,405 [INFO] Running org.apache.hc.core5.http2.hpack.TestFifoLinkedList
+2022-11-08 20:40:47,411 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.http2.hpack.TestFifoLinkedList
+2022-11-08 20:40:47,411 [INFO] Running org.apache.hc.core5.http2.config.H2ConfigTest
+2022-11-08 20:40:47,424 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.apache.hc.core5.http2.config.H2ConfigTest
+2022-11-08 20:40:47,424 [INFO] Running org.apache.hc.core5.http2.frame.TestH2Settings
+2022-11-08 20:40:47,432 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s - in org.apache.hc.core5.http2.frame.TestH2Settings
+2022-11-08 20:40:47,432 [INFO] Running org.apache.hc.core5.http2.frame.TestFrameFlag
+2022-11-08 20:40:47,438 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 s - in org.apache.hc.core5.http2.frame.TestFrameFlag
+2022-11-08 20:40:47,438 [INFO] Running org.apache.hc.core5.http2.frame.TestDefaultFrameFactory
+2022-11-08 20:40:47,445 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.http2.frame.TestDefaultFrameFactory
+2022-11-08 20:40:47,490 [INFO] 
+2022-11-08 20:40:47,490 [INFO] Results:
+2022-11-08 20:40:47,490 [INFO] 
+2022-11-08 20:40:47,490 [INFO] Tests run: 117, Failures: 0, Errors: 0, Skipped: 0
+2022-11-08 20:40:47,490 [INFO] 
+2022-11-08 20:40:47,492 [INFO] 
+2022-11-08 20:40:47,493 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-h2 ---
+2022-11-08 20:40:47,529 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/httpcore5-h2-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:47,574 [INFO] 
+2022-11-08 20:40:47,575 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-h2 ---
+2022-11-08 20:40:47,577 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-08 20:40:47,577 [INFO] 
+2022-11-08 20:40:47,577 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-h2 ---
+2022-11-08 20:40:47,756 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.diff'.
+2022-11-08 20:40:48,107 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.xml'.
+2022-11-08 20:40:48,108 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/japicmp/japicmp.html'.
+2022-11-08 20:40:48,108 [INFO] 
+2022-11-08 20:40:48,109 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-h2 ---
+2022-11-08 20:40:48,117 [INFO] Enabled default license matchers.
+2022-11-08 20:40:48,117 [INFO] Will parse SCM ignores for exclusions...
+2022-11-08 20:40:48,117 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-08 20:40:48,117 [INFO] 62 implicit excludes.
+2022-11-08 20:40:48,119 [INFO] 11 explicit excludes.
+2022-11-08 20:40:48,168 [INFO] 141 resources included
+2022-11-08 20:40:48,603 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 141 licenses.
+2022-11-08 20:40:48,603 [INFO] 
+2022-11-08 20:40:48,603 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-h2 ---
+2022-11-08 20:40:48,605 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/target/httpcore5-h2-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.1-SNAPSHOT/httpcore5-h2-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:48,608 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-h2/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-h2/5.2.1-SNAPSHOT/httpcore5-h2-5.2.1-SNAPSHOT.pom
+2022-11-08 20:40:48,616 [INFO] 
+2022-11-08 20:40:48,616 [INFO] ---------< org.apache.httpcomponents.core5:httpcore5-reactive >---------
+2022-11-08 20:40:48,616 [INFO] Building Apache HttpComponents Core Reactive Extensions 5.2.1-SNAPSHOT [4/5]
+2022-11-08 20:40:48,616 [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-08 20:40:48,632 [INFO] 
+2022-11-08 20:40:48,632 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-reactive ---
+2022-11-08 20:40:48,633 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target
+2022-11-08 20:40:48,665 [INFO] 
+2022-11-08 20:40:48,665 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-reactive ---
+2022-11-08 20:40:48,666 [INFO] 
+2022-11-08 20:40:48,666 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-reactive ---
+2022-11-08 20:40:48,667 [INFO] 
+2022-11-08 20:40:48,667 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-reactive ---
+2022-11-08 20:40:48,671 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:48,805 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:11 [INFO] 
-2022-11-08 19:00:11 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-reactive ---
-2022-11-08 19:00:11 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:12 [INFO] Beginne Prüfung...
+2022-11-08 20:40:48,840 [INFO] 
+2022-11-08 20:40:48,841 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-reactive ---
+2022-11-08 20:40:48,847 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:49,022 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
-2022-11-08 19:00:12 [INFO] Copying 3 resources from 1 bundle.
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:12 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:12 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/src/main/resources
-2022-11-08 19:00:12 [INFO] Copying 3 resources
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:12 [INFO] Compiling 6 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/classes
-2022-11-08 19:00:12 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:12 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:12 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/src/test/resources
-2022-11-08 19:00:12 [INFO] Copying 3 resources
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:12 [INFO] Compiling 7 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/test-classes
-2022-11-08 19:00:12 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-reactive ---
-2022-11-08 19:00:12 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-2022-11-08 19:00:12 [INFO] 
-2022-11-08 19:00:12 [INFO] -------------------------------------------------------
-2022-11-08 19:00:12 [INFO]  T E S T S
-2022-11-08 19:00:12 [INFO] -------------------------------------------------------
-2022-11-08 19:00:14 [INFO] Running org.apache.hc.core5.reactive.TestReactiveDataConsumer
-2022-11-08 19:00:15 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.114 s - in org.apache.hc.core5.reactive.TestReactiveDataConsumer
-2022-11-08 19:00:15 [INFO] Running org.apache.hc.core5.reactive.TestReactiveDataProducer
-2022-11-08 19:00:15 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 s - in org.apache.hc.core5.reactive.TestReactiveDataProducer
-2022-11-08 19:00:15 [INFO] Running org.apache.hc.core5.reactive.TestReactiveEntityProducer
-2022-11-08 19:00:15 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 s - in org.apache.hc.core5.reactive.TestReactiveEntityProducer
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] Results:
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-reactive ---
-2022-11-08 19:00:15 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/httpcore5-reactive-5.2.1-SNAPSHOT.jar
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-reactive ---
-2022-11-08 19:00:15 [INFO] Skipping because packaging 'jar' is not pom.
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-reactive ---
-2022-11-08 19:00:15 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.diff'.
-2022-11-08 19:00:15 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.xml'.
-2022-11-08 19:00:15 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.html'.
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-reactive ---
-2022-11-08 19:00:15 [INFO] Enabled default license matchers.
-2022-11-08 19:00:15 [INFO] Will parse SCM ignores for exclusions...
-2022-11-08 19:00:15 [INFO] Finished adding exclusions from SCM ignore files.
-2022-11-08 19:00:15 [INFO] 62 implicit excludes.
-2022-11-08 19:00:15 [INFO] 11 explicit excludes.
-2022-11-08 19:00:15 [INFO] 14 resources included
-2022-11-08 19:00:15 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 14 licenses.
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-reactive ---
-2022-11-08 19:00:15 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/httpcore5-reactive-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-reactive/5.2.1-SNAPSHOT/httpcore5-reactive-5.2.1-SNAPSHOT.jar
-2022-11-08 19:00:15 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-reactive/5.2.1-SNAPSHOT/httpcore5-reactive-5.2.1-SNAPSHOT.pom
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] ---------< org.apache.httpcomponents.core5:httpcore5-testing >----------
-2022-11-08 19:00:15 [INFO] Building Apache HttpComponents Core Integration Tests 5.2.1-SNAPSHOT [5/5]
-2022-11-08 19:00:15 [INFO] --------------------------------[ jar ]---------------------------------
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-testing ---
-2022-11-08 19:00:15 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-testing ---
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-testing ---
-2022-11-08 19:00:15 [INFO] 
-2022-11-08 19:00:15 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-testing ---
-2022-11-08 19:00:15 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:17 [INFO] Beginne Prüfung...
+2022-11-08 20:40:49,051 [INFO] 
+2022-11-08 20:40:49,051 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-reactive ---
+2022-11-08 20:40:49,053 [INFO] 
+2022-11-08 20:40:49,053 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---
+2022-11-08 20:40:49,055 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-08 20:40:49,064 [INFO] Copying 3 resources from 1 bundle.
+2022-11-08 20:40:49,122 [INFO] 
+2022-11-08 20:40:49,122 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-reactive ---
+2022-11-08 20:40:49,124 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:49,124 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:49,124 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/src/main/resources
+2022-11-08 20:40:49,125 [INFO] Copying 3 resources
+2022-11-08 20:40:49,129 [INFO] 
+2022-11-08 20:40:49,129 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-reactive ---
+2022-11-08 20:40:49,137 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:49,138 [INFO] Compiling 6 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/classes
+2022-11-08 20:40:49,393 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:49,393 [INFO] 
+2022-11-08 20:40:49,394 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-reactive ---
+2022-11-08 20:40:49,396 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:49,396 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:49,396 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/src/test/resources
+2022-11-08 20:40:49,397 [INFO] Copying 3 resources
+2022-11-08 20:40:49,401 [INFO] 
+2022-11-08 20:40:49,401 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-reactive ---
+2022-11-08 20:40:49,407 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:49,410 [INFO] Compiling 7 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/test-classes
+2022-11-08 20:40:49,935 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:49,935 [INFO] 
+2022-11-08 20:40:49,936 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-reactive ---
+2022-11-08 20:40:49,937 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-08 20:40:50,013 [INFO] 
+2022-11-08 20:40:50,013 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-reactive ---
+2022-11-08 20:40:50,019 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2022-11-08 20:40:50,036 [INFO] 
+2022-11-08 20:40:50,036 [INFO] -------------------------------------------------------
+2022-11-08 20:40:50,037 [INFO]  T E S T S
+2022-11-08 20:40:50,037 [INFO] -------------------------------------------------------
+2022-11-08 20:40:51,329 [INFO] Running org.apache.hc.core5.reactive.TestReactiveDataConsumer
+2022-11-08 20:40:52,430 [INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.095 s - in org.apache.hc.core5.reactive.TestReactiveDataConsumer
+2022-11-08 20:40:52,433 [INFO] Running org.apache.hc.core5.reactive.TestReactiveDataProducer
+2022-11-08 20:40:52,482 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s - in org.apache.hc.core5.reactive.TestReactiveDataProducer
+2022-11-08 20:40:52,488 [INFO] Running org.apache.hc.core5.reactive.TestReactiveEntityProducer
+2022-11-08 20:40:52,515 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s - in org.apache.hc.core5.reactive.TestReactiveEntityProducer
+2022-11-08 20:40:52,560 [INFO] 
+2022-11-08 20:40:52,560 [INFO] Results:
+2022-11-08 20:40:52,560 [INFO] 
+2022-11-08 20:40:52,560 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+2022-11-08 20:40:52,561 [INFO] 
+2022-11-08 20:40:52,563 [INFO] 
+2022-11-08 20:40:52,563 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-reactive ---
+2022-11-08 20:40:52,572 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/httpcore5-reactive-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:52,586 [INFO] 
+2022-11-08 20:40:52,586 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-reactive ---
+2022-11-08 20:40:52,587 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-08 20:40:52,587 [INFO] 
+2022-11-08 20:40:52,587 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-reactive ---
+2022-11-08 20:40:52,621 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.diff'.
+2022-11-08 20:40:52,787 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.xml'.
+2022-11-08 20:40:52,787 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/japicmp/japicmp.html'.
+2022-11-08 20:40:52,788 [INFO] 
+2022-11-08 20:40:52,788 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-reactive ---
+2022-11-08 20:40:52,791 [INFO] Enabled default license matchers.
+2022-11-08 20:40:52,791 [INFO] Will parse SCM ignores for exclusions...
+2022-11-08 20:40:52,791 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-08 20:40:52,792 [INFO] 62 implicit excludes.
+2022-11-08 20:40:52,792 [INFO] 11 explicit excludes.
+2022-11-08 20:40:52,800 [INFO] 14 resources included
+2022-11-08 20:40:52,839 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 14 licenses.
+2022-11-08 20:40:52,839 [INFO] 
+2022-11-08 20:40:52,840 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-reactive ---
+2022-11-08 20:40:52,841 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/target/httpcore5-reactive-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-reactive/5.2.1-SNAPSHOT/httpcore5-reactive-5.2.1-SNAPSHOT.jar
+2022-11-08 20:40:52,846 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-reactive/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-reactive/5.2.1-SNAPSHOT/httpcore5-reactive-5.2.1-SNAPSHOT.pom
+2022-11-08 20:40:52,854 [INFO] 
+2022-11-08 20:40:52,854 [INFO] ---------< org.apache.httpcomponents.core5:httpcore5-testing >----------
+2022-11-08 20:40:52,854 [INFO] Building Apache HttpComponents Core Integration Tests 5.2.1-SNAPSHOT [5/5]
+2022-11-08 20:40:52,854 [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-08 20:40:52,898 [INFO] 
+2022-11-08 20:40:52,898 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ httpcore5-testing ---
+2022-11-08 20:40:52,899 [INFO] Deleting /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target
+2022-11-08 20:40:53,142 [INFO] 
+2022-11-08 20:40:53,142 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ httpcore5-testing ---
+2022-11-08 20:40:53,143 [INFO] 
+2022-11-08 20:40:53,143 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ httpcore5-testing ---
+2022-11-08 20:40:53,144 [INFO] 
+2022-11-08 20:40:53,145 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate) @ httpcore5-testing ---
+2022-11-08 20:40:53,149 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:54,367 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:17 [INFO] 
-2022-11-08 19:00:17 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-testing ---
-2022-11-08 19:00:17 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
-2022-11-08 19:00:18 [INFO] Beginne Prüfung...
+2022-11-08 20:40:54,389 [INFO] 
+2022-11-08 20:40:54,389 [INFO] --- maven-checkstyle-plugin:3.2.0:checkstyle (validate-main) @ httpcore5-testing ---
+2022-11-08 20:40:54,396 [INFO] Rendering content with org.apache.maven.skins:maven-default-skin:jar:1.3 skin.
+2022-11-08 20:40:56,079 [INFO] Beginne Prüfung...
 Prüfung beendet.
-2022-11-08 19:00:18 [INFO] 
-2022-11-08 19:00:18 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-testing ---
-2022-11-08 19:00:18 [INFO] 
-2022-11-08 19:00:18 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-testing ---
-2022-11-08 19:00:18 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
-2022-11-08 19:00:18 [INFO] Copying 3 resources from 1 bundle.
-2022-11-08 19:00:18 [INFO] 
-2022-11-08 19:00:18 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-testing ---
-2022-11-08 19:00:18 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:18 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:18 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/src/main/resources
-2022-11-08 19:00:18 [INFO] Copying 3 resources
-2022-11-08 19:00:18 [INFO] 
-2022-11-08 19:00:18 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-testing ---
-2022-11-08 19:00:18 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:18 [INFO] Compiling 54 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/classes
-2022-11-08 19:00:19 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:19 [INFO] 
-2022-11-08 19:00:19 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-testing ---
-2022-11-08 19:00:19 [INFO] Using 'UTF-8' encoding to copy filtered resources.
-2022-11-08 19:00:19 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
-2022-11-08 19:00:19 [INFO] Copying 5 resources
-2022-11-08 19:00:19 [INFO] Copying 3 resources
-2022-11-08 19:00:19 [INFO] 
-2022-11-08 19:00:19 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-testing ---
-2022-11-08 19:00:19 [INFO] Changes detected - recompiling the module!
-2022-11-08 19:00:19 [INFO] Compiling 63 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/test-classes
-2022-11-08 19:00:22 [WARNING] bootstrap class path not set in conjunction with -source 8
-2022-11-08 19:00:22 [INFO] 
-2022-11-08 19:00:22 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-testing ---
-2022-11-08 19:00:22 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
-2022-11-08 19:00:23 [INFO] 
-2022-11-08 19:00:23 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-testing ---
-2022-11-08 19:00:23 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
-2022-11-08 19:00:23 [INFO] 
-2022-11-08 19:00:23 [INFO] -------------------------------------------------------
-2022-11-08 19:00:23 [INFO]  T E S T S
-2022-11-08 19:00:23 [INFO] -------------------------------------------------------
-2022-11-08 19:00:24 [INFO] Running org.apache.hc.core5.benchmark.BenchmarkToolTest
-2022-11-08 19:00:25 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.999 s - in org.apache.hc.core5.benchmark.BenchmarkToolTest
-2022-11-08 19:00:25 [INFO] Running org.apache.hc.core5.benchmark.ResultFormatterTest
-2022-11-08 19:00:25 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s - in org.apache.hc.core5.benchmark.ResultFormatterTest
-2022-11-08 19:00:25 [INFO] Running org.apache.hc.core5.testing.framework.TestClassicTestClientTestingAdapter
-2022-11-08 19:00:28 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.895 s - in org.apache.hc.core5.testing.framework.TestClassicTestClientTestingAdapter
-2022-11-08 19:00:28 [INFO] Running org.apache.hc.core5.testing.framework.TestFrameworkTest
-2022-11-08 19:00:28 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.testing.framework.TestFrameworkTest
-2022-11-08 19:00:28 [INFO] Running org.apache.hc.core5.testing.framework.TestClientTestingAdapter
-2022-11-08 19:00:28 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.testing.framework.TestClientTestingAdapter
-2022-11-08 19:00:28 [INFO] Running org.apache.hc.core5.testing.framework.TestTestingFrameworkRequestHandler
-2022-11-08 19:00:28 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.testing.framework.TestTestingFrameworkRequestHandler
-2022-11-08 19:00:28 [INFO] Running org.apache.hc.core5.testing.framework.TestClientPojoAdapter
-2022-11-08 19:00:28 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.testing.framework.TestClientPojoAdapter
-2022-11-08 19:00:28 [INFO] Running org.apache.hc.core5.testing.framework.TestTestingFramework
-2022-11-08 19:00:29 [INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.621 s - in org.apache.hc.core5.testing.framework.TestTestingFramework
-2022-11-08 19:00:29 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests
-2022-11-08 19:00:29 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1Tls
-2022-11-08 19:00:36 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.857 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1Tls
-2022-11-08 19:00:36 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1
-2022-11-08 19:00:36 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.425 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1
-2022-11-08 19:00:36 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.292 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests
-2022-11-08 19:00:36 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests
-2022-11-08 19:00:36 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxyTls
-2022-11-08 19:00:37 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.784 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxyTls
-2022-11-08 19:00:37 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxy
-2022-11-08 19:00:42 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.221 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxy
-2022-11-08 19:00:42 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$HttpFilters
-2022-11-08 19:00:42 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.097 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$HttpFilters
-2022-11-08 19:00:42 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategyTls
-2022-11-08 19:00:42 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.339 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategyTls
-2022-11-08 19:00:42 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategy
-2022-11-08 19:00:43 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.103 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategy
-2022-11-08 19:00:43 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$AuthenticationImmediateResponse
-2022-11-08 19:00:43 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.275 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$AuthenticationImmediateResponse
-2022-11-08 19:00:43 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$Authentication
-2022-11-08 19:00:43 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.276 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$Authentication
-2022-11-08 19:00:43 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportTls
-2022-11-08 19:00:44 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.704 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportTls
-2022-11-08 19:00:44 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransport
-2022-11-08 19:00:44 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.22 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransport
-2022-11-08 19:00:44 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.044 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests
-2022-11-08 19:00:44 [INFO] Running org.apache.hc.core5.testing.classic.ClassicTLSIntegrationTest
-2022-11-08 19:00:49 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.615 s - in org.apache.hc.core5.testing.classic.ClassicTLSIntegrationTest
-2022-11-08 19:00:49 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests
-2022-11-08 19:00:49 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctionsTls
-2022-11-08 19:00:54 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.452 s - in org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctionsTls
-2022-11-08 19:00:54 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctions
-2022-11-08 19:00:59 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.001 s - in org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctions
-2022-11-08 19:00:59 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.458 s - in org.apache.hc.core5.testing.reactive.IntegrationTests
-2022-11-08 19:00:59 [INFO] Running org.apache.hc.core5.testing.nio.TLSIntegrationTest
-2022-11-08 19:01:06 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.79 s - in org.apache.hc.core5.testing.nio.TLSIntegrationTest
-2022-11-08 19:01:06 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests
-2022-11-08 19:01:06 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_3
-2022-11-08 19:01:08 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.301 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_3
-2022-11-08 19:01:08 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_2
-2022-11-08 19:01:10 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.452 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_2
-2022-11-08 19:01:10 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$Oracle
-2022-11-08 19:01:12 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.041 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$Oracle
-2022-11-08 19:01:12 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.798 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests
-2022-11-08 19:01:12 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests
-2022-11-08 19:01:12 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$H2Tls
-2022-11-08 19:01:29 [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 17.07 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$H2Tls
-2022-11-08 19:01:29 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$H2
-2022-11-08 19:01:36 [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.497 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$H2
-2022-11-08 19:01:36 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1Tls
-2022-11-08 19:02:01 [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 24.444 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1Tls
-2022-11-08 19:02:01 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1
-2022-11-08 19:02:13 [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.275 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1
-2022-11-08 19:02:13 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 61.301 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests
-2022-11-08 19:02:13 [INFO] Running org.apache.hc.core5.testing.nio.TestDefaultListeningIOReactor
-2022-11-08 19:02:13 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.testing.nio.TestDefaultListeningIOReactor
-2022-11-08 19:02:13 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests
-2022-11-08 19:02:13 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2SocksProxy
-2022-11-08 19:02:20 [WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 6.73 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2SocksProxy
-2022-11-08 19:02:20 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxyTls
-2022-11-08 19:02:22 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.978 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxyTls
-2022-11-08 19:02:22 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxy
-2022-11-08 19:02:24 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.697 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxy
-2022-11-08 19:02:24 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$AuthenticationImmediateResponse
-2022-11-08 19:02:25 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.032 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$AuthenticationImmediateResponse
-2022-11-08 19:02:25 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$Authentication
-2022-11-08 19:02:26 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.925 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$Authentication
-2022-11-08 19:02:26 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$H2Filters
-2022-11-08 19:02:27 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.328 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$H2Filters
-2022-11-08 19:02:27 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$HttpFilters
-2022-11-08 19:02:27 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.316 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$HttpFilters
-2022-11-08 19:02:27 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2MultiplexingTls
-2022-11-08 19:02:29 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.628 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2MultiplexingTls
-2022-11-08 19:02:29 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Multiplexing
-2022-11-08 19:02:30 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.569 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Multiplexing
-2022-11-08 19:02:30 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Tls
-2022-11-08 19:02:32 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.857 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Tls
-2022-11-08 19:02:32 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2
-2022-11-08 19:02:34 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.779 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2
-2022-11-08 19:02:34 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportTls
-2022-11-08 19:02:36 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.128 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportTls
-2022-11-08 19:02:36 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransport
-2022-11-08 19:02:44 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.662 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransport
-2022-11-08 19:02:44 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.66 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests
-2022-11-08 19:02:44 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests
-2022-11-08 19:02:44 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$NonStrictH2AlpnH2Disllowed
-2022-11-08 19:02:45 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.755 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$NonStrictH2AlpnH2Disllowed
-2022-11-08 19:02:45 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Disllowed
-2022-11-08 19:02:49 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.407 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Disllowed
-2022-11-08 19:02:49 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Allowed
-2022-11-08 19:02:50 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.521 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Allowed
-2022-11-08 19:02:50 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.723 s - in org.apache.hc.core5.testing.nio.H2AlpnTests
-2022-11-08 19:02:50 [INFO] Running org.apache.hc.core5.testing.nio.TLSUpgradeTest
-2022-11-08 19:02:51 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.86 s - in org.apache.hc.core5.testing.nio.TLSUpgradeTest
-2022-11-08 19:02:51 [INFO] Running org.apache.hc.core5.testing.nio.H2ProtocolNegotiationTest
-2022-11-08 19:02:53 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.543 s - in org.apache.hc.core5.testing.nio.H2ProtocolNegotiationTest
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [INFO] Results:
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [WARNING] Tests run: 319, Failures: 0, Errors: 0, Skipped: 1
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-testing ---
-2022-11-08 19:02:53 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/httpcore5-testing-5.2.1-SNAPSHOT.jar
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-testing ---
-2022-11-08 19:02:53 [INFO] Skipping because packaging 'jar' is not pom.
-2022-11-08 19:02:53 [INFO] 
-2022-11-08 19:02:53 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-testing ---
-2022-11-08 19:02:54 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.diff'.
-2022-11-08 19:02:55 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.xml'.
-2022-11-08 19:02:55 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.html'.
-2022-11-08 19:02:55 [INFO] 
-2022-11-08 19:02:55 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-testing ---
-2022-11-08 19:02:55 [INFO] Enabled default license matchers.
-2022-11-08 19:02:55 [INFO] Will parse SCM ignores for exclusions...
-2022-11-08 19:02:55 [INFO] Finished adding exclusions from SCM ignore files.
-2022-11-08 19:02:55 [INFO] 62 implicit excludes.
-2022-11-08 19:02:55 [INFO] 11 explicit excludes.
-2022-11-08 19:02:55 [INFO] 126 resources included
-2022-11-08 19:02:55 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 125 licenses.
-2022-11-08 19:02:55 [INFO] 
-2022-11-08 19:02:55 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-testing ---
-2022-11-08 19:02:55 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/httpcore5-testing-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-testing/5.2.1-SNAPSHOT/httpcore5-testing-5.2.1-SNAPSHOT.jar
-2022-11-08 19:02:55 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-testing/5.2.1-SNAPSHOT/httpcore5-testing-5.2.1-SNAPSHOT.pom
-2022-11-08 19:02:55 [INFO] ------------------------------------------------------------------------
-2022-11-08 19:02:55 [INFO] Reactor Summary for Apache HttpComponents Core Parent 5.2.1-SNAPSHOT:
-2022-11-08 19:02:55 [INFO] 
-2022-11-08 19:02:55 [INFO] Apache HttpComponents Core Parent .................. SUCCESS [ 14.322 s]
-2022-11-08 19:02:55 [INFO] Apache HttpComponents Core HTTP/1.1 ................ SUCCESS [01:03 min]
-2022-11-08 19:02:55 [INFO] Apache HttpComponents Core HTTP/2 .................. SUCCESS [ 10.489 s]
-2022-11-08 19:02:55 [INFO] Apache HttpComponents Core Reactive Extensions ..... SUCCESS [  3.772 s]
-2022-11-08 19:02:55 [INFO] Apache HttpComponents Core Integration Tests ....... SUCCESS [02:40 min]
-2022-11-08 19:02:55 [INFO] ------------------------------------------------------------------------
-2022-11-08 19:02:55 [INFO] BUILD SUCCESS
-2022-11-08 19:02:55 [INFO] ------------------------------------------------------------------------
-2022-11-08 19:02:55 [INFO] Total time:  04:12 min
-2022-11-08 19:02:55 [INFO] Finished at: 2022-11-08T19:02:55+01:00
-2022-11-08 19:02:55 [INFO] ------------------------------------------------------------------------
+2022-11-08 20:40:56,099 [INFO] 
+2022-11-08 20:40:56,099 [INFO] --- build-helper-maven-plugin:3.2.0:parse-version (parse-version) @ httpcore5-testing ---
+2022-11-08 20:40:56,100 [INFO] 
+2022-11-08 20:40:56,100 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-testing ---
+2022-11-08 20:40:56,102 [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-08 20:40:56,107 [INFO] Copying 3 resources from 1 bundle.
+2022-11-08 20:40:56,201 [INFO] 
+2022-11-08 20:40:56,201 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ httpcore5-testing ---
+2022-11-08 20:40:56,202 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:56,202 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:56,202 [INFO] skip non existing resourceDirectory /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/src/main/resources
+2022-11-08 20:40:56,203 [INFO] Copying 3 resources
+2022-11-08 20:40:56,206 [INFO] 
+2022-11-08 20:40:56,206 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ httpcore5-testing ---
+2022-11-08 20:40:56,210 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:56,212 [INFO] Compiling 54 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/classes
+2022-11-08 20:40:56,940 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:56,940 [INFO] 
+2022-11-08 20:40:56,940 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ httpcore5-testing ---
+2022-11-08 20:40:56,942 [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-08 20:40:56,942 [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-08 20:40:56,943 [INFO] Copying 5 resources
+2022-11-08 20:40:56,965 [INFO] Copying 3 resources
+2022-11-08 20:40:56,968 [INFO] 
+2022-11-08 20:40:56,968 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ httpcore5-testing ---
+2022-11-08 20:40:56,976 [INFO] Changes detected - recompiling the module!
+2022-11-08 20:40:56,977 [INFO] Compiling 63 source files to /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/test-classes
+2022-11-08 20:40:59,533 [WARNING] bootstrap class path not set in conjunction with -source 8
+2022-11-08 20:40:59,533 [INFO] 
+2022-11-08 20:40:59,533 [INFO] --- animal-sniffer-maven-plugin:1.22:check (checkAPIcompatibility) @ httpcore5-testing ---
+2022-11-08 20:40:59,535 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-08 20:41:00,230 [INFO] 
+2022-11-08 20:41:00,230 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ httpcore5-testing ---
+2022-11-08 20:41:00,239 [INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+2022-11-08 20:41:00,248 [INFO] 
+2022-11-08 20:41:00,249 [INFO] -------------------------------------------------------
+2022-11-08 20:41:00,249 [INFO]  T E S T S
+2022-11-08 20:41:00,249 [INFO] -------------------------------------------------------
+2022-11-08 20:41:01,848 [INFO] Running org.apache.hc.core5.benchmark.BenchmarkToolTest
+2022-11-08 20:41:02,810 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.955 s - in org.apache.hc.core5.benchmark.BenchmarkToolTest
+2022-11-08 20:41:02,811 [INFO] Running org.apache.hc.core5.benchmark.ResultFormatterTest
+2022-11-08 20:41:02,832 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 s - in org.apache.hc.core5.benchmark.ResultFormatterTest
+2022-11-08 20:41:02,835 [INFO] Running org.apache.hc.core5.testing.framework.TestClassicTestClientTestingAdapter
+2022-11-08 20:41:05,851 [INFO] Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.005 s - in org.apache.hc.core5.testing.framework.TestClassicTestClientTestingAdapter
+2022-11-08 20:41:05,852 [INFO] Running org.apache.hc.core5.testing.framework.TestFrameworkTest
+2022-11-08 20:41:05,859 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 s - in org.apache.hc.core5.testing.framework.TestFrameworkTest
+2022-11-08 20:41:05,859 [INFO] Running org.apache.hc.core5.testing.framework.TestClientTestingAdapter
+2022-11-08 20:41:05,870 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.testing.framework.TestClientTestingAdapter
+2022-11-08 20:41:05,870 [INFO] Running org.apache.hc.core5.testing.framework.TestTestingFrameworkRequestHandler
+2022-11-08 20:41:05,881 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s - in org.apache.hc.core5.testing.framework.TestTestingFrameworkRequestHandler
+2022-11-08 20:41:05,882 [INFO] Running org.apache.hc.core5.testing.framework.TestClientPojoAdapter
+2022-11-08 20:41:05,896 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 s - in org.apache.hc.core5.testing.framework.TestClientPojoAdapter
+2022-11-08 20:41:05,896 [INFO] Running org.apache.hc.core5.testing.framework.TestTestingFramework
+2022-11-08 20:41:07,714 [INFO] Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.808 s - in org.apache.hc.core5.testing.framework.TestTestingFramework
+2022-11-08 20:41:07,714 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests
+2022-11-08 20:41:07,714 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1Tls
+2022-11-08 20:41:18,284 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.545 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1Tls
+2022-11-08 20:41:18,284 [INFO] Running org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1
+2022-11-08 20:41:19,145 [INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.863 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests$Http1
+2022-11-08 20:41:19,155 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.432 s - in org.apache.hc.core5.testing.classic.ClassicProtocolTests
+2022-11-08 20:41:19,156 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests
+2022-11-08 20:41:19,156 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxyTls
+2022-11-08 20:41:20,233 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.078 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxyTls
+2022-11-08 20:41:20,235 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxy
+2022-11-08 20:41:25,487 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.243 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportSocksProxy
+2022-11-08 20:41:25,487 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$HttpFilters
+2022-11-08 20:41:25,589 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.098 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$HttpFilters
+2022-11-08 20:41:25,589 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategyTls
+2022-11-08 20:41:25,965 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.375 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategyTls
+2022-11-08 20:41:25,967 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategy
+2022-11-08 20:41:26,089 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.124 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$MonitoringResponseOutOfOrderStrategy
+2022-11-08 20:41:26,089 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$AuthenticationImmediateResponse
+2022-11-08 20:41:26,402 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$AuthenticationImmediateResponse
+2022-11-08 20:41:26,402 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$Authentication
+2022-11-08 20:41:26,728 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.331 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$Authentication
+2022-11-08 20:41:26,728 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportTls
+2022-11-08 20:41:27,450 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.718 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransportTls
+2022-11-08 20:41:27,450 [INFO] Running org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransport
+2022-11-08 20:41:27,635 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.189 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests$CoreTransport
+2022-11-08 20:41:27,639 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.494 s - in org.apache.hc.core5.testing.classic.ClassicIntegrationTests
+2022-11-08 20:41:27,639 [INFO] Running org.apache.hc.core5.testing.classic.ClassicTLSIntegrationTest
+2022-11-08 20:41:32,386 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.748 s - in org.apache.hc.core5.testing.classic.ClassicTLSIntegrationTest
+2022-11-08 20:41:32,386 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests
+2022-11-08 20:41:32,397 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctionsTls
+2022-11-08 20:41:38,596 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.111 s - in org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctionsTls
+2022-11-08 20:41:38,598 [INFO] Running org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctions
+2022-11-08 20:41:43,321 [INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.807 s - in org.apache.hc.core5.testing.reactive.IntegrationTests$CoreFunctions
+2022-11-08 20:41:43,326 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.934 s - in org.apache.hc.core5.testing.reactive.IntegrationTests
+2022-11-08 20:41:43,326 [INFO] Running org.apache.hc.core5.testing.nio.TLSIntegrationTest
+2022-11-08 20:41:51,090 [INFO] Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.765 s - in org.apache.hc.core5.testing.nio.TLSIntegrationTest
+2022-11-08 20:41:51,090 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests
+2022-11-08 20:41:51,090 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_3
+2022-11-08 20:41:53,625 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.536 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_3
+2022-11-08 20:41:53,625 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_2
+2022-11-08 20:41:55,153 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.524 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$ConscryptTlsV1_2
+2022-11-08 20:41:55,153 [INFO] Running org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$Oracle
+2022-11-08 20:41:57,168 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.015 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests$Oracle
+2022-11-08 20:41:57,171 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.08 s - in org.apache.hc.core5.testing.nio.JSSEProviderIntegrationTests
+2022-11-08 20:41:57,171 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests
+2022-11-08 20:41:57,171 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$H2Tls
+2022-11-08 20:42:17,019 [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.839 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$H2Tls
+2022-11-08 20:42:17,020 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$H2
+2022-11-08 20:42:25,804 [INFO] Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.779 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$H2
+2022-11-08 20:42:25,804 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1Tls
+2022-11-08 20:43:06,833 [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.013 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1Tls
+2022-11-08 20:43:06,835 [INFO] Running org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1
+2022-11-08 20:43:18,731 [INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.899 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests$Http1
+2022-11-08 20:43:18,737 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 81.549 s - in org.apache.hc.core5.testing.nio.HttpProtocolTests
+2022-11-08 20:43:18,737 [INFO] Running org.apache.hc.core5.testing.nio.TestDefaultListeningIOReactor
+2022-11-08 20:43:18,748 [INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s - in org.apache.hc.core5.testing.nio.TestDefaultListeningIOReactor
+2022-11-08 20:43:18,748 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests
+2022-11-08 20:43:18,749 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2SocksProxy
+2022-11-08 20:43:25,913 [WARNING] Tests run: 6, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 7.165 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2SocksProxy
+2022-11-08 20:43:25,913 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxyTls
+2022-11-08 20:43:27,958 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.045 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxyTls
+2022-11-08 20:43:27,958 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxy
+2022-11-08 20:43:29,723 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.761 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportSocksProxy
+2022-11-08 20:43:29,723 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$AuthenticationImmediateResponse
+2022-11-08 20:43:30,804 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.083 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$AuthenticationImmediateResponse
+2022-11-08 20:43:30,804 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$Authentication
+2022-11-08 20:43:31,787 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.983 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$Authentication
+2022-11-08 20:43:31,787 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$H2Filters
+2022-11-08 20:43:32,121 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.332 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$H2Filters
+2022-11-08 20:43:32,122 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$HttpFilters
+2022-11-08 20:43:32,849 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.728 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$HttpFilters
+2022-11-08 20:43:32,849 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2MultiplexingTls
+2022-11-08 20:43:34,609 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.754 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2MultiplexingTls
+2022-11-08 20:43:34,609 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Multiplexing
+2022-11-08 20:43:36,264 [INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.652 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Multiplexing
+2022-11-08 20:43:36,264 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Tls
+2022-11-08 20:43:38,317 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.054 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2Tls
+2022-11-08 20:43:38,317 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2
+2022-11-08 20:43:40,060 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.739 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportH2
+2022-11-08 20:43:40,060 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportTls
+2022-11-08 20:43:42,142 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.083 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransportTls
+2022-11-08 20:43:42,142 [INFO] Running org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransport
+2022-11-08 20:43:44,369 [INFO] Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.226 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests$CoreTransport
+2022-11-08 20:43:44,377 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.633 s - in org.apache.hc.core5.testing.nio.HttpIntegrationTests
+2022-11-08 20:43:44,378 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests
+2022-11-08 20:43:44,378 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$NonStrictH2AlpnH2Disllowed
+2022-11-08 20:43:45,086 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.717 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$NonStrictH2AlpnH2Disllowed
+2022-11-08 20:43:45,087 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Disllowed
+2022-11-08 20:43:45,761 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.673 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Disllowed
+2022-11-08 20:43:45,761 [INFO] Running org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Allowed
+2022-11-08 20:43:46,682 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.918 s - in org.apache.hc.core5.testing.nio.H2AlpnTests$StrictH2AlpnH2Allowed
+2022-11-08 20:43:46,692 [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.313 s - in org.apache.hc.core5.testing.nio.H2AlpnTests
+2022-11-08 20:43:46,692 [INFO] Running org.apache.hc.core5.testing.nio.TLSUpgradeTest
+2022-11-08 20:43:47,181 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.497 s - in org.apache.hc.core5.testing.nio.TLSUpgradeTest
+2022-11-08 20:43:47,181 [INFO] Running org.apache.hc.core5.testing.nio.H2ProtocolNegotiationTest
+2022-11-08 20:43:48,389 [INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.205 s - in org.apache.hc.core5.testing.nio.H2ProtocolNegotiationTest
+2022-11-08 20:43:48,466 [INFO] 
+2022-11-08 20:43:48,466 [INFO] Results:
+2022-11-08 20:43:48,466 [INFO] 
+2022-11-08 20:43:48,467 [WARNING] Tests run: 319, Failures: 0, Errors: 0, Skipped: 1
+2022-11-08 20:43:48,467 [INFO] 
+2022-11-08 20:43:48,474 [INFO] 
+2022-11-08 20:43:48,474 [INFO] --- maven-jar-plugin:3.2.2:jar (default-jar) @ httpcore5-testing ---
+2022-11-08 20:43:48,531 [INFO] Building jar: /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/httpcore5-testing-5.2.1-SNAPSHOT.jar
+2022-11-08 20:43:48,624 [INFO] 
+2022-11-08 20:43:48,624 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ httpcore5-testing ---
+2022-11-08 20:43:48,627 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-08 20:43:48,628 [INFO] 
+2022-11-08 20:43:48,628 [INFO] --- japicmp-maven-plugin:0.16.0:cmp (default) @ httpcore5-testing ---
+2022-11-08 20:43:48,796 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.diff'.
+2022-11-08 20:43:49,063 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.xml'.
+2022-11-08 20:43:49,063 [INFO] Written file '/Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/japicmp/japicmp.html'.
+2022-11-08 20:43:49,064 [INFO] 
+2022-11-08 20:43:49,064 [INFO] --- apache-rat-plugin:0.14:check (default) @ httpcore5-testing ---
+2022-11-08 20:43:49,069 [INFO] Enabled default license matchers.
+2022-11-08 20:43:49,069 [INFO] Will parse SCM ignores for exclusions...
+2022-11-08 20:43:49,072 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-08 20:43:49,072 [INFO] 62 implicit excludes.
+2022-11-08 20:43:49,072 [INFO] 11 explicit excludes.
+2022-11-08 20:43:49,124 [INFO] 126 resources included
+2022-11-08 20:43:49,572 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 125 licenses.
+2022-11-08 20:43:49,572 [INFO] 
+2022-11-08 20:43:49,573 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ httpcore5-testing ---
+2022-11-08 20:43:49,576 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/target/httpcore5-testing-5.2.1-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-testing/5.2.1-SNAPSHOT/httpcore5-testing-5.2.1-SNAPSHOT.jar
+2022-11-08 20:43:49,582 [INFO] Installing /Users/Stefan/git/apache-httpcomponents/httpcore5-testing/pom.xml to /Users/Stefan/.m2/repository/org/apache/httpcomponents/core5/httpcore5-testing/5.2.1-SNAPSHOT/httpcore5-testing-5.2.1-SNAPSHOT.pom
+2022-11-08 20:43:49,589 [INFO] ------------------------------------------------------------------------
+2022-11-08 20:43:49,589 [INFO] Reactor Summary for Apache HttpComponents Core Parent 5.2.1-SNAPSHOT:
+2022-11-08 20:43:49,589 [INFO] 
+2022-11-08 20:43:49,589 [INFO] Apache HttpComponents Core Parent .................. SUCCESS [ 14.135 s]
+2022-11-08 20:43:49,589 [INFO] Apache HttpComponents Core HTTP/1.1 ................ SUCCESS [01:14 min]
+2022-11-08 20:43:49,589 [INFO] Apache HttpComponents Core HTTP/2 .................. SUCCESS [ 13.500 s]
+2022-11-08 20:43:49,590 [INFO] Apache HttpComponents Core Reactive Extensions ..... SUCCESS [  4.238 s]
+2022-11-08 20:43:49,590 [INFO] Apache HttpComponents Core Integration Tests ....... SUCCESS [02:56 min]
+2022-11-08 20:43:49,590 [INFO] ------------------------------------------------------------------------
+2022-11-08 20:43:49,590 [INFO] BUILD SUCCESS
+2022-11-08 20:43:49,590 [INFO] ------------------------------------------------------------------------
+2022-11-08 20:43:49,590 [INFO] Total time:  04:43 min
+2022-11-08 20:43:49,590 [INFO] Finished at: 2022-11-08T20:43:49+01:00
+2022-11-08 20:43:49,590 [INFO] ------------------------------------------------------------------------

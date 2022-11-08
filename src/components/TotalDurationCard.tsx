@@ -37,6 +37,7 @@ export const TotalDurationCard: FunctionComponent<Props> = ({ data }) => {
                     layout="horizontal"
                     margin={{ top: 40, right: 40, bottom: 40, left: 120 }}
                     padding={0.3}
+                    labelSkipWidth={30}
                     colors={{ scheme: 'blues' }}
                     colorBy="indexValue"
                     enableGridX={true}

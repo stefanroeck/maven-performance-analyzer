@@ -47,6 +47,7 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
                     margin={{ top: 40, right: 40, bottom: 40, left: 120 }}
                     padding={0.3}
                     innerPadding={2}
+                    labelSkipWidth={50}
                     colors={{ scheme: 'pastel1' }}
                     colorBy="id"
                     enableGridX={true}

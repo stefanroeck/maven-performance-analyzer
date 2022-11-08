@@ -1,4 +1,5 @@
-import { MavenGoalExecutionLine, ParserResult } from "./parser";
+import { Dayjs } from "dayjs";
+import { ParserResult } from "./parser";
 
 export interface Location {
     startLine: number;
@@ -17,12 +18,12 @@ export const analyze = ({ lines, lastTimestamp }: ParserResult): AnalyzerRow[] =
     const threads = lines.map(r => r.thread).filter((f, idx, arr) => arr.indexOf(f) === idx);
 
     return lines.map(({ module, plugin, startTime, thread }, idx) => {
-        const nextStartTime = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
+        const nextStartTime: Dayjs | undefined = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
         return {
             thread,
             module,
             plugin,
-            duration: nextStartTime ? nextStartTime.diff(startTime) : 0,
+            duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
         }
     });
 

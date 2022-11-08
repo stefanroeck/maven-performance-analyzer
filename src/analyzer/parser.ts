@@ -16,8 +16,8 @@ export interface ParserResult {
     totalBuildTime?: number;
 }
 
-const mavenGoalExecutionRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}).*--- (.*):(.*):(.*) @ (.*) ---/
-const lineWithTimeStampRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}).*/
+const mavenGoalExecutionRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*--- (.*):(.*):(.*) @ (.*) ---/
+const lineWithTimeStampRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*/
 
 
 export const parse = (logContent: string): ParserResult => {
@@ -38,16 +38,20 @@ const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
 }
 
 // Parses sth like this
-// 2022-11-08 19:00:12 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---
+// 2022-11-08 19:00:12,555 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---
 export const parseMavenGoalExecutionLine = (line: string): MavenGoalExecutionLine => {
     const matches = line.match(mavenGoalExecutionRegexp);
     if (!matches) {
         throw new Error("Line does not match regexp: " + line);
     }
     return {
-        startTime: dayjs(matches[1]),
+        startTime: parseTimestamp(matches[1]),
         plugin: matches[2],
         goal: matches[4],
         module: matches[5],
     }
+}
+
+export const parseTimestamp = (timestamp: string): Dayjs => {
+    return dayjs(timestamp, ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"]);
 }

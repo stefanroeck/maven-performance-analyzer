@@ -45,6 +45,7 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
                     innerPadding={2}
                     colors={{ scheme: 'pastel2' }}
                     colorBy="id"
+                    labelSkipHeight={12}
                     borderRadius={2}
                     enableGridX={false}
                     enableGridY={true}
