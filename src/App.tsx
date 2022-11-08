@@ -1,4 +1,3 @@
-import { Divider, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import { useState } from 'react';
 import { TotalDurationCard } from './components/TotalDurationCard';
