@@ -1,4 +1,4 @@
-import { ParserResult } from "./parser";
+import { MavenGoalExecutionLine, ParserResult } from "./parser";
 
 export interface Location {
     startLine: number;
@@ -13,61 +13,18 @@ export interface AnalyzerRow {
     location?: Location;
 }
 
-export const analyze = (parserResult: ParserResult[]): AnalyzerRow[] => {
+export const analyze = ({ lines, lastTimestamp }: ParserResult): AnalyzerRow[] => {
+    const threads = lines.map(r => r.thread).filter((f, idx, arr) => arr.indexOf(f) === idx);
 
-    return [{
-        module: "shared",
-        plugin: "maven-compiler",
-        duration: 120,
-    },
-    {
-        module: "shared",
-        plugin: "install",
-        duration: 20,
-    },
-    {
-        module: "shared",
-        plugin: "maven-jar",
-        duration: 32,
-    },
-    {
-        module: "shared",
-        plugin: "surefire",
-        duration: 190,
-    },
-    {
-        module: "server",
-        plugin: "maven-jar",
-        duration: 39,
-    },
-    {
-        module: "server",
-        plugin: "maven-ear",
-        duration: 49,
-    },
-    {
-        module: "server",
-        plugin: "maven-compiler",
-        duration: 149,
-    },
-    {
-        module: "server",
-        plugin: "jasper",
-        duration: 29,
-    },
-    {
-        module: "client",
-        plugin: "maven-compiler",
-        duration: 142,
-    },
-    {
-        module: "client",
-        plugin: "jasper",
-        duration: 39,
-    },
-    {
-        module: "shared",
-        plugin: "rebel",
-        duration: 13,
-    }];
+    return lines.map(({ module, plugin, startTime, thread }, idx) => {
+        const nextStartTime = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
+        return {
+            thread,
+            module,
+            plugin,
+            duration: nextStartTime ? nextStartTime.diff(startTime) : 0,
+        }
+    });
+
+
 }
