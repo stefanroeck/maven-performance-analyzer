@@ -3,6 +3,7 @@ import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { AnalyzerRow } from '../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
+import { axisWithDuration, basicBarCharProps, formatDuration, muiDistinctColors } from './diagramUtils';
 
 interface Props {
     data: AnalyzerRow[];
@@ -33,25 +34,25 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
     const keys = barData.flatMap(f => Object.keys(f).filter(f => f !== "module" && f !== "thread"))
         .filter((f, idx, arr) => arr.indexOf(f) === idx);
 
-    const height = barData.length * 150;
+    const height = barData.length * 60 + 100;
 
     return (
         <ExpandableCard title="Timeline" subheader="Visualizes execution order and dependencies for multi-threaded builds">
             <Box sx={{ height: `${height}px` }}>
                 <ResponsiveBar
+                    {...basicBarCharProps}
                     data={barData}
                     keys={keys}
-                    label="id"
+                    label={"id"}
                     indexBy="thread"
                     layout="horizontal"
                     margin={{ top: 40, right: 40, bottom: 40, left: 120 }}
-                    padding={0.3}
-                    innerPadding={2}
-                    labelSkipWidth={50}
-                    colors={{ scheme: 'pastel1' }}
+                    labelSkipWidth={60}
+                    colors={muiDistinctColors}
                     colorBy="id"
                     enableGridX={true}
                     enableGridY={false}
+                    axisBottom={axisWithDuration}
                 />
             </Box>
         </ExpandableCard>

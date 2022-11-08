@@ -17,11 +17,10 @@ function MainApp() {
   const onAnalyze = (logContent: string) => {
     const result = analyze(parse(logContent));
     setData(result);
-    if (result.length > 0) {
-      setShowTotalDuration(true);
-      setDurationPerModule(true);
-      setShowTimeline(true);
-    }
+    const chartsVisible = result.length > 0;
+    setShowTotalDuration(chartsVisible);
+    setDurationPerModule(chartsVisible);
+    setShowTimeline(chartsVisible);
   };
 
   return (
