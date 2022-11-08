@@ -15,7 +15,7 @@ export const ExpandableCard: FC<Props> = ({ children, title, subheader }) => {
     const [expanded, setExpanded] = useState(true);
 
     return (
-        <Card>
+        <Card sx={{ margin: "20px 0" }}>
             <CardHeader title={title} subheader={subheader} action={
                 <IconButton onClick={() => setExpanded(old => !old)}>{expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}</IconButton>
             } />

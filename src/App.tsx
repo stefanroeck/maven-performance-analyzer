@@ -1,4 +1,4 @@
-import { Divider } from '@mui/material';
+import { Divider, Grid } from '@mui/material';
 import { Box } from '@mui/system';
 import { useState } from 'react';
 import { TotalDurationCard } from './components/TotalDurationCard';
@@ -30,11 +30,8 @@ function MainApp() {
       <Header />
       <Box sx={{ margin: "20px" }}>
         <InputCard onAnalyze={onAnalyze} />
-        <Divider sx={{ margin: "20px" }} />
         {showTimeline && <TimelineCard data={data} />}
-        <Divider sx={{ margin: "20px" }} />
         {showDurationPerModule && <DurationPerModuleCard data={data} />}
-        <Divider sx={{ margin: "20px" }} />
         {showTotalDuration && <TotalDurationCard data={data} />}
       </Box>
     </Box >
