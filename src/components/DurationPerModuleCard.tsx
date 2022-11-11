@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { AnalyzerRow } from '../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
-import { axisWithDuration, basicBarCharProps, muiColorGradient, muiDistinctColors } from './diagramUtils';
+import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiColorGradient, muiDistinctColors } from './diagramUtils';
 
 interface Props {
     data: AnalyzerRow[];
@@ -34,26 +34,26 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
     // map to strings (except "module" and remove duplicates
     const keys = barData.flatMap(f => Object.keys(f).filter(f => f !== "module")).filter((f, idx, arr) => arr.indexOf(f) === idx);
     const modules = barData.flatMap(f => f.module).filter((f, idx, arr) => arr.indexOf(f) === idx);
-    const height = modules.length * 60 + 100;
+
     return (
         <ExpandableCard title="Maven Goals per Module" subheader="Execution time per module and maven plugin">
-            <Box sx={{ height: `${height}px` }}>
+            <Box sx={{ height: `${diagramHeight(modules.length)}px` }}>
                 <ResponsiveBar
                     {...basicBarCharProps}
                     data={barData}
                     keys={keys}
                     indexBy="module"
                     layout="horizontal"
-                    margin={{ top: 40, right: 140, bottom: 40, left: 120 }}
                     colors={muiDistinctColors}
                     colorBy="id"
+                    margin={{ ...defaultMargin, right: 220 }}
                     enableGridX={false}
                     enableGridY={true}
                     axisBottom={axisWithDuration}
                     legends={[
                         {
                             dataFrom: 'keys',
-                            anchor: 'bottom-right',
+                            anchor: 'top-right',
                             direction: 'column',
                             translateX: 120,
                             translateY: 0,

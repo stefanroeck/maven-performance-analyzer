@@ -10,11 +10,16 @@ export function formatDuration(v: string | number) {
     return dayjs(v).format("mm:ss");
 }
 
+export const defaultMargin = {
+    top: 0, right: 20, bottom: 20, left: 160
+}
+
 export const basicBarCharProps: Partial<Omit<BarSvgProps<any>, "height" | "width">> = {
     padding: 0.3,
     innerPadding: 1,
     labelSkipWidth: 35,
     borderRadius: 2,
+    margin: defaultMargin,
     valueFormat: formatDuration,
 }
 
@@ -56,3 +61,6 @@ export const muiColorGradient: string[] =
         amber[50],
     ]
 
+export const diagramHeight = (elements: number, barHeight: "normal" | "large" = "normal") => {
+    return (elements * (barHeight === "normal" ? 40 : 60)) + 100;
+}
