@@ -41,7 +41,7 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
                 <ResponsiveBar
                     {...basicBarCharProps}
                     data={barData}
-                    keys={keys}
+                    keys={keys.sort()}
                     indexBy="module"
                     layout="horizontal"
                     colors={muiDistinctColors}
@@ -60,6 +60,7 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
                             itemsSpacing: 2,
                             itemWidth: 100,
                             itemHeight: 20,
+                            toggleSerie: true,
                         }
                     ]}
                 />
