@@ -3,7 +3,7 @@ import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { AnalyzerRow } from '../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
-import { axisWithDuration, basicBarCharProps, diagramHeight, formatDuration, muiColorGradient } from './diagramUtils';
+import { axisWithDuration, basicBarCharProps, diagramHeight, muiColorGradients } from './diagramUtils';
 
 interface Props {
     data: AnalyzerRow[];
@@ -37,7 +37,7 @@ export const TotalDurationCard: FunctionComponent<Props> = ({ data }) => {
                     ]}
                     indexBy="label"
                     layout="horizontal"
-                    colors={muiColorGradient}
+                    colors={muiColorGradients(barData.length)}
                     colorBy="indexValue"
                     enableGridX={true}
                     enableGridY={false}

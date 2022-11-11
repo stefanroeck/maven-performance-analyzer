@@ -49,6 +49,7 @@ export const muiDistinctColors: string[] = [
 
 export const muiColorGradient: string[] =
     [
+        amber[50],
         amber[100],
         amber[200],
         amber[300],
@@ -58,8 +59,11 @@ export const muiColorGradient: string[] =
         amber[700],
         amber[800],
         amber[900],
-        amber[50],
     ]
+
+export const muiColorGradients = (size: number) => {
+    return Array.from(Array(size).keys()).map(i => muiColorGradient[Math.floor(i * muiColorGradient.length / size)]);
+}
 
 export const diagramHeight = (elements: number, barHeight: "normal" | "large" = "normal") => {
     return (elements * (barHeight === "normal" ? 40 : 60)) + 100;
