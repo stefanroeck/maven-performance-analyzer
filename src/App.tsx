@@ -7,20 +7,17 @@ import { DurationPerModuleCard } from './components/cards/DurationPerModuleCard'
 import { parse } from './analyzer/parser';
 import { analyze, AnalyzerRow } from './analyzer/analyzer';
 import { TimelineCard } from './components/cards/TimelineCard';
+import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard';
 
 function MainApp() {
-  const [showTimeline, setShowTimeline] = useState(false);
-  const [showTotalDuration, setShowTotalDuration] = useState(false);
-  const [showDurationPerModule, setDurationPerModule] = useState(false);
+  const [showResults, setShowResults] = useState(false);
   const [data, setData] = useState<AnalyzerRow[]>([]);
 
   const onAnalyze = (logContent: string) => {
     const result = analyze(parse(logContent));
     setData(result);
     const chartsVisible = result.length > 0;
-    setShowTotalDuration(chartsVisible);
-    setDurationPerModule(chartsVisible);
-    setShowTimeline(chartsVisible);
+    setShowResults(chartsVisible);
   };
 
   return (
@@ -28,9 +25,12 @@ function MainApp() {
       <Header />
       <Box sx={{ margin: "20px" }}>
         <InputCard onAnalyze={onAnalyze} />
-        {showTimeline && <TimelineCard data={data} />}
-        {showDurationPerModule && <DurationPerModuleCard data={data} />}
-        {showTotalDuration && <TotalDurationCard data={data} />}
+        {showResults && <>
+          <TimelineCard data={data} />
+          <DurationPerModuleCard data={data} />
+          <TotalDurationCard data={data} />
+          <SourceCodeTreeMapCard data={data} />
+        </>}
       </Box>
     </Box >
   );
