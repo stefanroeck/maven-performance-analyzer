@@ -5,19 +5,16 @@ import { InputCard } from './components/input/InputCard';
 import { Header } from './Header';
 import { DurationPerModuleCard } from './components/cards/DurationPerModuleCard';
 import { parse } from './analyzer/parser';
-import { analyze, AnalyzerRow } from './analyzer/analyzer';
+import { analyze, AnalyzerResult } from './analyzer/analyzer';
 import { TimelineCard } from './components/cards/TimelineCard';
 import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard';
 
 function MainApp() {
-  const [showResults, setShowResults] = useState(false);
-  const [data, setData] = useState<AnalyzerRow[]>([]);
+  const [data, setData] = useState<AnalyzerResult | undefined>(undefined);
 
   const onAnalyze = (logContent: string) => {
     const result = analyze(parse(logContent));
     setData(result);
-    const chartsVisible = result.length > 0;
-    setShowResults(chartsVisible);
   };
 
   return (
@@ -25,11 +22,13 @@ function MainApp() {
       <Header />
       <Box sx={{ margin: "20px" }}>
         <InputCard onAnalyze={onAnalyze} />
-        {showResults && <>
-          <TimelineCard data={data} />
-          <DurationPerModuleCard data={data} />
-          <TotalDurationCard data={data} />
-          <SourceCodeTreeMapCard data={data} />
+        {data && (data.mavenPlugins.length > 0) && <>
+          <TimelineCard data={data.mavenPlugins} />
+          <DurationPerModuleCard data={data.mavenPlugins} />
+          <TotalDurationCard data={data.mavenPlugins} />
+        </>}
+        {data && (data.modules.length > 0) && <>
+          <SourceCodeTreeMapCard data={data.modules} />
         </>}
       </Box>
     </Box >

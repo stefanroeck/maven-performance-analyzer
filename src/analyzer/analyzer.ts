@@ -1,5 +1,5 @@
 import { Dayjs } from "dayjs";
-import { ParserResult } from "./parser";
+import { ParserResult, SourceStatisticLine } from "./parser";
 
 export interface Location {
     startLine: number;
@@ -14,18 +14,58 @@ export interface AnalyzerRow {
     location?: Location;
 }
 
-export const analyze = ({ lines, lastTimestamp }: ParserResult): AnalyzerRow[] => {
-    const threads = lines.map(r => r.thread).filter((f, idx, arr) => arr.indexOf(f) === idx);
+export interface AnalyzedModule {
+    module: string;
+    compiledSources: number;
+    compiledTestSources: number;
+    copiedResources: number;
+    copiedTestResources: number;
+}
 
-    return lines.map(({ module, plugin, startTime, thread }, idx) => {
-        const nextStartTime: Dayjs | undefined = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
-        return {
-            thread,
-            module,
-            plugin,
-            duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
+export interface AnalyzerResult {
+    mavenPlugins: AnalyzerRow[];
+    modules: AnalyzedModule[];
+}
+
+export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult): AnalyzerResult => {
+    // const threads = lines.map(r => r.thread).filter((f, idx, arr) => arr.indexOf(f) === idx);
+    const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
+        const existing = arr.find(c => c.module === curr.module);
+        if (existing) {
+            switch (curr.compileMode) {
+                case "src": existing.compiledSources = existing.compiledSources + curr.compiledSources; break;
+                case "testSrc": existing.compiledTestSources = existing.compiledTestSources + curr.compiledSources; break;
+            }
+
+        } else {
+            const analyzedModule: AnalyzedModule = {
+                module: curr.module,
+                compiledSources: 0,
+                compiledTestSources: 0,
+                copiedResources: 0,
+                copiedTestResources: 0,
+            }
+            switch (curr.compileMode) {
+                case "src": analyzedModule.compiledSources = curr.compiledSources; break;
+                case "testSrc": analyzedModule.compiledTestSources = curr.compiledSources; break;
+            }
+            arr.push(analyzedModule);
+
         }
-    });
+        return arr;
+    }, [] as AnalyzedModule[]);
+    return {
+        mavenPlugins: lines.map(({ module, plugin, startTime, thread }, idx) => {
+            const nextStartTime: Dayjs | undefined = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
+            return {
+                thread,
+                module,
+                plugin,
+                duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
+            }
+        }),
+        modules: aggregatedCompiledSources,
+    };
 
 
 }

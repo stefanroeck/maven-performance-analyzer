@@ -18,11 +18,12 @@ describe("analyzer", () => {
                 goal: "g2",
                 thread: "main",
                 startTime: dayjs("2022-01-01 10:00:05"),
-            }]
-            , lastTimestamp: dayjs("2022-01-01 10:00:15"),
+            }],
+            lastTimestamp: dayjs("2022-01-01 10:00:15"),
+            compiledSources: [],
         });
 
-        expect(analysis).toEqual<AnalyzerRow[]>([{
+        expect(analysis.mavenPlugins).toEqual<AnalyzerRow[]>([{
             module: "m1",
             plugin: "p1",
             thread: "main",
@@ -36,6 +37,6 @@ describe("analyzer", () => {
     })
 
     it("analyzes empty result", () => {
-        expect(analyze({ lines: [] })).toEqual([]);
+        expect(analyze({ lines: [], compiledSources: [], }).mavenPlugins).toEqual([]);
     })
 })

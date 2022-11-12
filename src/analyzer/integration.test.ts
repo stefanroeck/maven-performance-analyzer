@@ -9,11 +9,20 @@ describe("parser and analyzer", () => {
 
         const result = analyze(parse(content));
 
-        expect(result.length).toEqual(421);
-        expect(result.map(r => r.thread).filter((t, idx, arr) => arr.indexOf(t) === idx)).toEqual(["main"]);
+        expect(result.mavenPlugins.length).toEqual(421);
+        expect(result.mavenPlugins.map(r => r.thread).filter((t, idx, arr) => arr.indexOf(t) === idx)).toEqual(["main"]);
 
-        expect(durationSumForPlugin(result, "maven-compiler-plugin")).toEqual(143028);
-        expect(durationSumForPlugin(result, "maven-surefire-plugin")).toEqual(434);
+        expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(143028);
+        expect(durationSumForPlugin(result.mavenPlugins, "maven-surefire-plugin")).toEqual(434);
+
+        expect(result.modules).toHaveLength(19);
+        expect(result.modules[0]).toEqual({
+            module: "surefire-api",
+            compiledSources: 111,
+            compiledTestSources: 28,
+            copiedResources: 0,
+            copiedTestResources: 0,
+        });
     })
 
     function durationSumForPlugin(result: AnalyzerRow[], plugin: string): number {
