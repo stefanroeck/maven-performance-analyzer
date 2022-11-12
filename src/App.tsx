@@ -1,12 +1,12 @@
 import { Box } from '@mui/system';
 import { useState } from 'react';
-import { TotalDurationCard } from './components/TotalDurationCard';
-import { InputCard } from './components/InputCard';
+import { TotalDurationCard } from './components/cards/TotalDurationCard';
+import { InputCard } from './components/input/InputCard';
 import { Header } from './Header';
-import { DurationPerModuleCard } from './components/DurationPerModuleCard';
+import { DurationPerModuleCard } from './components/cards/DurationPerModuleCard';
 import { parse } from './analyzer/parser';
 import { analyze, AnalyzerRow } from './analyzer/analyzer';
-import { TimelineCard } from './components/TimelineCard';
+import { TimelineCard } from './components/cards/TimelineCard';
 
 function MainApp() {
   const [showTimeline, setShowTimeline] = useState(false);

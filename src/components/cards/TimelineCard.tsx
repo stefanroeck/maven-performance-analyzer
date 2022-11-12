@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
-import { BarDatum, ResponsiveBar } from '@nivo/bar';
-import { AnalyzerRow } from '../analyzer/analyzer';
+import { Bar, BarDatum } from '@nivo/bar';
+import { AnalyzerRow } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
-import { axisWithDuration, basicBarCharProps, diagramHeight, formatDuration, muiDistinctColors } from './diagramUtils';
+import { axisWithDuration, basicBarCharProps, diagramHeight, muiDistinctColors } from './diagramUtils';
 
 interface Props {
     data: AnalyzerRow[];
@@ -34,11 +34,14 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
     const keys = barData.flatMap(f => Object.keys(f).filter(f => f !== "module" && f !== "thread"))
         .filter((f, idx, arr) => arr.indexOf(f) === idx);
 
+    const width = Math.max(keys.length * 100, document.body.clientWidth - 80);
 
     return (
-        <ExpandableCard title="Timeline" subheader="Visualizes execution order and dependencies for multi-threaded builds">
-            <Box sx={{ height: `${diagramHeight(barData.length, "large")}px` }}>
-                <ResponsiveBar
+        <ExpandableCard title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents one thread for multi-threaded builds. Make sure that the threadName is part of the log file.">
+            <Box sx={{ overflowX: "auto" }}>
+                <Bar
+                    height={diagramHeight(barData.length, "large")}
+                    width={width}
                     {...basicBarCharProps}
                     data={barData}
                     keys={keys}

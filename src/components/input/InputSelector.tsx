@@ -1,6 +1,6 @@
 import { Box, Button, Chip, FormControlLabel, Link, Switch, TextField, Typography } from "@mui/material";
 import { ChangeEvent, FC, useState, MouseEvent } from "react";
-import { fetchSampleFile } from "../sample/fetchSampleFile";
+import { fetchSampleFile } from "../../sample/fetchSampleFile";
 
 type InputType = "file" | "text";
 

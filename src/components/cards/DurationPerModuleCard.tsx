@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
-import { AnalyzerRow } from '../analyzer/analyzer';
+import { AnalyzerRow } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
-import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiColorGradient, muiDistinctColors } from './diagramUtils';
+import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiDistinctColors } from './diagramUtils';
 
 interface Props {
     data: AnalyzerRow[];

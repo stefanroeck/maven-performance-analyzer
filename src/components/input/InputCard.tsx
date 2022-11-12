@@ -1,6 +1,6 @@
 import { Button, Link, Typography } from '@mui/material';
 import { FunctionComponent, useState } from 'react';
-import { ExpandableCard } from './ExpandableCard';
+import { ExpandableCard } from '../cards/ExpandableCard';
 import { InputSelector } from './InputSelector';
 
 interface Props {
