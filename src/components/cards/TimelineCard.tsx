@@ -37,7 +37,7 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
     const width = Math.max(keys.length * 100, document.body.clientWidth - 80);
 
     return (
-        <ExpandableCard title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents one thread for multi-threaded builds. Make sure that the threadName is part of the log file.">
+        <ExpandableCard initiallyExpanded={true} title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents one thread for multi-threaded builds. Make sure that the threadName is part of the log file.">
             <Box sx={{ overflowX: "auto" }}>
                 <Bar
                     height={diagramHeight(barData.length, "large")}

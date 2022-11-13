@@ -21,7 +21,7 @@ export const InputCard: FunctionComponent<Props> = ({ onAnalyze }) => {
         </Typography>
     </>;
     return (
-        <ExpandableCard title="Provide Maven Log" subheader={subheader}>
+        <ExpandableCard title="Provide Maven Log" subheader={subheader} initiallyExpanded={true}>
             <InputSelector onSelected={setLogContent} />
             <Button
                 disabled={logContent === ""}

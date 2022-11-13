@@ -8,20 +8,26 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 interface Props extends PropsWithChildren {
     title: string;
     subheader: ReactNode;
+    initiallyExpanded?: boolean;
 }
 
-export const ExpandableCard: FC<Props> = ({ children, title, subheader }) => {
+export const ExpandableCard: FC<Props> = ({ children, title, subheader, initiallyExpanded = false }) => {
 
-    const [expanded, setExpanded] = useState(true);
+    const [expanded, setExpanded] = useState(initiallyExpanded);
+    const [rendered, setRendered] = useState(false);
+    const onExpand = () => {
+        setExpanded(old => !old);
+        setRendered(true);
+    }
 
     return (
         <Card sx={{ margin: "20px 0" }}>
             <CardHeader title={title} subheader={subheader} action={
-                <IconButton onClick={() => setExpanded(old => !old)}>{expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}</IconButton>
+                <IconButton onClick={onExpand}>{expanded ? <ExpandLessIcon /> : <ExpandMoreIcon />}</IconButton>
             } />
             <Collapse in={expanded}>
                 <CardContent>
-                    {children}
+                    {(expanded || rendered) && children}
                 </CardContent>
             </Collapse>
         </Card>
