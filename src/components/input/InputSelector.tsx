@@ -27,6 +27,15 @@ export const InputSelector: FC<Props> = ({ onSelected }) => {
         const files = event.target.files;
         if (files && files.length > 0) {
             setSelectedFile(files[0]);
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                if (typeof reader.result === "string" && reader.result !== null) {
+                    onSelected(reader.result);
+                }
+            }
+            reader.readAsText(files[0]);
+        } else {
+            onSelected("");
         }
     }
 
@@ -36,7 +45,7 @@ export const InputSelector: FC<Props> = ({ onSelected }) => {
     }
 
     return (<>
-        <FormControlLabel control={switchComp} label={inputType === "file" ? "Upload Log File" : "Enter as text"} sx={{ marginBottom: "10px" }} />
+        <FormControlLabel control={switchComp} label={inputType === "file" ? "Select Log File" : "Enter as text"} sx={{ marginBottom: "10px" }} />
         <Typography component="span" hidden={inputType !== "text"} sx={{ float: "right", marginTop: "20px" }} variant={"subtitle2"}>
             Use&nbsp;
             <Link href="." onClick={loadSampleFile}>
@@ -52,7 +61,9 @@ export const InputSelector: FC<Props> = ({ onSelected }) => {
                 <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
             </Button>
             {selectedFile ?
-                <Chip sx={{ marginTop: "10px" }} label={selectedFile?.name} onDelete={() => setSelectedFile(undefined)} />
+                <Chip sx={{ marginTop: "10px" }} label={selectedFile?.name} onDelete={() => {
+                    setSelectedFile(undefined); onSelected("");
+                }} />
                 : null}
         </Box>
     </>
