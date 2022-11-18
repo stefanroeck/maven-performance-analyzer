@@ -1,0 +1,375 @@
+2022-11-18 21:39:49 [INFO] Scanning for projects...
+2022-11-18 21:39:50 [INFO] 
+2022-11-18 21:39:50 [INFO] ------------------< org.apache.commons:commons-lang3 >------------------
+2022-11-18 21:39:50 [INFO] Building Apache Commons Lang 3.13.0-SNAPSHOT
+2022-11-18 21:39:50 [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-18 21:39:51 [INFO] 
+2022-11-18 21:39:51 [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ commons-lang3 ---
+2022-11-18 21:39:51 [INFO] Deleting /Users/Stefan/git/commons-lang/target
+2022-11-18 21:39:52 [INFO] 
+2022-11-18 21:39:52 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2022-11-18 21:39:53 [INFO] 
+2022-11-18 21:39:53 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ commons-lang3 ---
+2022-11-18 21:39:53 [INFO] 
+2022-11-18 21:39:53 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-3) @ commons-lang3 ---
+2022-11-18 21:39:53 [INFO] 
+2022-11-18 21:39:53 [INFO] --- apache-rat-plugin:0.15:check (rat-check) @ commons-lang3 ---
+2022-11-18 21:39:54 [INFO] Enabled default license matchers.
+2022-11-18 21:39:54 [INFO] Will parse SCM ignores for exclusions...
+2022-11-18 21:39:54 [INFO] Parsing exclusions from /Users/Stefan/git/commons-lang/.gitignore
+2022-11-18 21:39:54 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-18 21:39:54 [INFO] 73 implicit excludes.
+2022-11-18 21:39:54 [INFO] 16 explicit excludes.
+2022-11-18 21:39:54 [INFO] 511 resources included
+2022-11-18 21:39:55 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 506 licenses.
+2022-11-18 21:39:55 [INFO] 
+2022-11-18 21:39:55 [INFO] --- build-helper-maven-plugin:3.3.0:parse-version (parse-version) @ commons-lang3 ---
+2022-11-18 21:39:56 [INFO] 
+2022-11-18 21:39:56 [INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2022-11-18 21:39:56 [INFO] Executing tasks
+2022-11-18 21:39:57 [INFO]      [copy] Copying 2 files to /Users/Stefan/git/commons-lang/target/apidocs/META-INF
+2022-11-18 21:39:57 [INFO] Executed tasks
+2022-11-18 21:39:57 [INFO] 
+2022-11-18 21:39:57 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-lang3 ---
+2022-11-18 21:39:58 [INFO] Skipping remote resources execution.
+2022-11-18 21:39:58 [INFO] 
+2022-11-18 21:39:58 [INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ commons-lang3 ---
+2022-11-18 21:39:58 [INFO] Executing: /bin/sh -c cd '/Users/Stefan/git/commons-lang' && 'git' 'rev-parse' '--verify' 'HEAD'
+2022-11-18 21:39:58 [INFO] Working directory: /Users/Stefan/git/commons-lang
+2022-11-18 21:39:58 [INFO] Storing buildNumber: null at timestamp: 1668803998691
+2022-11-18 21:39:58 [INFO] Storing buildScmBranch: master
+2022-11-18 21:39:58 [INFO] 
+2022-11-18 21:39:58 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ commons-lang3 ---
+2022-11-18 21:39:59 [INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+2022-11-18 21:39:59 [INFO] Using 'ISO-8859-1' encoding to copy filtered properties files.
+2022-11-18 21:39:59 [INFO] skip non existing resourceDirectory /Users/Stefan/git/commons-lang/src/main/resources
+2022-11-18 21:39:59 [INFO] Copying 2 resources to META-INF
+2022-11-18 21:39:59 [INFO] 
+2022-11-18 21:39:59 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ commons-lang3 ---
+2022-11-18 21:39:59 [INFO] Changes detected - recompiling the module!
+Compiling 239 source files to /Users/Stefan/git/commons-lang/target/classes
+2022-11-18 21:40:08 [ERROR] /Users/Stefan/git/commons-lang/src/main/java/org/apache/commons/lang3/JavaVersion.java:[233] Cannot switch on a value of type String. Only convertible int values, strings or enum variables are permitted
+2022-11-18 21:40:08 [ERROR] /Users/Stefan/git/commons-lang/src/main/java/org/apache/commons/lang3/time/DurationUtils.java:[160] Cannot switch on a value of type TimeUnit. Only convertible int values, strings or enum variables are permitted
+2022-11-18 21:40:08 [INFO] 
+2022-11-18 21:40:08 [INFO] --- maven-bundle-plugin:5.1.2:manifest (bundle-manifest) @ commons-lang3 ---
+2022-11-18 21:40:11 [WARNING] Manifest org.apache.commons:commons-lang3:jar:3.13.0-SNAPSHOT : Classes found in the wrong directory: {org/apache/commons/lang3/mutable/package-info.java.class=org.apache.commons.lang3.mutable.package-info, org/apache/commons/lang3/exception/package-info.java.class=org.apache.commons.lang3.exception.package-info, org/apache/commons/lang3/concurrent/package-info.java.class=org.apache.commons.lang3.concurrent.package-info, org/apache/commons/lang3/text/translate/package-info.java.class=org.apache.commons.lang3.text.translate.package-info, org/apache/commons/lang3/builder/package-info.java.class=org.apache.commons.lang3.builder.package-info, org/apache/commons/lang3/arch/package-info.java.class=org.apache.commons.lang3.arch.package-info, org/apache/commons/lang3/concurrent/locks/package-info.java.class=org.apache.commons.lang3.concurrent.locks.package-info, org/apache/commons/lang3/math/package-info.java.class=org.apache.commons.lang3.math.package-info, org/apache/commons/lang3/text/package-info.java.class=org.apache.commons.lang3.text.package-info, org/apache/commons/lang3/package-info.java.class=org.apache.commons.lang3.package-info, org/apache/commons/lang3/reflect/package-info.java.class=org.apache.commons.lang3.reflect.package-info, org/apache/commons/lang3/util/package-info.java.class=org.apache.commons.lang3.util.package-info, org/apache/commons/lang3/function/package-info.java.class=org.apache.commons.lang3.function.package-info, org/apache/commons/lang3/stream/package-info.java.class=org.apache.commons.lang3.stream.package-info, org/apache/commons/lang3/time/package-info.java.class=org.apache.commons.lang3.time.package-info, org/apache/commons/lang3/compare/package-info.java.class=org.apache.commons.lang3.compare.package-info, org/apache/commons/lang3/event/package-info.java.class=org.apache.commons.lang3.event.package-info, org/apache/commons/lang3/tuple/package-info.java.class=org.apache.commons.lang3.tuple.package-info}
+2022-11-18 21:40:11 [INFO] 
+2022-11-18 21:40:11 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ commons-lang3 ---
+2022-11-18 21:40:11 [INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+2022-11-18 21:40:11 [INFO] Using 'ISO-8859-1' encoding to copy filtered properties files.
+2022-11-18 21:40:11 [INFO] Copying 2 resources
+2022-11-18 21:40:11 [INFO] Copying 2 resources to META-INF
+2022-11-18 21:40:11 [INFO] 
+2022-11-18 21:40:11 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ commons-lang3 ---
+2022-11-18 21:40:11 [INFO] Changes detected - recompiling the module!
+Compiling 225 source files to /Users/Stefan/git/commons-lang/target/test-classes
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/JavaVersionTest.java:[30] The import org.apache.commons.lang3.JavaVersion.JAVA_18 cannot be resolved
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/JavaVersionTest.java:[74] JAVA_18 cannot be resolved to a variable
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/mutable/PrintAtomicVsMutable.java:[32] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/mutable/PrintAtomicVsMutable.java:[38] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[41] The method getNanosOfMilli(null) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[42] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[43] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[44] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[45] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[46] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[47] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[48] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[49] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[50] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[94] The method of(this::testSince) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[99] The method of((<no type> start) -> {}) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[104] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[111] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[112] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[113] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:40:19 [INFO] 
+2022-11-18 21:40:19 [INFO] --- animal-sniffer-maven-plugin:1.21:check (checkAPIcompatibility) @ commons-lang3 ---
+2022-11-18 21:40:19 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-18 21:40:21 [INFO] 
+2022-11-18 21:40:21 [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (prepare-agent) @ commons-lang3 ---
+2022-11-18 21:40:21 [INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+2022-11-18 21:40:21 [INFO] 
+2022-11-18 21:40:21 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ commons-lang3 ---
+2022-11-18 21:40:21 [INFO] Tests are skipped.
+2022-11-18 21:40:21 [INFO] 
+2022-11-18 21:40:21 [INFO] --- maven-jar-plugin:3.3.0:jar (default-jar) @ commons-lang3 ---
+2022-11-18 21:40:22 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT.jar
+2022-11-18 21:40:22 [INFO] 
+2022-11-18 21:40:22 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ commons-lang3 ---
+2022-11-18 21:40:24 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-18 21:40:24 [INFO] 
+2022-11-18 21:40:24 [INFO] --- maven-jar-plugin:3.3.0:test-jar (default) @ commons-lang3 ---
+2022-11-18 21:40:24 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-tests.jar
+2022-11-18 21:40:24 [INFO] 
+2022-11-18 21:40:24 [INFO] --- maven-source-plugin:3.2.1:jar-no-fork (create-source-jar) @ commons-lang3 ---
+2022-11-18 21:40:24 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-sources.jar
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- maven-source-plugin:3.2.1:test-jar-no-fork (create-source-jar) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-test-sources.jar
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] >>> maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) > generate-sources @ commons-lang3 >>>
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-3) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- apache-rat-plugin:0.15:check (rat-check) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] Enabled default license matchers.
+2022-11-18 21:40:25 [INFO] Will parse SCM ignores for exclusions...
+2022-11-18 21:40:25 [INFO] Parsing exclusions from /Users/Stefan/git/commons-lang/.gitignore
+2022-11-18 21:40:25 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-18 21:40:25 [INFO] 73 implicit excludes.
+2022-11-18 21:40:25 [INFO] 16 explicit excludes.
+2022-11-18 21:40:25 [INFO] 511 resources included
+2022-11-18 21:40:25 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 506 licenses.
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- build-helper-maven-plugin:3.3.0:parse-version (parse-version) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] 
+2022-11-18 21:40:25 [INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2022-11-18 21:40:25 [INFO] Executing tasks
+2022-11-18 21:40:25 [INFO] Executed tasks
+2022-11-18 21:40:26 [INFO] 
+2022-11-18 21:40:26 [INFO] <<< maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) < generate-sources @ commons-lang3 <<<
+2022-11-18 21:40:26 [INFO] 
+2022-11-18 21:40:26 [INFO] 
+2022-11-18 21:40:26 [INFO] --- maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) @ commons-lang3 ---
+2022-11-18 21:40:28 [INFO] No previous run data found, generating javadoc.
+2022-11-18 21:40:47 [INFO] 
+1 warning
+2022-11-18 21:40:47 [WARNING] Javadoc Warnings
+2022-11-18 21:40:47 [WARNING] javadoc: warning - URL https://docs.oracle.com/javase/8/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/19/ -- Update the command-line options to suppress this warning.
+2022-11-18 21:40:47 [INFO] 
+2022-11-18 21:40:47 [INFO] --- maven-javadoc-plugin:3.4.1:jar (create-javadoc-jar) @ commons-lang3 ---
+2022-11-18 21:40:48 [INFO] Configuration changed, re-generating javadoc.
+2022-11-18 21:41:02 [INFO] 
+1 warning
+2022-11-18 21:41:02 [WARNING] Javadoc Warnings
+2022-11-18 21:41:02 [WARNING] javadoc: warning - URL https://docs.oracle.com/javase/8/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/19/ -- Update the command-line options to suppress this warning.
+2022-11-18 21:41:02 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-javadoc.jar
+2022-11-18 21:41:02 [INFO] 
+2022-11-18 21:41:02 [INFO] --- cyclonedx-maven-plugin:2.7.1:makeAggregateBom (default) @ commons-lang3 ---
+2022-11-18 21:41:03 [INFO] CycloneDX: Parameters
+2022-11-18 21:41:03 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:41:03 [INFO] schemaVersion          : 1.4
+2022-11-18 21:41:03 [INFO] includeBomSerialNumber : true
+2022-11-18 21:41:03 [INFO] includeCompileScope    : true
+2022-11-18 21:41:03 [INFO] includeProvidedScope   : true
+2022-11-18 21:41:03 [INFO] includeRuntimeScope    : true
+2022-11-18 21:41:03 [INFO] includeTestScope       : false
+2022-11-18 21:41:03 [INFO] includeSystemScope     : true
+2022-11-18 21:41:03 [INFO] includeLicenseText     : false
+2022-11-18 21:41:03 [INFO] outputReactorProjects  : true
+2022-11-18 21:41:03 [INFO] outputFormat           : all
+2022-11-18 21:41:03 [INFO] outputName             : commons-lang3-3.13.0-SNAPSHOT-bom
+2022-11-18 21:41:03 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:41:07 [INFO] CycloneDX: Creating BOM
+2022-11-18 21:41:07 [INFO] CycloneDX: Writing BOM (XML): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.xml
+2022-11-18 21:41:08 [INFO] CycloneDX: Validating BOM (XML): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.xml
+2022-11-18 21:41:08 [INFO] CycloneDX: Writing BOM (JSON): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.json
+2022-11-18 21:41:08 [INFO] CycloneDX: Validating BOM (JSON): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.json
+2022-11-18 21:41:08 [WARNING] Unknown keyword additionalItems - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] >>> spdx-maven-plugin:0.5.5:createSPDX (build-spdx) > verify @ commons-lang3 >>>
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ commons-lang3 ---
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-3) @ commons-lang3 ---
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- apache-rat-plugin:0.15:check (rat-check) @ commons-lang3 ---
+2022-11-18 21:41:08 [INFO] Enabled default license matchers.
+2022-11-18 21:41:08 [INFO] Will parse SCM ignores for exclusions...
+2022-11-18 21:41:08 [INFO] Parsing exclusions from /Users/Stefan/git/commons-lang/.gitignore
+2022-11-18 21:41:08 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-18 21:41:08 [INFO] 73 implicit excludes.
+2022-11-18 21:41:08 [INFO] 16 explicit excludes.
+2022-11-18 21:41:08 [INFO] 511 resources included
+2022-11-18 21:41:08 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 506 licenses.
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- build-helper-maven-plugin:3.3.0:parse-version (parse-version) @ commons-lang3 ---
+2022-11-18 21:41:08 [INFO] 
+2022-11-18 21:41:08 [INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2022-11-18 21:41:09 [INFO] Executing tasks
+2022-11-18 21:41:09 [INFO] Executed tasks
+2022-11-18 21:41:09 [INFO] 
+2022-11-18 21:41:09 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ commons-lang3 ---
+2022-11-18 21:41:09 [INFO] Skipping remote resources execution.
+2022-11-18 21:41:09 [INFO] 
+2022-11-18 21:41:09 [INFO] --- buildnumber-maven-plugin:3.0.0:create (default) @ commons-lang3 ---
+2022-11-18 21:41:09 [INFO] Executing: /bin/sh -c cd '/Users/Stefan/git/commons-lang' && 'git' 'rev-parse' '--verify' 'HEAD'
+2022-11-18 21:41:09 [INFO] Working directory: /Users/Stefan/git/commons-lang
+2022-11-18 21:41:09 [INFO] Storing buildNumber: null at timestamp: 1668804069129
+2022-11-18 21:41:09 [INFO] Storing buildScmBranch: master
+2022-11-18 21:41:09 [INFO] 
+2022-11-18 21:41:09 [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ commons-lang3 ---
+2022-11-18 21:41:09 [INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+2022-11-18 21:41:09 [INFO] Using 'ISO-8859-1' encoding to copy filtered properties files.
+2022-11-18 21:41:09 [INFO] skip non existing resourceDirectory /Users/Stefan/git/commons-lang/src/main/resources
+2022-11-18 21:41:09 [INFO] Copying 2 resources to META-INF
+2022-11-18 21:41:09 [INFO] 
+2022-11-18 21:41:09 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ commons-lang3 ---
+2022-11-18 21:41:09 [INFO] Changes detected - recompiling the module!
+Compiling 239 source files to /Users/Stefan/git/commons-lang/target/classes
+2022-11-18 21:41:11 [ERROR] /Users/Stefan/git/commons-lang/src/main/java/org/apache/commons/lang3/JavaVersion.java:[233] Cannot switch on a value of type String. Only convertible int values, strings or enum variables are permitted
+2022-11-18 21:41:11 [ERROR] /Users/Stefan/git/commons-lang/src/main/java/org/apache/commons/lang3/time/DurationUtils.java:[160] Cannot switch on a value of type TimeUnit. Only convertible int values, strings or enum variables are permitted
+2022-11-18 21:41:11 [INFO] 
+2022-11-18 21:41:11 [INFO] --- maven-bundle-plugin:5.1.2:manifest (bundle-manifest) @ commons-lang3 ---
+2022-11-18 21:41:11 [WARNING] Manifest org.apache.commons:commons-lang3:jar:3.13.0-SNAPSHOT : Classes found in the wrong directory: {org/apache/commons/lang3/mutable/package-info.java.class=org.apache.commons.lang3.mutable.package-info, org/apache/commons/lang3/exception/package-info.java.class=org.apache.commons.lang3.exception.package-info, org/apache/commons/lang3/concurrent/package-info.java.class=org.apache.commons.lang3.concurrent.package-info, org/apache/commons/lang3/text/translate/package-info.java.class=org.apache.commons.lang3.text.translate.package-info, org/apache/commons/lang3/builder/package-info.java.class=org.apache.commons.lang3.builder.package-info, org/apache/commons/lang3/arch/package-info.java.class=org.apache.commons.lang3.arch.package-info, org/apache/commons/lang3/concurrent/locks/package-info.java.class=org.apache.commons.lang3.concurrent.locks.package-info, org/apache/commons/lang3/math/package-info.java.class=org.apache.commons.lang3.math.package-info, org/apache/commons/lang3/text/package-info.java.class=org.apache.commons.lang3.text.package-info, org/apache/commons/lang3/package-info.java.class=org.apache.commons.lang3.package-info, org/apache/commons/lang3/reflect/package-info.java.class=org.apache.commons.lang3.reflect.package-info, org/apache/commons/lang3/util/package-info.java.class=org.apache.commons.lang3.util.package-info, org/apache/commons/lang3/function/package-info.java.class=org.apache.commons.lang3.function.package-info, org/apache/commons/lang3/stream/package-info.java.class=org.apache.commons.lang3.stream.package-info, org/apache/commons/lang3/time/package-info.java.class=org.apache.commons.lang3.time.package-info, org/apache/commons/lang3/compare/package-info.java.class=org.apache.commons.lang3.compare.package-info, org/apache/commons/lang3/event/package-info.java.class=org.apache.commons.lang3.event.package-info, org/apache/commons/lang3/tuple/package-info.java.class=org.apache.commons.lang3.tuple.package-info}
+2022-11-18 21:41:11 [INFO] 
+2022-11-18 21:41:11 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ commons-lang3 ---
+2022-11-18 21:41:11 [INFO] Using 'ISO-8859-1' encoding to copy filtered resources.
+2022-11-18 21:41:11 [INFO] Using 'ISO-8859-1' encoding to copy filtered properties files.
+2022-11-18 21:41:11 [INFO] Copying 2 resources
+2022-11-18 21:41:11 [INFO] Copying 2 resources to META-INF
+2022-11-18 21:41:11 [INFO] 
+2022-11-18 21:41:11 [INFO] --- maven-compiler-plugin:3.10.1:testCompile (default-testCompile) @ commons-lang3 ---
+2022-11-18 21:41:11 [INFO] Changes detected - recompiling the module!
+Compiling 225 source files to /Users/Stefan/git/commons-lang/target/test-classes
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/JavaVersionTest.java:[30] The import org.apache.commons.lang3.JavaVersion.JAVA_18 cannot be resolved
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/JavaVersionTest.java:[74] JAVA_18 cannot be resolved to a variable
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/mutable/PrintAtomicVsMutable.java:[32] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/mutable/PrintAtomicVsMutable.java:[38] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[41] The method getNanosOfMilli(null) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[42] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[43] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[44] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[45] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[46] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[47] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[48] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[49] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[50] The method getNanosOfMilli(Duration) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[94] The method of(this::testSince) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[99] The method of((<no type> start) -> {}) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[104] The method of(() -> {}) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[111] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[112] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [ERROR] /Users/Stefan/git/commons-lang/src/test/java/org/apache/commons/lang3/time/DurationUtilsTest.java:[113] The method since(Instant) is undefined for the type DurationUtils
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- animal-sniffer-maven-plugin:1.21:check (checkAPIcompatibility) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (prepare-agent) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-surefire-plugin:3.0.0-M7:test (default-test) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Tests are skipped.
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-jar-plugin:3.3.0:jar (default-jar) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT.jar
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-site-plugin:3.12.1:attach-descriptor (attach-descriptor) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Skipping because packaging 'jar' is not pom.
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-jar-plugin:3.3.0:test-jar (default) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-tests.jar
+2022-11-18 21:41:17 [WARNING] artifact org.apache.commons:commons-lang3:test-jar:tests:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-source-plugin:3.2.1:jar-no-fork (create-source-jar) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-sources.jar
+2022-11-18 21:41:17 [WARNING] artifact org.apache.commons:commons-lang3:java-source:sources:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:17 [INFO] 
+2022-11-18 21:41:17 [INFO] --- maven-source-plugin:3.2.1:test-jar-no-fork (create-source-jar) @ commons-lang3 ---
+2022-11-18 21:41:17 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-test-sources.jar
+2022-11-18 21:41:18 [WARNING] artifact org.apache.commons:commons-lang3:java-source:test-sources:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] >>> maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) > generate-sources @ commons-lang3 >>>
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-version) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-java-version) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- maven-enforcer-plugin:3.1.0:enforce (enforce-maven-3) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- apache-rat-plugin:0.15:check (rat-check) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] Enabled default license matchers.
+2022-11-18 21:41:18 [INFO] Will parse SCM ignores for exclusions...
+2022-11-18 21:41:18 [INFO] Parsing exclusions from /Users/Stefan/git/commons-lang/.gitignore
+2022-11-18 21:41:18 [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-18 21:41:18 [INFO] 73 implicit excludes.
+2022-11-18 21:41:18 [INFO] 16 explicit excludes.
+2022-11-18 21:41:18 [INFO] 511 resources included
+2022-11-18 21:41:18 [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 506 licenses.
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- build-helper-maven-plugin:3.3.0:parse-version (parse-version) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- maven-antrun-plugin:3.1.0:run (javadoc.resources) @ commons-lang3 ---
+2022-11-18 21:41:18 [INFO] Executing tasks
+2022-11-18 21:41:18 [INFO] Executed tasks
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] <<< maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) < generate-sources @ commons-lang3 <<<
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] 
+2022-11-18 21:41:18 [INFO] --- maven-javadoc-plugin:3.4.1:javadoc (create-javadoc-jar) @ commons-lang3 ---
+2022-11-18 21:41:19 [INFO] Configuration changed, re-generating javadoc.
+2022-11-18 21:41:33 [INFO] 
+1 warning
+2022-11-18 21:41:33 [WARNING] Javadoc Warnings
+2022-11-18 21:41:33 [WARNING] javadoc: warning - URL https://docs.oracle.com/javase/8/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/19/ -- Update the command-line options to suppress this warning.
+2022-11-18 21:41:33 [INFO] 
+2022-11-18 21:41:33 [INFO] --- maven-javadoc-plugin:3.4.1:jar (create-javadoc-jar) @ commons-lang3 ---
+2022-11-18 21:41:33 [INFO] Configuration changed, re-generating javadoc.
+2022-11-18 21:41:52 [INFO] 
+1 warning
+2022-11-18 21:41:52 [WARNING] Javadoc Warnings
+2022-11-18 21:41:52 [WARNING] javadoc: warning - URL https://docs.oracle.com/javase/8/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/19/ -- Update the command-line options to suppress this warning.
+2022-11-18 21:41:53 [INFO] Building jar: /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-javadoc.jar
+2022-11-18 21:41:53 [WARNING] artifact org.apache.commons:commons-lang3:javadoc:javadoc:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:53 [INFO] 
+2022-11-18 21:41:53 [INFO] --- cyclonedx-maven-plugin:2.7.1:makeAggregateBom (default) @ commons-lang3 ---
+2022-11-18 21:41:53 [INFO] CycloneDX: Parameters
+2022-11-18 21:41:53 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:41:53 [INFO] schemaVersion          : 1.4
+2022-11-18 21:41:53 [INFO] includeBomSerialNumber : true
+2022-11-18 21:41:53 [INFO] includeCompileScope    : true
+2022-11-18 21:41:53 [INFO] includeProvidedScope   : true
+2022-11-18 21:41:53 [INFO] includeRuntimeScope    : true
+2022-11-18 21:41:53 [INFO] includeTestScope       : false
+2022-11-18 21:41:53 [INFO] includeSystemScope     : true
+2022-11-18 21:41:53 [INFO] includeLicenseText     : false
+2022-11-18 21:41:53 [INFO] outputReactorProjects  : true
+2022-11-18 21:41:53 [INFO] outputFormat           : all
+2022-11-18 21:41:53 [INFO] outputName             : commons-lang3-3.13.0-SNAPSHOT-bom
+2022-11-18 21:41:53 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:41:56 [INFO] CycloneDX: Creating BOM
+2022-11-18 21:41:56 [INFO] CycloneDX: Writing BOM (XML): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.xml
+2022-11-18 21:41:56 [INFO] CycloneDX: Validating BOM (XML): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.xml
+2022-11-18 21:41:56 [WARNING] artifact org.apache.commons:commons-lang3:xml:cyclonedx:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:56 [INFO] CycloneDX: Writing BOM (JSON): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.json
+2022-11-18 21:41:56 [INFO] CycloneDX: Validating BOM (JSON): /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.json
+2022-11-18 21:41:56 [WARNING] artifact org.apache.commons:commons-lang3:json:cyclonedx:3.13.0-SNAPSHOT already attached, replace previous instance
+2022-11-18 21:41:56 [INFO] 
+2022-11-18 21:41:56 [INFO] --- jacoco-maven-plugin:0.8.8:check (check) @ commons-lang3 ---
+2022-11-18 21:41:56 [INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+2022-11-18 21:41:56 [INFO] 
+2022-11-18 21:41:56 [INFO] <<< spdx-maven-plugin:0.5.5:createSPDX (build-spdx) < verify @ commons-lang3 <<<
+2022-11-18 21:41:56 [INFO] 
+2022-11-18 21:41:56 [INFO] 
+2022-11-18 21:41:56 [INFO] --- spdx-maven-plugin:0.5.5:createSPDX (build-spdx) @ commons-lang3 ---
+2022-11-18 21:41:57 [INFO] Creating SPDX File /Users/Stefan/git/commons-lang/target/site/Apache Commons Lang-3.13.0-SNAPSHOT.spdx.rdf.xml
+2022-11-18 21:42:04 [WARNING] Unable to map maven licenses to a declared license.  Using NOASSERTION
+2022-11-18 21:42:05 [WARNING] Could not determine the SPDX relationship type for dependency artifact ID commons-text scope provided
+2022-11-18 21:42:09 [INFO] 
+2022-11-18 21:42:09 [INFO] --- jacoco-maven-plugin:0.8.8:check (check) @ commons-lang3 ---
+2022-11-18 21:42:09 [INFO] Skipping JaCoCo execution because property jacoco.skip is set.
+2022-11-18 21:42:09 [INFO] 
+2022-11-18 21:42:09 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ commons-lang3 ---
+2022-11-18 21:42:09 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT.jar to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT.jar
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/pom.xml to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT.pom
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-tests.jar to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-tests.jar
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-sources.jar to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-sources.jar
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-test-sources.jar to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-test-sources.jar
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-javadoc.jar to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-javadoc.jar
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.xml to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-cyclonedx.xml
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/commons-lang3-3.13.0-SNAPSHOT-bom.json to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT-cyclonedx.json
+2022-11-18 21:42:10 [INFO] Installing /Users/Stefan/git/commons-lang/target/site/Apache Commons Lang-3.13.0-SNAPSHOT.spdx.rdf.xml to /Users/Stefan/.m2/repository/org/apache/commons/commons-lang3/3.13.0-SNAPSHOT/commons-lang3-3.13.0-SNAPSHOT.spdx.rdf.xml
+2022-11-18 21:42:10 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:42:10 [INFO] BUILD SUCCESS
+2022-11-18 21:42:10 [INFO] ------------------------------------------------------------------------
+2022-11-18 21:42:10 [INFO] Total time:  02:20 min
+2022-11-18 21:42:10 [INFO] Finished at: 2022-11-18T21:42:10+01:00
+2022-11-18 21:42:10 [INFO] ------------------------------------------------------------------------
