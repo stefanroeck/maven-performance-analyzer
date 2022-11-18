@@ -1,0 +1,18 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------< org.apache.maven:maven-archiver >-------------------
+[INFO] Building Apache Maven Archiver 3.6.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ maven-archiver ---
+[INFO] Deleting /Users/Stefan/git/maven-archiver/target
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.10.1:compile (default-cli) @ maven-archiver ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 5 source files to /Users/Stefan/git/maven-archiver/target/classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.879 s
+[INFO] Finished at: 2022-11-04T21:01:57+01:00
+[INFO] ------------------------------------------------------------------------

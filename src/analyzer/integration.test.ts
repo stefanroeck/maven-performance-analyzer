@@ -25,6 +25,18 @@ describe("parser and analyzer", () => {
         });
     })
 
+    it("log without timestamps", () => {
+        const content = readFileSync(__dirname + "/testfiles/logWithoutTimestamps.log", "utf8");
+
+        const result = analyze(parse(content));
+
+        expect(result.mavenPlugins.length).toEqual(0);
+
+        expect(result.modules).toHaveLength(1);
+        expect(result.modules).toEqual([{ "compiledSources": 5, "compiledTestSources": 0, "copiedResources": 0, "copiedTestResources": 0, "module": "maven-archiver" }]);
+
+    })
+
     function durationSumForPlugin(result: AnalyzerRow[], plugin: string): number {
         return result.filter(r => r.plugin === plugin).reduce((prev, curr) => prev + curr.duration, 0);
     }
