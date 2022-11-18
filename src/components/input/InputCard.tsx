@@ -5,10 +5,11 @@ import { InputSelector } from './InputSelector';
 
 interface Props {
     onAnalyze: (logContent: string) => void;
-    error: string | undefined;
+    infoText: string | undefined;
+    errorText: string | undefined;
 }
 
-export const InputCard: FunctionComponent<Props> = ({ onAnalyze, error }) => {
+export const InputCard: FunctionComponent<Props> = ({ onAnalyze, infoText, errorText }) => {
 
     const [logContent, setLogContent] = useState("");
     const subheader = <>
@@ -31,7 +32,8 @@ export const InputCard: FunctionComponent<Props> = ({ onAnalyze, error }) => {
                 sx={{ marginTop: "20px" }}
                 onClick={() => onAnalyze(logContent)}
             >Analyze</Button>
-            {error && <Alert severity="error" sx={{ marginTop: "20px" }}>{error}</Alert>}
+            {errorText && <Alert severity="error" sx={{ marginTop: "20px" }}>{errorText}</Alert>}
+            {infoText && <Alert severity="info" sx={{ marginTop: "20px" }}>{infoText}</Alert>}
         </ExpandableCard>
     );
 }

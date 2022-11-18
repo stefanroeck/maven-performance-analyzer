@@ -56,7 +56,7 @@ export const InputSelector: FC<Props> = ({ onSelected }) => {
             <TextField variant="outlined" minRows={4} maxRows={6} multiline fullWidth label="Maven Log File Output" value={textFieldInput} onChange={textFieldChange} inputProps={{ style: { fontSize: "small", fontFamily: "monospace" } }} />
         </Box>
         <Box hidden={inputType !== "file"}>
-            <Button variant="outlined" component="label" color="secondary" fullWidth>
+            <Button variant="outlined" component="label" color="primary" fullWidth>
                 Select File
                 <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
             </Button>

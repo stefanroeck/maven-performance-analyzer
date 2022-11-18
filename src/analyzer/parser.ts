@@ -70,8 +70,9 @@ export const parseMavenGoalExecutionLine = (line: string): MavenGoalExecutionLin
     }
 }
 
+export const supportedTimestampFormats = ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"];
 export const parseTimestamp = (timestamp: string): Dayjs => {
-    return dayjs(timestamp, ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"]);
+    return dayjs(timestamp, supportedTimestampFormats);
 }
 
 function collectCompiledResources(lines: string[]): SourceStatisticLine[] {
