@@ -1,13 +1,14 @@
-import { Button, Link, Typography } from '@mui/material';
+import { Alert, Button, Link, Typography } from '@mui/material';
 import { FunctionComponent, useState } from 'react';
 import { ExpandableCard } from '../cards/ExpandableCard';
 import { InputSelector } from './InputSelector';
 
 interface Props {
     onAnalyze: (logContent: string) => void;
+    error: string | undefined;
 }
 
-export const InputCard: FunctionComponent<Props> = ({ onAnalyze }) => {
+export const InputCard: FunctionComponent<Props> = ({ onAnalyze, error }) => {
 
     const [logContent, setLogContent] = useState("");
     const subheader = <>
@@ -30,6 +31,7 @@ export const InputCard: FunctionComponent<Props> = ({ onAnalyze }) => {
                 sx={{ marginTop: "20px" }}
                 onClick={() => onAnalyze(logContent)}
             >Analyze</Button>
+            {error && <Alert severity="error" sx={{ marginTop: "20px" }}>{error}</Alert>}
         </ExpandableCard>
     );
 }

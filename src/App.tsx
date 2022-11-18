@@ -11,6 +11,8 @@ import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard'
 
 function MainApp() {
   const [data, setData] = useState<AnalyzerResult | undefined>(undefined);
+  const showError = data !== undefined && data.modules.length === 0 && data.mavenPlugins.length === 0;
+  const error = showError ? "No metrics could be found. Please make sure to provide a valid maven log file with timestamp information as described above." : undefined;
 
   const onAnalyze = (logContent: string) => {
     const result = analyze(parse(logContent));
@@ -21,7 +23,7 @@ function MainApp() {
     <Box>
       <Header />
       <Box sx={{ margin: "20px" }}>
-        <InputCard onAnalyze={onAnalyze} />
+        <InputCard onAnalyze={onAnalyze} error={error} />
         {data && (data.mavenPlugins.length > 0) && <>
           <TimelineCard data={data.mavenPlugins} />
           <DurationPerModuleCard data={data.mavenPlugins} />
