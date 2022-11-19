@@ -30,7 +30,7 @@ export interface ParserResult {
     totalBuildTime?: number;
 }
 
-const mavenGoalExecutionRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*--- (.*):(.*):(.*) @ (.*) ---/
+const mavenGoalExecutionRegexp = /(?<date>[0-9- :,]*[0-9]) (\[(?<thread>[a-z-]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/
 const lineWithTimeStampRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*/
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
@@ -42,7 +42,7 @@ export const parse = (logContent: string): ParserResult => {
     return {
         lines: lines.filter(line => line.match(mavenGoalExecutionRegexp)).map((line, row) => {
             const result = parseMavenGoalExecutionLine(line);
-            return { ...result, row, thread: "main" };
+            return { ...result, row };
         }),
         compiledSources: collectCompiledResources(lines),
         lastTimestamp: findLastTimeStamp(lines),
@@ -62,11 +62,14 @@ export const parseMavenGoalExecutionLine = (line: string): MavenGoalExecutionLin
     if (!matches) {
         throw new Error("Line does not match regexp: " + line);
     }
+    //@ts-ignore
+    const { date, goal, plugin, thread, module } = matches.groups;
     return {
-        startTime: parseTimestamp(matches[1]),
-        plugin: matches[2],
-        goal: matches[4],
-        module: matches[5],
+        startTime: parseTimestamp(date),
+        plugin,
+        goal,
+        module,
+        thread,
     }
 }
 

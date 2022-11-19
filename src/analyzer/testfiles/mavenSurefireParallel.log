@@ -1,0 +1,807 @@
+2022-11-19 19:05:58,184 [main] [INFO] Scanning for projects...
+2022-11-19 19:05:58,694 [main] [INFO] ------------------------------------------------------------------------
+2022-11-19 19:05:58,694 [main] [INFO] Reactor Build Order:
+2022-11-19 19:05:58,694 [main] [INFO] 
+2022-11-19 19:05:58,696 [main] [INFO] Apache Maven Surefire                                              [pom]
+2022-11-19 19:05:58,697 [main] [INFO] Surefire Shared Utils                                              [jar]
+2022-11-19 19:05:58,697 [main] [INFO] SureFire Logger API                                                [jar]
+2022-11-19 19:05:58,697 [main] [INFO] SureFire API                                                       [jar]
+2022-11-19 19:05:58,698 [main] [INFO] Surefire Extensions API                                            [jar]
+2022-11-19 19:05:58,698 [main] [INFO] Surefire Extensions SPI                                            [jar]
+2022-11-19 19:05:58,698 [main] [INFO] SureFire Booter                                                    [jar]
+2022-11-19 19:05:58,698 [main] [INFO] Maven Surefire Test-Grouping Support                               [jar]
+2022-11-19 19:05:58,699 [main] [INFO] SureFire Providers                                                 [pom]
+2022-11-19 19:05:58,699 [main] [INFO] Shared JUnit3 Provider Code                                        [jar]
+2022-11-19 19:05:58,699 [main] [INFO] Shared Java 5 Provider Base                                        [jar]
+2022-11-19 19:05:58,700 [main] [INFO] Shared JUnit4 Provider Code                                        [jar]
+2022-11-19 19:05:58,700 [main] [INFO] Shared JUnit48 Provider Code                                       [jar]
+2022-11-19 19:05:58,700 [main] [INFO] SureFire JUnit Runner                                              [jar]
+2022-11-19 19:05:58,701 [main] [INFO] SureFire JUnit4 Runner                                             [jar]
+2022-11-19 19:05:58,701 [main] [INFO] Maven Surefire Common                                              [jar]
+2022-11-19 19:05:58,701 [main] [INFO] SureFire JUnitCore Runner                                          [jar]
+2022-11-19 19:05:58,701 [main] [INFO] SureFire JUnit Platform Runner                                     [jar]
+2022-11-19 19:05:58,702 [main] [INFO] SureFire TestNG Utils                                              [jar]
+2022-11-19 19:05:58,702 [main] [INFO] SureFire TestNG Runner                                             [jar]
+2022-11-19 19:05:58,702 [main] [INFO] ShadeFire JUnit3 Provider                                          [jar]
+2022-11-19 19:05:58,703 [main] [INFO] Surefire Report Parser                                             [jar]
+2022-11-19 19:05:58,703 [main] [INFO] Maven Surefire Plugin                                     [maven-plugin]
+2022-11-19 19:05:58,703 [main] [INFO] Maven Failsafe Plugin                                     [maven-plugin]
+2022-11-19 19:05:58,704 [main] [INFO] Maven Surefire Report Plugin                              [maven-plugin]
+2022-11-19 19:05:58,704 [main] [INFO] Maven Surefire Integration Tests                                   [jar]
+2022-11-19 19:05:58,718 [main] [INFO] 
+2022-11-19 19:05:58,719 [main] [INFO] Using the MultiThreadedBuilder implementation with a thread count of 4
+2022-11-19 19:05:58,726 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:05:58,727 [mvn-builder-surefire] [INFO] -----------------< org.apache.maven.surefire:surefire >-----------------
+2022-11-19 19:05:58,727 [mvn-builder-surefire] [INFO] Building Apache Maven Surefire 3.0.0-M8-SNAPSHOT                  [1/26]
+2022-11-19 19:05:58,728 [mvn-builder-surefire] [INFO] --------------------------------[ pom ]---------------------------------
+2022-11-19 19:05:58,954 [mvn-builder-surefire] [WARNING] *****************************************************************
+2022-11-19 19:05:58,954 [mvn-builder-surefire] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:05:58,954 [mvn-builder-surefire] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:05:58,954 [mvn-builder-surefire] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:05:58,955 [mvn-builder-surefire] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:05:58,955 [mvn-builder-surefire] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:05:58,955 [mvn-builder-surefire] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:05:58,955 [mvn-builder-surefire] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:05:58,956 [mvn-builder-surefire] [WARNING] *****************************************************************
+2022-11-19 19:05:58,956 [mvn-builder-surefire] [WARNING] The following plugins are not marked as thread-safe in Apache Maven Surefire:
+2022-11-19 19:05:58,956 [mvn-builder-surefire] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:05:58,956 [mvn-builder-surefire] [WARNING] 
+2022-11-19 19:05:58,956 [mvn-builder-surefire] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:05:58,957 [mvn-builder-surefire] [WARNING] *****************************************************************
+2022-11-19 19:05:59,089 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:05:59,091 [mvn-builder-surefire] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire ---
+2022-11-19 19:05:59,215 [mvn-builder-surefire] [INFO] Deleting /Users/Stefan/git/maven-surefire/target
+2022-11-19 19:05:59,223 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:05:59,224 [mvn-builder-surefire] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire ---
+2022-11-19 19:06:02,157 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:06:02,157 [mvn-builder-surefire] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire ---
+2022-11-19 19:06:02,707 [mvn-builder-surefire] [INFO] Adding ignore: module-info
+2022-11-19 19:06:02,812 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:06:02,813 [mvn-builder-surefire] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire ---
+2022-11-19 19:06:02,825 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:06:02,826 [mvn-builder-surefire] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire ---
+2022-11-19 19:06:02,850 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:06:02,851 [mvn-builder-surefire] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire ---
+2022-11-19 19:06:03,359 [mvn-builder-surefire] [INFO] Enabled default license matchers.
+2022-11-19 19:06:03,367 [mvn-builder-surefire] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:03,368 [mvn-builder-surefire] [INFO] Parsing exclusions from /Users/Stefan/git/maven-surefire/.gitignore
+2022-11-19 19:06:03,380 [mvn-builder-surefire] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:03,380 [mvn-builder-surefire] [INFO] 86 implicit excludes (use -debug for more details).
+2022-11-19 19:06:03,380 [mvn-builder-surefire] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:04,165 [mvn-builder-surefire] [INFO] 6 resources included (use -debug for more details)
+2022-11-19 19:06:04,578 [mvn-builder-surefire] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 6 licenses.
+2022-11-19 19:06:04,579 [mvn-builder-surefire] [INFO] 
+2022-11-19 19:06:04,580 [mvn-builder-surefire] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire ---
+2022-11-19 19:06:05,496 [mvn-builder-surefire] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:05,778 [mvn-builder-surefire] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:05,965 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:05,966 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:05,966 [mvn-builder-surefire-shared-utils] [INFO] ----------< org.apache.maven.surefire:surefire-shared-utils >-----------
+2022-11-19 19:06:05,966 [mvn-builder-surefire-logger-api] [INFO] -----------< org.apache.maven.surefire:surefire-logger-api >------------
+2022-11-19 19:06:05,966 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:05,966 [mvn-builder-surefire-logger-api] [INFO] Building SureFire Logger API 3.0.0-M8-SNAPSHOT                    [3/26]
+2022-11-19 19:06:05,966 [mvn-builder-surefire-shared-utils] [INFO] Building Surefire Shared Utils 3.0.0-M8-SNAPSHOT                  [2/26]
+2022-11-19 19:06:05,967 [mvn-builder-surefire-logger-api] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:05,967 [mvn-builder-surefire-shared-utils] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:05,966 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:05,967 [mvn-builder-surefire-grouper] [INFO] -------------< org.apache.maven.surefire:surefire-grouper >-------------
+2022-11-19 19:06:05,968 [mvn-builder-surefire-grouper] [INFO] Building Maven Surefire Test-Grouping Support 3.0.0-M8-SNAPSHOT   [4/26]
+2022-11-19 19:06:05,968 [mvn-builder-surefire-grouper] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:05,966 [mvn-builder-surefire-its] [INFO] ---------------< org.apache.maven.surefire:surefire-its >---------------
+2022-11-19 19:06:05,968 [mvn-builder-surefire-its] [INFO] Building Maven Surefire Integration Tests 3.0.0-M8-SNAPSHOT       [5/26]
+2022-11-19 19:06:05,969 [mvn-builder-surefire-its] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:06,059 [mvn-builder-surefire-shared-utils] [WARNING] *****************************************************************
+2022-11-19 19:06:06,059 [mvn-builder-surefire-shared-utils] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:06,060 [mvn-builder-surefire-shared-utils] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:06,060 [mvn-builder-surefire-shared-utils] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:06,061 [mvn-builder-surefire-shared-utils] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] *****************************************************************
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] The following plugins are not marked as thread-safe in Surefire Shared Utils:
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] 
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] *****************************************************************
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:06,063 [mvn-builder-surefire-its] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING] *****************************************************************
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING] The following plugins are not marked as thread-safe in Maven Surefire Integration Tests:
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING] 
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:06,064 [mvn-builder-surefire-its] [WARNING] *****************************************************************
+2022-11-19 19:06:06,062 [mvn-builder-surefire-shared-utils] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:06,066 [mvn-builder-surefire-shared-utils] [WARNING] *****************************************************************
+2022-11-19 19:06:06,061 [mvn-builder-surefire-logger-api] [WARNING] *****************************************************************
+2022-11-19 19:06:06,067 [mvn-builder-surefire-logger-api] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:06,067 [mvn-builder-surefire-logger-api] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:06,067 [mvn-builder-surefire-logger-api] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:06,067 [mvn-builder-surefire-logger-api] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] *****************************************************************
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] The following plugins are not marked as thread-safe in SureFire Logger API:
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] 
+2022-11-19 19:06:06,068 [mvn-builder-surefire-logger-api] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:06,069 [mvn-builder-surefire-logger-api] [WARNING] *****************************************************************
+2022-11-19 19:06:06,061 [mvn-builder-surefire-grouper] [WARNING] *****************************************************************
+2022-11-19 19:06:06,071 [mvn-builder-surefire-grouper] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:06,072 [mvn-builder-surefire-grouper] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:06,072 [mvn-builder-surefire-grouper] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:06,072 [mvn-builder-surefire-grouper] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] *****************************************************************
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] The following plugins are not marked as thread-safe in Maven Surefire Test-Grouping Support:
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING]   org.javacc.plugin:javacc-maven-plugin:3.0.3
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] 
+2022-11-19 19:06:06,073 [mvn-builder-surefire-grouper] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:06,074 [mvn-builder-surefire-grouper] [WARNING] *****************************************************************
+2022-11-19 19:06:06,082 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:06,082 [mvn-builder-surefire-grouper] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-grouper ---
+2022-11-19 19:06:06,087 [mvn-builder-surefire-grouper] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-grouper/target
+2022-11-19 19:06:06,116 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:06,117 [mvn-builder-surefire-grouper] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-grouper ---
+2022-11-19 19:06:06,153 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:06,153 [mvn-builder-surefire-logger-api] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-logger-api ---
+2022-11-19 19:06:06,153 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:06,156 [mvn-builder-surefire-shared-utils] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-shared-utils ---
+2022-11-19 19:06:06,165 [mvn-builder-surefire-logger-api] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-logger-api/target
+2022-11-19 19:06:06,166 [mvn-builder-surefire-shared-utils] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-shared-utils/target
+2022-11-19 19:06:06,172 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:06,175 [mvn-builder-surefire-shared-utils] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-shared-utils ---
+2022-11-19 19:06:06,190 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:06,190 [mvn-builder-surefire-logger-api] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-logger-api ---
+2022-11-19 19:06:06,619 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:06,620 [mvn-builder-surefire-its] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-its ---
+2022-11-19 19:06:06,622 [mvn-builder-surefire-its] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-its/target
+2022-11-19 19:06:07,837 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:07,837 [mvn-builder-surefire-shared-utils] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-shared-utils ---
+2022-11-19 19:06:07,861 [mvn-builder-surefire-shared-utils] [INFO] Adding ignore: module-info
+2022-11-19 19:06:08,234 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:08,235 [mvn-builder-surefire-shared-utils] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-shared-utils ---
+2022-11-19 19:06:08,237 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:08,237 [mvn-builder-surefire-shared-utils] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-shared-utils ---
+2022-11-19 19:06:08,240 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:08,240 [mvn-builder-surefire-shared-utils] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-shared-utils ---
+2022-11-19 19:06:08,252 [mvn-builder-surefire-shared-utils] [INFO] Enabled default license matchers.
+2022-11-19 19:06:08,254 [mvn-builder-surefire-shared-utils] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:08,255 [mvn-builder-surefire-shared-utils] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:08,256 [mvn-builder-surefire-shared-utils] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:08,257 [mvn-builder-surefire-shared-utils] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:08,258 [mvn-builder-surefire-shared-utils] [INFO] 1 resources included (use -debug for more details)
+2022-11-19 19:06:08,402 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:08,402 [mvn-builder-surefire-shared-utils] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 1 licenses.
+2022-11-19 19:06:08,402 [mvn-builder-surefire-logger-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-logger-api ---
+2022-11-19 19:06:08,406 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:08,407 [mvn-builder-surefire-shared-utils] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-shared-utils ---
+2022-11-19 19:06:08,420 [mvn-builder-surefire-logger-api] [INFO] Adding ignore: module-info
+2022-11-19 19:06:08,423 [mvn-builder-surefire-shared-utils] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:08,426 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:08,427 [mvn-builder-surefire-grouper] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-grouper ---
+2022-11-19 19:06:08,431 [mvn-builder-surefire-grouper] [INFO] Adding ignore: module-info
+2022-11-19 19:06:08,432 [mvn-builder-surefire-shared-utils] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:08,451 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:08,452 [mvn-builder-surefire-its] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-its ---
+2022-11-19 19:06:08,694 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:08,695 [mvn-builder-surefire-grouper] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-grouper ---
+2022-11-19 19:06:08,706 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:08,711 [mvn-builder-surefire-grouper] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-grouper ---
+2022-11-19 19:06:08,713 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:08,713 [mvn-builder-surefire-grouper] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-grouper ---
+2022-11-19 19:06:08,724 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:08,727 [mvn-builder-surefire-logger-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-logger-api ---
+2022-11-19 19:06:08,730 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:08,730 [mvn-builder-surefire-logger-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-logger-api ---
+2022-11-19 19:06:08,733 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:08,733 [mvn-builder-surefire-logger-api] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-logger-api ---
+2022-11-19 19:06:08,778 [mvn-builder-surefire-grouper] [INFO] Enabled default license matchers.
+2022-11-19 19:06:08,779 [mvn-builder-surefire-grouper] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:08,780 [mvn-builder-surefire-grouper] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:08,780 [mvn-builder-surefire-grouper] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:08,780 [mvn-builder-surefire-grouper] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:08,782 [mvn-builder-surefire-logger-api] [INFO] Enabled default license matchers.
+2022-11-19 19:06:08,787 [mvn-builder-surefire-logger-api] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:08,784 [mvn-builder-surefire-grouper] [INFO] 12 resources included (use -debug for more details)
+2022-11-19 19:06:08,788 [mvn-builder-surefire-logger-api] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:08,789 [mvn-builder-surefire-logger-api] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:08,789 [mvn-builder-surefire-logger-api] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:08,814 [mvn-builder-surefire-logger-api] [INFO] 11 resources included (use -debug for more details)
+2022-11-19 19:06:08,953 [mvn-builder-surefire-grouper] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 12 licenses.
+2022-11-19 19:06:08,954 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:08,954 [mvn-builder-surefire-grouper] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ surefire-grouper ---
+2022-11-19 19:06:08,964 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:08,965 [mvn-builder-surefire-shared-utils] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-shared-utils ---
+2022-11-19 19:06:08,981 [mvn-builder-surefire-logger-api] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 11 licenses.
+2022-11-19 19:06:08,982 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:08,982 [mvn-builder-surefire-logger-api] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ surefire-logger-api ---
+2022-11-19 19:06:09,265 [mvn-builder-surefire-grouper] [INFO] jacoco.agent set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/surefire-grouper/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:09,265 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:09,266 [mvn-builder-surefire-logger-api] [INFO] jacoco.agent set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/surefire-logger-api/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:09,266 [mvn-builder-surefire-grouper] [INFO] --- javacc-maven-plugin:3.0.3:javacc (javacc) @ surefire-grouper ---
+2022-11-19 19:06:09,266 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:09,267 [mvn-builder-surefire-logger-api] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-logger-api ---
+2022-11-19 19:06:09,636 [mvn-builder-surefire-logger-api] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:09,650 [mvn-builder-surefire-logger-api] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:09,660 [mvn-builder-surefire-shared-utils] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:09,661 [mvn-builder-surefire-shared-utils] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:09,662 [mvn-builder-surefire-shared-utils] [INFO] skip non existing resourceDirectory /Users/Stefan/git/maven-surefire/surefire-shared-utils/src/main/resources
+2022-11-19 19:06:09,697 [mvn-builder-surefire-shared-utils] [INFO] Copying 3 resources
+2022-11-19 19:06:09,744 [mvn-builder-surefire-shared-utils] [INFO] 
+2022-11-19 19:06:09,744 [mvn-builder-surefire-shared-utils] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-shared-utils ---
+2022-11-19 19:06:09,746 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:09,746 [mvn-builder-surefire-logger-api] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-logger-api ---
+2022-11-19 19:06:10,646 [mvn-builder-surefire-logger-api] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:10,647 [mvn-builder-surefire-logger-api] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:10,647 [mvn-builder-surefire-logger-api] [INFO] skip non existing resourceDirectory /Users/Stefan/git/maven-surefire/surefire-logger-api/src/main/resources
+2022-11-19 19:06:10,648 [mvn-builder-surefire-logger-api] [INFO] Copying 3 resources
+2022-11-19 19:06:10,653 [mvn-builder-surefire-logger-api] [INFO] 
+2022-11-19 19:06:10,653 [mvn-builder-surefire-logger-api] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-logger-api ---
+Java Compiler Compiler Version 7.0.12 (Parser Generator)
+(type "javacc" with no arguments for help)
+Reading from file /Users/Stefan/git/maven-surefire/surefire-grouper/src/main/javacc/category-expression.jj . . .
+2022-11-19 19:06:10,874 [mvn-builder-surefire-shared-utils] [INFO] No sources to compile
+2022-11-19 19:06:10,915 [mvn-builder-surefire-logger-api] [INFO] Changes detected - recompiling the module!
+2022-11-19 19:06:10,922 [mvn-builder-surefire-logger-api] [INFO] Compiling 6 source files to /Users/Stefan/git/maven-surefire/surefire-logger-api/target/classes
+File "TokenMgrError.java" does not exist.  Will create one.
+File "ParseException.java" does not exist.  Will create one.
+File "Token.java" does not exist.  Will create one.
+File "SimpleCharStream.java" does not exist.  Will create one.
+Parser generated with 0 errors and 3 warnings.
+2022-11-19 19:06:11,030 [mvn-builder-surefire-grouper] [INFO] Processed 1 grammar
+2022-11-19 19:06:11,031 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:11,031 [mvn-builder-surefire-grouper] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-grouper ---
+2022-11-19 19:06:11,036 [mvn-builder-surefire-grouper] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:11,050 [mvn-builder-surefire-grouper] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:11,251 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:11,251 [mvn-builder-surefire-grouper] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-grouper ---
+2022-11-19 19:06:11,254 [mvn-builder-surefire-grouper] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:11,254 [mvn-builder-surefire-grouper] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:11,254 [mvn-builder-surefire-grouper] [INFO] skip non existing resourceDirectory /Users/Stefan/git/maven-surefire/surefire-grouper/src/main/resources
+2022-11-19 19:06:11,256 [mvn-builder-surefire-grouper] [INFO] Copying 3 resources
+2022-11-19 19:06:11,285 [mvn-builder-surefire-grouper] [INFO] 
+2022-11-19 19:06:11,286 [mvn-builder-surefire-grouper] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-grouper ---
+2022-11-19 19:06:11,297 [mvn-builder-surefire-grouper] [INFO] Changes detected - recompiling the module!
+2022-11-19 19:06:11,299 [mvn-builder-surefire-grouper] [INFO] Compiling 13 source files to /Users/Stefan/git/maven-surefire/surefire-grouper/target/classes
+2022-11-19 19:06:14,165 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:14,166 [mvn-builder-surefire-its] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-its ---
+2022-11-19 19:06:14,283 [mvn-builder-surefire-its] [INFO] Adding ignore: module-info
+2022-11-19 19:06:14,666 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:14,666 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:14,667 [mvn-builder-surefire-report-parser] [INFO] ----------< org.apache.maven.surefire:surefire-report-parser >----------
+2022-11-19 19:06:14,667 [mvn-builder-surefire-api] [INFO] ---------------< org.apache.maven.surefire:surefire-api >---------------
+2022-11-19 19:06:14,667 [mvn-builder-surefire-report-parser] [INFO] Building Surefire Report Parser 3.0.0-M8-SNAPSHOT                 [6/26]
+2022-11-19 19:06:14,667 [mvn-builder-surefire-api] [INFO] Building SureFire API 3.0.0-M8-SNAPSHOT                           [7/26]
+2022-11-19 19:06:14,667 [mvn-builder-surefire-report-parser] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:14,667 [mvn-builder-surefire-api] [INFO] --------------------------------[ jar ]---------------------------------
+2022-11-19 19:06:14,671 [mvn-builder-surefire-api] [WARNING] *****************************************************************
+2022-11-19 19:06:14,671 [mvn-builder-surefire-report-parser] [WARNING] *****************************************************************
+2022-11-19 19:06:14,671 [mvn-builder-surefire-api] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:14,671 [mvn-builder-surefire-report-parser] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:14,671 [mvn-builder-surefire-api] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:14,671 [mvn-builder-surefire-report-parser] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:14,671 [mvn-builder-surefire-api] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] *****************************************************************
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] *****************************************************************
+2022-11-19 19:06:14,672 [mvn-builder-surefire-api] [WARNING] The following plugins are not marked as thread-safe in SureFire API:
+2022-11-19 19:06:14,672 [mvn-builder-surefire-report-parser] [WARNING] The following plugins are not marked as thread-safe in Surefire Report Parser:
+2022-11-19 19:06:14,673 [mvn-builder-surefire-api] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:14,673 [mvn-builder-surefire-report-parser] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:14,673 [mvn-builder-surefire-api] [WARNING] 
+2022-11-19 19:06:14,673 [mvn-builder-surefire-report-parser] [WARNING] 
+2022-11-19 19:06:14,673 [mvn-builder-surefire-api] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:14,673 [mvn-builder-surefire-report-parser] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:14,673 [mvn-builder-surefire-api] [WARNING] *****************************************************************
+2022-11-19 19:06:14,673 [mvn-builder-surefire-report-parser] [WARNING] *****************************************************************
+2022-11-19 19:06:14,678 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:14,678 [mvn-builder-surefire-report-parser] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-report-parser ---
+2022-11-19 19:06:14,680 [mvn-builder-surefire-report-parser] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-report-parser/target
+2022-11-19 19:06:14,690 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:14,690 [mvn-builder-surefire-report-parser] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-report-parser ---
+2022-11-19 19:06:14,721 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:14,722 [mvn-builder-surefire-api] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-api ---
+2022-11-19 19:06:14,723 [mvn-builder-surefire-api] [INFO] Deleting /Users/Stefan/git/maven-surefire/surefire-api/target
+2022-11-19 19:06:14,729 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:14,730 [mvn-builder-surefire-api] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ surefire-api ---
+2022-11-19 19:06:15,222 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:15,222 [mvn-builder-surefire-its] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-its ---
+2022-11-19 19:06:15,224 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:15,225 [mvn-builder-surefire-its] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-its ---
+2022-11-19 19:06:15,226 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:15,226 [mvn-builder-surefire-its] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-its ---
+2022-11-19 19:06:15,232 [mvn-builder-surefire-its] [INFO] Enabled default license matchers.
+2022-11-19 19:06:15,232 [mvn-builder-surefire-its] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:15,232 [mvn-builder-surefire-its] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:15,233 [mvn-builder-surefire-its] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:15,233 [mvn-builder-surefire-its] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:15,784 [mvn-builder-surefire-its] [INFO] 228 resources included (use -debug for more details)
+2022-11-19 19:06:16,060 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,061 [mvn-builder-surefire-report-parser] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-report-parser ---
+2022-11-19 19:06:16,078 [mvn-builder-surefire-report-parser] [INFO] Adding ignore: module-info
+2022-11-19 19:06:16,311 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,312 [mvn-builder-surefire-report-parser] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-report-parser ---
+2022-11-19 19:06:16,314 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,314 [mvn-builder-surefire-report-parser] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-report-parser ---
+2022-11-19 19:06:16,316 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,317 [mvn-builder-surefire-report-parser] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-report-parser ---
+2022-11-19 19:06:16,323 [mvn-builder-surefire-report-parser] [INFO] Enabled default license matchers.
+2022-11-19 19:06:16,323 [mvn-builder-surefire-report-parser] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:16,323 [mvn-builder-surefire-report-parser] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:16,323 [mvn-builder-surefire-report-parser] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:16,323 [mvn-builder-surefire-report-parser] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:16,329 [mvn-builder-surefire-report-parser] [INFO] 10 resources included (use -debug for more details)
+2022-11-19 19:06:16,359 [mvn-builder-surefire-its] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 228 licenses.
+2022-11-19 19:06:16,360 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:16,360 [mvn-builder-surefire-its] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ surefire-its ---
+2022-11-19 19:06:16,422 [mvn-builder-surefire-its] [INFO] argLine set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/surefire-its/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:16,423 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:16,424 [mvn-builder-surefire-its] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-its ---
+2022-11-19 19:06:16,441 [mvn-builder-surefire-its] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:16,447 [mvn-builder-surefire-its] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:16,523 [mvn-builder-surefire-report-parser] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 10 licenses.
+2022-11-19 19:06:16,524 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,524 [mvn-builder-surefire-report-parser] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ surefire-report-parser ---
+2022-11-19 19:06:16,528 [mvn-builder-surefire-report-parser] [INFO] jacoco.agent set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/surefire-report-parser/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:16,528 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,528 [mvn-builder-surefire-report-parser] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-report-parser ---
+2022-11-19 19:06:16,542 [mvn-builder-surefire-report-parser] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:16,567 [mvn-builder-surefire-report-parser] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:16,784 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,784 [mvn-builder-surefire-report-parser] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-report-parser ---
+2022-11-19 19:06:16,787 [mvn-builder-surefire-report-parser] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:16,788 [mvn-builder-surefire-report-parser] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:16,788 [mvn-builder-surefire-report-parser] [INFO] skip non existing resourceDirectory /Users/Stefan/git/maven-surefire/surefire-report-parser/src/main/resources
+2022-11-19 19:06:16,796 [mvn-builder-surefire-report-parser] [INFO] Copying 3 resources
+2022-11-19 19:06:16,800 [mvn-builder-surefire-report-parser] [INFO] 
+2022-11-19 19:06:16,800 [mvn-builder-surefire-report-parser] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-report-parser ---
+2022-11-19 19:06:16,808 [mvn-builder-surefire-report-parser] [INFO] Changes detected - recompiling the module!
+2022-11-19 19:06:16,810 [mvn-builder-surefire-report-parser] [INFO] Compiling 4 source files to /Users/Stefan/git/maven-surefire/surefire-report-parser/target/classes
+2022-11-19 19:06:17,516 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:17,516 [mvn-builder-surefire-its] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-its ---
+2022-11-19 19:06:17,522 [mvn-builder-surefire-its] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:17,522 [mvn-builder-surefire-its] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:17,993 [mvn-builder-surefire-its] [INFO] Copying 980 resources to /Users/Stefan/git/maven-surefire/surefire-its/target/classes
+2022-11-19 19:06:18,632 [mvn-builder-surefire-api] [INFO] There are 6 errors reported by Checkstyle 6.18 with config/maven_checks.xml ruleset.
+2022-11-19 19:06:18,670 [mvn-builder-surefire-api] [INFO] Ignored 6 errors, 0 violation remaining.
+2022-11-19 19:06:18,677 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:18,677 [mvn-builder-surefire-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ surefire-api ---
+2022-11-19 19:06:18,685 [mvn-builder-surefire-api] [INFO] Adding ignore: module-info
+2022-11-19 19:06:19,026 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,027 [mvn-builder-surefire-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire-api ---
+2022-11-19 19:06:19,033 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,033 [mvn-builder-surefire-api] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ surefire-api ---
+2022-11-19 19:06:19,036 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,037 [mvn-builder-surefire-api] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ surefire-api ---
+2022-11-19 19:06:19,043 [mvn-builder-surefire-api] [INFO] Enabled default license matchers.
+2022-11-19 19:06:19,044 [mvn-builder-surefire-api] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:19,044 [mvn-builder-surefire-api] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:19,045 [mvn-builder-surefire-api] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:19,045 [mvn-builder-surefire-api] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:19,064 [mvn-builder-surefire-api] [INFO] 142 resources included (use -debug for more details)
+2022-11-19 19:06:19,407 [mvn-builder-surefire-api] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 142 licenses.
+2022-11-19 19:06:19,407 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,407 [mvn-builder-surefire-api] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ surefire-api ---
+2022-11-19 19:06:19,410 [mvn-builder-surefire-api] [INFO] jacoco.agent set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/surefire-api/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:19,410 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,410 [mvn-builder-surefire-api] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ surefire-api ---
+2022-11-19 19:06:19,413 [mvn-builder-surefire-api] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:19,425 [mvn-builder-surefire-api] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:19,805 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,805 [mvn-builder-surefire-api] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ surefire-api ---
+2022-11-19 19:06:19,810 [mvn-builder-surefire-api] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:19,810 [mvn-builder-surefire-api] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:19,811 [mvn-builder-surefire-api] [INFO] skip non existing resourceDirectory /Users/Stefan/git/maven-surefire/surefire-api/src/main/resources
+2022-11-19 19:06:19,813 [mvn-builder-surefire-api] [INFO] Copying 3 resources
+2022-11-19 19:06:19,817 [mvn-builder-surefire-api] [INFO] 
+2022-11-19 19:06:19,817 [mvn-builder-surefire-api] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-api ---
+2022-11-19 19:06:19,846 [mvn-builder-surefire-api] [INFO] Changes detected - recompiling the module!
+2022-11-19 19:06:19,850 [mvn-builder-surefire-api] [INFO] Compiling 111 source files to /Users/Stefan/git/maven-surefire/surefire-api/target/classes
+2022-11-19 19:06:21,032 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:21,032 [mvn-builder-maven-surefire-report-plugin] [INFO] -------< org.apache.maven.plugins:maven-surefire-report-plugin >--------
+2022-11-19 19:06:21,032 [mvn-builder-maven-surefire-report-plugin] [INFO] Building Maven Surefire Report Plugin 3.0.0-M8-SNAPSHOT           [8/26]
+2022-11-19 19:06:21,033 [mvn-builder-maven-surefire-report-plugin] [INFO] ----------------------------[ maven-plugin ]----------------------------
+2022-11-19 19:06:21,055 [mvn-builder-maven-surefire-report-plugin] [WARNING] *****************************************************************
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * Your build is requesting parallel execution, but this         *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * project contains the following plugin(s) that have goals not  *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * marked as thread-safe to support parallel execution.          *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * While this /may/ work fine, please look for plugin updates    *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * and/or request plugins be made thread-safe.                   *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * If reporting an issue, report it against the plugin in        *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] * question, not against Apache Maven.                           *
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] *****************************************************************
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING] The following plugins are not marked as thread-safe in Maven Surefire Report Plugin:
+2022-11-19 19:06:21,056 [mvn-builder-maven-surefire-report-plugin] [WARNING]   org.apache.rat:apache-rat-plugin:0.13
+2022-11-19 19:06:21,057 [mvn-builder-maven-surefire-report-plugin] [WARNING] 
+2022-11-19 19:06:21,057 [mvn-builder-maven-surefire-report-plugin] [WARNING] Enable debug to see precisely which goals are not marked as thread-safe.
+2022-11-19 19:06:21,057 [mvn-builder-maven-surefire-report-plugin] [WARNING] *****************************************************************
+2022-11-19 19:06:21,513 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:21,513 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:21,529 [mvn-builder-maven-surefire-report-plugin] [INFO] Deleting /Users/Stefan/git/maven-surefire/maven-surefire-report-plugin/target
+2022-11-19 19:06:21,553 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:21,553 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-checkstyle-plugin:3.0.0:check (checkstyle-check) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:22,619 [mvn-builder-surefire-its] [INFO] Copying 1 resource to /Users/Stefan/git/maven-surefire/surefire-its/target/private
+2022-11-19 19:06:22,663 [mvn-builder-surefire-its] [INFO] Copying 3 resources
+2022-11-19 19:06:22,666 [mvn-builder-surefire-its] [INFO] 
+2022-11-19 19:06:22,667 [mvn-builder-surefire-its] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-its ---
+2022-11-19 19:06:22,673 [mvn-builder-surefire-its] [INFO] No sources to compile
+2022-11-19 19:06:22,782 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:22,783 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-bytecode-version) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:23,011 [mvn-builder-maven-surefire-report-plugin] [INFO] Adding ignore: module-info
+2022-11-19 19:06:23,756 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:23,756 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:23,758 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:23,758 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-java-version) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:23,760 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:23,761 [mvn-builder-maven-surefire-report-plugin] [INFO] --- apache-rat-plugin:0.13:check (rat-check) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:23,805 [mvn-builder-maven-surefire-report-plugin] [INFO] Enabled default license matchers.
+2022-11-19 19:06:23,805 [mvn-builder-maven-surefire-report-plugin] [INFO] Will parse SCM ignores for exclusions...
+2022-11-19 19:06:23,805 [mvn-builder-maven-surefire-report-plugin] [INFO] Finished adding exclusions from SCM ignore files.
+2022-11-19 19:06:23,806 [mvn-builder-maven-surefire-report-plugin] [INFO] 62 implicit excludes (use -debug for more details).
+2022-11-19 19:06:23,806 [mvn-builder-maven-surefire-report-plugin] [INFO] 28 explicit excludes (use -debug for more details).
+2022-11-19 19:06:23,821 [mvn-builder-maven-surefire-report-plugin] [INFO] 34 resources included (use -debug for more details)
+2022-11-19 19:06:23,948 [mvn-builder-maven-surefire-report-plugin] [INFO] Rat check: Summary over all files. Unapproved: 0, unknown: 0, generated: 0, approved: 30 licenses.
+2022-11-19 19:06:23,948 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:23,949 [mvn-builder-maven-surefire-report-plugin] [INFO] --- jacoco-maven-plugin:0.8.8:prepare-agent (jacoco-agent) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:23,951 [mvn-builder-maven-surefire-report-plugin] [INFO] jacoco.agent set to -javaagent:/Users/Stefan/.m2/repository/org/jacoco/org.jacoco.agent/0.8.8/org.jacoco.agent-0.8.8-runtime.jar=destfile=/Users/Stefan/git/maven-surefire/maven-surefire-report-plugin/target/jacoco.exec,includes=**/failsafe/*:**/failsafe/**/*:**/surefire/*:**/surefire/**/*,excludes=**/HelpMojo.class:**/shadefire/**/*:org/jacoco/**/*:com/vladium/emma/rt/*
+2022-11-19 19:06:23,952 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:23,952 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-plugin-plugin:3.6.4:helpmojo (help-mojo) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:24,896 [mvn-builder-maven-surefire-report-plugin] [INFO] Using 'UTF-8' encoding to read mojo source files.
+2022-11-19 19:06:25,608 [mvn-builder-surefire-api] [INFO] -------------------------------------------------------------
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] COMPILATION ERROR : 
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [INFO] -------------------------------------------------------------
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[24,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[24] error: static import only from classes and interfaces
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[25,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[25] error: static import only from classes and interfaces
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[49,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[49] error: static import only from classes and interfaces
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[29,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,609 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[29] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[30,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[30] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[31,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[31] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[32,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[32] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[33,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[33] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[22,45] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[23,48] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[29,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[29] error: static import only from classes and interfaces
+2022-11-19 19:06:25,610 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[30,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[30] error: static import only from classes and interfaces
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[31,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[31] error: static import only from classes and interfaces
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[32,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[32] error: static import only from classes and interfaces
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[33,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[33] error: static import only from classes and interfaces
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[381,25] error: cannot find symbol
+  symbol:   class MatchPatterns
+  location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[390,16] error: cannot find symbol
+  symbol:   class MatchPatterns
+  location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[24,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[24] error: static import only from classes and interfaces
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/filter/SpecificTestClassFilter.java:[25,48] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,611 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[25,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[25] error: static import only from classes and interfaces
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[26,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[26] error: static import only from classes and interfaces
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[43,16] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class ClassMethod
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[43,37] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class ClassMethod
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[84,15] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class Command
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[674,17] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class AbstractStreamDecoder<M,MT,ST>.BufferedStream
+  where M,MT,ST are type-variables:
+    M extends Object declared in class AbstractStreamDecoder
+    MT extends Enum<MT> declared in class AbstractStreamDecoder
+    ST extends Enum<ST> declared in class AbstractStreamDecoder
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[310,19] error: cannot find symbol
+  symbol:   variable StringUtils
+  location: class ResolvedTest
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[334,13] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class ResolvedTest
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[351,15] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class ResolvedTest
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[351,50] error: cannot find symbol
+  symbol:   variable PATTERN_HANDLER_SUFFIX
+  location: class ResolvedTest
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[397,28] error: cannot find symbol
+  symbol:   method from(String[])
+  location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:25,612 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[449,23] error: cannot find symbol
+  symbol:   method matchPath(String,String)
+  location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[473,27] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[474,68] error: cannot find symbol
+  symbol:   variable PATTERN_HANDLER_SUFFIX
+  location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[72,17] error: cannot find symbol
+  symbol:   method isNotBlank(String)
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[74,39] error: cannot find symbol
+  symbol:   method split(String,String)
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[199,26] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[199,54] error: cannot find symbol
+  symbol:   method isBlank(String)
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[249,13] error: cannot find symbol
+  symbol:   method isNotBlank(String)
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[385,44] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[386,27] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[390,47] error: cannot find symbol
+  symbol:   variable PATTERN_HANDLER_SUFFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[392,45] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[411,34] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[411,66] error: cannot find symbol
+  symbol:   variable PATTERN_HANDLER_SUFFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[417,19] error: cannot find symbol
+  symbol:   variable REGEX_HANDLER_PREFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,613 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[418,34] error: cannot find symbol
+  symbol:   variable PATTERN_HANDLER_SUFFIX
+  location: class TestListResolver
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[442,30] error: cannot find symbol
+  symbol:   method split(String,String)
+  location: class TestListResolver
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[92,17] error: cannot find symbol
+  symbol:   method isNotEmpty(String)
+  location: class LegacyPojoStackTraceWriter
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/filter/SpecificTestClassFilter.java:[71,21] error: cannot find symbol
+  symbol:   variable SelectorUtils
+  location: class SpecificTestClassFilter
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[56,35] error: cannot find symbol
+  symbol:   variable JAVA_17
+  location: class ObjectUtils
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[56,15] error: cannot find symbol
+  symbol:   variable JAVA_RECENT
+  location: class ObjectUtils
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/DefaultDirectoryScanner.java:[112,53] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/DefaultDirectoryScanner.java:[113,61] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [INFO] 69 errors 
+2022-11-19 19:06:25,614 [mvn-builder-surefire-api] [INFO] -------------------------------------------------------------
+2022-11-19 19:06:26,448 [mvn-builder-maven-surefire-report-plugin] [INFO] java-annotations mojo extractor found 0 mojo descriptor.
+2022-11-19 19:06:26,506 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:26,512 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:26,516 [mvn-builder-maven-surefire-report-plugin] [INFO] Preparing remote bundle org.apache:apache-jar-resource-bundle:1.4
+2022-11-19 19:06:26,523 [mvn-builder-maven-surefire-report-plugin] [INFO] Copying 3 resources from 1 bundle.
+2022-11-19 19:06:28,064 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:28,065 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:28,069 [mvn-builder-maven-surefire-report-plugin] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+2022-11-19 19:06:28,069 [mvn-builder-maven-surefire-report-plugin] [INFO] Using 'UTF-8' encoding to copy filtered properties files.
+2022-11-19 19:06:28,070 [mvn-builder-maven-surefire-report-plugin] [INFO] Copying 5 resources
+2022-11-19 19:06:28,076 [mvn-builder-maven-surefire-report-plugin] [INFO] Copying 3 resources
+2022-11-19 19:06:28,079 [mvn-builder-maven-surefire-report-plugin] [INFO] 
+2022-11-19 19:06:28,079 [mvn-builder-maven-surefire-report-plugin] [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ maven-surefire-report-plugin ---
+2022-11-19 19:06:28,085 [mvn-builder-maven-surefire-report-plugin] [INFO] Changes detected - recompiling the module!
+2022-11-19 19:06:28,088 [mvn-builder-maven-surefire-report-plugin] [INFO] Compiling 8 source files to /Users/Stefan/git/maven-surefire/maven-surefire-report-plugin/target/classes
+2022-11-19 19:06:32,148 [main] [INFO] ------------------------------------------------------------------------
+2022-11-19 19:06:32,149 [main] [INFO] Reactor Summary for Apache Maven Surefire 3.0.0-M8-SNAPSHOT:
+2022-11-19 19:06:32,149 [main] [INFO] 
+2022-11-19 19:06:32,149 [main] [INFO] Apache Maven Surefire .............................. SUCCESS [  7.239 s]
+2022-11-19 19:06:32,149 [main] [INFO] Surefire Shared Utils .............................. SUCCESS [  4.909 s]
+2022-11-19 19:06:32,150 [main] [INFO] SureFire Logger API ................................ SUCCESS [  8.701 s]
+2022-11-19 19:06:32,150 [main] [INFO] SureFire API ....................................... FAILURE [ 10.949 s]
+2022-11-19 19:06:32,150 [main] [INFO] Surefire Extensions API ............................ SKIPPED
+2022-11-19 19:06:32,150 [main] [INFO] Surefire Extensions SPI ............................ SKIPPED
+2022-11-19 19:06:32,150 [main] [INFO] SureFire Booter .................................... SKIPPED
+2022-11-19 19:06:32,150 [main] [INFO] Maven Surefire Test-Grouping Support ............... SUCCESS [ 10.571 s]
+2022-11-19 19:06:32,150 [main] [INFO] SureFire Providers ................................. SKIPPED
+2022-11-19 19:06:32,150 [main] [INFO] Shared JUnit3 Provider Code ........................ SKIPPED
+2022-11-19 19:06:32,150 [main] [INFO] Shared Java 5 Provider Base ........................ SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] Shared JUnit4 Provider Code ........................ SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] Shared JUnit48 Provider Code ....................... SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire JUnit Runner .............................. SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire JUnit4 Runner ............................. SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] Maven Surefire Common .............................. SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire JUnitCore Runner .......................... SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire JUnit Platform Runner ..................... SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire TestNG Utils .............................. SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] SureFire TestNG Runner ............................. SKIPPED
+2022-11-19 19:06:32,151 [main] [INFO] ShadeFire JUnit3 Provider .......................... SKIPPED
+2022-11-19 19:06:32,152 [main] [INFO] Surefire Report Parser ............................. SUCCESS [  6.366 s]
+2022-11-19 19:06:32,152 [main] [INFO] Maven Surefire Plugin .............................. SKIPPED
+2022-11-19 19:06:32,152 [main] [INFO] Maven Failsafe Plugin .............................. SKIPPED
+2022-11-19 19:06:32,152 [main] [INFO] Maven Surefire Report Plugin ....................... SUCCESS [ 11.116 s]
+2022-11-19 19:06:32,152 [main] [INFO] Maven Surefire Integration Tests ................... SUCCESS [ 16.707 s]
+2022-11-19 19:06:32,152 [main] [INFO] ------------------------------------------------------------------------
+2022-11-19 19:06:32,152 [main] [INFO] BUILD FAILURE
+2022-11-19 19:06:32,152 [main] [INFO] ------------------------------------------------------------------------
+2022-11-19 19:06:32,152 [main] [INFO] Total time:  34.008 s (Wall Clock)
+2022-11-19 19:06:32,153 [main] [INFO] Finished at: 2022-11-19T19:06:32+01:00
+2022-11-19 19:06:32,153 [main] [INFO] ------------------------------------------------------------------------
+2022-11-19 19:06:32,157 [main] [ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.10.1:compile (default-compile) on project surefire-api: Compilation failure: Compilation failure: 
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[24,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[24] error: static import only from classes and interfaces
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[25,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[25] error: static import only from classes and interfaces
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[49,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[49] error: static import only from classes and interfaces
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[29,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[29] error: static import only from classes and interfaces
+2022-11-19 19:06:32,157 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[30,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[30] error: static import only from classes and interfaces
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[31,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[31] error: static import only from classes and interfaces
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[32,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[32] error: static import only from classes and interfaces
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[33,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,158 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[33] error: static import only from classes and interfaces
+2022-11-19 19:06:32,159 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[22,45] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,159 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[23,48] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,159 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[29,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,159 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[29] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[30,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[30] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[31,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[31] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[32,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[32] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[33,55] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[33] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[381,25] error: cannot find symbol
+2022-11-19 19:06:32,160 [main] [ERROR]   symbol:   class MatchPatterns
+2022-11-19 19:06:32,160 [main] [ERROR]   location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[390,16] error: cannot find symbol
+2022-11-19 19:06:32,160 [main] [ERROR]   symbol:   class MatchPatterns
+2022-11-19 19:06:32,160 [main] [ERROR]   location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[24,52] error: package org.apache.maven.surefire.shared.utils does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[24] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/filter/SpecificTestClassFilter.java:[25,48] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[25,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[25] error: static import only from classes and interfaces
+2022-11-19 19:06:32,160 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[26,52] error: package org.apache.maven.surefire.shared.lang3 does not exist
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[26] error: static import only from classes and interfaces
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[43,16] error: cannot find symbol
+2022-11-19 19:06:32,161 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,161 [main] [ERROR]   location: class ClassMethod
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ClassMethod.java:[43,37] error: cannot find symbol
+2022-11-19 19:06:32,161 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,161 [main] [ERROR]   location: class ClassMethod
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/booter/Command.java:[84,15] error: cannot find symbol
+2022-11-19 19:06:32,161 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,161 [main] [ERROR]   location: class Command
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/stream/AbstractStreamDecoder.java:[674,17] error: cannot find symbol
+2022-11-19 19:06:32,161 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,161 [main] [ERROR]   location: class AbstractStreamDecoder<M,MT,ST>.BufferedStream
+2022-11-19 19:06:32,161 [main] [ERROR]   where M,MT,ST are type-variables:
+2022-11-19 19:06:32,161 [main] [ERROR]     M extends Object declared in class AbstractStreamDecoder
+2022-11-19 19:06:32,161 [main] [ERROR]     MT extends Enum<MT> declared in class AbstractStreamDecoder
+2022-11-19 19:06:32,161 [main] [ERROR]     ST extends Enum<ST> declared in class AbstractStreamDecoder
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[310,19] error: cannot find symbol
+2022-11-19 19:06:32,161 [main] [ERROR]   symbol:   variable StringUtils
+2022-11-19 19:06:32,161 [main] [ERROR]   location: class ResolvedTest
+2022-11-19 19:06:32,161 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[334,13] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest
+2022-11-19 19:06:32,162 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[351,15] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest
+2022-11-19 19:06:32,162 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[351,50] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   variable PATTERN_HANDLER_SUFFIX
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest
+2022-11-19 19:06:32,162 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[397,28] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   method from(String[])
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest.ClassMatcher
+2022-11-19 19:06:32,162 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[449,23] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   method matchPath(String,String)
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:32,162 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[473,27] error: cannot find symbol
+2022-11-19 19:06:32,162 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,162 [main] [ERROR]   location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/ResolvedTest.java:[474,68] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   variable PATTERN_HANDLER_SUFFIX
+2022-11-19 19:06:32,163 [main] [ERROR]   location: class ResolvedTest.MethodMatcher
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[72,17] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   method isNotBlank(String)
+2022-11-19 19:06:32,163 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[74,39] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   method split(String,String)
+2022-11-19 19:06:32,163 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[199,26] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,163 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[199,54] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   method isBlank(String)
+2022-11-19 19:06:32,163 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,163 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[249,13] error: cannot find symbol
+2022-11-19 19:06:32,163 [main] [ERROR]   symbol:   method isNotBlank(String)
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[385,44] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[386,27] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[390,47] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable PATTERN_HANDLER_SUFFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[392,45] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[411,34] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,164 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[411,66] error: cannot find symbol
+2022-11-19 19:06:32,164 [main] [ERROR]   symbol:   variable PATTERN_HANDLER_SUFFIX
+2022-11-19 19:06:32,164 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[417,19] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   variable REGEX_HANDLER_PREFIX
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[418,34] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   variable PATTERN_HANDLER_SUFFIX
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/testset/TestListResolver.java:[442,30] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   method split(String,String)
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class TestListResolver
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/report/LegacyPojoStackTraceWriter.java:[92,17] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   method isNotEmpty(String)
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class LegacyPojoStackTraceWriter
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/filter/SpecificTestClassFilter.java:[71,21] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   variable SelectorUtils
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class SpecificTestClassFilter
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[56,35] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   variable JAVA_17
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class ObjectUtils
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/internal/ObjectUtils.java:[56,15] error: cannot find symbol
+2022-11-19 19:06:32,165 [main] [ERROR]   symbol:   variable JAVA_RECENT
+2022-11-19 19:06:32,165 [main] [ERROR]   location: class ObjectUtils
+2022-11-19 19:06:32,165 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/DefaultDirectoryScanner.java:[112,53] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,166 [main] [ERROR] /Users/Stefan/git/maven-surefire/surefire-api/src/main/java/org/apache/maven/surefire/api/util/DefaultDirectoryScanner.java:[113,61] error: package org.apache.maven.surefire.shared.utils.io does not exist
+2022-11-19 19:06:32,166 [main] [ERROR] -> [Help 1]
+2022-11-19 19:06:32,166 [main] [ERROR] 
+2022-11-19 19:06:32,166 [main] [ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+2022-11-19 19:06:32,166 [main] [ERROR] Re-run Maven using the -X switch to enable full debug logging.
+2022-11-19 19:06:32,166 [main] [ERROR] 
+2022-11-19 19:06:32,166 [main] [ERROR] For more information about the errors and possible solutions, please read the following articles:
+2022-11-19 19:06:32,166 [main] [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+2022-11-19 19:06:32,166 [main] [ERROR] 
+2022-11-19 19:06:32,166 [main] [ERROR] After correcting the problems, you can resume the build with the command
+2022-11-19 19:06:32,167 [main] [ERROR]   mvn <args> -rf :surefire-api

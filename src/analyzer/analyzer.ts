@@ -1,4 +1,5 @@
 import { Dayjs } from "dayjs";
+import { dedup } from "../utils/arrayUtils";
 import { ParserResult, SourceStatisticLine } from "./parser";
 
 export interface Location {
@@ -10,7 +11,7 @@ export interface AnalyzerRow {
     module: string;
     plugin: string;
     duration: number;
-    thread?: string;
+    thread: string;
     location?: Location;
 }
 
@@ -28,7 +29,8 @@ export interface AnalyzerResult {
 }
 
 export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult): AnalyzerResult => {
-    // const threads = lines.map(r => r.thread).filter((f, idx, arr) => arr.indexOf(f) === idx);
+    const threads = dedup(lines.map(r => r.thread || "main"));
+
     const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
@@ -54,16 +56,23 @@ export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult)
         }
         return arr;
     }, [] as AnalyzedModule[]);
-    return {
-        mavenPlugins: lines.map(({ module, plugin, startTime, thread }, idx) => {
-            const nextStartTime: Dayjs | undefined = idx < lines.length - 1 ? lines[idx + 1].startTime : lastTimestamp;
+
+
+    const mavenPlugins = threads.flatMap(thread => {
+        const threadLines = lines.filter(l => l.thread === undefined || l.thread === thread);
+        return threadLines.map(({ module, plugin, startTime }, idx) => {
+            const nextStartTime: Dayjs | undefined = idx < threadLines.length - 1 ? threadLines[idx + 1].startTime : lastTimestamp;
             return {
                 thread,
                 module,
                 plugin,
                 duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
-            }
-        }),
+            };
+        });
+    });
+
+    return {
+        mavenPlugins,
         modules: aggregatedCompiledSources,
     };
 

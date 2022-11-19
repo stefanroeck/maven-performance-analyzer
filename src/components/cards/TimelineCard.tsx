@@ -4,6 +4,7 @@ import { Bar, BarDatum } from '@nivo/bar';
 import { AnalyzerRow } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { axisWithDuration, basicBarCharProps, diagramHeight, muiDistinctColors } from './diagramUtils';
+import { dedup } from '../../utils/arrayUtils';
 
 interface Props {
     data: AnalyzerRow[];
@@ -16,23 +17,22 @@ export interface DataWithDuration extends BarDatum {
 
 export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
 
-    const barData = data.reduce((arr, curr) => {
-        const existing = arr.find(e => e.thread === curr.thread || curr.thread === undefined);
+    const barData = data.reduce((arr, { thread, module, duration }) => {
+        const existing = arr.find(e => e.thread === thread);
         if (existing) {
-            if (existing[curr.module] && typeof existing[curr.module] === "number") {
-                (existing[curr.module] as number) += curr.duration;
+            if (existing[module]) {
+                (existing[module] as number) += duration;
             } else {
-                existing[curr.module] = curr.duration;
+                existing[module] = duration;
             }
         } else {
-            arr.push({ thread: "main", [curr.module]: curr.duration });
+            arr.push({ thread, [module]: duration });
         }
         return arr;
     }, [] as DataWithDuration[]);
 
-    // map to strings (except "module" and remove duplicates
-    const keys = barData.flatMap(f => Object.keys(f).filter(f => f !== "module" && f !== "thread"))
-        .filter((f, idx, arr) => arr.indexOf(f) === idx);
+    const keys = dedup(data.flatMap(f => f.module));
+
 
     const width = Math.max(keys.length * 100, document.body.clientWidth - 80);
 
