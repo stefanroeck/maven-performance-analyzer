@@ -59,6 +59,10 @@ describe("parser and analyzer", () => {
 
         const threads = dedup(result.mavenPlugins.flatMap(p => p.thread));
         expect(threads).toEqual(expect.arrayContaining(["mvn-builder-surefire", "mvn-builder-surefire-api", "mvn-builder-surefire-report-parser"]));
+        const duration = result.mavenPlugins
+            .filter(r => r.plugin === "maven-resources-plugin" && r.thread === "mvn-builder-surefire-grouper")
+            .reduce((prev, curr) => prev + curr.duration, 0);
+        expect(duration).toEqual(35);
     })
 
     function durationSumForPlugin(result: AnalyzerRow[], plugin: string): number {
