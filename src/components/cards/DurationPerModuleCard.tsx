@@ -4,15 +4,21 @@ import { BarDatum, ResponsiveBar } from '@nivo/bar';
 import { AnalyzerRow } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiDistinctColors } from './diagramUtils';
+import { dedup } from '../../utils/arrayUtils';
 
 interface Props {
     data: AnalyzerRow[];
 }
 
 
-export interface DataWithDuration extends BarDatum {
+interface DataWithDuration extends BarDatum {
     module: string;
     [key: string]: number | string;
+    totalDuration: number;
+}
+
+const totalDuration = (data: AnalyzerRow[], module: string) => {
+    return data.filter(d => d.module === module).reduce((sum, d) => sum + d.duration, 0);
 }
 
 export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
@@ -26,14 +32,15 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
         if (existing) {
             Object.assign(existing, curr);
         } else {
-            arr.push(curr);
+            arr.push({ ...curr, totalDuration: totalDuration(data, curr.module) });
         }
         return arr;
     }, [] as DataWithDuration[]);
 
-    // map to strings (except "module" and remove duplicates
-    const keys = barData.flatMap(f => Object.keys(f).filter(f => f !== "module")).filter((f, idx, arr) => arr.indexOf(f) === idx);
-    const modules = barData.flatMap(f => f.module).filter((f, idx, arr) => arr.indexOf(f) === idx);
+    // extract relevant keys and remove duplicates
+    const keys = dedup(barData.flatMap(f => Object.keys(f).filter(f => f !== "module" && f !== "totalDuration")));
+    const modules = dedup(barData.flatMap(f => f.module));
+    barData.sort((a, b) => a.totalDuration - b.totalDuration);
 
     return (
         <ExpandableCard title="Maven Goals per Module" subheader="Execution time per module and maven plugin">
