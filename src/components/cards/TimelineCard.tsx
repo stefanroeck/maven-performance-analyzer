@@ -1,62 +1,156 @@
 import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
-import { Bar, BarDatum } from '@nivo/bar';
 import { AnalyzerRow } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
-import { axisWithDuration, basicBarCharProps, diagramHeight, muiDistinctColors } from './diagramUtils';
+import { diagramHeight, muiDistinctColors } from './diagramUtils';
+import ReactApexChart, { Props as ApexChartProps } from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
+import dayjs, { Dayjs } from 'dayjs';
 import { dedup } from '../../utils/arrayUtils';
+import { grey } from '@mui/material/colors';
 
 interface Props {
     data: AnalyzerRow[];
 }
 
-export interface DataWithDuration extends BarDatum {
+interface DataWithDuration {
     thread: string;
-    [key: string]: number | string;
+    module: string;
+    startTime: Dayjs;
+    duration: number;
 }
 
 export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
 
-    const barData = data.reduce((arr, { thread, module, duration }) => {
-        const existing = arr.find(e => e.thread === thread);
+    const barData = data.reduce((arr, { thread, module, duration, startTime }) => {
+        const existing = arr.find(e => e.thread === thread && e.module === module);
         if (existing) {
-            if (existing[module]) {
-                (existing[module] as number) += duration;
-            } else {
-                existing[module] = duration;
+            existing.duration += duration;
+            if (startTime < existing.startTime) {
+                existing.startTime = startTime;
             }
         } else {
-            arr.push({ thread, [module]: duration });
+            arr.push({
+                thread,
+                module,
+                startTime,
+                duration,
+            }
+            );
         }
         return arr;
     }, [] as DataWithDuration[]);
 
-    const keys = dedup(data.flatMap(f => f.module));
+    const threads = dedup(barData.map(b => b.thread));
+    const modules = dedup(barData.map(b => b.module));
+    const multiThreaded = threads.length > 1;
 
+    const series: ApexChartProps["series"] = [{
+        data: barData.map((b, idx) => {
+            return {
+                fillColor: muiDistinctColors[idx % muiDistinctColors.length],
+                x: multiThreaded ? b.thread : b.module,
+                y: [
+                    b.startTime.toDate().getTime(),
+                    b.startTime.add(b.duration, "milliseconds").toDate().getTime(),
+                ]
+            }
+        }),
+    }];
 
-    const width = Math.max(keys.length * 100, document.body.clientWidth - 80);
+    const options: ApexOptions = {
+        chart: {
+            zoom: {
+                enabled: false
+            },
+            toolbar: {
+                show: false,
+            }
+        },
+        fill: {
+            opacity: 1.0,
+        },
+        plotOptions: {
+            bar: {
+                horizontal: true,
+                dataLabels: {
+                    orientation: "horizontal",
+                    hideOverflowingLabels: false,
+                    position: 'bottom',
+                }
+            }
+        },
+        dataLabels: {
+            enabled: true,
+            textAnchor: 'start',
+            offsetX: -35,
+            style: {
+                colors: ["black"],
+                fontWeight: "normal",
+            },
+            formatter: function (val, opts) {
+                const label = modules[opts.dataPointIndex];
+                if (Array.isArray(val)) {
+                    const from = dayjs(val[0]);
+                    const to = dayjs(val[1]);
+                    const millis = to.diff(from, 'ms');
+                    return `${label} - ${new Date(millis).toISOString().substring(14, 19)}`;
+                }
+                return label + "";
+            },
+        },
+        xaxis: {
+            type: 'datetime'
 
+        },
+        yaxis: {
+            show: true
+        },
+        grid: {
+            row: {
+                colors: [grey[50], '#fff'],
+            },
+            xaxis: {
+                lines: {
+                    show: true
+                }
+            },
+            yaxis: {
+                lines: {
+                    show: false
+                }
+            },
+        }, states: {
+            hover: {
+                filter: {
+                    type: "none",
+                }
+            },
+            active: {
+                filter: {
+                    type: "none",
+                }
+            }
+        },
+        tooltip: {
+            x: {
+                format: "HH:mm:ss",
+            }
+
+        }
+    };
+
+    const height = diagramHeight(multiThreaded ? threads.length : modules.length, "normal");
     return (
-        <ExpandableCard initiallyExpanded={true} title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents one thread for multi-threaded builds. Make sure that the threadName is part of the log file.">
+        <ExpandableCard initiallyExpanded={true} title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents a module. In case of multithreaded builds, multiple modules are built concurrently. Only works, if the thread name is part of the log file." >
+            <ReactApexChart
+                options={options}
+                series={series}
+                type="rangeBar"
+                height={height}
+            />
             <Box sx={{ overflowX: "auto" }}>
-                <Bar
-                    height={diagramHeight(barData.length, "large")}
-                    width={width}
-                    {...basicBarCharProps}
-                    data={barData}
-                    keys={keys}
-                    label={"id"}
-                    indexBy="thread"
-                    layout="horizontal"
-                    labelSkipWidth={60}
-                    colors={muiDistinctColors}
-                    colorBy="id"
-                    enableGridX={true}
-                    enableGridY={false}
-                    axisBottom={axisWithDuration}
-                />
             </Box>
-        </ExpandableCard>
-
+        </ExpandableCard >
     );
 }

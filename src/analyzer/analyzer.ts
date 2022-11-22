@@ -1,6 +1,6 @@
 import { Dayjs } from "dayjs";
 import { dedup } from "../utils/arrayUtils";
-import { ParserResult, SourceStatisticLine } from "./parser";
+import { ParserResult } from "./parser";
 
 export interface Location {
     startLine: number;
@@ -10,6 +10,7 @@ export interface Location {
 export interface AnalyzerRow {
     module: string;
     plugin: string;
+    startTime: Dayjs;
     duration: number;
     thread: string;
     location?: Location;
@@ -66,6 +67,7 @@ export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult)
                 thread,
                 module,
                 plugin,
+                startTime,
                 duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
             };
         });

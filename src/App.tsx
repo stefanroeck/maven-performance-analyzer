@@ -6,8 +6,8 @@ import { Header } from './Header';
 import { DurationPerModuleCard } from './components/cards/DurationPerModuleCard';
 import { parse, supportedTimestampFormats } from './analyzer/parser';
 import { analyze, AnalyzerResult } from './analyzer/analyzer';
-import { TimelineCard } from './components/cards/TimelineCard';
 import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard';
+import { TimelineCard } from './components/cards/TimelineCard';
 
 function MainApp() {
   const [data, setData] = useState<AnalyzerResult | undefined>(undefined);
