@@ -142,7 +142,7 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
 
     const height = diagramHeight(multiThreaded ? threads.length : modules.length, "normal");
     return (
-        <ExpandableCard initiallyExpanded={true} title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents a module. In case of multithreaded builds, multiple modules are built concurrently. Only works, if the thread name is part of the log file." >
+        <ExpandableCard expanded={true} title="Timeline" subheader="Visualizes execution order and dependencies for multi-module builds. Each line represents a module. In case of multithreaded builds, multiple modules are built concurrently. Only works, if the thread name is part of the log file." >
             <ReactApexChart
                 options={options}
                 series={series}
