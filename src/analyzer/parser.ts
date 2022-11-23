@@ -30,7 +30,7 @@ export interface ParserResult {
     totalBuildTime?: number;
 }
 
-const mavenGoalExecutionRegexp = /(?<date>[0-9- :,]*[0-9]) (\[(?<thread>[a-z-]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/
+const mavenGoalExecutionRegexp = /(?<date>[0-9- :,]*[0-9]) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/
 const lineWithTimeStampRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*/
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/

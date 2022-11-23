@@ -48,6 +48,18 @@ describe("parser", () => {
         expect(result.plugin).toEqual("maven-enforcer-plugin");
     })
 
+    it("parses line with another thread name", () => {
+        const line = "2022-11-23 08:05:26,619 [BuilderThread 0] [INFO] --- maven-enforcer-plugin:3.0.0:enforce (enforce-maven-version) @ surefire ---";
+
+        const result = parseMavenGoalExecutionLine(line);
+
+        expect(result.thread).toEqual("BuilderThread 0");
+        expect(result.startTime.format()).toEqual(dayjs("2022-11-23T07:05:26.619Z").format());
+        expect(result.goal).toEqual("enforce (enforce-maven-version)");
+        expect(result.module).toEqual("surefire");
+        expect(result.plugin).toEqual("maven-enforcer-plugin");
+    })
+
     it("parses timestamp", () => {
         expect(parseTimestamp("2022-11-08 11:00:00,500").format()).toEqual(dayjs("2022-11-08T10:00:00.500Z").format());
         expect(parseTimestamp("2022-11-08 11:00:00").format()).toEqual(dayjs("2022-11-08T10:00:00.000Z").format());
