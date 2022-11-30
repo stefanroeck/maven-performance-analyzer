@@ -60,6 +60,18 @@ describe("parser", () => {
         expect(result.plugin).toEqual("maven-enforcer-plugin");
     })
 
+    it("parses jenkins build line", () => {
+        const line = "[2022-11-29T20:07:14.966Z] [INFO] --- jacoco-maven-plugin:0.8.7:prepare-agent (default) @ module-one ---";
+
+        const result = parseMavenGoalExecutionLine(line);
+
+        expect(result.thread).toBeUndefined();
+        expect(result.startTime.format()).toEqual(dayjs("2022-11-29T19:07:14.966Z").format());
+        expect(result.goal).toEqual("prepare-agent (default)");
+        expect(result.module).toEqual("module-one");
+        expect(result.plugin).toEqual("jacoco-maven-plugin");
+    })
+
     it("parses timestamp", () => {
         expect(parseTimestamp("2022-11-08 11:00:00,500").format()).toEqual(dayjs("2022-11-08T10:00:00.500Z").format());
         expect(parseTimestamp("2022-11-08 11:00:00").format()).toEqual(dayjs("2022-11-08T10:00:00.000Z").format());
