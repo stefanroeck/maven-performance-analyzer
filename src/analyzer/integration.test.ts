@@ -79,6 +79,41 @@ describe("parser and analyzer", () => {
         expect(duration).toEqual(35);
     })
 
+    it("surefire log", () => {
+        const content = readFileSync(__dirname + "/testfiles/guavaBuildJenkinsTimestamps.log", "utf8");
+
+        const result = analyze(parse(content));
+
+        expect(result.mavenPlugins.length).toEqual(77);
+        expect(dedup(result.mavenPlugins.map(r => r.thread))).toEqual(["main"]);
+
+        expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(109646);
+        expect(durationSumForPlugin(result.mavenPlugins, "maven-surefire-plugin")).toEqual(1499363);
+
+        expect(result.modules).toHaveLength(4);
+        expect(result.modules[0]).toEqual({
+            module: "guava",
+            compiledSources: 619,
+            compiledTestSources: 0,
+            copiedResources: 0,
+            copiedTestResources: 0,
+        });
+        expect(result.modules[1]).toEqual({
+            module: "guava-testlib",
+            compiledSources: 292,
+            compiledTestSources: 37,
+            copiedResources: 0,
+            copiedTestResources: 0,
+        });
+        expect(result.modules[2]).toEqual({
+            module: "guava-tests",
+            compiledSources: 0,
+            compiledTestSources: 631,
+            copiedResources: 0,
+            copiedTestResources: 6,
+        });
+    })
+
     function durationSumForPlugin(result: AnalyzerRow[], plugin: string): number {
         return result.filter(r => r.plugin === plugin).reduce((prev, curr) => prev + curr.duration, 0);
     }
