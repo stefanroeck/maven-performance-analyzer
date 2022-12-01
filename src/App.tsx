@@ -1,9 +1,9 @@
 import { Box } from '@mui/system';
 import { useState } from 'react';
-import { TotalDurationCard } from './components/cards/TotalDurationCard';
+import { MavenPluginsCard } from './components/cards/MavenPluginsCard';
 import { InputCard } from './components/input/InputCard';
 import { Header } from './Header';
-import { DurationPerModuleCard } from './components/cards/DurationPerModuleCard';
+import { ModulesCard } from './components/cards/ModulesCard';
 import { parse } from './analyzer/parser';
 import { analyze, AnalyzerResult } from './analyzer/analyzer';
 import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard';
@@ -30,8 +30,8 @@ function MainApp() {
         <InputCard onAnalyze={onAnalyze} infoText={infoText} errorText={errorText} />
         {data && (data.mavenPlugins.length > 0) && <>
           <TimelineCard data={data.mavenPlugins} />
-          <DurationPerModuleCard data={data.mavenPlugins} />
-          <TotalDurationCard data={data.mavenPlugins} />
+          <ModulesCard data={data.mavenPlugins} />
+          <MavenPluginsCard data={data.mavenPlugins} />
         </>}
         {data && (data.modules.length > 0) && <>
           <SourceCodeTreeMapCard data={data.modules} />

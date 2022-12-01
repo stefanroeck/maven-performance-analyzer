@@ -1,7 +1,7 @@
 import { ComputedNode } from '@nivo/treemap';
 import { linearGradientDef, patternLinesDef, SvgDefsAndFill } from '@nivo/core';
 import { TreeMapNode } from './sourceCodeTreeMapLabel';
-import { amber, blue, blueGrey, brown, deepOrange, grey, indigo, lightGreen, lime, orange, pink, purple, red, teal, yellow } from '@mui/material/colors';
+import { amber, blue, blueGrey, brown, deepOrange, indigo, lightGreen, lime, orange, pink, purple, red, teal, yellow } from '@mui/material/colors';
 
 
 const treeMapColors = [

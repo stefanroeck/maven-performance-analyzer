@@ -21,7 +21,7 @@ const totalDuration = (data: AnalyzerRow[], module: string) => {
     return data.filter(d => d.module === module).reduce((sum, d) => sum + d.duration, 0);
 }
 
-export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
+export const ModulesCard: FunctionComponent<Props> = ({ data }) => {
     const barData: DataWithDuration[] = data.map(row => {
         return {
             module: row.module,
@@ -43,7 +43,7 @@ export const DurationPerModuleCard: FunctionComponent<Props> = ({ data }) => {
     barData.sort((a, b) => a.totalDuration - b.totalDuration);
 
     return (
-        <ExpandableCard title="Maven Goals per Module" subheader="Execution time per module and maven plugin">
+        <ExpandableCard title="Modules" subheader="Execution time per module and maven build plugin">
             <Box sx={{ height: `${diagramHeight(modules.length)}px` }}>
                 <ResponsiveBar
                     {...basicBarCharProps}

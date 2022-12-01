@@ -14,7 +14,7 @@ export interface DataWithDuration extends BarDatum {
     duration: number;
 }
 
-export const TotalDurationCard: FunctionComponent<Props> = ({ data }) => {
+export const MavenPluginsCard: FunctionComponent<Props> = ({ data }) => {
 
     const barData = data.reduce((arr, curr) => {
         const existing = arr.find(e => e.label === curr.plugin);
@@ -27,7 +27,7 @@ export const TotalDurationCard: FunctionComponent<Props> = ({ data }) => {
     }, [] as DataWithDuration[]);
 
     return (
-        <ExpandableCard title="Maven Goals" subheader="Total execution time per maven plugin">
+        <ExpandableCard title="Maven Build Plugins" subheader="Aggregated execution time per maven build plugin">
             <Box sx={{ height: `${diagramHeight(barData.length)}px` }}>
                 <ResponsiveBar
                     {...basicBarCharProps}
