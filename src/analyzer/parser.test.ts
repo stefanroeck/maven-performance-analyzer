@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { parseMavenGoalExecutionLine, parseTimestamp } from "./parser"
+import { findLastTimeStamp, parseMavenGoalExecutionLine, parseTimestamp } from "./parser"
 
 describe("parser", () => {
 
@@ -75,5 +75,15 @@ describe("parser", () => {
     it("parses timestamp", () => {
         expect(parseTimestamp("2022-11-08 11:00:00,500").format()).toEqual(dayjs("2022-11-08T10:00:00.500Z").format());
         expect(parseTimestamp("2022-11-08 11:00:00").format()).toEqual(dayjs("2022-11-08T10:00:00.000Z").format());
+    })
+
+    it("find last timestamp short date", () => {
+        const lastLine = "2022-11-18 21:42:10 [INFO] Total time:  02:20 min";
+        expect(findLastTimeStamp([lastLine])?.format()).toEqual(dayjs("2022-11-18T20:42:10.000Z").format());
+    })
+
+    it("find last timestamp jenkins date", () => {
+        const lastLine = "[2022-11-30T18:05:53.848Z] [INFO] Total time:  12:52 min";
+        expect(findLastTimeStamp([lastLine])?.format()).toEqual(dayjs("2022-11-30T17:05:53.848Z").format());
     })
 })

@@ -30,8 +30,11 @@ export interface ParserResult {
     totalBuildTime?: number;
 }
 
-const mavenGoalExecutionRegexp = /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/
-const lineWithTimeStampRegexp = /(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},?\d{0,3}).*/
+const timestampThreadLevelRegexp = /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\]/;
+const mavenGoalRegexp = /.*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
+const mavenGoalExecutionRegexp = new RegExp(timestampThreadLevelRegexp.source + mavenGoalRegexp.source);
+const totalTimeRegexp = / Total time:  ([0-9:]+)/;
+const lastLineWithTimeStampAndTotalTimeRegexp = new RegExp(timestampThreadLevelRegexp.source + totalTimeRegexp.source);
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
 const anyPluginRegexp = /.*---.*@.*---/
@@ -49,10 +52,10 @@ export const parse = (logContent: string): ParserResult => {
     }
 }
 
-const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
-    const lastLineWithTimeStamp = lines.reverse().find(line => line.match(lineWithTimeStampRegexp) !== null);
-    const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(lineWithTimeStampRegexp)?.[1] : undefined;
-    return timestamp ? dayjs(timestamp) : undefined;
+export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
+    const lastLineWithTimeStamp = lines.reverse().find(line => line.match(lastLineWithTimeStampAndTotalTimeRegexp) !== null);
+    const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(lastLineWithTimeStampAndTotalTimeRegexp)?.groups?.date : undefined;
+    return timestamp ? parseTimestamp(timestamp) : undefined;
 }
 
 // Parses sth like this
