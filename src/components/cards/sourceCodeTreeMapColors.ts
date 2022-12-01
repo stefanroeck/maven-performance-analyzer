@@ -45,7 +45,6 @@ export const defsForAllColors = treeMapColors.flatMap((color, idx) => {
         linearGradientDef(`${idx}_mainSrc`, [
             { offset: 0, color: color[200] },
             { offset: 100, color: color[200] },
-
         ]),
         patternLinesDef(`${idx}_testSrc`, {
             "spacing": 10,
@@ -55,16 +54,15 @@ export const defsForAllColors = treeMapColors.flatMap((color, idx) => {
             "color": color[100],
         }),
         linearGradientDef(`${idx}_mainRes`, [
-            { offset: 0, color: grey[300] },
-            { offset: 100, color: grey[300] },
-
+            { offset: 0, color: color[200] },
+            { offset: 100, color: color[200] },
         ]),
         patternLinesDef(`${idx}_testRes`, {
             "spacing": 10,
             "rotation": 45,
             "lineWidth": 6,
-            "background": grey[300],
-            "color": grey[200],
+            "background": color[200],
+            "color": color[100],
         }),
     ];
 });

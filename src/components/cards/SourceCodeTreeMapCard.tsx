@@ -1,35 +1,67 @@
-import { Box } from '@mui/material';
-import { FunctionComponent } from 'react';
+import { Box, FormControlLabel, Switch } from '@mui/material';
+import { FunctionComponent, useState } from 'react';
 import { AnalyzedModule } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { diagramHeight } from './diagramUtils';
 import { ResponsiveTreeMap } from '@nivo/treemap';
 import { grey } from '@mui/material/colors';
-import { labelForTreeMapNode, TreeMapNode } from './sourceCodeTreeMapLabel';
+import { labelForTreeMapNode, SourceCodeType, TreeMapNode } from './sourceCodeTreeMapLabel';
 import { colorFor, defsForAllColors, fillsForAllColors } from './sourceCodeTreeMapColors';
 
 interface Props {
     data: AnalyzedModule[];
 }
 
+type ShowFilesType = "source" | "resource";
+
+interface ShowFiles {
+    type: ShowFilesType;
+    label: string;
+    value: (module: AnalyzedModule) => number;
+    testValue: (module: AnalyzedModule) => number;
+    valueId: SourceCodeType;
+    testValueId: SourceCodeType;
+}
+
+const showSources: ShowFiles = {
+    type: "source",
+    label: "Compiled Source Files",
+    value: m => m.compiledSources,
+    testValue: m => m.compiledTestSources,
+    valueId: "mainSrc",
+    testValueId: "testSrc",
+}
+
+const showResources: ShowFiles = {
+    type: "resource",
+    label: "Copied Resource Files",
+    value: m => m.copiedResources,
+    testValue: m => m.copiedTestResources,
+    valueId: "mainRes",
+    testValueId: "testRes",
+}
+
+
 export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
+    const [fileType, setFileType] = useState<ShowFiles>(showSources);
 
     const treeData: TreeMapNode = {
         id: "root",
-        children: data.map(({ module: moduleId, compiledSources, compiledTestSources }) => {
+        children: data.map((row) => {
+            const moduleId = row.module;
             return {
                 id: moduleId,
                 moduleId,
                 children: [
                     {
-                        id: "mainSrc",
+                        id: fileType.valueId,
                         moduleId,
-                        value: compiledSources,
+                        value: fileType.value(row),
                     },
                     {
-                        id: "testSrc",
+                        id: fileType.testValueId,
                         moduleId,
-                        value: compiledTestSources,
+                        value: fileType.testValue(row),
                     },
                 ],
             }
@@ -37,7 +69,9 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
     }
 
     return (
-        <ExpandableCard title="Source Code" subheader="Shows the number of source code files and copied resources">
+        <ExpandableCard title="Source Code" subheader="Shows the number of compiled source code files and copied resources. Please note that if you build without clean, Maven only compiles files if something has changed.">
+            <FormControlLabel control={<Switch onChange={() => setFileType(old => old === showSources ? showResources : showSources)} />} label={fileType.label} sx={{ marginBottom: "10px" }} />
+
             <Box sx={{ height: `${diagramHeight(10)}px` }}>
                 <ResponsiveTreeMap
                     data={treeData}

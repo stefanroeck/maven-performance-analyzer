@@ -10,22 +10,29 @@ export interface MavenGoalExecutionLine {
     row?: number;
 }
 
-type CompileMode = "src" | "testSrc";
+type FileOrigin = "main" | "test";
 
-export interface SourceStatisticLine {
-    module: string;
+export interface SourceStatisticLine extends AbstactStatisticLine {
+    type: "source";
     compiledSources: number;
-    compileMode: CompileMode;
 }
 
-export interface RessourceStatisticLine {
-    module: string;
+export interface ResourceStatisticLine extends AbstactStatisticLine {
+    type: "resource";
     copiedResources: number;
 }
 
+interface AbstactStatisticLine {
+    type: "source" | "resource";
+    module: string;
+    compileMode: FileOrigin;
+};
+
+export type StatisticLine = SourceStatisticLine | ResourceStatisticLine;
+
 export interface ParserResult {
     lines: MavenGoalExecutionLine[];
-    compiledSources: SourceStatisticLine[];
+    compiledSources: StatisticLine[];
     lastTimestamp?: Dayjs;
     totalBuildTime?: number;
 }
@@ -37,8 +44,11 @@ const totalTimeRegexp = / Total time:  ([0-9:]+)/;
 const lastLineWithTimeStampAndTotalTimeRegexp = new RegExp(timestampThreadLevelRegexp.source + totalTimeRegexp.source);
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
+const mavenResourcePluginRegexp = /.*--- maven-resources-plugin:.*:(resources|testResources).*@ (.*) ---/
+
 const anyPluginRegexp = /.*---.*@.*---/
 const mavenCompilerPluginCompilingRegexp = /.*Compiling (\d*) source files to.*/
+const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/
 
 export const parse = (logContent: string): ParserResult => {
     const lines = logContent.split("\n");
@@ -81,29 +91,47 @@ export const parseTimestamp = (timestamp: string): Dayjs => {
     return dayjs(timestamp, supportedTimestampFormats);
 }
 
-function collectCompiledResources(lines: string[]): SourceStatisticLine[] {
-    let moduleInsideOfCompilerPlugin = undefined;
-    let mode: "compile" | "testCompile" | undefined = undefined;
-    const result: SourceStatisticLine[] = [];
+function collectCompiledResources(lines: string[]): StatisticLine[] {
+    // TODO: Support multithreaded builds
+    let module = undefined;
+    let fileOrigin: FileOrigin | undefined;
+    const result: StatisticLine[] = [];
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i];
-        const matchModule = line.match(mavenCompilerPluginRegexp)
-        if (matchModule) {
-            mode = matchModule[1] as "compile" | "testCompile" | undefined;
-            moduleInsideOfCompilerPlugin = matchModule[2];
+        const matchCompilerPluginModule = line.match(mavenCompilerPluginRegexp);
+        const matchResourcesPluginModule = line.match(mavenResourcePluginRegexp);
+        if (matchCompilerPluginModule) {
+            const mode = matchCompilerPluginModule[1] as "compile" | "testCompile";
+            fileOrigin = mode === "compile" ? "main" : "test";
+            module = matchCompilerPluginModule[2];
+        } else if (matchResourcesPluginModule) {
+            const mode = matchResourcesPluginModule[1] as "resources" | "testResources";
+            fileOrigin = mode === "resources" ? "main" : "test";
+            module = matchResourcesPluginModule[2];
         } else if (line.match(anyPluginRegexp)) {
-            moduleInsideOfCompilerPlugin = undefined;
-            mode = undefined;
+            module = undefined;
+            fileOrigin = undefined;
         }
 
-        if (moduleInsideOfCompilerPlugin) {
+        if (module && fileOrigin) {
             const matchCompiling = line.match(mavenCompilerPluginCompilingRegexp);
             if (matchCompiling) {
                 const compiledSources = parseInt(matchCompiling[1]);
                 result.push({
-                    module: moduleInsideOfCompilerPlugin,
+                    type: "source",
+                    module: module,
                     compiledSources,
-                    compileMode: mode === "compile" ? "src" : "testSrc",
+                    compileMode: fileOrigin,
+                });
+            }
+            const matchCopying = line.match(mavenResourcePluginCopyingRegexp);
+            if (matchCopying) {
+                const copiedResources = parseInt(matchCopying[1]);
+                result.push({
+                    type: "resource",
+                    module: module,
+                    copiedResources,
+                    compileMode: fileOrigin,
                 });
             }
         }

@@ -16,13 +16,27 @@ describe("parser and analyzer", () => {
         expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(143028);
         expect(durationSumForPlugin(result.mavenPlugins, "maven-surefire-plugin")).toEqual(434);
 
-        expect(result.modules).toHaveLength(19);
+        expect(result.modules).toHaveLength(24);
         expect(result.modules[0]).toEqual({
+            module: "surefire-shared-utils",
+            compiledSources: 0,
+            compiledTestSources: 0,
+            copiedResources: 3,
+            copiedTestResources: 3,
+        });
+        expect(result.modules[2]).toEqual({
             module: "surefire-api",
             compiledSources: 111,
             compiledTestSources: 28,
-            copiedResources: 0,
-            copiedTestResources: 0,
+            copiedResources: 3,
+            copiedTestResources: 3,
+        });
+        expect(result.modules[5]).toEqual({
+            module: "surefire-booter",
+            compiledSources: 34,
+            compiledTestSources: 15,
+            copiedResources: 4,
+            copiedTestResources: 11,
         });
     })
 
@@ -49,7 +63,7 @@ describe("parser and analyzer", () => {
         expect(durationSumForPlugin(result.mavenPlugins, "maven-javadoc-plugin")).toEqual(71000);
 
         expect(result.modules).toHaveLength(1);
-        expect(result.modules).toEqual([{ "compiledSources": 478, "compiledTestSources": 450, "copiedResources": 0, "copiedTestResources": 0, "module": "commons-lang3" }]);
+        expect(result.modules).toEqual([{ "compiledSources": 478, "compiledTestSources": 450, "copiedResources": 4, "copiedTestResources": 8, "module": "commons-lang3" }]);
     })
 
     it("mutilthreaded build", () => {

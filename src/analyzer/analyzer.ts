@@ -35,9 +35,16 @@ export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult)
     const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
-            switch (curr.compileMode) {
-                case "src": existing.compiledSources = existing.compiledSources + curr.compiledSources; break;
-                case "testSrc": existing.compiledTestSources = existing.compiledTestSources + curr.compiledSources; break;
+            if (curr.type === "source") {
+                switch (curr.compileMode) {
+                    case "main": existing.compiledSources += curr.compiledSources; break;
+                    case "test": existing.compiledTestSources += curr.compiledSources; break;
+                }
+            } else {
+                switch (curr.compileMode) {
+                    case "main": existing.copiedResources += curr.copiedResources; break;
+                    case "test": existing.copiedTestResources += curr.copiedResources; break;
+                }
             }
 
         } else {
@@ -48,10 +55,18 @@ export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult)
                 copiedResources: 0,
                 copiedTestResources: 0,
             }
-            switch (curr.compileMode) {
-                case "src": analyzedModule.compiledSources = curr.compiledSources; break;
-                case "testSrc": analyzedModule.compiledTestSources = curr.compiledSources; break;
+            if (curr.type === "source") {
+                switch (curr.compileMode) {
+                    case "main": analyzedModule.compiledSources = curr.compiledSources; break;
+                    case "test": analyzedModule.compiledTestSources = curr.compiledSources; break;
+                }
+            } else {
+                switch (curr.compileMode) {
+                    case "main": analyzedModule.copiedResources = curr.copiedResources; break;
+                    case "test": analyzedModule.copiedTestResources = curr.copiedResources; break;
+                }
             }
+
             arr.push(analyzedModule);
 
         }
