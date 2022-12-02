@@ -37,11 +37,16 @@ export interface ParserResult {
     totalBuildTime?: number;
 }
 
-const timestampThreadLevelRegexp = /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\]/;
-const mavenGoalRegexp = /.*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
-const mavenGoalExecutionRegexp = new RegExp(timestampThreadLevelRegexp.source + mavenGoalRegexp.source);
-const totalTimeRegexp = / Total time:  ([0-9:]+)/;
-const lastLineWithTimeStampAndTotalTimeRegexp = new RegExp(timestampThreadLevelRegexp.source + totalTimeRegexp.source);
+// Looks like we need to repeat parts of the RegExp as concatenating as suggested on StackOverflow doesn't work
+// https://stackoverflow.com/questions/185510/how-can-i-concatenate-regex-literals-in-javascript
+// likely because of https://babeljs.io/docs/en/babel-plugin-transform-named-capturing-groups-regex that 
+// breaks the logic of named capturing groups.
+
+const mavenGoalExecutionRegexp =
+    /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
+const lastLineWithTimeStampAndTotalTimeRegexp =
+    /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\] Total time: {2}([0-9:]+)/;
+
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
 const mavenResourcePluginRegexp = /.*--- maven-resources-plugin:.*:(resources|testResources).*@ (.*) ---/
@@ -50,16 +55,38 @@ const anyPluginRegexp = /.*---.*@.*---/
 const mavenCompilerPluginCompilingRegexp = /.*Compiling (\d*) source files to.*/
 const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/
 
+
 export const parse = (logContent: string): ParserResult => {
-    const lines = logContent.split("\n");
-    return {
-        lines: lines.filter(line => line.match(mavenGoalExecutionRegexp)).map((line, row) => {
-            const result = parseMavenGoalExecutionLine(line);
-            return { ...result, row };
-        }),
-        compiledSources: collectCompiledResources(lines),
-        lastTimestamp: findLastTimeStamp(lines),
+    console.time("parser");
+    try {
+        const lines = logContent.split("\n");
+        console.log(`Split string with ${logContent.length} chars into ${lines.length} lines`);
+        return {
+            lines: lines.map(line => matchGroupsAndProcess(line, mavenGoalExecutionRegexp, (groups => {
+                //@ts-ignore
+                const { date, goal, plugin, thread, module } = groups;
+                return {
+                    startTime: parseTimestamp(date),
+                    plugin,
+                    goal,
+                    module,
+                    thread,
+                }
+            }))).filter(l => l) as MavenGoalExecutionLine[],
+            compiledSources: collectCompiledResources(lines),
+            lastTimestamp: findLastTimeStamp(lines),
+        }
+    } finally {
+        console.timeEnd("parser");
     }
+}
+
+const matchGroupsAndProcess = <T>(line: string, regExp: RegExp, process: (groups: any) => T): T | undefined => {
+    const match = line.match(regExp);
+    if (match && match.groups) {
+        return process(match.groups);
+    }
+    return undefined;
 }
 
 export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
@@ -68,25 +95,8 @@ export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
     return timestamp ? parseTimestamp(timestamp) : undefined;
 }
 
-// Parses sth like this
-// 2022-11-08 19:00:12,555 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---
-export const parseMavenGoalExecutionLine = (line: string): MavenGoalExecutionLine => {
-    const matches = line.match(mavenGoalExecutionRegexp);
-    if (!matches) {
-        throw new Error("Line does not match regexp: " + line);
-    }
-    //@ts-ignore
-    const { date, goal, plugin, thread, module } = matches.groups;
-    return {
-        startTime: parseTimestamp(date),
-        plugin,
-        goal,
-        module,
-        thread,
-    }
-}
-
 export const supportedTimestampFormats = ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"];
+
 export const parseTimestamp = (timestamp: string): Dayjs => {
     return dayjs(timestamp, supportedTimestampFormats);
 }
