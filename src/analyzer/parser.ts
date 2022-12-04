@@ -27,7 +27,7 @@ interface AbstactStatisticLine {
     type: "source" | "resource";
     module: string;
     compileMode: FileOrigin;
-};
+}
 
 export type StatisticLine = SourceStatisticLine | ResourceStatisticLine;
 export interface LastTimestamp {
@@ -35,11 +35,27 @@ export interface LastTimestamp {
     lastTimestamp: Dayjs;
 }
 
+interface AbstractParserStatistics {
+    totalBuildTime?: string; // TODO
+    multiThreadedBuild: boolean;
+}
+
+interface SingleThreadedParserStatistics extends AbstractParserStatistics {
+    multiThreadedBuild: false;
+}
+
+interface MulitThreaderParserStatistics extends AbstractParserStatistics {
+    multiThreadedBuild: true;
+    threads: number;
+}
+
+export type ParserStatistics = SingleThreadedParserStatistics | MulitThreaderParserStatistics;
+
 export interface ParserResult {
     lines: MavenGoalExecutionLine[];
     compiledSources: StatisticLine[];
     lastTimestamps: LastTimestamp[];
-    totalBuildTime?: string; // TODO
+    statistics: ParserStatistics;
 }
 
 // Looks like we need to repeat parts of the RegExp as concatenating as suggested on StackOverflow doesn't work
@@ -59,6 +75,8 @@ const mavenResourcePluginRegexp = /.*--- maven-resources-plugin:.*:(resources|te
 const anyPluginRegexp = /.*---.*@.*---/
 const mavenCompilerPluginCompilingRegexp = /.*Compiling (\d*) source files to.*/
 const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/
+
+const multiThreadedParserLineRegexp = /.*Using the MultiThreadedBuilder implementation with a thread count of (?<threads>\d+)/;
 
 
 export const parse = (logContent: string): ParserResult => {
@@ -82,6 +100,7 @@ export const parse = (logContent: string): ParserResult => {
             lines: mavenGoalExecutionLines.filter(l => l) as MavenGoalExecutionLine[],
             compiledSources: collectCompiledResources(logLines),
             lastTimestamps: findLastTimeStamps(mavenGoalExecutionLines, threads),
+            statistics: collectStatistics(logLines),
         }
     } finally {
         console.timeEnd("parser");
@@ -170,3 +189,19 @@ function collectCompiledResources(lines: string[]): StatisticLine[] {
 
     return result;
 }
+
+const collectStatistics = (logLines: string[]): ParserStatistics => {
+
+    return logLines.reduce((prev, line) => {
+        const threads = matchGroupsAndProcess(line, multiThreadedParserLineRegexp, groups => {
+            return parseInt(groups.threads);
+        });
+        if (threads !== undefined) {
+            return { ...prev, threads, multiThreadedBuild: true };
+        }
+        return prev;
+    }, {
+        multiThreadedBuild: false,
+    } as ParserStatistics);
+};
+

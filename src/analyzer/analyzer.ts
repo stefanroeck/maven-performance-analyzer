@@ -24,12 +24,19 @@ export interface AnalyzedModule {
     copiedTestResources: number;
 }
 
+export interface Stats {
+    multiThreaded: boolean;
+    threads: number;
+    totalDuration?: string;
+}
+
 export interface AnalyzerResult {
     mavenPlugins: AnalyzerRow[];
     modules: AnalyzedModule[];
+    stats: Stats;
 }
 
-export const analyze = ({ lines, lastTimestamps, compiledSources }: ParserResult): AnalyzerResult => {
+export const analyze = ({ lines, lastTimestamps, compiledSources, statistics }: ParserResult): AnalyzerResult => {
     const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
@@ -90,6 +97,10 @@ export const analyze = ({ lines, lastTimestamps, compiledSources }: ParserResult
     return {
         mavenPlugins,
         modules: aggregatedCompiledSources,
+        stats: {
+            multiThreaded: statistics.multiThreadedBuild,
+            threads: statistics.multiThreadedBuild ? statistics.threads : 1,
+        }
     };
 
 

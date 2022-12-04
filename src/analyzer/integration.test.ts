@@ -52,6 +52,7 @@ describe("parser and analyzer", () => {
             copiedResources: 4,
             copiedTestResources: 11,
         });
+        expect(result.stats.multiThreaded).toEqual(false);
     })
 
     it("log without timestamps", () => {
@@ -91,6 +92,8 @@ describe("parser and analyzer", () => {
             .filter(r => r.plugin === "maven-resources-plugin" && r.thread === "mvn-builder-surefire-grouper")
             .reduce((prev, curr) => prev + curr.duration, 0);
         expect(duration).toEqual(35);
+        expect(result.stats.multiThreaded).toEqual(true);
+        expect(result.stats.threads).toEqual(4);
     })
 
     it("guava log", () => {
