@@ -100,8 +100,10 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
             },
         },
         xaxis: {
-            type: 'datetime'
-
+            type: 'datetime',
+            labels: {
+                datetimeUTC: false,
+            }
         },
         yaxis: {
             show: true

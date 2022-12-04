@@ -16,9 +16,9 @@ export const defaultMargin = {
 
 export const basicBarCharProps: Partial<Omit<BarSvgProps<any>, "height" | "width">> = {
     padding: 0.3,
-    innerPadding: 1,
+    innerPadding: 0,
     labelSkipWidth: 35,
-    borderRadius: 2,
+    borderRadius: 0,
     margin: defaultMargin,
     valueFormat: formatDuration,
 }
