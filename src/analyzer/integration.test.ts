@@ -5,6 +5,20 @@ import { parse } from "./parser"
 
 describe("parser and analyzer", () => {
 
+    it("empty input", () => {
+        const result = analyze(parse(""));
+
+        expect(result.mavenPlugins).toHaveLength(0);
+        expect(result.modules).toHaveLength(0);
+    })
+
+    it("arbitrary input", () => {
+        const result = analyze(parse("This is not a maven logfile\nNo, it's not."));
+
+        expect(result.mavenPlugins).toHaveLength(0);
+        expect(result.modules).toHaveLength(0);
+    })
+
     it("surefire log", () => {
         const content = readFileSync(__dirname + "/testfiles/mavenSurefire.log", "utf8");
 
@@ -79,7 +93,7 @@ describe("parser and analyzer", () => {
         expect(duration).toEqual(35);
     })
 
-    it("surefire log", () => {
+    it("guava log", () => {
         const content = readFileSync(__dirname + "/testfiles/guavaBuildJenkinsTimestamps.log", "utf8");
 
         const result = analyze(parse(content));
@@ -89,6 +103,50 @@ describe("parser and analyzer", () => {
 
         expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(109646);
         expect(durationSumForPlugin(result.mavenPlugins, "maven-surefire-plugin")).toEqual(1499363);
+        expect(durationSumForModule(result.mavenPlugins, "guava-parent")).toEqual(3869);
+        expect(durationSumForModule(result.mavenPlugins, "guava-testlib")).toEqual(361975);
+
+        expect(result.modules).toHaveLength(4);
+        expect(result.modules[0]).toEqual({
+            module: "guava",
+            compiledSources: 619,
+            compiledTestSources: 0,
+            copiedResources: 0,
+            copiedTestResources: 0,
+        });
+        expect(result.modules[1]).toEqual({
+            module: "guava-testlib",
+            compiledSources: 292,
+            compiledTestSources: 37,
+            copiedResources: 0,
+            copiedTestResources: 0,
+        });
+        expect(result.modules[2]).toEqual({
+            module: "guava-tests",
+            compiledSources: 0,
+            compiledTestSources: 631,
+            copiedResources: 0,
+            copiedTestResources: 6,
+        });
+    })
+
+    it("guava log parallel", () => {
+        const content = readFileSync(__dirname + "/testfiles/guavaBuildParallel.log", "utf8");
+
+        const result = analyze(parse(content));
+
+        expect(result.mavenPlugins.length).toEqual(77);
+        expect(dedup(result.mavenPlugins.map(r => r.thread))).toEqual([
+            "mvn-builder-guava-parent",
+            "mvn-builder-guava-bom",
+            "mvn-builder-guava",
+            "mvn-builder-guava-testlib",
+            "mvn-builder-guava-tests",
+            "mvn-builder-guava-gwt",
+        ]);
+
+        expect(durationSumForModule(result.mavenPlugins, "guava-parent")).toEqual(3473);
+        expect(durationSumForModule(result.mavenPlugins, "guava-testlib")).toEqual(296117);
 
         expect(result.modules).toHaveLength(4);
         expect(result.modules[0]).toEqual({
@@ -118,4 +176,7 @@ describe("parser and analyzer", () => {
         return result.filter(r => r.plugin === plugin).reduce((prev, curr) => prev + curr.duration, 0);
     }
 
+    function durationSumForModule(result: AnalyzerRow[], module: string): number {
+        return result.filter(r => r.module === module).reduce((prev, curr) => prev + curr.duration, 0);
+    }
 })

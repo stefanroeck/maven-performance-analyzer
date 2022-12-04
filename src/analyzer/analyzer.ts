@@ -29,9 +29,7 @@ export interface AnalyzerResult {
     modules: AnalyzedModule[];
 }
 
-export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult): AnalyzerResult => {
-    const threads = dedup(lines.map(r => r.thread || "main"));
-
+export const analyze = ({ lines, lastTimestamps, compiledSources }: ParserResult): AnalyzerResult => {
     const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
@@ -68,18 +66,19 @@ export const analyze = ({ lines, lastTimestamp, compiledSources }: ParserResult)
             }
 
             arr.push(analyzedModule);
-
         }
         return arr;
     }, [] as AnalyzedModule[]);
 
 
+    const threads = dedup(lines.map(r => r.thread));
     const mavenPlugins = threads.flatMap(thread => {
         const threadLines = lines.filter(l => l.thread === undefined || l.thread === thread);
+        const lastTimestamp = lastTimestamps.find(t => t.thread === thread)?.lastTimestamp;
         return threadLines.map(({ module, plugin, startTime }, idx) => {
             const nextStartTime: Dayjs | undefined = idx < threadLines.length - 1 ? threadLines[idx + 1].startTime : lastTimestamp;
             return {
-                thread,
+                thread: thread || "main",
                 module,
                 plugin,
                 startTime,

@@ -86,4 +86,30 @@ describe("parser", () => {
         const lastLine = "[2022-11-30T18:05:53.848Z] [INFO] Total time:  12:52 min";
         expect(findLastTimeStamp([lastLine])?.format()).toEqual(dayjs("2022-11-30T17:05:53.848Z").format());
     })
+
+    it("parses lines from multiple threads", () => {
+        const result = parse(
+            "2022-11-19 19:06:06,153 [mvn-builder-surefire-logger-api] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-logger-api ---\n" +
+            "2022-11-19 19:06:06,156 [mvn-builder-surefire-shared-utils] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-shared-utils ---\n"
+        );
+
+        expect(result.lines[0]).toMatchObject(
+            {
+                "goal": "clean (default-clean)",
+                "module": "surefire-logger-api",
+                "plugin": "maven-clean-plugin",
+                "thread": "mvn-builder-surefire-logger-api",
+            });
+        expect(result.lines[0].startTime.format()).toEqual(dayjs("2022-11-19T18:06:06.153Z").format())
+
+        expect(result.lines[1]).toMatchObject(
+            {
+                "goal": "clean (default-clean)",
+                "module": "surefire-shared-utils",
+                "plugin": "maven-clean-plugin",
+                "thread": "mvn-builder-surefire-shared-utils",
+            },
+        );
+        expect(result.lines[1].startTime.format()).toEqual(dayjs("2022-11-19T18:06:06.156Z").format())
+    })
 })

@@ -1,4 +1,5 @@
 import dayjs, { Dayjs } from "dayjs";
+import { dedup } from "../utils/arrayUtils";
 
 
 export interface MavenGoalExecutionLine {
@@ -29,12 +30,16 @@ interface AbstactStatisticLine {
 };
 
 export type StatisticLine = SourceStatisticLine | ResourceStatisticLine;
+export interface LastTimestamp {
+    thread?: string;
+    lastTimestamp: Dayjs;
+}
 
 export interface ParserResult {
     lines: MavenGoalExecutionLine[];
     compiledSources: StatisticLine[];
-    lastTimestamp?: Dayjs;
-    totalBuildTime?: number;
+    lastTimestamps: LastTimestamp[];
+    totalBuildTime?: string; // TODO
 }
 
 // Looks like we need to repeat parts of the RegExp as concatenating as suggested on StackOverflow doesn't work
@@ -44,7 +49,7 @@ export interface ParserResult {
 
 const mavenGoalExecutionRegexp =
     /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
-const lastLineWithTimeStampAndTotalTimeRegexp =
+const totalTimeRegexp =
     /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\] Total time: {2}([0-9:]+)/;
 
 
@@ -59,22 +64,24 @@ const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/
 export const parse = (logContent: string): ParserResult => {
     console.time("parser");
     try {
-        const lines = logContent.split("\n");
-        console.log(`Split string with ${logContent.length} chars into ${lines.length} lines`);
+        const logLines = logContent.split("\n");
+        console.log(`Split string with ${logContent.length} chars into ${logLines.length} lines`);
+        const mavenGoalExecutionLines: MavenGoalExecutionLine[] = logLines.map(line => matchGroupsAndProcess(line, mavenGoalExecutionRegexp, (groups => {
+            //@ts-ignore
+            const { date, goal, plugin, thread, module } = groups;
+            return {
+                startTime: parseTimestamp(date),
+                plugin,
+                goal,
+                module,
+                thread,
+            };
+        }))).filter(l => l) as MavenGoalExecutionLine[];
+        const threads = dedup(mavenGoalExecutionLines.map(r => r.thread).filter(l => l) as string[]);
         return {
-            lines: lines.map(line => matchGroupsAndProcess(line, mavenGoalExecutionRegexp, (groups => {
-                //@ts-ignore
-                const { date, goal, plugin, thread, module } = groups;
-                return {
-                    startTime: parseTimestamp(date),
-                    plugin,
-                    goal,
-                    module,
-                    thread,
-                }
-            }))).filter(l => l) as MavenGoalExecutionLine[],
-            compiledSources: collectCompiledResources(lines),
-            lastTimestamp: findLastTimeStamp(lines),
+            lines: mavenGoalExecutionLines.filter(l => l) as MavenGoalExecutionLine[],
+            compiledSources: collectCompiledResources(logLines),
+            lastTimestamps: findLastTimeStamps(mavenGoalExecutionLines, threads),
         }
     } finally {
         console.timeEnd("parser");
@@ -90,9 +97,23 @@ const matchGroupsAndProcess = <T>(line: string, regExp: RegExp, process: (groups
 }
 
 export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
-    const lastLineWithTimeStamp = lines.reverse().find(line => line.match(lastLineWithTimeStampAndTotalTimeRegexp) !== null);
-    const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(lastLineWithTimeStampAndTotalTimeRegexp)?.groups?.date : undefined;
+    const lastLineWithTimeStamp = lines.reverse().find(line => line.match(totalTimeRegexp) !== null);
+    const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(totalTimeRegexp)?.groups?.date : undefined;
     return timestamp ? parseTimestamp(timestamp) : undefined;
+}
+
+const findLastTimeStamps = (lines: MavenGoalExecutionLine[], threads: string[]): LastTimestamp[] => {
+    const linesReverse = lines.reverse();
+    if (threads.length > 0) {
+        return threads.map(thread => {
+            const lastElement = linesReverse.find(l => l.thread === thread) as MavenGoalExecutionLine;
+            return { thread, lastTimestamp: lastElement?.startTime };
+        })
+    } else if (linesReverse.length > 0) {
+        return [{ lastTimestamp: linesReverse[0].startTime }]
+    } else {
+        return [];
+    }
 }
 
 export const supportedTimestampFormats = ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"];
