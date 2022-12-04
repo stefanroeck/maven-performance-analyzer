@@ -1,0 +1,1463 @@
+[2022-12-02T22:53:06.493Z] [main] [INFO] Scanning for projects...
+[2022-12-02T22:53:09.383Z] [main] [INFO] ------------------------------------------------------------------------
+[2022-12-02T22:53:09.384Z] [main] [INFO] Reactor Build Order:
+[2022-12-02T22:53:09.384Z] [main] [INFO] 
+[2022-12-02T22:53:09.386Z] [main] [INFO] Guava Maven Parent                                                 [pom]
+[2022-12-02T22:53:09.386Z] [main] [INFO] Guava: Google Core Libraries for Java                           [bundle]
+[2022-12-02T22:53:09.387Z] [main] [INFO] Guava BOM                                                          [pom]
+[2022-12-02T22:53:09.387Z] [main] [INFO] Guava Testing Library                                              [jar]
+[2022-12-02T22:53:09.387Z] [main] [INFO] Guava Unit Tests                                                   [jar]
+[2022-12-02T22:53:09.387Z] [main] [INFO] Guava GWT compatible libs                                          [jar]
+[2022-12-02T22:53:09.398Z] [main] [INFO] 
+[2022-12-02T22:53:09.399Z] [main] [INFO] Using the MultiThreadedBuilder implementation with a thread count of 4
+[2022-12-02T22:53:09.423Z] [mvn-builder-guava-bom] [INFO] 
+[2022-12-02T22:53:09.423Z] [mvn-builder-guava-parent] [INFO] 
+[2022-12-02T22:53:09.423Z] [mvn-builder-guava-bom] [INFO] ---------------------< com.google.guava:guava-bom >---------------------
+[2022-12-02T22:53:09.423Z] [mvn-builder-guava-parent] [INFO] -------------------< com.google.guava:guava-parent >--------------------
+[2022-12-02T22:53:09.424Z] [mvn-builder-guava-bom] [INFO] Building Guava BOM HEAD-jre-SNAPSHOT                               [1/6]
+[2022-12-02T22:53:09.424Z] [mvn-builder-guava-parent] [INFO] Building Guava Maven Parent HEAD-jre-SNAPSHOT                      [2/6]
+[2022-12-02T22:53:09.424Z] [mvn-builder-guava-bom] [INFO] --------------------------------[ pom ]---------------------------------
+[2022-12-02T22:53:09.424Z] [mvn-builder-guava-parent] [INFO] --------------------------------[ pom ]---------------------------------
+[2022-12-02T22:53:09.675Z] [mvn-builder-guava-parent] [INFO] 
+[2022-12-02T22:53:09.675Z] [mvn-builder-guava-bom] [INFO] 
+[2022-12-02T22:53:09.690Z] [mvn-builder-guava-parent] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava-parent ---
+[2022-12-02T22:53:09.691Z] [mvn-builder-guava-bom] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava-bom ---
+[2022-12-02T22:53:09.850Z] [mvn-builder-guava-parent] [INFO] 
+[2022-12-02T22:53:09.850Z] [mvn-builder-guava-bom] [INFO] 
+[2022-12-02T22:53:09.850Z] [mvn-builder-guava-parent] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-parent ---
+[2022-12-02T22:53:09.851Z] [mvn-builder-guava-bom] [INFO] --- maven-enforcer-plugin:1.2:enforce (enforce-maven) @ guava-bom ---
+[2022-12-02T22:53:10.511Z] [mvn-builder-guava-parent] [INFO] 
+[2022-12-02T22:53:10.511Z] [mvn-builder-guava-parent] [INFO] --- maven-javadoc-plugin:3.4.1:jar (attach-docs) @ guava-parent ---
+[2022-12-02T22:53:10.926Z] [mvn-builder-guava-bom] [INFO] 
+[2022-12-02T22:53:10.927Z] [mvn-builder-guava-bom] [INFO] --- maven-install-plugin:2.4:install (default-install) @ guava-bom ---
+[2022-12-02T22:53:13.160Z] [mvn-builder-guava-parent] [INFO] Not executing Javadoc as the project is not a Java classpath-capable package
+[2022-12-02T22:53:13.163Z] [mvn-builder-guava-parent] [INFO] 
+[2022-12-02T22:53:13.163Z] [mvn-builder-guava-parent] [INFO] --- maven-install-plugin:2.4:install (default-install) @ guava-parent ---
+[2022-12-02T22:53:13.262Z] [mvn-builder-guava-bom] [INFO] Installing /Users/Stefan/git/guava/guava-bom/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava-bom/HEAD-jre-SNAPSHOT/guava-bom-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T22:53:13.262Z] [mvn-builder-guava-parent] [INFO] Installing /Users/Stefan/git/guava/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava-parent/HEAD-jre-SNAPSHOT/guava-parent-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T22:53:13.337Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:13.337Z] [mvn-builder-guava] [INFO] -----------------------< com.google.guava:guava >-----------------------
+[2022-12-02T22:53:13.337Z] [mvn-builder-guava] [INFO] Building Guava: Google Core Libraries for Java HEAD-jre-SNAPSHOT   [3/6]
+[2022-12-02T22:53:13.338Z] [mvn-builder-guava] [INFO] -------------------------------[ bundle ]-------------------------------
+[2022-12-02T22:53:13.648Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:13.648Z] [mvn-builder-guava] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava ---
+[2022-12-02T22:53:13.690Z] [mvn-builder-guava] [INFO] Deleting /Users/Stefan/git/guava/guava/target
+[2022-12-02T22:53:23.444Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:23.446Z] [mvn-builder-guava] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava ---
+[2022-12-02T22:53:23.610Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:23.611Z] [mvn-builder-guava] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-jdk-sources) @ guava ---
+[2022-12-02T22:53:24.970Z] [mvn-builder-guava] [INFO] Unpacking /Library/Java/JavaVirtualMachines/jdk-14.0.1.jdk/Contents/Home/lib/src.zip to /Users/Stefan/git/guava/guava/target/jdk-sources with includes "" and excludes "**/module-info.java,**/java/io/FileDescriptor.java"
+[2022-12-02T22:53:50.087Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:50.089Z] [mvn-builder-guava] [INFO] --- maven-resources-plugin:3.3.0:resources (default-resources) @ guava ---
+[2022-12-02T22:53:50.319Z] [mvn-builder-guava] [INFO] Copying 0 resource
+[2022-12-02T22:53:50.320Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:53:50.321Z] [mvn-builder-guava] [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ guava ---
+[2022-12-02T22:53:51.212Z] [mvn-builder-guava] [INFO] Changes detected - recompiling the module!
+[2022-12-02T22:53:51.234Z] [mvn-builder-guava] [INFO] Compiling 619 source files to /Users/Stefan/git/guava/guava/target/classes
+[2022-12-02T22:54:18.759Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[29,15] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.761Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[23,15] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.762Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[317,19] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.762Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[339,29] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.762Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[341,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.762Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[347,66] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.763Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[349,31] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.763Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[350,32] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/primitives/UnsignedBytes.java:[350,53] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1333,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1341,14] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1343,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1348,56] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.764Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1350,35] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1351,36] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/util/concurrent/AbstractFuture.java:[1351,57] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[161,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[172,19] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[174,15] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[180,39] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[182,24] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.765Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/LittleEndianByteArray.java:[182,36] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[111,33] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[269,31] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[290,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[292,21] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[297,62] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[299,27] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[300,28] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.766Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/cache/Striped64.java:[300,49] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[111,33] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[269,31] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[290,25] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[292,21] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[297,62] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[299,27] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[300,28] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.767Z] [mvn-builder-guava] [WARNING] /Users/Stefan/git/guava/guava/src/com/google/common/hash/Striped64.java:[300,49] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T22:54:18.768Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:18.768Z] [mvn-builder-guava] [INFO] --- maven-bundle-plugin:2.5.0:manifest (bundle-manifest) @ guava ---
+[2022-12-02T22:54:29.209Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:29.209Z] [mvn-builder-guava] [INFO] --- maven-resources-plugin:3.3.0:testResources (default-testResources) @ guava ---
+[2022-12-02T22:54:29.214Z] [mvn-builder-guava] [INFO] skip non existing resourceDirectory /Users/Stefan/git/guava/guava/test
+[2022-12-02T22:54:29.215Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:29.215Z] [mvn-builder-guava] [INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ guava ---
+[2022-12-02T22:54:29.236Z] [mvn-builder-guava] [INFO] No sources to compile
+[2022-12-02T22:54:29.236Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:29.237Z] [mvn-builder-guava] [INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ guava ---
+[2022-12-02T22:54:29.391Z] [mvn-builder-guava] [INFO] No tests to run.
+[2022-12-02T22:54:29.397Z] [mvn-builder-guava] [INFO] Surefire report directory: /Users/Stefan/git/guava/guava/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[2022-12-02T22:54:29.995Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:29.996Z] [mvn-builder-guava] [INFO] --- animal-sniffer-maven-plugin:1.22:check (check-java-version-compatibility) @ guava ---
+[2022-12-02T22:54:30.277Z] [mvn-builder-guava] [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[2022-12-02T22:54:33.293Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:33.293Z] [mvn-builder-guava] [INFO] --- maven-bundle-plugin:2.5.0:bundle (default-bundle) @ guava ---
+[2022-12-02T22:54:42.635Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.635Z] [mvn-builder-guava] [INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ guava >>>
+[2022-12-02T22:54:42.636Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.637Z] [mvn-builder-guava] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava ---
+[2022-12-02T22:54:42.639Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.639Z] [mvn-builder-guava] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-jdk-sources) @ guava ---
+[2022-12-02T22:54:42.643Z] [mvn-builder-guava] [INFO] jdk:srczip:jar:999 already exists in destination.
+[2022-12-02T22:54:42.644Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.644Z] [mvn-builder-guava] [INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ guava <<<
+[2022-12-02T22:54:42.644Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.644Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:42.644Z] [mvn-builder-guava] [INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ guava ---
+[2022-12-02T22:54:43.320Z] [mvn-builder-guava] [INFO] Building jar: /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T22:54:43.934Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:54:43.935Z] [mvn-builder-guava] [INFO] --- maven-javadoc-plugin:3.4.1:jar (attach-docs) @ guava ---
+[2022-12-02T22:54:48.911Z] [mvn-builder-guava] [INFO] No previous run data found, generating javadoc.
+[2022-12-02T22:55:17.521Z] [mvn-builder-guava] [INFO] 
+1 warning
+[2022-12-02T22:55:17.524Z] [mvn-builder-guava] [WARNING] Javadoc Warnings
+[2022-12-02T22:55:17.524Z] [mvn-builder-guava] [WARNING] javadoc: warning - URL https://docs.oracle.com/javase/9/docs/api/element-list was redirected to https://docs.oracle.com/en/java/javase/19/ -- Update the command-line options to suppress this warning.
+[2022-12-02T22:55:17.758Z] [mvn-builder-guava] [INFO] Building jar: /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT-javadoc.jar
+[2022-12-02T22:55:18.635Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:55:18.635Z] [mvn-builder-guava] [INFO] --- maven-install-plugin:3.1.0:install (default-install) @ guava ---
+[2022-12-02T22:55:18.711Z] [mvn-builder-guava] [INFO] Installing /Users/Stefan/git/guava/guava/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava/HEAD-jre-SNAPSHOT/guava-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T22:55:18.719Z] [mvn-builder-guava] [INFO] Installing /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT.jar to /Users/Stefan/.m2/repository/com/google/guava/guava/HEAD-jre-SNAPSHOT/guava-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T22:55:18.742Z] [mvn-builder-guava] [INFO] Installing /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT-sources.jar to /Users/Stefan/.m2/repository/com/google/guava/guava/HEAD-jre-SNAPSHOT/guava-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T22:55:18.758Z] [mvn-builder-guava] [INFO] Installing /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT-javadoc.jar to /Users/Stefan/.m2/repository/com/google/guava/guava/HEAD-jre-SNAPSHOT/guava-HEAD-jre-SNAPSHOT-javadoc.jar
+[2022-12-02T22:55:18.799Z] [mvn-builder-guava] [INFO] 
+[2022-12-02T22:55:18.799Z] [mvn-builder-guava] [INFO] --- maven-bundle-plugin:2.5.0:install (default-install) @ guava ---
+[2022-12-02T22:55:18.917Z] [mvn-builder-guava] [INFO] Installing com/google/guava/guava/HEAD-jre-SNAPSHOT/guava-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T22:55:18.929Z] [mvn-builder-guava] [INFO] Writing OBR metadata
+[2022-12-02T22:55:18.961Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:18.961Z] [mvn-builder-guava-testlib] [INFO] -------------------< com.google.guava:guava-testlib >-------------------
+[2022-12-02T22:55:18.961Z] [mvn-builder-guava-testlib] [INFO] Building Guava Testing Library HEAD-jre-SNAPSHOT                   [4/6]
+[2022-12-02T22:55:18.962Z] [mvn-builder-guava-testlib] [INFO] --------------------------------[ jar ]---------------------------------
+[2022-12-02T22:55:19.056Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:19.056Z] [mvn-builder-guava-testlib] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava-testlib ---
+[2022-12-02T22:55:19.059Z] [mvn-builder-guava-testlib] [INFO] Deleting /Users/Stefan/git/guava/guava-testlib/target
+[2022-12-02T22:55:20.175Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:20.175Z] [mvn-builder-guava-testlib] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-testlib ---
+[2022-12-02T22:55:20.176Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:20.177Z] [mvn-builder-guava-testlib] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ guava-testlib ---
+[2022-12-02T22:55:20.345Z] [mvn-builder-guava-testlib] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T22:55:20.381Z] [mvn-builder-guava-testlib] [INFO] Copying 0 resource
+[2022-12-02T22:55:20.382Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:20.382Z] [mvn-builder-guava-testlib] [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ guava-testlib ---
+[2022-12-02T22:55:20.665Z] [mvn-builder-guava-testlib] [INFO] Changes detected - recompiling the module!
+[2022-12-02T22:55:20.684Z] [mvn-builder-guava-testlib] [INFO] Compiling 292 source files to /Users/Stefan/git/guava/guava-testlib/target/classes
+[2022-12-02T22:55:31.686Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:31.686Z] [mvn-builder-guava-testlib] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ guava-testlib ---
+[2022-12-02T22:55:31.690Z] [mvn-builder-guava-testlib] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T22:55:31.698Z] [mvn-builder-guava-testlib] [INFO] Copying 0 resource
+[2022-12-02T22:55:31.698Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:31.699Z] [mvn-builder-guava-testlib] [INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ guava-testlib ---
+[2022-12-02T22:55:31.725Z] [mvn-builder-guava-testlib] [INFO] Changes detected - recompiling the module!
+[2022-12-02T22:55:31.726Z] [mvn-builder-guava-testlib] [INFO] Compiling 37 source files to /Users/Stefan/git/guava/guava-testlib/target/test-classes
+[2022-12-02T22:55:37.393Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:55:37.393Z] [mvn-builder-guava-testlib] [INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ guava-testlib ---
+[2022-12-02T22:55:37.445Z] [mvn-builder-guava-testlib] [INFO] Surefire report directory: /Users/Stefan/git/guava/guava-testlib/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.google.common.collect.testing.FeatureSpecificTestSuiteBuilderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.144 sec
+Running com.google.common.collect.testing.HelpersTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running com.google.common.collect.testing.IteratorTesterTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.069 sec
+Running com.google.common.collect.testing.MapTestSuiteBuilderTests
+Tests run: 3732, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.946 sec
+Running com.google.common.collect.testing.MinimalCollectionTest
+Tests run: 151, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.077 sec
+Running com.google.common.collect.testing.MinimalIterableTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.testing.MinimalSetTest
+Tests run: 187, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.085 sec
+Running com.google.common.collect.testing.OpenJdk6ListTests
+Tests run: 6831, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.797 sec
+Running com.google.common.collect.testing.OpenJdk6MapTests
+Tests run: 321081, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 83.292 sec
+Running com.google.common.collect.testing.OpenJdk6QueueTests
+Tests run: 2031, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.772 sec
+Running com.google.common.collect.testing.OpenJdk6SetTests
+Tests run: 36329, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.994 sec
+Running com.google.common.collect.testing.OpenJdk6Tests
+Tests run: 366272, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 99.924 sec
+Running com.google.common.collect.testing.ReserializedSafeTreeMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+Running com.google.common.collect.testing.SafeTreeMapTest
+Tests run: 117807, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 33.655 sec
+Running com.google.common.collect.testing.SafeTreeSetTest
+Tests run: 509, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.359 sec
+Running com.google.common.collect.testing.features.FeatureEnumTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.testing.features.FeatureUtilTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.091 sec
+Running com.google.common.testing.ArbitraryInstancesTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.291 sec
+Running com.google.common.testing.ClassSanityTesterTest
+Tests run: 71, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.258 sec
+Running com.google.common.testing.EqualsTesterTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.testing.EquivalenceTesterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.testing.FakeTickerTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec
+Running com.google.common.testing.FreshValueGeneratorTest
+Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.889 sec
+Running com.google.common.testing.GcFinalizationTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.628 sec
+Running com.google.common.testing.NullPointerTesterTest
+Tests run: 68, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.21 sec
+Running com.google.common.testing.RelationshipTesterTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.testing.SerializableTesterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.testing.TearDownStackTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.testing.TestLogHandlerTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.testing.anotherpackage.ForwardingWrapperTesterTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.116 sec
+Running com.google.common.util.concurrent.testing.TestingExecutorsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.071 sec
+
+Results :
+
+Tests run: 855333, Failures: 0, Errors: 0, Skipped: 0
+
+[2022-12-02T22:59:53.150Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:53.152Z] [mvn-builder-guava-testlib] [INFO] --- animal-sniffer-maven-plugin:1.22:check (check-java-version-compatibility) @ guava-testlib ---
+[2022-12-02T22:59:53.445Z] [mvn-builder-guava-testlib] [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[2022-12-02T22:59:55.852Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:55.852Z] [mvn-builder-guava-testlib] [INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ guava-testlib ---
+[2022-12-02T22:59:56.535Z] [mvn-builder-guava-testlib] [INFO] Building jar: /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T22:59:56.912Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:56.913Z] [mvn-builder-guava-testlib] [INFO] --- maven-jar-plugin:3.2.0:test-jar (create-test-jar) @ guava-testlib ---
+[2022-12-02T22:59:56.992Z] [mvn-builder-guava-testlib] [INFO] Building jar: /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-tests.jar
+[2022-12-02T22:59:57.127Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.128Z] [mvn-builder-guava-testlib] [INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ guava-testlib >>>
+[2022-12-02T22:59:57.132Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.132Z] [mvn-builder-guava-testlib] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-testlib ---
+[2022-12-02T22:59:57.134Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.134Z] [mvn-builder-guava-testlib] [INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ guava-testlib <<<
+[2022-12-02T22:59:57.134Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.135Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.135Z] [mvn-builder-guava-testlib] [INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ guava-testlib ---
+[2022-12-02T22:59:57.492Z] [mvn-builder-guava-testlib] [INFO] Building jar: /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T22:59:57.696Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.697Z] [mvn-builder-guava-testlib] [INFO] >>> maven-source-plugin:3.2.1:test-jar (attach-test-sources) > generate-sources @ guava-testlib >>>
+[2022-12-02T22:59:57.697Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.698Z] [mvn-builder-guava-testlib] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-testlib ---
+[2022-12-02T22:59:57.699Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.700Z] [mvn-builder-guava-testlib] [INFO] <<< maven-source-plugin:3.2.1:test-jar (attach-test-sources) < generate-sources @ guava-testlib <<<
+[2022-12-02T22:59:57.700Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.700Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.700Z] [mvn-builder-guava-testlib] [INFO] --- maven-source-plugin:3.2.1:test-jar (attach-test-sources) @ guava-testlib ---
+[2022-12-02T22:59:57.719Z] [mvn-builder-guava-testlib] [INFO] Building jar: /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-test-sources.jar
+[2022-12-02T22:59:57.763Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T22:59:57.763Z] [mvn-builder-guava-testlib] [INFO] --- maven-javadoc-plugin:3.4.1:jar (attach-docs) @ guava-testlib ---
+[2022-12-02T22:59:58.211Z] [mvn-builder-guava-testlib] [INFO] No previous run data found, generating javadoc.
+[2022-12-02T23:00:14.566Z] [mvn-builder-guava-testlib] [INFO] Building jar: /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-javadoc.jar
+[2022-12-02T23:00:15.173Z] [mvn-builder-guava-testlib] [INFO] 
+[2022-12-02T23:00:15.173Z] [mvn-builder-guava-testlib] [INFO] --- maven-install-plugin:2.4:install (default-install) @ guava-testlib ---
+[2022-12-02T23:00:15.189Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T23:00:15.200Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T23:00:15.216Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-tests.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT-tests.jar
+[2022-12-02T23:00:15.231Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-sources.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T23:00:15.243Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-test-sources.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT-test-sources.jar
+[2022-12-02T23:00:15.250Z] [mvn-builder-guava-testlib] [INFO] Installing /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-javadoc.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-testlib/HEAD-jre-SNAPSHOT/guava-testlib-HEAD-jre-SNAPSHOT-javadoc.jar
+[2022-12-02T23:00:15.292Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:15.292Z] [mvn-builder-guava-tests] [INFO] --------------------< com.google.guava:guava-tests >--------------------
+[2022-12-02T23:00:15.292Z] [mvn-builder-guava-tests] [INFO] Building Guava Unit Tests HEAD-jre-SNAPSHOT                        [5/6]
+[2022-12-02T23:00:15.292Z] [mvn-builder-guava-tests] [INFO] --------------------------------[ jar ]---------------------------------
+[2022-12-02T23:00:15.609Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:15.610Z] [mvn-builder-guava-tests] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava-tests ---
+[2022-12-02T23:00:15.613Z] [mvn-builder-guava-tests] [INFO] Deleting /Users/Stefan/git/guava/guava-tests/target
+[2022-12-02T23:00:17.892Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:17.892Z] [mvn-builder-guava-tests] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-tests ---
+[2022-12-02T23:00:17.894Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:17.894Z] [mvn-builder-guava-tests] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ guava-tests ---
+[2022-12-02T23:00:17.896Z] [mvn-builder-guava-tests] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T23:00:17.896Z] [mvn-builder-guava-tests] [INFO] skip non existing resourceDirectory /Users/Stefan/git/guava/guava-tests/src
+[2022-12-02T23:00:17.896Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:17.896Z] [mvn-builder-guava-tests] [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ guava-tests ---
+[2022-12-02T23:00:17.902Z] [mvn-builder-guava-tests] [INFO] No sources to compile
+[2022-12-02T23:00:17.902Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:17.902Z] [mvn-builder-guava-tests] [INFO] --- build-helper-maven-plugin:1.7:add-test-source (add-benchmark-sources) @ guava-tests ---
+[2022-12-02T23:00:17.991Z] [mvn-builder-guava-tests] [INFO] Test Source directory: /Users/Stefan/git/guava/guava-tests/benchmark added.
+[2022-12-02T23:00:17.992Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:17.992Z] [mvn-builder-guava-tests] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ guava-tests ---
+[2022-12-02T23:00:17.993Z] [mvn-builder-guava-tests] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T23:00:18.127Z] [mvn-builder-guava-tests] [INFO] Copying 6 resources
+[2022-12-02T23:00:18.233Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:00:18.233Z] [mvn-builder-guava-tests] [INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ guava-tests ---
+[2022-12-02T23:00:18.411Z] [mvn-builder-guava-tests] [INFO] Changes detected - recompiling the module!
+[2022-12-02T23:00:18.413Z] [mvn-builder-guava-tests] [INFO] Compiling 631 source files to /Users/Stefan/git/guava/guava-tests/target/test-classes
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[32,23] ProviderList is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[33,23] Providers is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/util/concurrent/AbstractFutureFallbackAtomicHelperTest.java:[57,45] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/util/concurrent/AbstractFutureFallbackAtomicHelperTest.java:[66,22] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[82,4] ProviderList is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[82,29] Providers is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[83,4] Providers is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[83,30] ProviderList is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.114Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/test/com/google/common/hash/MacHashFunctionTest.java:[89,6] Providers is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[579,33] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[598,27] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[600,23] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[605,64] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[607,29] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[608,30] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [WARNING] /Users/Stefan/git/guava/guava-tests/benchmark/com/google/common/util/concurrent/ExecutionListBenchmark.java:[608,51] Unsafe is internal proprietary API and may be removed in a future release
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:01:10.115Z] [mvn-builder-guava-tests] [INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ guava-tests ---
+[2022-12-02T23:01:10.120Z] [mvn-builder-guava-tests] [INFO] Surefire report directory: /Users/Stefan/git/guava/guava-tests/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.google.common.base.AbstractIteratorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 sec
+Running com.google.common.base.AsciiTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running com.google.common.base.CaseFormatTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.691 sec
+Running com.google.common.base.CharMatcherTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.5 sec
+Running com.google.common.base.CharsetsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.base.ConverterTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.114 sec
+Running com.google.common.base.DefaultsTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running com.google.common.base.EnumsTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.123 sec
+Running com.google.common.base.EquivalenceTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running com.google.common.base.FinalizableReferenceQueueClassLoaderUnloadingTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.484 sec
+Running com.google.common.base.FinalizableReferenceQueueTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.163 sec
+Running com.google.common.base.FunctionsTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.457 sec
+Running com.google.common.base.JoinerTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec
+Running com.google.common.base.ObjectsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.base.OptionalTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec
+Running com.google.common.base.PreconditionsTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.google.common.base.PredicatesTest
+Tests run: 87, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec
+Running com.google.common.base.SplitterTest
+Tests run: 104, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
+Running com.google.common.base.StandardSystemPropertyTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.base.StopwatchJavaTimeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.base.StopwatchTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running com.google.common.base.StringsTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.173 sec
+Running com.google.common.base.SuppliersTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.67 sec
+Running com.google.common.base.ThrowablesTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running com.google.common.base.ToStringHelperTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.base.Utf8Test
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.176 sec
+Running com.google.common.base.VerifyTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.cache.AbstractCacheTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running com.google.common.cache.AbstractLoadingCacheTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.cache.CacheBuilderGwtTest
+Tests run: 18, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 sec
+Running com.google.common.cache.CacheBuilderSpecTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Running com.google.common.cache.CacheBuilderTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.998 sec
+Running com.google.common.cache.CacheEvictionTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
+Running com.google.common.cache.CacheExpirationTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.cache.CacheLoaderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.cache.CacheLoadingTest
+Tests run: 46, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.021 sec
+Running com.google.common.cache.CacheManualTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.cache.CacheReferencesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running com.google.common.cache.CacheRefreshTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.cache.CacheStatsTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.cache.EmptyCachesTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.791 sec
+Running com.google.common.cache.ForwardingCacheTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.047 sec
+Running com.google.common.cache.ForwardingLoadingCacheTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.084 sec
+Running com.google.common.cache.LocalCacheMapComputeTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.492 sec
+Running com.google.common.cache.LocalCacheTest
+Tests run: 9567, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.234 sec
+Running com.google.common.cache.LocalLoadingCacheTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.cache.LongAdderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.cache.NullCacheTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.cache.PopulatedCachesTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.347 sec
+Running com.google.common.cache.RemovalNotificationTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.collect.AbstractBiMapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.collect.AbstractIteratorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.137 sec
+Running com.google.common.collect.AbstractMapEntryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.collect.AbstractSequentialIteratorTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running com.google.common.collect.ArrayListMultimapTest
+Tests run: 6044, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.39 sec
+Running com.google.common.collect.ArrayTableColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 sec
+Running com.google.common.collect.ArrayTableColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 sec
+Running com.google.common.collect.ArrayTableRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running com.google.common.collect.ArrayTableRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.collect.ArrayTableTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.227 sec
+Running com.google.common.collect.CollectSpliteratorsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.118 sec
+Running com.google.common.collect.Collections2FilterArrayListTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running com.google.common.collect.Collections2Test
+Tests run: 1284, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.943 sec
+Running com.google.common.collect.CompactHashMapFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.4 sec
+Running com.google.common.collect.CompactHashMapTest
+Tests run: 3838, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.948 sec
+Running com.google.common.collect.CompactHashSetFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.43 sec
+Running com.google.common.collect.CompactHashSetTest
+Tests run: 1568, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.651 sec
+Running com.google.common.collect.CompactLinkedHashMapFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.287 sec
+Running com.google.common.collect.CompactLinkedHashMapTest
+Tests run: 4046, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.333 sec
+Running com.google.common.collect.CompactLinkedHashSetFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.232 sec
+Running com.google.common.collect.CompactLinkedHashSetTest
+Tests run: 1110, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.284 sec
+Running com.google.common.collect.ComparatorsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.collect.ComparisonChainTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.ConcurrentHashMultisetBasherTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.123 sec
+Running com.google.common.collect.ConcurrentHashMultisetTest
+Tests run: 3345, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.195 sec
+Running com.google.common.collect.ContiguousSetTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running com.google.common.collect.ContiguousSetTest$BuiltTests
+Tests run: 905, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.267 sec
+Running com.google.common.collect.CountTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.collect.DiscreteDomainTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.EmptyImmutableTableTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.EnumBiMapTest
+Tests run: 4084, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.597 sec
+Running com.google.common.collect.EnumHashBiMapTest
+Tests run: 4220, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.283 sec
+Running com.google.common.collect.EnumMultisetTest
+Tests run: 870, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.196 sec
+Running com.google.common.collect.EvictingQueueTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Running com.google.common.collect.FauxveridesTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 sec
+Running com.google.common.collect.FilteredBiMapTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.112 sec
+Running com.google.common.collect.FilteredMapTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.collect.FilteredMultimapTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.collect.FilteredSortedMapTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.collect.FluentIterableTest
+Tests run: 105, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.1 sec
+Running com.google.common.collect.ForMapMultimapAsMapImplementsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
+Running com.google.common.collect.ForwardingCollectionTest
+Tests run: 377, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.16 sec
+Running com.google.common.collect.ForwardingConcurrentMapTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.ForwardingDequeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.google.common.collect.ForwardingListIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.collect.ForwardingListMultimapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.02 sec
+Running com.google.common.collect.ForwardingListTest
+Tests run: 721, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.172 sec
+Running com.google.common.collect.ForwardingMapTest
+Tests run: 1718, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.556 sec
+Running com.google.common.collect.ForwardingMultimapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.collect.ForwardingMultisetTest
+Tests run: 1718, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.387 sec
+Running com.google.common.collect.ForwardingNavigableMapTest
+Tests run: 32243, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.093 sec
+Running com.google.common.collect.ForwardingNavigableSetTest
+Tests run: 507, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.134 sec
+Running com.google.common.collect.ForwardingObjectTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.ForwardingQueueTest
+Tests run: 228, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
+Running com.google.common.collect.ForwardingSetMultimapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.collect.ForwardingSetTest
+Tests run: 439, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.082 sec
+Running com.google.common.collect.ForwardingSortedMapImplementsMapTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.ForwardingSortedMapTest
+Tests run: 10970, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.205 sec
+Running com.google.common.collect.ForwardingSortedMultisetTest
+Tests run: 24156, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.55 sec
+Running com.google.common.collect.ForwardingSortedSetMultimapTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running com.google.common.collect.ForwardingSortedSetTest
+Tests run: 982, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.206 sec
+Running com.google.common.collect.ForwardingTableTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.GeneralRangeTest
+Tests run: 19, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.HashBasedTableColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.google.common.collect.HashBasedTableColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.collect.HashBasedTableRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.HashBasedTableRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.HashBasedTableTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.collect.HashBiMapTest
+Tests run: 4505, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.988 sec
+Running com.google.common.collect.HashMultimapTest
+Tests run: 5715, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.331 sec
+Running com.google.common.collect.HashMultisetTest
+Tests run: 1863, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.414 sec
+Running com.google.common.collect.HashingTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.collect.ImmutableBiMapFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.609 sec
+Running com.google.common.collect.ImmutableBiMapInverseMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.collect.ImmutableBiMapMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.google.common.collect.ImmutableBiMapTest
+Tests run: 12351, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.914 sec
+Running com.google.common.collect.ImmutableClassToInstanceMapTest
+Tests run: 1422, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.346 sec
+Running com.google.common.collect.ImmutableCollectionTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.collect.ImmutableEnumMapTest
+Tests run: 1319, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.36 sec
+Running com.google.common.collect.ImmutableListCopyOfConcurrentlyModifiedInputTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.collect.ImmutableListMultimapTest
+Tests run: 8852, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.116 sec
+Running com.google.common.collect.ImmutableListTest
+Tests run: 4254, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.104 sec
+Running com.google.common.collect.ImmutableMapFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.442 sec
+Running com.google.common.collect.ImmutableMapTest
+Tests run: 12402, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.888 sec
+Running com.google.common.collect.ImmutableMapWithBadHashesMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.ImmutableMultimapAsMapImplementsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.ImmutableMultimapTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.google.common.collect.ImmutableMultisetFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.074 sec
+Running com.google.common.collect.ImmutableMultisetTest
+Tests run: 4663, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.302 sec
+Running com.google.common.collect.ImmutableRangeMapTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 15.459 sec
+Running com.google.common.collect.ImmutableRangeSetTest
+Tests run: 758, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.027 sec
+Running com.google.common.collect.ImmutableSetFloodingTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.903 sec
+Running com.google.common.collect.ImmutableSetMultimapAsMapImplementsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.ImmutableSetMultimapTest
+Tests run: 8547, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.466 sec
+Running com.google.common.collect.ImmutableSetTest
+Tests run: 3108, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.801 sec
+Running com.google.common.collect.ImmutableSortedMapHeadMapInclusiveMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.488 sec
+Running com.google.common.collect.ImmutableSortedMapHeadMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Running com.google.common.collect.ImmutableSortedMapSubMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.145 sec
+Running com.google.common.collect.ImmutableSortedMapTailMapExclusiveMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running com.google.common.collect.ImmutableSortedMapTailMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.ImmutableSortedMapTest
+Tests run: 66304, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 28.982 sec
+Running com.google.common.collect.ImmutableSortedMultisetTest
+Tests run: 20613, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.03 sec
+Running com.google.common.collect.ImmutableSortedSetTest
+Tests run: 17064, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.92 sec
+Running com.google.common.collect.ImmutableTableTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.408 sec
+Running com.google.common.collect.InternersTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.225 sec
+Running com.google.common.collect.IterablesFilterArrayListTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.collect.IterablesTest
+Tests run: 132, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.311 sec
+Running com.google.common.collect.IteratorsTest
+Tests run: 582, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.674 sec
+Running com.google.common.collect.LinkedHashMultimapTest
+Tests run: 6062, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.207 sec
+Running com.google.common.collect.LinkedHashMultisetTest
+Tests run: 1965, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.548 sec
+Running com.google.common.collect.LinkedListMultimapTest
+Tests run: 6282, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.322 sec
+Running com.google.common.collect.ListsImplTest
+Tests run: 42, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.ListsTest
+Tests run: 5933, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.274 sec
+Running com.google.common.collect.MapMakerInternalMapTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.072 sec
+Running com.google.common.collect.MapMakerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.MapsCollectionTest
+Tests run: 234922, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 56.774 sec
+Running com.google.common.collect.MapsSortedTransformValuesTest
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.collect.MapsTest
+Tests run: 92, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.288 sec
+Running com.google.common.collect.MapsTransformValuesTest
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.google.common.collect.MapsTransformValuesUnmodifiableIteratorTest
+Tests run: 66, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Running com.google.common.collect.MinMaxPriorityQueueTest
+Tests run: 253, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.323 sec
+Running com.google.common.collect.MoreCollectorsTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.google.common.collect.MultimapBuilderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec
+Running com.google.common.collect.MultimapsCollectionTest
+Tests run: 37867, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.857 sec
+Running com.google.common.collect.MultimapsFilterEntriesAsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running com.google.common.collect.MultimapsTest
+Tests run: 58, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.141 sec
+Running com.google.common.collect.MultimapsTransformValuesAsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.collect.MultisetsCollectionTest
+Tests run: 23303, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.281 sec
+Running com.google.common.collect.MultisetsImmutableEntryTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.MultisetsTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.collect.MutableClassToInstanceMapTest
+Tests run: 1757, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.843 sec
+Running com.google.common.collect.NewCustomTableTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.collect.ObjectArraysTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.OrderingTest
+Tests run: 69, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.773 sec
+Running com.google.common.collect.PeekingIteratorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.108 sec
+Running com.google.common.collect.QueuesTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.221 sec
+Running com.google.common.collect.RangeNonGwtTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running com.google.common.collect.RangeTest
+Tests run: 37, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.collect.RegularImmutableAsListTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.RegularImmutableMapMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.RegularImmutableMapWithUnhashableValuesMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 sec
+Running com.google.common.collect.RegularImmutableSortedMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.collect.RegularImmutableTableTest
+Tests run: 22, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.collect.ReserializedImmutableMapMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 sec
+Running com.google.common.collect.ReserializedImmutableSortedMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.google.common.collect.SetOperationsTest
+Tests run: 1619, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.842 sec
+Running com.google.common.collect.SetsFilterHashSetTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.SetsFilterNavigableSetTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.165 sec
+Running com.google.common.collect.SetsFilterSortedSetTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+Running com.google.common.collect.SetsTest
+Tests run: 2282, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.353 sec
+Running com.google.common.collect.SimpleAbstractMultisetTest
+Tests run: 699, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.29 sec
+Running com.google.common.collect.SingletonImmutableMapMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.SingletonImmutableMapWithUnhashableValueMapInterfaceTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.SingletonImmutableSortedMapMapInterfaceTest
+Tests run: 59, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.SingletonImmutableTableTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.collect.SortedIterablesTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.SortedListsTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running com.google.common.collect.StreamsTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.278 sec
+Running com.google.common.collect.SubMapMultimapAsMapImplementsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.google.common.collect.SynchronizedBiMapTest
+Tests run: 6844, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.157 sec
+Running com.google.common.collect.SynchronizedDequeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.collect.SynchronizedMapTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.SynchronizedMultimapTest
+Tests run: 5646, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.137 sec
+Running com.google.common.collect.SynchronizedNavigableMapTest
+Tests run: 32384, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.719 sec
+Running com.google.common.collect.SynchronizedNavigableSetTest
+Tests run: 8953, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.627 sec
+Running com.google.common.collect.SynchronizedQueueTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.SynchronizedSetTest
+Tests run: 506, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.13 sec
+Running com.google.common.collect.SynchronizedTableTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.TableCollectionTest
+Tests run: 5856, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.975 sec
+Running com.google.common.collect.TableCollectorsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
+Running com.google.common.collect.TablesTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.TablesTransformValuesColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.collect.TablesTransformValuesColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.TablesTransformValuesRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.TablesTransformValuesRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.TablesTransformValuesTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.TablesTransposeColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.TablesTransposeRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.TopKSelectorTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.411 sec
+Running com.google.common.collect.TransposedTableTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.TreeBasedTableColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.collect.TreeBasedTableColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.collect.TreeBasedTableRowMapHeadMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.TreeBasedTableRowMapInterfaceTest
+Tests run: 60, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.collect.TreeBasedTableRowMapSubMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.collect.TreeBasedTableRowMapTailMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.collect.TreeBasedTableRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.TreeBasedTableRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.TreeBasedTableTest
+Tests run: 3823, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.733 sec
+Running com.google.common.collect.TreeMultimapExplicitTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.collect.TreeMultimapNaturalTest
+Tests run: 40220, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.733 sec
+Running com.google.common.collect.TreeMultisetTest
+Tests run: 103115, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.937 sec
+Running com.google.common.collect.TreeRangeMapTest
+Tests run: 3276, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 19.445 sec
+Running com.google.common.collect.TreeRangeSetTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 45.256 sec
+Running com.google.common.collect.TreeTraverserTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Running com.google.common.collect.UnmodifiableIteratorTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.collect.UnmodifiableListIteratorTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.collect.UnmodifiableMultimapAsMapImplementsMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.collect.UnmodifiableRowSortedTableColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 sec
+Running com.google.common.collect.UnmodifiableRowSortedTableColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.collect.UnmodifiableRowSortedTableRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.UnmodifiableRowSortedTableRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.collect.UnmodifiableTableColumnMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.collect.UnmodifiableTableColumnTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.UnmodifiableTableRowMapTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.collect.UnmodifiableTableRowTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.escape.ArrayBasedCharEscaperTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.escape.ArrayBasedEscaperMapTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.escape.ArrayBasedUnicodeEscaperTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.escape.CharEscaperBuilderTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.escape.EscapersTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.escape.UnicodeEscaperTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.eventbus.AsyncEventBusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.018 sec
+Running com.google.common.eventbus.DispatcherTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.012 sec
+Running com.google.common.eventbus.EventBusTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.39 sec
+Running com.google.common.eventbus.ReentrantEventsTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.eventbus.SubscriberRegistryTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.eventbus.SubscriberTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.eventbus.outside.AbstractNotAnnotatedInSuperclassTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.eventbus.outside.AnnotatedAndAbstractInSuperclassTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.eventbus.outside.AnnotatedNotAbstractInSuperclassTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.eventbus.outside.BaseSubscriberFinderTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.eventbus.outside.DeepInterfaceTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.eventbus.outside.NeitherAbstractNorAnnotatedInSuperclassTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.eventbus.outside.OutsideEventBusTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.graph.DefaultNetworkImplementationsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.086 sec
+Running com.google.common.graph.ElementOrderTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.graph.EndpointPairTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.graph.GraphEquivalenceTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.graph.GraphMutationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.769 sec
+Running com.google.common.graph.GraphPropertiesTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.graph.GraphsTest
+Tests run: 33, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec
+Running com.google.common.graph.ImmutableNetworkTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.graph.ImmutableValueGraphTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.009 sec
+Running com.google.common.graph.MapCacheTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.graph.NetworkEquivalenceTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.graph.NetworkMutationTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 30.319 sec
+Running com.google.common.graph.StandardImmutableDirectedGraphTest
+Tests run: 130, Failures: 0, Errors: 0, Skipped: 60, Time elapsed: 0.284 sec
+Running com.google.common.graph.StandardImmutableDirectedNetworkTest
+Tests run: 392, Failures: 0, Errors: 0, Skipped: 187, Time elapsed: 0.851 sec
+Running com.google.common.graph.StandardImmutableGraphAdditionalTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.graph.StandardImmutableUndirectedGraphTest
+Tests run: 124, Failures: 0, Errors: 0, Skipped: 56, Time elapsed: 0.265 sec
+Running com.google.common.graph.StandardMutableDirectedGraphTest
+Tests run: 260, Failures: 0, Errors: 0, Skipped: 37, Time elapsed: 0.229 sec
+Running com.google.common.graph.StandardMutableDirectedNetworkTest
+Tests run: 392, Failures: 0, Errors: 0, Skipped: 71, Time elapsed: 0.472 sec
+Running com.google.common.graph.StandardMutableUndirectedGraphTest
+Tests run: 248, Failures: 0, Errors: 0, Skipped: 37, Time elapsed: 0.483 sec
+Running com.google.common.graph.StandardMutableUndirectedNetworkTest
+Tests run: 368, Failures: 0, Errors: 0, Skipped: 67, Time elapsed: 0.683 sec
+Running com.google.common.graph.TraverserTest
+Tests run: 112, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.google.common.graph.ValueGraphTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running com.google.common.hash.AbstractByteHasherTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.044 sec
+Running com.google.common.hash.AbstractNonStreamingHashFunctionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+Running com.google.common.hash.AbstractStreamingHasherTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.707 sec
+Running com.google.common.hash.BloomFilterTest
+Tests run: 29, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.246 sec
+Running com.google.common.hash.ChecksumHashFunctionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.hash.Crc32cHashFunctionTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.109 sec
+Running com.google.common.hash.FarmHashFingerprint64Test
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec
+Running com.google.common.hash.Fingerprint2011Test
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.027 sec
+Running com.google.common.hash.FunnelsTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.381 sec
+Running com.google.common.hash.HashCodeTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.hash.HashingInputStreamTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.14 sec
+Running com.google.common.hash.HashingOutputStreamTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.hash.HashingTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.381 sec
+Running com.google.common.hash.MacHashFunctionTest
+Tests run: 28, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.614 sec
+Running com.google.common.hash.MessageDigestHashFunctionTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 sec
+Running com.google.common.hash.Murmur3Hash128Test
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.379 sec
+Running com.google.common.hash.Murmur3Hash32Test
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.013 sec
+Running com.google.common.hash.SipHashFunctionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.143 sec
+Running com.google.common.html.HtmlEscapersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.io.AppendableWriterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.io.BaseEncodingTest
+Tests run: 40, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.25 sec
+Running com.google.common.io.ByteSinkTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 sec
+Running com.google.common.io.ByteSourceTest
+Tests run: 2223, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.268 sec
+Running com.google.common.io.ByteStreamsTest
+Tests run: 57, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.37 sec
+Running com.google.common.io.CharSequenceReaderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.io.CharSinkTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.io.CharSourceTest
+Tests run: 1539, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.285 sec
+Running com.google.common.io.CharStreamsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.029 sec
+Running com.google.common.io.CloseablesTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.057 sec
+Running com.google.common.io.CloserTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 sec
+Running com.google.common.io.CountingInputStreamTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.io.CountingOutputStreamTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.io.FileBackedOutputStreamTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.233 sec
+Running com.google.common.io.FilesFileTraverserTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+Running com.google.common.io.FilesSimplifyPathTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.795 sec
+Running com.google.common.io.FilesTest
+Tests run: 1161, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.209 sec
+Running com.google.common.io.FlushablesTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.google.common.io.LineBufferTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.028 sec
+Running com.google.common.io.LittleEndianDataInputStreamTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.io.LittleEndianDataOutputStreamTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.io.MoreFilesFileTraverserTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.186 sec
+Running com.google.common.io.MoreFilesTest
+Tests run: 1151, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.971 sec
+Running com.google.common.io.MultiInputStreamTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.086 sec
+Running com.google.common.io.MultiReaderTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.io.PatternFilenameFilterTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.io.ResourcesTest
+Tests run: 773, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.581 sec
+Running com.google.common.math.BigDecimalMathTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec
+Running com.google.common.math.BigIntegerMathTest
+Tests run: 63, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.648 sec
+Running com.google.common.math.DoubleMathTest
+Tests run: 68, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.645 sec
+Running com.google.common.math.DoubleUtilsTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.math.IntMathTest
+Tests run: 56, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.266 sec
+Running com.google.common.math.LinearTransformationTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 sec
+Running com.google.common.math.LongMathTest
+Tests run: 69, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 43.274 sec
+Running com.google.common.math.MathPreconditionsTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.math.PairedStatsAccumulatorTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.math.PairedStatsTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.google.common.math.QuantilesAlgorithmTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.019 sec
+Running com.google.common.math.QuantilesTest
+Tests run: 58, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.837 sec
+Running com.google.common.math.StatsAccumulatorTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.558 sec
+Running com.google.common.math.StatsTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.78 sec
+Running com.google.common.net.HostAndPortTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.net.HostSpecifierTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.062 sec
+Running com.google.common.net.HttpHeadersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.net.InetAddressesTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running com.google.common.net.InternetDomainNameTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.03 sec
+Running com.google.common.net.MediaTypeTest
+Tests run: 49, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.052 sec
+Running com.google.common.net.PercentEscaperTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.net.UrlEscapersTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.primitives.BooleansTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.primitives.ByteArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.425 sec
+Running com.google.common.primitives.BytesTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.primitives.CharArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.319 sec
+Running com.google.common.primitives.CharsTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.582 sec
+Running com.google.common.primitives.DoubleArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.493 sec
+Running com.google.common.primitives.DoublesTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.774 sec
+Running com.google.common.primitives.FloatArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.159 sec
+Running com.google.common.primitives.FloatsTest
+Tests run: 47, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.13 sec
+Running com.google.common.primitives.ImmutableDoubleArrayTest
+Tests run: 2334, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 11.38 sec
+Running com.google.common.primitives.ImmutableIntArrayTest
+Tests run: 2333, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 14.349 sec
+Running com.google.common.primitives.ImmutableLongArrayTest
+Tests run: 2333, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.27 sec
+Running com.google.common.primitives.IntArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.271 sec
+Running com.google.common.primitives.IntsTest
+Tests run: 50, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+Running com.google.common.primitives.LongArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.184 sec
+Running com.google.common.primitives.LongsTest
+Tests run: 48, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.primitives.PrimitivesTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.primitives.ShortArrayAsListTest
+Tests run: 896, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.537 sec
+Running com.google.common.primitives.ShortsTest
+Tests run: 45, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+Running com.google.common.primitives.SignedBytesTest
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.primitives.UnsignedBytesTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.042 sec
+Running com.google.common.primitives.UnsignedIntegerTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.primitives.UnsignedIntsTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.313 sec
+Running com.google.common.primitives.UnsignedLongTest
+Tests run: 21, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 sec
+Running com.google.common.primitives.UnsignedLongsTest
+Tests run: 24, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.348 sec
+Running com.google.common.reflect.AbstractInvocationHandlerTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.reflect.ClassPathTest
+Tests run: 44, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.06 sec
+Running com.google.common.reflect.ImmutableTypeToInstanceMapTest
+Tests run: 712, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.178 sec
+Running com.google.common.reflect.InvokableTest
+Tests run: 62, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.068 sec
+Running com.google.common.reflect.MutableTypeToInstanceMapTest
+Tests run: 831, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.188 sec
+Running com.google.common.reflect.ParameterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 sec
+Running com.google.common.reflect.ReflectionTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.reflect.TypeParameterTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.reflect.TypeResolverTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.182 sec
+Running com.google.common.reflect.TypeTokenResolutionTest
+Tests run: 36, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 sec
+Running com.google.common.reflect.TypeTokenSubtypeTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.067 sec
+Running com.google.common.reflect.TypeTokenTest
+Tests run: 172, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1 sec
+Running com.google.common.reflect.TypeVisitorTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.031 sec
+Running com.google.common.reflect.TypesTest
+Tests run: 26, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.054 sec
+Running com.google.common.util.concurrent.AbstractExecutionThreadServiceTest
+Tests run: 12, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec
+Running com.google.common.util.concurrent.AbstractFutureCancellationCauseTest
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.07 sec
+Running com.google.common.util.concurrent.AbstractFutureFallbackAtomicHelperTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 118.254 sec
+Running com.google.common.util.concurrent.AbstractFutureInnocuousThreadTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 sec
+Running com.google.common.util.concurrent.AbstractFutureTest
+Tests run: 43, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 56.849 sec
+Running com.google.common.util.concurrent.AbstractIdleServiceTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.043 sec
+Running com.google.common.util.concurrent.AbstractListeningExecutorServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec
+Running com.google.common.util.concurrent.AbstractScheduledServiceTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.087 sec
+Running com.google.common.util.concurrent.AbstractServiceTest
+Tests run: 38, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.058 sec
+Running com.google.common.util.concurrent.AggregateFutureStateFallbackAtomicHelperTest
+Tests run: 160, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.042 sec
+Running com.google.common.util.concurrent.AtomicDoubleArrayTest
+Tests run: 27, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.142 sec
+Running com.google.common.util.concurrent.AtomicDoubleTest
+Tests run: 25, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.026 sec
+Running com.google.common.util.concurrent.AtomicLongMapBasherTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.021 sec
+Running com.google.common.util.concurrent.AtomicLongMapTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.util.concurrent.AtomicsTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.003 sec
+Running com.google.common.util.concurrent.CallablesTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.032 sec
+Running com.google.common.util.concurrent.ClosingFutureFinishToFutureTest
+Tests run: 65, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.569 sec
+Running com.google.common.util.concurrent.ClosingFutureFinishToValueAndCloserTest
+Tests run: 64, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 57.296 sec
+Running com.google.common.util.concurrent.CycleDetectingLockFactoryTest
+Tests run: 23, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 sec
+Running com.google.common.util.concurrent.ExecutionListTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.021 sec
+Running com.google.common.util.concurrent.ExecutionSequencerTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.778 sec
+Running com.google.common.util.concurrent.FakeTimeLimiterTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.util.concurrent.FluentFutureTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.022 sec
+Running com.google.common.util.concurrent.ForwardingBlockingDequeTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.298 sec
+Running com.google.common.util.concurrent.ForwardingBlockingQueueTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.285 sec
+Running com.google.common.util.concurrent.ForwardingExecutorServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.094 sec
+Running com.google.common.util.concurrent.ForwardingFutureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.05 sec
+Running com.google.common.util.concurrent.ForwardingListenableFutureTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.041 sec
+Running com.google.common.util.concurrent.ForwardingListeningExecutorServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.133 sec
+Running com.google.common.util.concurrent.ForwardingObjectTesterTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.039 sec
+Running com.google.common.util.concurrent.FutureCallbackTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.035 sec
+Running com.google.common.util.concurrent.FuturesGetCheckedTest
+Tests run: 32, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.261 sec
+Running com.google.common.util.concurrent.FuturesGetDoneTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.util.concurrent.FuturesGetUncheckedTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.util.concurrent.FuturesTest
+Tests run: 160, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.75 sec
+Running com.google.common.util.concurrent.FuturesTransformAsyncTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 sec
+Running com.google.common.util.concurrent.FuturesTransformTest
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 sec
+Running com.google.common.util.concurrent.GeneratedMonitorTest
+Tests run: 980, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.083 sec
+Running com.google.common.util.concurrent.InterruptibleMonitorTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.777 sec
+Running com.google.common.util.concurrent.InterruptibleTaskTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.util.concurrent.JdkFutureAdaptersTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.014 sec
+Running com.google.common.util.concurrent.ListenableFutureTaskTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.01 sec
+Running com.google.common.util.concurrent.ListenerCallQueueTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 sec
+Running com.google.common.util.concurrent.ListeningScheduledExecutorServiceTest
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.util.concurrent.MoreExecutorsTest
+Tests run: 34, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.048 sec
+Running com.google.common.util.concurrent.RateLimiterTest
+Tests run: 31, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.795 sec
+Running com.google.common.util.concurrent.RunnablesTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.util.concurrent.SequentialExecutorTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.06 sec
+Running com.google.common.util.concurrent.ServiceManagerTest
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.896 sec
+Running com.google.common.util.concurrent.ServiceTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running com.google.common.util.concurrent.SettableFutureTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.081 sec
+Running com.google.common.util.concurrent.SimpleTimeLimiterTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.58 sec
+Running com.google.common.util.concurrent.StripedTest
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.075 sec
+Running com.google.common.util.concurrent.SupplementalMonitorTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.008 sec
+Running com.google.common.util.concurrent.ThreadFactoryBuilderTest
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 sec
+Running com.google.common.util.concurrent.TrustedInputFutureTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.053 sec
+Running com.google.common.util.concurrent.TrustedListenableFutureTaskTest
+Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.519 sec
+Running com.google.common.util.concurrent.UncaughtExceptionHandlersTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.055 sec
+Running com.google.common.util.concurrent.UninterruptibleFutureTest
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.063 sec
+Running com.google.common.util.concurrent.UninterruptibleMonitorTest
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.794 sec
+Running com.google.common.util.concurrent.UninterruptiblesTest
+Tests run: 49, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.816 sec
+Running com.google.common.util.concurrent.UntrustedInputFutureTest
+Tests run: 35, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.037 sec
+Running com.google.common.util.concurrent.WrappingExecutorServiceTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.002 sec
+Running com.google.common.util.concurrent.WrappingScheduledExecutorServiceTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.004 sec
+Running com.google.common.xml.XmlEscapersTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.09 sec
+
+Results :
+
+Tests run: 856535, Failures: 0, Errors: 0, Skipped: 515
+
+[2022-12-02T23:18:13.588Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:13.591Z] [mvn-builder-guava-tests] [INFO] --- animal-sniffer-maven-plugin:1.22:check (check-java-version-compatibility) @ guava-tests ---
+[2022-12-02T23:18:13.602Z] [mvn-builder-guava-tests] [INFO] Checking unresolved references to org.codehaus.mojo.signature:java18:1.0
+[2022-12-02T23:18:13.643Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:13.643Z] [mvn-builder-guava-tests] [INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ guava-tests ---
+[2022-12-02T23:18:13.651Z] [mvn-builder-guava-tests] [INFO] Skipping packaging of the jar
+[2022-12-02T23:18:13.651Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:13.651Z] [mvn-builder-guava-tests] [INFO] --- maven-jar-plugin:3.2.0:test-jar (create-test-jar) @ guava-tests ---
+[2022-12-02T23:18:14.302Z] [mvn-builder-guava-tests] [INFO] Building jar: /Users/Stefan/git/guava/guava-tests/target/guava-tests-HEAD-jre-SNAPSHOT-tests.jar
+[2022-12-02T23:18:15.602Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.602Z] [mvn-builder-guava-tests] [INFO] --- maven-javadoc-plugin:3.4.1:jar (attach-docs) @ guava-tests ---
+[2022-12-02T23:18:15.637Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.638Z] [mvn-builder-guava-tests] [INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ guava-tests >>>
+[2022-12-02T23:18:15.653Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.653Z] [mvn-builder-guava-tests] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-tests ---
+[2022-12-02T23:18:15.655Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.655Z] [mvn-builder-guava-tests] [INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ guava-tests <<<
+[2022-12-02T23:18:15.655Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.656Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.656Z] [mvn-builder-guava-tests] [INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ guava-tests ---
+[2022-12-02T23:18:15.663Z] [mvn-builder-guava-tests] [INFO] No sources in project. Archive not created.
+[2022-12-02T23:18:15.663Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.663Z] [mvn-builder-guava-tests] [INFO] >>> maven-source-plugin:3.2.1:test-jar (attach-test-sources) > generate-sources @ guava-tests >>>
+[2022-12-02T23:18:15.664Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.664Z] [mvn-builder-guava-tests] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-tests ---
+[2022-12-02T23:18:15.665Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.665Z] [mvn-builder-guava-tests] [INFO] <<< maven-source-plugin:3.2.1:test-jar (attach-test-sources) < generate-sources @ guava-tests <<<
+[2022-12-02T23:18:15.665Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.665Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:15.666Z] [mvn-builder-guava-tests] [INFO] --- maven-source-plugin:3.2.1:test-jar (attach-test-sources) @ guava-tests ---
+[2022-12-02T23:18:15.860Z] [mvn-builder-guava-tests] [INFO] Building jar: /Users/Stefan/git/guava/guava-tests/target/guava-tests-HEAD-jre-SNAPSHOT-test-sources.jar
+[2022-12-02T23:18:16.428Z] [mvn-builder-guava-tests] [INFO] 
+[2022-12-02T23:18:16.429Z] [mvn-builder-guava-tests] [INFO] --- maven-install-plugin:2.4:install (default-install) @ guava-tests ---
+[2022-12-02T23:18:16.431Z] [mvn-builder-guava-tests] [INFO] No primary artifact to install, installing attached artifacts instead.
+[2022-12-02T23:18:16.433Z] [mvn-builder-guava-tests] [INFO] Installing /Users/Stefan/git/guava/guava-tests/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava-tests/HEAD-jre-SNAPSHOT/guava-tests-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T23:18:16.456Z] [mvn-builder-guava-tests] [INFO] Installing /Users/Stefan/git/guava/guava-tests/target/guava-tests-HEAD-jre-SNAPSHOT-tests.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-tests/HEAD-jre-SNAPSHOT/guava-tests-HEAD-jre-SNAPSHOT-tests.jar
+[2022-12-02T23:18:16.502Z] [mvn-builder-guava-tests] [INFO] Installing /Users/Stefan/git/guava/guava-tests/target/guava-tests-HEAD-jre-SNAPSHOT-test-sources.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-tests/HEAD-jre-SNAPSHOT/guava-tests-HEAD-jre-SNAPSHOT-test-sources.jar
+[2022-12-02T23:18:16.518Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:16.519Z] [mvn-builder-guava-gwt] [INFO] ---------------------< com.google.guava:guava-gwt >---------------------
+[2022-12-02T23:18:16.519Z] [mvn-builder-guava-gwt] [INFO] Building Guava GWT compatible libs HEAD-jre-SNAPSHOT               [6/6]
+[2022-12-02T23:18:16.519Z] [mvn-builder-guava-gwt] [INFO] --------------------------------[ jar ]---------------------------------
+[2022-12-02T23:18:17.536Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:17.536Z] [mvn-builder-guava-gwt] [INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ guava-gwt ---
+[2022-12-02T23:18:17.597Z] [mvn-builder-guava-gwt] [INFO] Deleting /Users/Stefan/git/guava/guava-gwt/target
+[2022-12-02T23:18:19.503Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:19.503Z] [mvn-builder-guava-gwt] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-gwt ---
+[2022-12-02T23:18:19.652Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:19.653Z] [mvn-builder-guava-gwt] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-failureaccess-sources) @ guava-gwt ---
+[2022-12-02T23:18:20.321Z] [mvn-builder-guava-gwt] [INFO] Unpacking /Users/Stefan/.m2/repository/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1-sources.jar to /Users/Stefan/git/guava/guava-gwt/target/failureaccess-sources with includes "" and excludes "META-INF/MANIFEST.MF"
+[2022-12-02T23:18:20.438Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:20.438Z] [mvn-builder-guava-gwt] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-guava-sources) @ guava-gwt ---
+[2022-12-02T23:18:20.441Z] [mvn-builder-guava-gwt] [INFO] Unpacking /Users/Stefan/git/guava/guava/target/guava-HEAD-jre-SNAPSHOT-sources.jar to /Users/Stefan/git/guava/guava-gwt/target/guava-sources with includes "" and excludes "META-INF/MANIFEST.MF"
+[2022-12-02T23:18:21.334Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:21.334Z] [mvn-builder-guava-gwt] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-guava-testlib-sources) @ guava-gwt ---
+[2022-12-02T23:18:21.336Z] [mvn-builder-guava-gwt] [INFO] Unpacking /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-sources.jar to /Users/Stefan/git/guava/guava-gwt/target/guava-test-sources with includes "" and excludes "META-INF/MANIFEST.MF"
+[2022-12-02T23:18:21.813Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:21.814Z] [mvn-builder-guava-gwt] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-guava-testlib-test-sources) @ guava-gwt ---
+[2022-12-02T23:18:21.816Z] [mvn-builder-guava-gwt] [INFO] Unpacking /Users/Stefan/git/guava/guava-testlib/target/guava-testlib-HEAD-jre-SNAPSHOT-test-sources.jar to /Users/Stefan/git/guava/guava-gwt/target/guava-test-sources with includes "" and excludes "META-INF/MANIFEST.MF"
+[2022-12-02T23:18:21.868Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:21.868Z] [mvn-builder-guava-gwt] [INFO] --- maven-dependency-plugin:3.1.1:unpack-dependencies (unpack-guava-test-sources) @ guava-gwt ---
+[2022-12-02T23:18:21.871Z] [mvn-builder-guava-gwt] [INFO] Unpacking /Users/Stefan/git/guava/guava-tests/target/guava-tests-HEAD-jre-SNAPSHOT-test-sources.jar to /Users/Stefan/git/guava/guava-gwt/target/guava-test-sources with includes "" and excludes "META-INF/MANIFEST.MF"
+[2022-12-02T23:18:22.638Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:22.639Z] [mvn-builder-guava-gwt] [INFO] --- maven-antrun-plugin:1.6:run (copy-gwt-files) @ guava-gwt ---
+[2022-12-02T23:18:23.231Z] [mvn-builder-guava-gwt] [INFO] Executing tasks
+
+copy-gwt-resources:
+     [copy] Copying 355 files to /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-sources
+     [copy] Copied 28 empty directories to 3 empty directories under /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-sources
+     [copy] Copying 1 file to /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-sources
+     [copy] Copying 1 file to /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-sources
+     [copy] Copying 1 file to /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-sources
+     [copy] Copying 489 files to /Users/Stefan/git/guava/guava-gwt/target/guava-test-gwt-sources
+     [copy] Copied 37 empty directories to 8 empty directories under /Users/Stefan/git/guava/guava-gwt/target/guava-test-gwt-sources
+[2022-12-02T23:18:30.228Z] [mvn-builder-guava-gwt] [INFO] Executed tasks
+[2022-12-02T23:18:30.229Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:30.229Z] [mvn-builder-guava-gwt] [INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ guava-gwt ---
+[2022-12-02T23:18:30.360Z] [mvn-builder-guava-gwt] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T23:18:30.392Z] [mvn-builder-guava-gwt] [INFO] Copying 17 resources
+[2022-12-02T23:18:30.521Z] [mvn-builder-guava-gwt] [INFO] Copying 56 resources
+[2022-12-02T23:18:30.855Z] [mvn-builder-guava-gwt] [INFO] Copying 358 resources
+[2022-12-02T23:18:31.219Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:31.219Z] [mvn-builder-guava-gwt] [INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ guava-gwt ---
+[2022-12-02T23:18:31.672Z] [mvn-builder-guava-gwt] [INFO] Nothing to compile - all classes are up to date
+[2022-12-02T23:18:31.673Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:31.673Z] [mvn-builder-guava-gwt] [INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ guava-gwt ---
+[2022-12-02T23:18:31.675Z] [mvn-builder-guava-gwt] [INFO] Using 'UTF-8' encoding to copy filtered resources.
+[2022-12-02T23:18:31.687Z] [mvn-builder-guava-gwt] [INFO] Copying 6 resources
+[2022-12-02T23:18:31.722Z] [mvn-builder-guava-gwt] [INFO] Copying 6 resources
+[2022-12-02T23:18:31.818Z] [mvn-builder-guava-gwt] [INFO] Copying 489 resources
+[2022-12-02T23:18:32.165Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:32.165Z] [mvn-builder-guava-gwt] [INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ guava-gwt ---
+[2022-12-02T23:18:32.204Z] [mvn-builder-guava-gwt] [INFO] Changes detected - recompiling the module!
+[2022-12-02T23:18:32.233Z] [mvn-builder-guava-gwt] [INFO] Compiling 2 source files to /Users/Stefan/git/guava/guava-gwt/target/test-classes
+[2022-12-02T23:18:35.130Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:35.131Z] [mvn-builder-guava-gwt] [INFO] --- maven-surefire-plugin:2.7.2:test (default-test) @ guava-gwt ---
+[2022-12-02T23:18:35.188Z] [mvn-builder-guava-gwt] [INFO] Tests are skipped.
+[2022-12-02T23:18:35.188Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:18:35.189Z] [mvn-builder-guava-gwt] [INFO] --- gwt-maven-plugin:2.8.2:compile (gwt-compile) @ guava-gwt ---
+[2022-12-02T23:19:38.325Z] [Thread-30] [INFO] [ERROR] Error saving compilation unit to cache file: /Users/Stefan/git/guava/guava-gwt/target/gwt-unitCache/gwt-unitCache-8c530e985114901166261cb2baf5ec75a6e55b9b-FF35F588CF7564DE259004F02565B00E-00000184D4EB9615
+[2022-12-02T23:19:38.329Z] [Thread-30] [INFO] java.io.IOException: Stream Closed
+[2022-12-02T23:19:38.329Z] [Thread-30] [INFO] 	at java.base/java.io.RandomAccessFile.readBytes(Native Method)
+[2022-12-02T23:19:38.329Z] [Thread-30] [INFO] 	at java.base/java.io.RandomAccessFile.read(RandomAccessFile.java:408)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at com.google.gwt.dev.util.DiskCache.transferToStream(DiskCache.java:165)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at com.google.gwt.dev.util.DiskCacheToken.writeObject(DiskCacheToken.java:73)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at jdk.internal.reflect.GeneratedMethodAccessor33.invoke(Unknown Source)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+[2022-12-02T23:19:38.330Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1186)
+[2022-12-02T23:19:38.331Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1523)
+[2022-12-02T23:19:38.331Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1444)
+[2022-12-02T23:19:38.331Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187)
+[2022-12-02T23:19:38.331Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.defaultWriteFields(ObjectOutputStream.java:1579)
+[2022-12-02T23:19:38.331Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.defaultWriteObject(ObjectOutputStream.java:446)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at com.google.gwt.dev.javac.CachedCompilationUnit.writeObject(CachedCompilationUnit.java:230)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at jdk.internal.reflect.GeneratedMethodAccessor36.invoke(Unknown Source)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectStreamClass.invokeWriteObject(ObjectStreamClass.java:1186)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeSerialData(ObjectOutputStream.java:1523)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeOrdinaryObject(ObjectOutputStream.java:1444)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1187)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at java.base/java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:353)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at com.google.gwt.dev.javac.PersistentUnitCacheDir$OpenFile.writeUnit(PersistentUnitCacheDir.java:373)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at com.google.gwt.dev.javac.PersistentUnitCacheDir.writeUnit(PersistentUnitCacheDir.java:194)
+[2022-12-02T23:19:38.332Z] [Thread-30] [INFO] 	at com.google.gwt.dev.javac.PersistentUnitCache$BackgroundService$6.run(PersistentUnitCache.java:444)
+[2022-12-02T23:19:38.333Z] [Thread-30] [INFO] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+[2022-12-02T23:19:38.333Z] [Thread-30] [INFO] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+[2022-12-02T23:19:38.333Z] [Thread-30] [INFO] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+[2022-12-02T23:19:38.333Z] [Thread-30] [INFO] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+[2022-12-02T23:19:38.333Z] [Thread-30] [INFO] 	at java.base/java.lang.Thread.run(Thread.java:832)
+[2022-12-02T23:19:43.518Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:43.518Z] [mvn-builder-guava-gwt] [INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ guava-gwt ---
+[2022-12-02T23:19:44.134Z] [mvn-builder-guava-gwt] [INFO] Building jar: /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T23:19:44.555Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:44.555Z] [mvn-builder-guava-gwt] [INFO] --- gwt-maven-plugin:2.8.2:test (gwt-test) @ guava-gwt ---
+[2022-12-02T23:19:45.824Z] [Thread-33] [INFO] 
+[2022-12-02T23:19:45.824Z] [Thread-33] [INFO] -------------------------------------------------------
+[2022-12-02T23:19:45.824Z] [Thread-33] [INFO]  T E S T S
+[2022-12-02T23:19:45.824Z] [Thread-33] [INFO] -------------------------------------------------------
+[2022-12-02T23:19:45.824Z] [Thread-33] [INFO] Running com.google.gwt.junit.tools.GWTTestSuite@1554909b
+[2022-12-02T23:19:45.847Z] [Thread-33] [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 sec
+[2022-12-02T23:19:45.847Z] [Thread-33] [INFO] 
+[2022-12-02T23:19:45.848Z] [Thread-33] [INFO] Results :
+[2022-12-02T23:19:45.848Z] [Thread-33] [INFO] 
+[2022-12-02T23:19:45.848Z] [Thread-33] [INFO] Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+[2022-12-02T23:19:45.848Z] [Thread-33] [INFO] 
+[2022-12-02T23:19:46.632Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:46.632Z] [mvn-builder-guava-gwt] [INFO] >>> maven-source-plugin:3.2.1:jar (attach-sources) > generate-sources @ guava-gwt >>>
+[2022-12-02T23:19:46.640Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:46.641Z] [mvn-builder-guava-gwt] [INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-versions) @ guava-gwt ---
+[2022-12-02T23:19:46.642Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:46.642Z] [mvn-builder-guava-gwt] [INFO] <<< maven-source-plugin:3.2.1:jar (attach-sources) < generate-sources @ guava-gwt <<<
+[2022-12-02T23:19:46.642Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:46.642Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:46.642Z] [mvn-builder-guava-gwt] [INFO] --- maven-source-plugin:3.2.1:jar (attach-sources) @ guava-gwt ---
+[2022-12-02T23:19:46.833Z] [mvn-builder-guava-gwt] [INFO] Building jar: /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T23:19:47.398Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:47.398Z] [mvn-builder-guava-gwt] [INFO] --- maven-javadoc-plugin:3.4.1:jar (attach-docs) @ guava-gwt ---
+[2022-12-02T23:19:48.391Z] [mvn-builder-guava-gwt] [INFO] 
+[2022-12-02T23:19:48.391Z] [mvn-builder-guava-gwt] [INFO] --- maven-install-plugin:2.4:install (default-install) @ guava-gwt ---
+[2022-12-02T23:19:48.442Z] [mvn-builder-guava-gwt] [INFO] Installing /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-HEAD-jre-SNAPSHOT.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-gwt/HEAD-jre-SNAPSHOT/guava-gwt-HEAD-jre-SNAPSHOT.jar
+[2022-12-02T23:19:48.454Z] [mvn-builder-guava-gwt] [INFO] Installing /Users/Stefan/git/guava/guava-gwt/pom.xml to /Users/Stefan/.m2/repository/com/google/guava/guava-gwt/HEAD-jre-SNAPSHOT/guava-gwt-HEAD-jre-SNAPSHOT.pom
+[2022-12-02T23:19:48.469Z] [mvn-builder-guava-gwt] [INFO] Installing /Users/Stefan/git/guava/guava-gwt/target/guava-gwt-HEAD-jre-SNAPSHOT-sources.jar to /Users/Stefan/.m2/repository/com/google/guava/guava-gwt/HEAD-jre-SNAPSHOT/guava-gwt-HEAD-jre-SNAPSHOT-sources.jar
+[2022-12-02T23:19:48.487Z] [main] [INFO] ------------------------------------------------------------------------
+[2022-12-02T23:19:48.487Z] [main] [INFO] Reactor Summary for Guava Maven Parent HEAD-jre-SNAPSHOT:
+[2022-12-02T23:19:48.487Z] [main] [INFO] 
+[2022-12-02T23:19:48.488Z] [main] [INFO] Guava Maven Parent ................................. SUCCESS [  3.919 s]
+[2022-12-02T23:19:48.488Z] [main] [INFO] Guava: Google Core Libraries for Java .............. SUCCESS [02:05 min]
+[2022-12-02T23:19:48.489Z] [main] [INFO] Guava BOM .......................................... SUCCESS [  3.917 s]
+[2022-12-02T23:19:48.489Z] [main] [INFO] Guava Testing Library .............................. SUCCESS [04:56 min]
+[2022-12-02T23:19:48.489Z] [main] [INFO] Guava Unit Tests ................................... SUCCESS [18:01 min]
+[2022-12-02T23:19:48.489Z] [main] [INFO] Guava GWT compatible libs .......................... SUCCESS [01:31 min]
+[2022-12-02T23:19:48.489Z] [main] [INFO] ------------------------------------------------------------------------
+[2022-12-02T23:19:48.490Z] [main] [INFO] BUILD SUCCESS
+[2022-12-02T23:19:48.490Z] [main] [INFO] ------------------------------------------------------------------------
+[2022-12-02T23:19:48.490Z] [main] [INFO] Total time:  26:42 min (Wall Clock)
+[2022-12-02T23:19:48.490Z] [main] [INFO] Finished at: 2022-12-02T23:19:48+01:00
+[2022-12-02T23:19:48.490Z] [main] [INFO] ------------------------------------------------------------------------
