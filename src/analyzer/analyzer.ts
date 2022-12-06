@@ -25,9 +25,10 @@ export interface AnalyzedModule {
 }
 
 export interface Stats {
+    status: "success" | "failed" | "unknown";
     multiThreaded: boolean;
     threads: number;
-    totalDuration?: string;
+    totalBuildTime?: string;
 }
 
 export interface AnalyzerResult {
@@ -100,6 +101,8 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics }: 
         stats: {
             multiThreaded: statistics.multiThreadedBuild,
             threads: statistics.multiThreadedBuild ? statistics.threads : 1,
+            status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
+            totalBuildTime: statistics.totalBuildTime,
         }
     };
 

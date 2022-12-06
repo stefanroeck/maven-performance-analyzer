@@ -77,16 +77,6 @@ describe("parser", () => {
         expect(parseTimestamp("2022-11-08 11:00:00").format()).toEqual(dayjs("2022-11-08T10:00:00.000Z").format());
     })
 
-    it("find last timestamp short date", () => {
-        const lastLine = "2022-11-18 21:42:10 [INFO] Total time:  02:20 min";
-        expect(findLastTimeStamp([lastLine])?.format()).toEqual(dayjs("2022-11-18T20:42:10.000Z").format());
-    })
-
-    it("find last timestamp jenkins date", () => {
-        const lastLine = "[2022-11-30T18:05:53.848Z] [INFO] Total time:  12:52 min";
-        expect(findLastTimeStamp([lastLine])?.format()).toEqual(dayjs("2022-11-30T17:05:53.848Z").format());
-    })
-
     it("parses lines from multiple threads", () => {
         const result = parse(
             "2022-11-19 19:06:06,153 [mvn-builder-surefire-logger-api] [INFO] --- maven-clean-plugin:3.2.0:clean (default-clean) @ surefire-logger-api ---\n" +

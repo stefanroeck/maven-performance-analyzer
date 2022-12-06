@@ -53,6 +53,9 @@ describe("parser and analyzer", () => {
             copiedTestResources: 11,
         });
         expect(result.stats.multiThreaded).toEqual(false);
+        expect(result.stats.threads).toEqual(1);
+        expect(result.stats.totalBuildTime).toEqual("04:20 min");
+        expect(result.stats.status).toEqual("success");
     })
 
     it("log without timestamps", () => {
@@ -94,6 +97,8 @@ describe("parser and analyzer", () => {
         expect(duration).toEqual(35);
         expect(result.stats.multiThreaded).toEqual(true);
         expect(result.stats.threads).toEqual(4);
+        expect(result.stats.totalBuildTime).toEqual("34.008 s (Wall Clock)");
+        expect(result.stats.status).toEqual("failed");
     })
 
     it("guava log", () => {

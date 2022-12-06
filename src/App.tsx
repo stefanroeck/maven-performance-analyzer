@@ -10,6 +10,7 @@ import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard'
 import { TimelineCard } from './components/cards/TimelineCard';
 import { HelpCard } from './components/input/HelpCard';
 import { dedup } from './utils/arrayUtils';
+import { StatisticsCard } from './components/cards/StatisticsCard';
 
 function MainApp() {
   const [data, setData] = useState<AnalyzerResult | undefined>(undefined);
@@ -34,6 +35,9 @@ function MainApp() {
       <Box sx={{ margin: "20px" }}>
         <HelpCard />
         <InputCard onAnalyze={onAnalyze} infoText={infoText} errorText={errorText} />
+        {!errorText && data && <>
+          <StatisticsCard data={data.stats} />
+        </>}
         {!errorText && data && (data.mavenPlugins.length > 0) && <>
           <TimelineCard data={data.mavenPlugins} />
           <ModulesCard data={data.mavenPlugins} />

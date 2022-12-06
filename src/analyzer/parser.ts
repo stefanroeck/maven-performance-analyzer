@@ -36,7 +36,8 @@ export interface LastTimestamp {
 }
 
 interface AbstractParserStatistics {
-    totalBuildTime?: string; // TODO
+    totalBuildTime?: string;
+    buildStatus?: "success" | "failed";
     multiThreadedBuild: boolean;
 }
 
@@ -65,8 +66,6 @@ export interface ParserResult {
 
 const mavenGoalExecutionRegexp =
     /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
-const totalTimeRegexp =
-    /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\] Total time: {2}([0-9:]+)/;
 
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
@@ -76,7 +75,11 @@ const anyPluginRegexp = /.*---.*@.*---/
 const mavenCompilerPluginCompilingRegexp = /.*Compiling (\d*) source files to.*/
 const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/
 
+/* Statistics */
 const multiThreadedParserLineRegexp = /.*Using the MultiThreadedBuilder implementation with a thread count of (?<threads>\d+)/;
+const totalTimeRegexp = /.*Total time: {2}(?<totalTime>.+)/;
+const buildSuccessRegexp = /.*BUILD SUCCESS/
+const buildFailedRegexp = /.*BUILD FAILURE/
 
 
 export const parse = (logContent: string): ParserResult => {
@@ -109,11 +112,15 @@ export const parse = (logContent: string): ParserResult => {
 
 const matchGroupsAndProcess = <T>(line: string, regExp: RegExp, process: (groups: any) => T): T | undefined => {
     const match = line.match(regExp);
-    if (match && match.groups) {
-        return process(match.groups);
-    }
-    return undefined;
+    return ifDefined(match?.groups, (g) => process(g));
 }
+
+const ifDefined = <T, R>(value: T | undefined, func: (t: T) => R, def: R | undefined = undefined): R | undefined => {
+    if (value !== undefined) {
+        return func(value);
+    }
+    return def;
+};
 
 export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
     const lastLineWithTimeStamp = lines.reverse().find(line => line.match(totalTimeRegexp) !== null);
@@ -193,12 +200,24 @@ function collectCompiledResources(lines: string[]): StatisticLine[] {
 const collectStatistics = (logLines: string[]): ParserStatistics => {
 
     return logLines.reduce((prev, line) => {
-        const threads = matchGroupsAndProcess(line, multiThreadedParserLineRegexp, groups => {
-            return parseInt(groups.threads);
-        });
+        const threads: number | undefined = matchGroupsAndProcess(line, multiThreadedParserLineRegexp, groups => parseInt(groups.threads));
         if (threads !== undefined) {
             return { ...prev, threads, multiThreadedBuild: true };
         }
+
+        const totalBuildTime: string | undefined = matchGroupsAndProcess(line, totalTimeRegexp, groups => groups.totalTime);
+        if (totalBuildTime !== undefined) {
+            return { ...prev, totalBuildTime };
+        }
+
+        if (line.match(buildSuccessRegexp)) {
+            return { ...prev, buildStatus: "success" };
+        }
+
+        if (line.match(buildFailedRegexp)) {
+            return { ...prev, buildStatus: "failed" };
+        }
+
         return prev;
     }, {
         multiThreadedBuild: false,
