@@ -13,7 +13,7 @@ export function formatDuration(v: string | number) {
 export const defaultMargin = {
     top: 0, right: 20, bottom: 20, left: 160
 }
-
+// a comment
 export const basicBarCharProps: Partial<Omit<BarSvgProps<any>, "height" | "width">> = {
     padding: 0.3,
     innerPadding: 0,
