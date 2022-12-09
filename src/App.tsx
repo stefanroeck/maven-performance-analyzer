@@ -39,7 +39,7 @@ function MainApp() {
       <Box sx={{ margin: "20px" }}>
         <HelpCard />
         <InputCard onAnalyze={onAnalyze} infoText={infoText} errorText={errorText} />
-        {!errorText && data && <>
+        {data && <>
           <StatisticsCard data={data.stats} />
         </>}
         {!errorText && data && (data.mavenPlugins.length > 0) && <>

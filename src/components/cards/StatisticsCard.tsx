@@ -58,6 +58,9 @@ const AlignedUnkownIcon = aligned(UnknownIcon, {
 const AlignedSingleThreadIcon = aligned(SingleThreadIcon);
 const AlignedMultiThreadIcon = aligned(MultiThreadIcon);
 
+const capitalize = (s: string): string => {
+    return s.length > 1 ? s.substring(0, 1).toUpperCase() + s.substring(1) : s;
+}
 
 export const StatisticsCard: FunctionComponent<Props> = ({ data: { totalBuildTime: totalDuration, multiThreaded, threads, status } }) => {
     return (
@@ -68,7 +71,7 @@ export const StatisticsCard: FunctionComponent<Props> = ({ data: { totalBuildTim
                     <StatsLabel>Build Status</StatsLabel>
                     <StatsValue>
                         {status === "success" ? <AlignedSuccessIcon /> : status === "failed" ? <AlignedFailedIcon /> : <AlignedUnkownIcon />}
-                        {status}
+                        {capitalize(status)}
                     </StatsValue>
                 </StatsBox>
                 <Divider orientation="vertical" variant="middle" flexItem />
