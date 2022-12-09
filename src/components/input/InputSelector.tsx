@@ -1,8 +1,14 @@
-import { Box, Button, Chip, FormControlLabel, Link, Switch, TextField, Typography } from "@mui/material";
-import { ChangeEvent, FC, useState, MouseEvent } from "react";
-import { fetchSampleFile } from "../../sample/fetchSampleFile";
+import { Paper, Tab, Tabs } from "@mui/material";
+import { FC, useState, SyntheticEvent } from "react";
+import FileIcon from '@mui/icons-material/AttachFileOutlined';
+import TextIcon from '@mui/icons-material/DescriptionOutlined';
+import UrlIcon from '@mui/icons-material/LinkOutlined';
+import { InputText } from "./InputText";
+import { InputFile } from "./InputFile";
+import { InputUrl } from "./InputUrl";
 
-type InputType = "file" | "text";
+type InputType = "file" | "text" | "url";
+const inputTypes: InputType[] = ["text", "url", "file"];
 
 interface Props {
     onSelected: (content: string) => void;
@@ -11,61 +17,23 @@ interface Props {
 export const InputSelector: FC<Props> = ({ onSelected }) => {
     const [inputType, setInputType] = useState<InputType>("text");
 
-    const loadSampleFile = (e: MouseEvent) => {
-        e.preventDefault();
-        fetchSampleFile().then(text => {
-            setTextFieldInput(text);
-            onSelected(text);
-        });
-    };
-
-    const [selectedFile, setSelectedFile] = useState<File | undefined>(undefined);
-    const [textFieldInput, setTextFieldInput] = useState("");
-
-    const switchComp = <Switch defaultChecked onChange={() => setInputType((old) => old === "file" ? "text" : "file")} />
-    const handleSelectedFile = (event: ChangeEvent<HTMLInputElement>) => {
-        const files = event.target.files;
-        if (files && files.length > 0) {
-            setSelectedFile(files[0]);
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                if (typeof reader.result === "string" && reader.result !== null) {
-                    onSelected(reader.result);
-                }
-            }
-            reader.readAsText(files[0]);
-        } else {
-            onSelected("");
-        }
-    }
-
-    const textFieldChange = (event: ChangeEvent<HTMLInputElement>) => {
-        setTextFieldInput(event.target.value);
-        onSelected(event.target.value);
+    const onTabChanged = (_event: SyntheticEvent, tabPos: number) => {
+        setInputType(inputTypes[tabPos]);
     }
 
     return (<>
-        <FormControlLabel control={switchComp} label={inputType === "file" ? "Select Log File" : "Enter as text"} sx={{ marginBottom: "10px" }} />
-        <Typography component="span" hidden={inputType !== "text"} sx={{ float: "right", marginTop: "20px" }} variant={"subtitle2"}>
-            Use&nbsp;
-            <Link href="." onClick={loadSampleFile}>
-                sample log file
-            </Link>
-        </Typography>
-        <Box hidden={inputType !== "text"} >
-            <TextField variant="outlined" minRows={4} maxRows={6} multiline fullWidth label="Maven Log File Output" value={textFieldInput} onChange={textFieldChange} inputProps={{ style: { fontSize: "small", fontFamily: "monospace" } }} />
-        </Box>
-        <Box hidden={inputType !== "file"}>
-            <Button variant="outlined" component="label" color="primary" fullWidth>
-                Select File
-                <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
-            </Button>
-            {selectedFile ?
-                <Chip sx={{ marginTop: "10px" }} label={selectedFile?.name} onDelete={() => {
-                    setSelectedFile(undefined); onSelected("");
-                }} />
-                : null}
-        </Box>
+        <Tabs value={inputTypes.indexOf(inputType)} onChange={onTabChanged} sx={{ marginTop: "-30px" }}>
+            <Tab label={"Enter as Text"} icon={<TextIcon />} iconPosition={"start"} />
+            <Tab label={"Enter Url"} icon={<UrlIcon />} iconPosition={"start"} />
+            <Tab label={"Select file from disk"} icon={<FileIcon />} iconPosition={"start"} />
+        </Tabs>
+
+        <Paper elevation={2} sx={{ padding: "20px" }}>
+            <InputText onSelected={onSelected} visible={inputType === "text"} />
+            <InputFile onSelected={onSelected} visible={inputType === "file"} />
+            <InputUrl onSelected={onSelected} visible={inputType === "url"} />
+        </Paper>
+
     </>
     );
 }

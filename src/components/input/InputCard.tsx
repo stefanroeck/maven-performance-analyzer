@@ -18,6 +18,7 @@ export const InputCard: FunctionComponent<Props> = ({ onAnalyze, infoText, error
             <Button
                 disabled={logContent === ""}
                 variant="contained"
+                fullWidth
                 color="primary"
                 sx={{ marginTop: "20px" }}
                 onClick={() => onAnalyze(logContent)}
