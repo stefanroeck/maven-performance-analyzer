@@ -25,8 +25,12 @@ function MainApp() {
   const infoText = showInfo ? "Durations cannot be calculated. Please make sure that the log file contains timestamps in the expected format yyyy-MM-dd HH:mm:ss,SSS" : undefined;
 
   const onAnalyze = (logContent: string) => {
-    const result = analyze(parse(logContent));
-    setData(result);
+    if (logContent !== "") {
+      const result = analyze(parse(logContent));
+      setData(result);
+    } else {
+      setData(undefined);
+    }
   };
 
   return (

@@ -27,7 +27,7 @@ export const InputFile: FunctionComponent<Props> = ({ visible, onSelected }) => 
 
     return (
         <Box hidden={!visible}>
-            <Button variant="outlined" component="label" color="primary" fullWidth>
+            <Button variant="contained" component="label" color="primary" fullWidth>
                 Select File
                 <input hidden accept="text" multiple type="file" onChange={handleSelectedFile} />
             </Button>

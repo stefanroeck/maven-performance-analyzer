@@ -1,5 +1,4 @@
 import { Box, Button, FormControl, FormHelperText, InputAdornment, TextField } from "@mui/material";
-import Grid2 from "@mui/material/Unstable_Grid2";
 import { ChangeEvent, FC, useState } from "react";
 import { fetchFile } from "../../sample/fetchSampleFile";
 import ValidIcon from '@mui/icons-material/TaskAltOutlined';
@@ -50,32 +49,28 @@ export const InputUrl: FC<Props> = ({ onSelected, visible }) => {
 
     return (<>
         <Box hidden={!visible} >
-            <Grid2 container spacing={2}>
-                <Grid2 xs={11}>
-                    <FormControl fullWidth error={error !== undefined}>
-                        <TextField fullWidth variant="outlined"
-                            label="Url to Maven Log"
-                            value={url}
-                            onChange={textFieldChange}
+            <FormControl fullWidth error={error !== undefined}>
+                <TextField fullWidth variant="outlined"
+                    label="Url to Maven Log"
+                    value={url}
+                    onChange={textFieldChange}
 
-                            InputProps={valid ? {
-                                endAdornment: (
-                                    <InputAdornment position="end">
-                                        <StyledValidIcon />
-                                    </InputAdornment>
-                                ),
-                            } : { error: error !== undefined }}
-                        />
-                        <FormHelperText>{error}</FormHelperText>
-                    </FormControl>
-                </Grid2>
-                <Grid2 xs={1}>
-                    <Button fullWidth variant="outlined" color="primary"
-                        onClick={onButtonClick} disabled={loading}>
-                        Load
-                    </Button>
-                </Grid2>
-            </Grid2>
+                    InputProps={valid ? {
+                        endAdornment: (
+                            <InputAdornment position="end">
+                                <StyledValidIcon />
+                            </InputAdornment>
+                        ),
+                    } : { error: error !== undefined }}
+                />
+                <FormHelperText>{error}</FormHelperText>
+            </FormControl>
+            <Button fullWidth variant="contained" color="primary"
+                onClick={onButtonClick} disabled={loading || url === ""}
+                sx={{ marginTop: "20px" }}
+            >
+                Load & Analyze
+            </Button>
         </Box>
     </>);
 

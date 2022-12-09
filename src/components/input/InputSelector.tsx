@@ -33,7 +33,6 @@ export const InputSelector: FC<Props> = ({ onSelected }) => {
             <InputFile onSelected={onSelected} visible={inputType === "file"} />
             <InputUrl onSelected={onSelected} visible={inputType === "url"} />
         </Paper>
-
     </>
     );
 }
