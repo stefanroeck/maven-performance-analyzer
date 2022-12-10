@@ -1,12 +1,13 @@
-import dayjs, { Dayjs } from "dayjs";
+import { isValid } from "./dateUtils";
 import { dedup } from "../utils/arrayUtils";
+import { parse as parseDate, parseISO } from 'date-fns'
 
 
 export interface MavenGoalExecutionLine {
     module: string;
     plugin: string;
     goal: string;
-    startTime: Dayjs;
+    startTime: Date;
     thread?: string;
     row?: number;
 }
@@ -32,7 +33,7 @@ interface AbstactStatisticLine {
 export type StatisticLine = SourceStatisticLine | ResourceStatisticLine;
 export interface LastTimestamp {
     thread?: string;
-    lastTimestamp: Dayjs;
+    lastTimestamp: Date;
 }
 
 interface AbstractParserStatistics {
@@ -51,7 +52,7 @@ interface MulitThreaderParserStatistics extends AbstractParserStatistics {
 }
 
 export interface FileDownload {
-    timestamp: Dayjs | undefined;
+    timestamp: Date | undefined;
     repository: string;
     resourceUrl: string;
     sizeInBytes: number;
@@ -73,7 +74,7 @@ export interface ParserResult {
 // breaks the logic of named capturing groups.
 
 const mavenGoalExecutionRegexp =
-    /(?<date>[0-9- :,.TZ[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
+    /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
 
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
@@ -91,7 +92,7 @@ const buildFailedRegexp = /.*BUILD FAILURE/
 
 /* Downloads */
 // Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.44.v20210927/websocket-api-9.4.44.v20210927.jar (52 kB at 32 kB/s)
-const downloadedResourceRegexp = /(?<date>[0-9- :,.TZ[\]]+)?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)/;
+const downloadedResourceRegexp = /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)?\]?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)/;
 
 
 export const parse = (logContent: string): ParserResult => {
@@ -135,7 +136,7 @@ const ifDefined = <T, R>(value: T | undefined, func: (t: T) => R, def: R | undef
     return def;
 };
 
-export const findLastTimeStamp = (lines: string[]): Dayjs | undefined => {
+export const findLastTimeStamp = (lines: string[]): Date | undefined => {
     const lastLineWithTimeStamp = lines.reverse().find(line => line.match(totalTimeRegexp) !== null);
     const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(totalTimeRegexp)?.groups?.date : undefined;
     return timestamp ? parseTimestamp(timestamp) : undefined;
@@ -155,10 +156,20 @@ const findLastTimeStamps = (lines: MavenGoalExecutionLine[], threads: string[]):
     }
 }
 
-export const supportedTimestampFormats = ["YYYY-MM-DD HH:mm:ss,SSS", "YYYY-MM-DD HH:mm:ss"];
+export const supportedTimestampFormats = ["yyyy-MM-dd HH:mm:ss,SSS", "yyyy-MM-dd HH:mm:ss"];
 
-export const parseTimestamp = (timestamp: string): Dayjs => {
-    return dayjs(timestamp, supportedTimestampFormats);
+export const parseTimestamp = (timestamp: string): Date => {
+    for (const timestampFormat of supportedTimestampFormats) {
+        const parsedDate = parseDate(timestamp, timestampFormat, new Date());
+        if (isValid(parsedDate)) {
+            return parsedDate;
+        }
+    }
+    const parsedDate = parseISO(timestamp);
+    if (isValid(parsedDate)) {
+        return parsedDate;
+    }
+    throw new Error("Cannot parse date: " + timestamp);
 }
 
 function collectCompiledResources(lines: string[]): StatisticLine[] {

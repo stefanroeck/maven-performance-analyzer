@@ -20,7 +20,7 @@
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.8",
     "apexcharts": "^3.36.3",
-    "dayjs": "^1.11.6",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
     "react-apexcharts": "^1.4.0",
     "react-dom": "^18.2.0",

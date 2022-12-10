@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { analyze, AnalyzerRow } from "./analyzer"
 
 describe("analyzer", () => {
@@ -9,17 +8,17 @@ describe("analyzer", () => {
             module: "m1",
             plugin: "p1",
             goal: "g1",
-            startTime: dayjs("2022-01-01 10:00:00"),
+            startTime: new Date("2022-01-01 10:00:00"),
         }, {
             module: "m1",
             plugin: "p2",
             goal: "g2",
-            startTime: dayjs("2022-01-01 10:00:05"),
+            startTime: new Date("2022-01-01 10:00:05"),
         }];
 
         const analysis = analyze({
             lines,
-            lastTimestamps: [{ thread: undefined, lastTimestamp: dayjs("2022-01-01 10:00:15") }],
+            lastTimestamps: [{ thread: undefined, lastTimestamp: new Date("2022-01-01 10:00:15") }],
             compiledSources: [],
             statistics: {
                 multiThreadedBuild: false,
@@ -62,25 +61,25 @@ describe("analyzer", () => {
             plugin: "p1",
             goal: "goal",
             thread: thread1,
-            startTime: dayjs("2022-01-01 10:00:00"),
+            startTime: new Date("2022-01-01 10:00:00"),
         }, {
             module: "m2",
             plugin: "p2",
             goal: "goal",
             thread: thread2,
-            startTime: dayjs("2022-01-01 10:00:00"),
+            startTime: new Date("2022-01-01 10:00:00"),
         }, {
             module: "m1",
             plugin: "p3", // end p1
             goal: "goal",
             thread: thread1,
-            startTime: dayjs("2022-01-01 10:00:02"),
+            startTime: new Date("2022-01-01 10:00:02"),
         }, {
             module: "m2",
             plugin: "p4", // end p2
             goal: "goal",
             thread: thread2,
-            startTime: dayjs("2022-01-01 10:00:03"),
+            startTime: new Date("2022-01-01 10:00:03"),
         },
         ];
 
@@ -89,11 +88,11 @@ describe("analyzer", () => {
             lastTimestamps: [
                 {
                     thread: thread1,
-                    lastTimestamp: dayjs("2022-01-01 10:00:15")
+                    lastTimestamp: new Date("2022-01-01 10:00:15")
                 },
                 {
                     thread: thread2,
-                    lastTimestamp: dayjs("2022-01-01 10:00:14")
+                    lastTimestamp: new Date("2022-01-01 10:00:14")
                 },
             ],
             compiledSources: [],

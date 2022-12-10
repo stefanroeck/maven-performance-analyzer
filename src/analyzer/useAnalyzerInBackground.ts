@@ -13,7 +13,15 @@ export const useAnalyzerInBackground = (content: string): AnalyzerResult | undef
                 console.log("Start processing in worker");
                 worker.postMessage(content);
                 worker.onmessage = (message) => {
-                    const result = JSON.parse(message.data) as AnalyzerResult;
+                    const result = JSON.parse(message.data, (key: string, value: any) => {
+                        // convert date-strings to Date objects again
+                        if (key === "startTime") {
+                            return new Date(value);
+                        }
+                        return value;
+                    }) as AnalyzerResult;
+
+                    console.log("Received result from web worker");
                     setResult(result);
                 };
             } else {

@@ -3,7 +3,3 @@
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
 import '@testing-library/jest-dom';
-import dayjs from "dayjs";
-import customParseFormat from 'dayjs/plugin/customParseFormat' // import plugin
-
-dayjs.extend(customParseFormat) // custom plugin to allow specifying the date format, see https://day.js.org/docs/en/parse/string-format

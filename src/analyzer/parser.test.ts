@@ -1,4 +1,3 @@
-import dayjs from "dayjs";
 import { FileDownload, parse, parseTimestamp } from "./parser"
 
 describe("parser", () => {
@@ -12,7 +11,7 @@ describe("parser", () => {
             plugin: "maven-remote-resources-plugin",
             module: "httpcore5-reactive",
         });
-        expect(result.startTime.format()).toEqual(dayjs("2022-11-08T18:00:12.500Z").format());
+        expect(result.startTime).toEqual(new Date("2022-11-08T18:00:12.500Z"));
     })
 
     it("parses single line without millis", () => {
@@ -24,7 +23,7 @@ describe("parser", () => {
             plugin: "maven-remote-resources-plugin",
             module: "httpcore5-reactive",
         });
-        expect(result.startTime.format()).toEqual(dayjs("2022-11-08T18:00:12.000Z").format());
+        expect(result.startTime).toEqual(new Date("2022-11-08T18:00:12.000Z"));
     })
 
     it("parses line without thread name", () => {
@@ -42,7 +41,7 @@ describe("parser", () => {
         const result = parse(line).lines[0];
 
         expect(result.thread).toEqual("mvn-builder-surefire");
-        expect(result.startTime.format()).toEqual(dayjs("2022-11-19T18:06:02.813Z").format());
+        expect(result.startTime).toEqual(new Date("2022-11-19T18:06:02.813Z"));
         expect(result.goal).toEqual("enforce (enforce-maven-version)");
         expect(result.module).toEqual("surefire");
         expect(result.plugin).toEqual("maven-enforcer-plugin");
@@ -54,7 +53,7 @@ describe("parser", () => {
         const result = parse(line).lines[0];
 
         expect(result.thread).toEqual("BuilderThread 0");
-        expect(result.startTime.format()).toEqual(dayjs("2022-11-23T07:05:26.619Z").format());
+        expect(result.startTime).toEqual(new Date("2022-11-23T07:05:26.619Z"));
         expect(result.goal).toEqual("enforce (enforce-maven-version)");
         expect(result.module).toEqual("surefire");
         expect(result.plugin).toEqual("maven-enforcer-plugin");
@@ -66,15 +65,15 @@ describe("parser", () => {
         const result = parse(line).lines[0];
 
         expect(result.thread).toBeUndefined();
-        expect(result.startTime.format()).toEqual(dayjs("2022-11-29T19:07:14.966Z").format());
+        expect(result.startTime).toEqual(new Date("2022-11-29T20:07:14.966Z"));
         expect(result.goal).toEqual("prepare-agent (default)");
         expect(result.module).toEqual("module-one");
         expect(result.plugin).toEqual("jacoco-maven-plugin");
     })
 
     it("parses timestamp", () => {
-        expect(parseTimestamp("2022-11-08 11:00:00,500").format()).toEqual(dayjs("2022-11-08T10:00:00.500Z").format());
-        expect(parseTimestamp("2022-11-08 11:00:00").format()).toEqual(dayjs("2022-11-08T10:00:00.000Z").format());
+        expect(parseTimestamp("2022-11-08 11:00:00,500")).toEqual(new Date("2022-11-08T10:00:00.500Z"));
+        expect(parseTimestamp("2022-11-08 11:00:00")).toEqual(new Date("2022-11-08T10:00:00.000Z"));
     })
 
     it("parses lines from multiple threads", () => {
@@ -90,7 +89,7 @@ describe("parser", () => {
                 "plugin": "maven-clean-plugin",
                 "thread": "mvn-builder-surefire-logger-api",
             });
-        expect(result.lines[0].startTime.format()).toEqual(dayjs("2022-11-19T18:06:06.153Z").format())
+        expect(result.lines[0].startTime).toEqual(new Date("2022-11-19T18:06:06.153Z"))
 
         expect(result.lines[1]).toMatchObject(
             {
@@ -100,7 +99,7 @@ describe("parser", () => {
                 "thread": "mvn-builder-surefire-shared-utils",
             },
         );
-        expect(result.lines[1].startTime.format()).toEqual(dayjs("2022-11-19T18:06:06.156Z").format())
+        expect(result.lines[1].startTime).toEqual(new Date("2022-11-19T18:06:06.156Z"))
     })
 
     it("parses downloads", () => {
@@ -143,6 +142,6 @@ describe("parser", () => {
                 repository: "plugins",
             },
         ]);
-        expect(result.downloads[0].timestamp?.format()).toEqual(dayjs("2022-11-30T16:53:13.391Z").format());
+        expect(result.downloads[0].timestamp).toEqual(new Date("2022-11-30T17:53:13.391Z"));
     })
 })

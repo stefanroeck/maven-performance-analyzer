@@ -1,13 +1,12 @@
 import { BarSvgProps } from "@nivo/bar";
-import dayjs from "dayjs";
 import { amber, blue, blueGrey, brown, cyan, deepOrange, deepPurple, green, grey, indigo, lightBlue, lightGreen, lime, orange, pink, purple, red, teal, yellow } from '@mui/material/colors';
 
 export const axisWithDuration = {
-    format: (v: string) => `${formatDuration(v)}`
+    format: (v: string) => `${formatDuration(parseInt(v))}`
 };
 
-export function formatDuration(v: string | number) {
-    return dayjs(v).format("mm:ss");
+export function formatDuration(v: number) {
+    return new Date(v).toISOString().substring(14, 19);
 }
 
 export const defaultMargin = {

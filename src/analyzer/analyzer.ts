@@ -1,5 +1,5 @@
-import { Dayjs } from "dayjs";
 import { dedup } from "../utils/arrayUtils";
+import { isValid } from "./dateUtils";
 import { ParserResult } from "./parser";
 
 export interface Location {
@@ -10,7 +10,7 @@ export interface Location {
 export interface AnalyzerRow {
     module: string;
     plugin: string;
-    startTime: Dayjs;
+    startTime: Date;
     duration: number;
     thread: string;
     location?: Location;
@@ -85,13 +85,13 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
         const threadLines = lines.filter(l => l.thread === undefined || l.thread === thread);
         const lastTimestamp = lastTimestamps.find(t => t.thread === thread)?.lastTimestamp;
         return threadLines.map(({ module, plugin, startTime }, idx) => {
-            const nextStartTime: Dayjs | undefined = idx < threadLines.length - 1 ? threadLines[idx + 1].startTime : lastTimestamp;
+            const nextStartTime: Date | undefined = idx < threadLines.length - 1 ? threadLines[idx + 1].startTime : lastTimestamp;
             return {
                 thread: thread || "main",
                 module,
                 plugin,
                 startTime,
-                duration: nextStartTime && nextStartTime.isValid() ? nextStartTime.diff(startTime) : 0,
+                duration: nextStartTime && isValid(nextStartTime) ? (nextStartTime.getTime() - startTime.getTime()) : 0,
             };
         });
     });

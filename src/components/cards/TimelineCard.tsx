@@ -5,7 +5,6 @@ import { ExpandableCard } from './ExpandableCard';
 import { diagramHeight, muiDistinctColors } from './diagramUtils';
 import ReactApexChart, { Props as ApexChartProps } from "react-apexcharts";
 import { ApexOptions } from "apexcharts";
-import dayjs, { Dayjs } from 'dayjs';
 import { dedup } from '../../utils/arrayUtils';
 import { grey } from '@mui/material/colors';
 
@@ -16,7 +15,7 @@ interface Props {
 interface DataWithDuration {
     thread: string;
     module: string;
-    startTime: Dayjs;
+    startTime: Date;
     duration: number;
 }
 
@@ -51,8 +50,8 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
                 fillColor: muiDistinctColors[idx % muiDistinctColors.length],
                 x: multiThreaded ? b.thread : b.module,
                 y: [
-                    b.startTime.toDate().getTime(),
-                    b.startTime.add(b.duration, "milliseconds").toDate().getTime(),
+                    b.startTime.getTime(),
+                    new Date(b.startTime.getTime() + b.duration).getTime(),
                 ]
             }
         }),
@@ -91,9 +90,9 @@ export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
             formatter: function (val, opts) {
                 const label = modules[opts.dataPointIndex];
                 if (Array.isArray(val)) {
-                    const from = dayjs(val[0]);
-                    const to = dayjs(val[1]);
-                    const millis = to.diff(from, 'ms');
+                    const from = new Date(val[0]);
+                    const to = new Date(val[1]);
+                    const millis = to.getTime() - from.getTime();
                     return `${label} - ${new Date(millis).toISOString().substring(14, 19)}`;
                 }
                 return label + "";
