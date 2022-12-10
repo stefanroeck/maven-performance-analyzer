@@ -29,6 +29,7 @@ export interface Stats {
     multiThreaded: boolean;
     threads: number;
     totalBuildTime?: string;
+    totalDownloadedBytes: number;
 }
 
 export interface AnalyzerResult {
@@ -37,7 +38,7 @@ export interface AnalyzerResult {
     stats: Stats;
 }
 
-export const analyze = ({ lines, lastTimestamps, compiledSources, statistics }: ParserResult): AnalyzerResult => {
+export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads }: ParserResult): AnalyzerResult => {
     const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
@@ -103,6 +104,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics }: 
             threads: statistics.multiThreadedBuild ? statistics.threads : 1,
             status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
             totalBuildTime: statistics.totalBuildTime,
+            totalDownloadedBytes: downloads.map(d => d.sizeInBytes).reduce((prev, curr) => prev + curr, 0),
         }
     };
 

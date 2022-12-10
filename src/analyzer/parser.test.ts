@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { findLastTimeStamp, parse, parseTimestamp } from "./parser"
+import { FileDownload, parse, parseTimestamp } from "./parser"
 
 describe("parser", () => {
 
@@ -101,5 +101,48 @@ describe("parser", () => {
             },
         );
         expect(result.lines[1].startTime.format()).toEqual(dayjs("2022-11-19T18:06:06.156Z").format())
+    })
+
+    it("parses downloads", () => {
+        const result = parse(
+            "Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.6.1/maven-model-3.6.1.jar (186 kB at 1.4 MB/s)\n" +
+            "Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.11.0/maven-artifact-transfer-0.11.0.jar (0 B at 0 B/s)\n" +
+            "Downloaded from central: https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.12.1/xercesImpl-2.12.1.jar (1.4 MB at 1.2 MB/s)\n"
+        );
+
+        expect(result.downloads).toEqual<FileDownload[]>([
+            {
+                resourceUrl: "https://repo.maven.apache.org/maven2/org/apache/maven/maven-model/3.6.1/maven-model-3.6.1.jar",
+                sizeInBytes: 186 * 1024,
+                timestamp: undefined,
+                repository: "central",
+            },
+            {
+                resourceUrl: "https://repo.maven.apache.org/maven2/org/apache/maven/shared/maven-artifact-transfer/0.11.0/maven-artifact-transfer-0.11.0.jar",
+                sizeInBytes: 0,
+                timestamp: undefined,
+                repository: "central",
+            },
+            {
+                resourceUrl: "https://repo.maven.apache.org/maven2/xerces/xercesImpl/2.12.1/xercesImpl-2.12.1.jar",
+                sizeInBytes: 1.4 * 1024 * 1024,
+                timestamp: undefined,
+                repository: "central",
+            },
+        ]);
+    })
+
+    it("parse download with timestamp", () => {
+        const result = parse(
+            "[2022-11-30T17:53:13.391Z] [INFO] Downloaded from plugins: https://repo1.maven.org/maven2/org/zeroturnaround/jrebel-maven-plugin/1.1.10/jrebel-maven-plugin-1.1.10.pom (6.9 kB at 18 kB/s)"
+        );
+        expect(result.downloads).toMatchObject([
+            {
+                resourceUrl: "https://repo1.maven.org/maven2/org/zeroturnaround/jrebel-maven-plugin/1.1.10/jrebel-maven-plugin-1.1.10.pom",
+                sizeInBytes: 6.9 * 1024,
+                repository: "plugins",
+            },
+        ]);
+        expect(result.downloads[0].timestamp?.format()).toEqual(dayjs("2022-11-30T16:53:13.391Z").format());
     })
 })

@@ -10,6 +10,7 @@ import ErrorIcon from '@mui/icons-material/ErrorOutline';
 import UnknownIcon from '@mui/icons-material/HelpOutline';
 import SingleThreadIcon from '@mui/icons-material/Filter1';
 import MultiThreadIcon from '@mui/icons-material/FilterNone';
+import DownloadIcon from '@mui/icons-material/FileDownloadOutlined';
 
 interface Props {
     data: Stats;
@@ -57,12 +58,24 @@ const AlignedUnkownIcon = aligned(UnknownIcon, {
 
 const AlignedSingleThreadIcon = aligned(SingleThreadIcon);
 const AlignedMultiThreadIcon = aligned(MultiThreadIcon);
+const AlignedDownloadIcon = aligned(DownloadIcon);
 
 const capitalize = (s: string): string => {
     return s.length > 1 ? s.substring(0, 1).toUpperCase() + s.substring(1) : s;
 }
 
-export const StatisticsCard: FunctionComponent<Props> = ({ data: { totalBuildTime: totalDuration, multiThreaded, threads, status } }) => {
+const ONE_MB = 1024 * 1024;
+const ONE_KB = 1024;
+
+const formatBytes = (bytes: number) => {
+    return bytes > ONE_MB
+        ? `${(bytes / ONE_MB).toFixed(2)} MB`
+        : bytes > ONE_KB
+            ? `${(bytes / ONE_KB).toFixed(2)} KB`
+            : `${bytes} Bytes`;
+};
+
+export const StatisticsCard: FunctionComponent<Props> = ({ data: { totalBuildTime: totalDuration, multiThreaded, threads, status, totalDownloadedBytes } }) => {
     return (
         <ExpandableCard title="Statistics" subheader="" expanded={true}>
             <Divider />
@@ -86,6 +99,20 @@ export const StatisticsCard: FunctionComponent<Props> = ({ data: { totalBuildTim
                         {multiThreaded ? <AlignedMultiThreadIcon /> : <AlignedSingleThreadIcon />}
                         {multiThreaded ? `${threads} Threads` : "Single Threaded"}</>
                     </StatsValue>
+                </StatsBox>
+            </StatsContainer>
+            <Divider />
+            <StatsContainer>
+                <StatsBox>
+                    <StatsLabel>IO Downloads</StatsLabel>
+                    <StatsValue>
+                        <AlignedDownloadIcon />
+                        {formatBytes(totalDownloadedBytes)}
+                    </StatsValue>
+                </StatsBox>
+                <Divider orientation="vertical" variant="middle" flexItem />
+                <StatsBox>
+                    <StatsLabel>Tests</StatsLabel>
                 </StatsBox>
             </StatsContainer>
         </ExpandableCard>

@@ -50,12 +50,20 @@ interface MulitThreaderParserStatistics extends AbstractParserStatistics {
     threads: number;
 }
 
+export interface FileDownload {
+    timestamp: Dayjs | undefined;
+    repository: string;
+    resourceUrl: string;
+    sizeInBytes: number;
+}
+
 export type ParserStatistics = SingleThreadedParserStatistics | MulitThreaderParserStatistics;
 
 export interface ParserResult {
     lines: MavenGoalExecutionLine[];
     compiledSources: StatisticLine[];
     lastTimestamps: LastTimestamp[];
+    downloads: FileDownload[];
     statistics: ParserStatistics;
 }
 
@@ -65,7 +73,7 @@ export interface ParserResult {
 // breaks the logic of named capturing groups.
 
 const mavenGoalExecutionRegexp =
-    /(?<date>[0-9- :,.TZ\[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
+    /(?<date>[0-9- :,.TZ[\]]+) (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
 
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
@@ -80,6 +88,10 @@ const multiThreadedParserLineRegexp = /.*Using the MultiThreadedBuilder implemen
 const totalTimeRegexp = /.*Total time: {2}(?<totalTime>.+)/;
 const buildSuccessRegexp = /.*BUILD SUCCESS/
 const buildFailedRegexp = /.*BUILD FAILURE/
+
+/* Downloads */
+// Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.44.v20210927/websocket-api-9.4.44.v20210927.jar (52 kB at 32 kB/s)
+const downloadedResourceRegexp = /(?<date>[0-9- :,.TZ[\]]+)?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)/;
 
 
 export const parse = (logContent: string): ParserResult => {
@@ -104,6 +116,7 @@ export const parse = (logContent: string): ParserResult => {
             compiledSources: collectCompiledResources(logLines),
             lastTimestamps: findLastTimeStamps(mavenGoalExecutionLines, threads),
             statistics: collectStatistics(logLines),
+            downloads: collectDownloads(logLines),
         }
     } finally {
         console.timeEnd("parser");
@@ -223,4 +236,30 @@ const collectStatistics = (logLines: string[]): ParserStatistics => {
         multiThreadedBuild: false,
     } as ParserStatistics);
 };
+
+const collectDownloads = (logLines: string[]): FileDownload[] => {
+    return logLines.map(line => matchGroupsAndProcess(line, downloadedResourceRegexp, (groups) => {
+        const a: FileDownload = {
+            repository: groups.repo,
+            resourceUrl: groups.res,
+            timestamp: ifDefined(groups.date, d => parseTimestamp(d)),
+            sizeInBytes: parseSize(groups.size),
+        }
+        return a;
+    })).filter(l => l) as FileDownload[];
+};
+
+function parseSize(sizeWithUnit: string): number {
+    const sizeArray = sizeWithUnit.split(" ");
+    if (sizeArray.length === 2) {
+        const unit = sizeArray[1];
+        const sizeNumber = parseFloat(sizeArray[0]);
+        switch (unit) {
+            case "B": return sizeNumber;
+            case "kB": return sizeNumber * 1024;
+            case "MB": return sizeNumber * 1024 * 1024;
+        };
+    }
+    throw new Error("Cannot parse download size with unit: " + sizeWithUnit);
+}
 

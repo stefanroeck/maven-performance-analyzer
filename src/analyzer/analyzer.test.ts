@@ -23,7 +23,8 @@ describe("analyzer", () => {
             compiledSources: [],
             statistics: {
                 multiThreadedBuild: false,
-            }
+            },
+            downloads: [],
         });
 
         expect(analysis.mavenPlugins).toEqual<AnalyzerRow[]>([{
@@ -42,7 +43,13 @@ describe("analyzer", () => {
     })
 
     it("analyzes empty result", () => {
-        expect(analyze({ lines: [], compiledSources: [], lastTimestamps: [], statistics: { multiThreadedBuild: false } }).mavenPlugins).toEqual([]);
+        expect(analyze({
+            lines: [],
+            compiledSources: [],
+            lastTimestamps: [],
+            statistics: { multiThreadedBuild: false },
+            downloads: [],
+        }).mavenPlugins).toEqual([]);
     })
 
     it("calculates duration for multiple threads", () => {
@@ -93,7 +100,8 @@ describe("analyzer", () => {
             statistics: {
                 multiThreadedBuild: true,
                 threads: 2,
-            }
+            },
+            downloads: [],
         });
 
         expect(analysis.mavenPlugins[0]).toEqual<AnalyzerRow>({

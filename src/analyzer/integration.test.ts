@@ -56,6 +56,7 @@ describe("parser and analyzer", () => {
         expect(result.stats.threads).toEqual(1);
         expect(result.stats.totalBuildTime).toEqual("04:20 min");
         expect(result.stats.status).toEqual("success");
+        expect(result.stats.totalDownloadedBytes).toEqual(13773414.4);
     })
 
     it("log without timestamps", () => {
@@ -99,6 +100,7 @@ describe("parser and analyzer", () => {
         expect(result.stats.threads).toEqual(4);
         expect(result.stats.totalBuildTime).toEqual("34.008 s (Wall Clock)");
         expect(result.stats.status).toEqual("failed");
+        expect(result.stats.totalDownloadedBytes).toEqual(0);
     })
 
     it("guava log", () => {
