@@ -11,7 +11,7 @@ export interface TreeMapNode {
 const sourceCodeTypes = ["mainSrc", "testSrc", "mainRes", "testRes"];
 export type SourceCodeType = typeof sourceCodeTypes[number];
 
-const labels: Record<SourceCodeType, string> = {
+export const labels: Record<SourceCodeType, string> = {
     "mainSrc": "Source files",
     "testSrc": "Test sources",
     "mainRes": "Resources",

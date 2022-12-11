@@ -1,11 +1,12 @@
 import { Box, FormControlLabel, Switch } from '@mui/material';
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, memo, useState } from 'react';
 import { ModuleStats } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { diagramHeight } from './diagramUtils';
-import { ResponsiveTreeMap } from '@nivo/treemap';
+import { ResponsiveTreeMap, TooltipProps } from '@nivo/treemap';
+import { useTheme } from '@nivo/core'
 import { grey } from '@mui/material/colors';
-import { labelForTreeMapNode, SourceCodeType, TreeMapNode } from './sourceCodeTreeMapLabel';
+import { labelForTreeMapNode, labels, SourceCodeType, TreeMapNode } from './sourceCodeTreeMapLabel';
 import { colorFor, defsForAllColors, fillsForAllColors } from './sourceCodeTreeMapColors';
 
 interface Props {
@@ -46,7 +47,7 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
     const [fileType, setFileType] = useState<ShowFiles>(showSources);
 
     const treeData: TreeMapNode = {
-        id: "root",
+        id: "total",
         children: data.map((row) => {
             const moduleId = row.module;
             return {
@@ -79,6 +80,7 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
                     value="value"
                     innerPadding={0}
                     label={labelForTreeMapNode}
+                    tooltip={TooltipWithLabel}
                     orientLabel={false}
                     nodeOpacity={1}
                     borderColor={"white"}
@@ -94,3 +96,25 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
         </ExpandableCard>
     );
 }
+
+
+// Custom tooltip to also render the moduleId for the leaf nodes
+const TooltipWithLabel = memo<TooltipProps<TreeMapNode>>(({ node }) => {
+    const theme = useTheme();
+
+    const value = node.value;
+    const label = node.isLeaf ? `${node.data.moduleId || ""} - ${labels[node.id]}` : `${node.id} - Files`;
+    const content = (
+        <div style={theme.tooltip.basic}>
+            {value !== undefined ? (
+                <span>
+                    {label}: <strong>{`${value}`}</strong>
+                </span>
+            ) : (
+                node.id
+            )}
+        </div>
+    )
+
+    return <div style={theme.tooltip.container}>{content}</div>;
+});
