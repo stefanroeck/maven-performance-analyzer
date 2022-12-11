@@ -4,18 +4,14 @@ import { fetchFile } from "../../sample/fetchSampleFile";
 import ValidIcon from '@mui/icons-material/TaskAltOutlined';
 import { styled } from "@mui/system";
 import { green } from "@mui/material/colors";
-
-interface Props {
-    visible: boolean;
-    onSelected: (content: string) => void;
-}
+import { InputProps } from "./inputProps";
 
 const StyledValidIcon = styled(ValidIcon)({
     color: green[500],
 });
 
 
-export const InputUrl: FC<Props> = ({ onSelected, visible }) => {
+export const InputUrl: FC<InputProps> = ({ onSelected, visible, disabled }) => {
     const [url, setUrl] = useState("");
     const [valid, setValid] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -66,7 +62,7 @@ export const InputUrl: FC<Props> = ({ onSelected, visible }) => {
                 <FormHelperText>{error}</FormHelperText>
             </FormControl>
             <Button fullWidth variant="contained" color="primary"
-                onClick={onButtonClick} disabled={loading || url === ""}
+                onClick={onButtonClick} disabled={loading || url === "" || disabled}
                 sx={{ marginTop: "20px" }}
             >
                 Load & Analyze

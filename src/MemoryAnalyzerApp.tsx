@@ -5,10 +5,10 @@ import MainPage from "./MainPage";
 
 export const MemoryAnalyzerApp = () => {
     const [input, setInput] = useState<string>("");
-    const result = useAnalyzerInBackground(input);
+    const { result, isBusy } = useAnalyzerInBackground(input);
 
     return (
-        <AnalyzerContext.Provider value={{ analyzerResult: result, setAnalyzerInput: setInput }}>
+        <AnalyzerContext.Provider value={{ analyzerResult: result, setAnalyzerInput: setInput, isBusy }}>
             <MainPage />
         </AnalyzerContext.Provider>
     );
