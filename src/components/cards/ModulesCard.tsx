@@ -1,13 +1,13 @@
 import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
 import { BarDatum, ResponsiveBar } from '@nivo/bar';
-import { AnalyzerRow } from '../../analyzer/analyzer';
+import { MavenPluginStats } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiDistinctColors } from './diagramUtils';
 import { dedup } from '../../utils/arrayUtils';
 
 interface Props {
-    data: AnalyzerRow[];
+    data: MavenPluginStats[];
 }
 
 
@@ -17,7 +17,7 @@ interface DataWithDuration extends BarDatum {
     totalDuration: number;
 }
 
-const totalDuration = (data: AnalyzerRow[], module: string) => {
+const totalDuration = (data: MavenPluginStats[], module: string) => {
     return data.filter(d => d.module === module).reduce((sum, d) => sum + d.duration, 0);
 }
 

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material';
 import { FunctionComponent } from 'react';
-import { AnalyzerRow } from '../../analyzer/analyzer';
+import { MavenPluginStats } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { diagramHeight, muiDistinctColors } from './diagramUtils';
 import ReactApexChart, { Props as ApexChartProps } from "react-apexcharts";
@@ -9,7 +9,7 @@ import { dedup } from '../../utils/arrayUtils';
 import { grey } from '@mui/material/colors';
 
 interface Props {
-    data: AnalyzerRow[];
+    data: MavenPluginStats[];
 }
 
 interface DataWithDuration {

@@ -1,6 +1,6 @@
 import { Box, FormControlLabel, Switch } from '@mui/material';
 import { FunctionComponent, useState } from 'react';
-import { AnalyzedModule } from '../../analyzer/analyzer';
+import { ModuleStats } from '../../analyzer/analyzer';
 import { ExpandableCard } from './ExpandableCard';
 import { diagramHeight } from './diagramUtils';
 import { ResponsiveTreeMap } from '@nivo/treemap';
@@ -9,7 +9,7 @@ import { labelForTreeMapNode, SourceCodeType, TreeMapNode } from './sourceCodeTr
 import { colorFor, defsForAllColors, fillsForAllColors } from './sourceCodeTreeMapColors';
 
 interface Props {
-    data: AnalyzedModule[];
+    data: ModuleStats[];
 }
 
 type ShowFilesType = "source" | "resource";
@@ -17,8 +17,8 @@ type ShowFilesType = "source" | "resource";
 interface ShowFiles {
     type: ShowFilesType;
     label: string;
-    value: (module: AnalyzedModule) => number;
-    testValue: (module: AnalyzedModule) => number;
+    value: (module: ModuleStats) => number;
+    testValue: (module: ModuleStats) => number;
     valueId: SourceCodeType;
     testValueId: SourceCodeType;
 }

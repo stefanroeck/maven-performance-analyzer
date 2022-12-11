@@ -1,4 +1,4 @@
-import { analyze, AnalyzerRow } from "./analyzer"
+import { analyze, MavenPluginStats } from "./analyzer"
 
 describe("analyzer", () => {
 
@@ -26,7 +26,7 @@ describe("analyzer", () => {
             downloads: [],
         });
 
-        expect(analysis.mavenPlugins).toEqual<AnalyzerRow[]>([{
+        expect(analysis.mavenPlugins).toEqual<MavenPluginStats[]>([{
             module: lines[0].module,
             plugin: lines[0].plugin,
             thread: "main",
@@ -103,7 +103,7 @@ describe("analyzer", () => {
             downloads: [],
         });
 
-        expect(analysis.mavenPlugins[0]).toEqual<AnalyzerRow>({
+        expect(analysis.mavenPlugins[0]).toEqual<MavenPluginStats>({
             module: lines[0].module,
             plugin: lines[0].plugin,
             thread: thread1,
@@ -111,21 +111,21 @@ describe("analyzer", () => {
             duration: 2000,
         });
 
-        expect(analysis.mavenPlugins[1]).toEqual<AnalyzerRow>({
+        expect(analysis.mavenPlugins[1]).toEqual<MavenPluginStats>({
             module: lines[2].module,
             plugin: lines[2].plugin,
             thread: thread1,
             startTime: lines[2].startTime,
             duration: 13000,
         });
-        expect(analysis.mavenPlugins[2]).toEqual<AnalyzerRow>({
+        expect(analysis.mavenPlugins[2]).toEqual<MavenPluginStats>({
             module: lines[1].module,
             plugin: lines[1].plugin,
             thread: thread2,
             startTime: lines[1].startTime,
             duration: 3000,
         });
-        expect(analysis.mavenPlugins[3]).toEqual<AnalyzerRow>({
+        expect(analysis.mavenPlugins[3]).toEqual<MavenPluginStats>({
             module: lines[3].module,
             plugin: lines[3].plugin,
             thread: thread2,

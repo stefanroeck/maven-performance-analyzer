@@ -3,7 +3,7 @@ import { green, grey, red } from "@mui/material/colors";
 import { styled } from "@mui/system";
 import { FunctionComponent } from "react";
 import { OverridableComponent } from "@mui/types";
-import { Stats } from "../../analyzer/analyzer";
+import { GeneralStats } from "../../analyzer/analyzer";
 import { ExpandableCard } from "./ExpandableCard";
 import SuccessIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorIcon from '@mui/icons-material/ErrorOutline';
@@ -13,7 +13,7 @@ import MultiThreadIcon from '@mui/icons-material/FilterNone';
 import DownloadIcon from '@mui/icons-material/FileDownloadOutlined';
 
 interface Props {
-    data: Stats;
+    data: GeneralStats;
 }
 
 const StatsContainer = styled('div')({

@@ -7,16 +7,16 @@ export interface Location {
     endLine: number;
 }
 
-export interface AnalyzerRow {
-    module: string;
+export interface MavenPluginStats {
     plugin: string;
+    module: string;
     startTime: Date;
     duration: number;
     thread: string;
     location?: Location;
 }
 
-export interface AnalyzedModule {
+export interface ModuleStats {
     module: string;
     compiledSources: number;
     compiledTestSources: number;
@@ -24,7 +24,7 @@ export interface AnalyzedModule {
     copiedTestResources: number;
 }
 
-export interface Stats {
+export interface GeneralStats {
     status: "success" | "failed" | "unknown";
     multiThreaded: boolean;
     threads: number;
@@ -38,14 +38,14 @@ interface AnalyzerMessages {
 }
 
 export interface AnalyzerResult {
-    mavenPlugins: AnalyzerRow[];
-    modules: AnalyzedModule[];
-    stats: Stats;
+    mavenPlugins: MavenPluginStats[];
+    modules: ModuleStats[];
+    stats: GeneralStats;
     messages: AnalyzerMessages;
 }
 
 export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads }: ParserResult): AnalyzerResult => {
-    const aggregatedCompiledSources: AnalyzedModule[] = compiledSources.reduce((arr, curr) => {
+    const aggregatedCompiledSources: ModuleStats[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
             if (curr.type === "source") {
@@ -61,7 +61,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
             }
 
         } else {
-            const analyzedModule: AnalyzedModule = {
+            const analyzedModule: ModuleStats = {
                 module: curr.module,
                 compiledSources: 0,
                 compiledTestSources: 0,
@@ -83,7 +83,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
             arr.push(analyzedModule);
         }
         return arr;
-    }, [] as AnalyzedModule[]);
+    }, [] as ModuleStats[]);
 
 
     const threads = dedup(lines.map(r => r.thread));
@@ -102,7 +102,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
         });
     });
 
-    const stats: Stats = {
+    const stats: GeneralStats = {
         multiThreaded: statistics.multiThreadedBuild,
         threads: statistics.multiThreadedBuild ? statistics.threads : 1,
         status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
@@ -119,7 +119,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
 
 }
 
-const determineMessages = (mavenPlugins: AnalyzerRow[], modules: AnalyzedModule[], stats: Stats): AnalyzerMessages => {
+const determineMessages = (mavenPlugins: MavenPluginStats[], modules: ModuleStats[], stats: GeneralStats): AnalyzerMessages => {
     const noMetricsFound = modules.length === 0 && mavenPlugins.length === 0;
     const multiThreadedNoThreads = stats.multiThreaded && stats.threads > 1 && dedup(mavenPlugins.map(p => p.thread)).length === 1;
     const errorText = noMetricsFound

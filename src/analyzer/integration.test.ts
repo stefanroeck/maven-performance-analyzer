@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 import { dedup } from "../utils/arrayUtils";
-import { analyze, AnalyzerRow } from "./analyzer";
+import { analyze, MavenPluginStats } from "./analyzer";
 import { parse } from "./parser"
 
 describe("parser and analyzer", () => {
@@ -182,11 +182,11 @@ describe("parser and analyzer", () => {
         });
     })
 
-    function durationSumForPlugin(result: AnalyzerRow[], plugin: string): number {
+    function durationSumForPlugin(result: MavenPluginStats[], plugin: string): number {
         return result.filter(r => r.plugin === plugin).reduce((prev, curr) => prev + curr.duration, 0);
     }
 
-    function durationSumForModule(result: AnalyzerRow[], module: string): number {
+    function durationSumForModule(result: MavenPluginStats[], module: string): number {
         return result.filter(r => r.module === module).reduce((prev, curr) => prev + curr.duration, 0);
     }
 })
