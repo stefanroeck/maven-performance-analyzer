@@ -32,10 +32,16 @@ export interface Stats {
     totalDownloadedBytes: number;
 }
 
+interface AnalyzerMessages {
+    info?: string;
+    error?: string;
+}
+
 export interface AnalyzerResult {
     mavenPlugins: AnalyzerRow[];
     modules: AnalyzedModule[];
     stats: Stats;
+    messages: AnalyzerMessages;
 }
 
 export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads }: ParserResult): AnalyzerResult => {
@@ -96,17 +102,36 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
         });
     });
 
+    const stats: Stats = {
+        multiThreaded: statistics.multiThreadedBuild,
+        threads: statistics.multiThreadedBuild ? statistics.threads : 1,
+        status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
+        totalBuildTime: statistics.totalBuildTime,
+        totalDownloadedBytes: downloads.map(d => d.sizeInBytes).reduce((prev, curr) => prev + curr, 0),
+    };
     return {
         mavenPlugins,
         modules: aggregatedCompiledSources,
-        stats: {
-            multiThreaded: statistics.multiThreadedBuild,
-            threads: statistics.multiThreadedBuild ? statistics.threads : 1,
-            status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
-            totalBuildTime: statistics.totalBuildTime,
-            totalDownloadedBytes: downloads.map(d => d.sizeInBytes).reduce((prev, curr) => prev + curr, 0),
-        }
+        stats,
+        messages: determineMessages(mavenPlugins, aggregatedCompiledSources, stats),
     };
 
 
 }
+
+const determineMessages = (mavenPlugins: AnalyzerRow[], modules: AnalyzedModule[], stats: Stats): AnalyzerMessages => {
+    const noMetricsFound = modules.length === 0 && mavenPlugins.length === 0;
+    const multiThreadedNoThreads = stats.multiThreaded && stats.threads > 1 && dedup(mavenPlugins.map(p => p.thread)).length === 1;
+    const errorText = noMetricsFound
+        ? "No metrics could be found. Please make sure to provide a valid maven log file with timestamp information as described above."
+        : multiThreadedNoThreads
+            ? `This seems to be a multi-threaded build with ${stats.threads} threads but the thread name cannot be found in the log file. Please make sure to configure maven logger as described above.`
+            : undefined;
+    const showInfo = modules.length > 0 && mavenPlugins.length === 0;
+    const infoText = showInfo ? "Durations cannot be calculated. Please make sure that the log file contains timestamps in the expected format yyyy-MM-dd HH:mm:ss,SSS" : undefined;
+
+    return {
+        info: infoText,
+        error: errorText,
+    }
+};

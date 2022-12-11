@@ -7,39 +7,29 @@ import { ModulesCard } from './components/cards/ModulesCard';
 import { SourceCodeTreeMapCard } from './components/cards/SourceCodeTreeMapCard';
 import { TimelineCard } from './components/cards/TimelineCard';
 import { HelpCard } from './components/input/HelpCard';
-import { dedup } from './utils/arrayUtils';
 import { StatisticsCard } from './components/cards/StatisticsCard';
 import { useAnalyzerInBackground } from './analyzer/useAnalyzerInBackground';
 
 function MainApp() {
   const [logContent, setLogContent] = useState<string>("");
   const data = useAnalyzerInBackground(logContent);
-
-  const noMetricsFound = data !== undefined && data.modules.length === 0 && data.mavenPlugins.length === 0;
-  const multiThreadedNoThreads = data?.stats.multiThreaded && data.stats.threads > 1 && dedup(data.mavenPlugins.map(p => p.thread)).length === 1;
-  const errorText = noMetricsFound
-    ? "No metrics could be found. Please make sure to provide a valid maven log file with timestamp information as described above."
-    : multiThreadedNoThreads
-      ? `This seems to be a multi-threaded build with ${data?.stats?.threads} threads but the thread name cannot be found in the log file. Please make sure to configure maven logger as described above.`
-      : undefined;
-  const showInfo = data !== undefined && data.modules.length > 0 && data.mavenPlugins.length === 0;
-  const infoText = showInfo ? "Durations cannot be calculated. Please make sure that the log file contains timestamps in the expected format yyyy-MM-dd HH:mm:ss,SSS" : undefined;
+  const hasError = data?.messages.error !== undefined;
 
   return (
     <Box>
       <Header />
       <Box sx={{ margin: "20px" }}>
         <HelpCard />
-        <InputCard onLogContentChanged={setLogContent} infoText={infoText} errorText={errorText} />
+        <InputCard onLogContentChanged={setLogContent} infoText={data?.messages.info} errorText={data?.messages.error} />
         {data && <>
           <StatisticsCard data={data.stats} />
         </>}
-        {!errorText && data && (data.mavenPlugins.length > 0) && <>
+        {!hasError && data && (data.mavenPlugins.length > 0) && <>
           <TimelineCard data={data.mavenPlugins} />
           <ModulesCard data={data.mavenPlugins} />
           <MavenPluginsCard data={data.mavenPlugins} />
         </>}
-        {!errorText && data && (data.modules.length > 0) && <>
+        {!hasError && data && (data.modules.length > 0) && <>
           <SourceCodeTreeMapCard data={data.modules} />
         </>}
       </Box>
