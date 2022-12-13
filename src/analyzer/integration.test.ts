@@ -155,8 +155,8 @@ describe("parser and analyzer", () => {
             "mvn-builder-guava-gwt",
         ]);
 
-        expect(durationSumForModule(result.mavenPlugins, "guava-parent")).toEqual(3473);
-        expect(durationSumForModule(result.mavenPlugins, "guava-testlib")).toEqual(296117);
+        expect(durationSumForModule(result.mavenPlugins, "guava-parent")).toEqual(3572);
+        expect(durationSumForModule(result.mavenPlugins, "guava-testlib")).toEqual(296194);
 
         expect(result.modules).toHaveLength(4);
         expect(result.modules[0]).toEqual({

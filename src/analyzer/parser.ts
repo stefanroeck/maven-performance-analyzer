@@ -79,6 +79,7 @@ const mavenGoalExecutionRegexp =
 
 const mavenCompilerPluginRegexp = /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/
 const mavenResourcePluginRegexp = /.*--- maven-resources-plugin:.*:(resources|testResources).*@ (.*) ---/
+const anyMavenLogWithTimestamp = /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*/;
 
 const anyPluginRegexp = /.*---.*@.*---/
 const mavenCompilerPluginCompilingRegexp = /.*Compiling (\d*) source files to.*/
@@ -115,7 +116,7 @@ export const parse = (logContent: string): ParserResult => {
         return {
             lines: mavenGoalExecutionLines.filter(l => l) as MavenGoalExecutionLine[],
             compiledSources: collectCompiledResources(logLines),
-            lastTimestamps: findLastTimeStamps(mavenGoalExecutionLines, threads),
+            lastTimestamps: findLastTimeStamps(logLines, threads),
             statistics: collectStatistics(logLines),
             downloads: collectDownloads(logLines),
         }
@@ -136,24 +137,39 @@ const ifDefined = <T, R>(value: T | undefined, func: (t: T) => R, def: R | undef
     return def;
 };
 
-export const findLastTimeStamp = (lines: string[]): Date | undefined => {
-    const lastLineWithTimeStamp = lines.reverse().find(line => line.match(totalTimeRegexp) !== null);
-    const timestamp = lastLineWithTimeStamp !== undefined ? lastLineWithTimeStamp.match(totalTimeRegexp)?.groups?.date : undefined;
-    return timestamp ? parseTimestamp(timestamp) : undefined;
-}
-
-const findLastTimeStamps = (lines: MavenGoalExecutionLine[], threads: string[]): LastTimestamp[] => {
-    const linesReverse = lines.reverse();
+const findLastTimeStamps = (lines: string[], threads: string[]): LastTimestamp[] => {
+    const lastTimestamps: LastTimestamp[] = [];
     if (threads.length > 0) {
-        return threads.map(thread => {
-            const lastElement = linesReverse.find(l => l.thread === thread) as MavenGoalExecutionLine;
-            return { thread, lastTimestamp: lastElement?.startTime };
-        })
-    } else if (linesReverse.length > 0) {
-        return [{ lastTimestamp: linesReverse[0].startTime }]
+        threads.forEach(thread => {
+            let lastTimestamp: Date | undefined = undefined;
+            for (let i = lines.length - 1; i >= 0; i--) {
+                lastTimestamp = matchGroupsAndProcess(lines[i], anyMavenLogWithTimestamp, ({ thread: t, date }) => {
+                    return (thread === t) ? parseTimestamp(date) : undefined;
+                });
+                if (lastTimestamp) { // stop loop after first match
+                    break;
+                }
+            }
+            if (lastTimestamp) {
+                lastTimestamps.push({
+                    thread,
+                    lastTimestamp,
+                });
+            }
+        });
     } else {
-        return [];
+        let lastTimestamp: Date | undefined = undefined;
+        for (let i = lines.length - 1; i >= 0; i--) {
+            lastTimestamp = matchGroupsAndProcess(lines[i], anyMavenLogWithTimestamp, ({ date }) => parseTimestamp(date));
+            if (lastTimestamp) {
+                break;
+            }
+        }
+        if (lastTimestamp) {
+            lastTimestamps.push({ lastTimestamp });
+        }
     }
+    return lastTimestamps;
 }
 
 export const supportedTimestampFormats = ["yyyy-MM-dd HH:mm:ss,SSS", "yyyy-MM-dd HH:mm:ss"];

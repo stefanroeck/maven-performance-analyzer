@@ -1,4 +1,4 @@
-import { FileDownload, parse, parseTimestamp } from "./parser"
+import { FileDownload, LastTimestamp, parse, parseTimestamp } from "./parser"
 
 describe("parser", () => {
 
@@ -144,4 +144,27 @@ describe("parser", () => {
         ]);
         expect(result.downloads[0].timestamp).toEqual(new Date("2022-11-30T17:53:13.391Z"));
     })
+
+    it("parses lastTimestamp is goal", () => {
+        const line = "2022-11-08 19:00:12 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---";
+
+        const result = parse(line);
+
+        expect(result.lastTimestamps).toEqual<LastTimestamp[]>([{
+            thread: undefined,
+            lastTimestamp: new Date("2022-11-08 19:00:12"),
+        }]);
+    })
+
+    it("parses lastTimestamp is another action", () => {
+        const lines = "2022-11-08 19:00:12 [INFO] --- maven-remote-resources-plugin:1.7.0:process (process-resource-bundles) @ httpcore5-reactive ---\n"
+            + "2022-11-08 19:00:15 [INFO] Building Apache HttpComponents Core Reactive Extensions 5.2.1-SNAPSHOT [4/5]";
+
+        const result = parse(lines);
+
+        expect(result.lastTimestamps).toEqual<LastTimestamp[]>([{
+            lastTimestamp: new Date("2022-11-08 19:00:15"),
+        }]);
+    })
+
 })
