@@ -60,11 +60,19 @@ export interface FileDownload {
 
 export type ParserStatistics = SingleThreadedParserStatistics | MulitThreaderParserStatistics;
 
+export interface TestStatistic {
+    total: number;
+    failures: number;
+    errors: number;
+    skipped: number;
+}
+
 export interface ParserResult {
     lines: MavenGoalExecutionLine[];
     compiledSources: StatisticLine[];
     lastTimestamps: LastTimestamp[];
     downloads: FileDownload[];
+    tests: TestStatistic[];
     statistics: ParserStatistics;
 }
 
@@ -95,6 +103,7 @@ const buildFailedRegexp = /.*BUILD FAILURE/
 // Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.44.v20210927/websocket-api-9.4.44.v20210927.jar (52 kB at 32 kB/s)
 const downloadedResourceRegexp = /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)?\]?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)/;
 
+const testRegexp = /.*Tests run: (?<total>\d+), Failures: (?<failures>\d+), Errors: (?<errors>\d+), Skipped: (?<skipped>\d+)$/m;
 
 export const parse = (logContent: string): ParserResult => {
     console.time("parser");
@@ -118,6 +127,7 @@ export const parse = (logContent: string): ParserResult => {
             compiledSources: collectCompiledResources(logLines),
             lastTimestamps: findLastTimeStamps(logLines, threads),
             statistics: collectStatistics(logLines),
+            tests: collectTests(logLines),
             downloads: collectDownloads(logLines),
         }
     } finally {
@@ -275,6 +285,19 @@ const collectDownloads = (logLines: string[]): FileDownload[] => {
         return a;
     })).filter(l => l) as FileDownload[];
 };
+
+const collectTests = (logLines: string[]): TestStatistic[] => {
+    return logLines.map(line => matchGroupsAndProcess(line, testRegexp, (groups) => {
+        const a: TestStatistic = {
+            total: parseInt(groups.total),
+            errors: parseInt(groups.errors),
+            failures: parseInt(groups.failures),
+            skipped: parseInt(groups.skipped),
+        }
+        return a;
+    })).filter(l => l) as TestStatistic[];
+};
+
 
 function parseSize(sizeWithUnit: string): number {
     const sizeArray = sizeWithUnit.split(" ");

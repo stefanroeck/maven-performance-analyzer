@@ -24,6 +24,7 @@ describe("analyzer", () => {
                 multiThreadedBuild: false,
             },
             downloads: [],
+            tests: [],
         });
 
         expect(analysis.mavenPlugins).toEqual<MavenPluginStats[]>([{
@@ -48,6 +49,7 @@ describe("analyzer", () => {
             lastTimestamps: [],
             statistics: { multiThreadedBuild: false },
             downloads: [],
+            tests: [],
         }).mavenPlugins).toEqual([]);
     })
 
@@ -101,6 +103,7 @@ describe("analyzer", () => {
                 threads: 2,
             },
             downloads: [],
+            tests: [],
         });
 
         expect(analysis.mavenPlugins[0]).toEqual<MavenPluginStats>({

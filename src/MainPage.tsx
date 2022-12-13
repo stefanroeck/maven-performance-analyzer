@@ -23,7 +23,7 @@ const MainPage = () => {
         <HelpCard />
         <InputCard />
         {analyzerResult && <>
-          <StatisticsCard data={analyzerResult.stats} />
+          <StatisticsCard data={analyzerResult} />
         </>}
         {!hasError && mavenPluginsStats && (mavenPluginsStats.length > 0) && <>
           <TimelineCard data={mavenPluginsStats} />

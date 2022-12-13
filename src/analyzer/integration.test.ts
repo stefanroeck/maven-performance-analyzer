@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 import { dedup } from "../utils/arrayUtils";
 import { analyze, MavenPluginStats } from "./analyzer";
-import { parse } from "./parser"
+import { parse, TestStatistic } from "./parser"
 
 describe("parser and analyzer", () => {
 
@@ -57,6 +57,12 @@ describe("parser and analyzer", () => {
         expect(result.stats.totalBuildTime).toEqual("04:20 min");
         expect(result.stats.status).toEqual("success");
         expect(result.stats.totalDownloadedBytes).toEqual(13773414.4);
+        expect(result.tests).toEqual<TestStatistic>({
+            errors: 0,
+            failures: 0,
+            total: 0,
+            skipped: 0,
+        });
     })
 
     it("log without timestamps", () => {
@@ -179,6 +185,12 @@ describe("parser and analyzer", () => {
             compiledTestSources: 631,
             copiedResources: 0,
             copiedTestResources: 6,
+        });
+        expect(result.tests).toEqual<TestStatistic>({
+            errors: 0,
+            failures: 0,
+            total: 1711868,
+            skipped: 515,
         });
     })
 

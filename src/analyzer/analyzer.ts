@@ -32,6 +32,13 @@ export interface GeneralStats {
     totalDownloadedBytes: number;
 }
 
+export interface TestStats {
+    total: number;
+    failures: number;
+    errors: number;
+    skipped: number;
+}
+
 interface AnalyzerMessages {
     info?: string;
     error?: string;
@@ -41,10 +48,11 @@ export interface AnalyzerResult {
     mavenPlugins: MavenPluginStats[];
     modules: ModuleStats[];
     stats: GeneralStats;
+    tests: TestStats;
     messages: AnalyzerMessages;
 }
 
-export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads }: ParserResult): AnalyzerResult => {
+export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads, tests }: ParserResult): AnalyzerResult => {
     const aggregatedCompiledSources: ModuleStats[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
@@ -109,10 +117,19 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
         totalBuildTime: statistics.totalBuildTime,
         totalDownloadedBytes: downloads.map(d => d.sizeInBytes).reduce((prev, curr) => prev + curr, 0),
     };
+
+    const testStats: TestStats = tests.reduce((prev, curr) => {
+        prev.errors += curr.errors;
+        prev.total += curr.total;
+        prev.failures += curr.failures;
+        prev.skipped += curr.skipped;
+        return prev;
+    }, { errors: 0, failures: 0, skipped: 0, total: 0 } as TestStats);
     return {
         mavenPlugins,
         modules: aggregatedCompiledSources,
         stats,
+        tests: testStats,
         messages: determineMessages(mavenPlugins, aggregatedCompiledSources, stats),
     };
 
