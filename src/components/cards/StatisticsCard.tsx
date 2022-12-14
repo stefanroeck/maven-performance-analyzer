@@ -3,7 +3,7 @@ import { green, grey, red } from "@mui/material/colors";
 import { styled } from "@mui/system";
 import { FunctionComponent } from "react";
 import { OverridableComponent } from "@mui/types";
-import { AnalyzerResult, GeneralStats } from "../../analyzer/analyzer";
+import { AnalyzerResult } from "../../analyzer/analyzer";
 import { ExpandableCard } from "./ExpandableCard";
 import SuccessIcon from '@mui/icons-material/CheckCircleOutline';
 import ErrorIcon from '@mui/icons-material/ErrorOutline';

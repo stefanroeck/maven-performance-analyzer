@@ -21,21 +21,37 @@ const totalDuration = (data: MavenPluginStats[], module: string) => {
     return data.filter(d => d.module === module).reduce((sum, d) => sum + d.duration, 0);
 }
 
+interface AggregatedPluginStats {
+    module: string;
+    plugin: string;
+    duration: number;
+}
+
 export const ModulesCard: FunctionComponent<Props> = ({ data }) => {
-    const barData: DataWithDuration[] = data.map(row => {
-        return {
-            module: row.module,
-            [row.plugin]: row.duration,
-        }
-    }).reduce((arr, curr) => {
-        const existing = arr.find(e => e.module === curr.module);
-        if (existing) {
-            Object.assign(existing, curr);
-        } else {
-            arr.push({ ...curr, totalDuration: totalDuration(data, curr.module) });
-        }
-        return arr;
-    }, [] as DataWithDuration[]);
+    const barData: DataWithDuration[] = data
+        .reduce((arr, curr) => {
+            // first join multiple occurrences of the same plugin 
+            const existing = arr.find(e => e.module === curr.module && e.plugin === curr.plugin);
+            if (existing) {
+                existing.duration += curr.duration;
+            } else {
+                arr.push(curr);
+            }
+            return arr;
+        }, [] as AggregatedPluginStats[])
+        .reduce((arr, curr) => {
+            const existing = arr.find(e => e.module === curr.module);
+            if (existing) {
+                Object.assign(existing, { [curr.plugin]: curr.duration });
+            } else {
+                arr.push({
+                    module: curr.module,
+                    [curr.plugin]: curr.duration,
+                    totalDuration: totalDuration(data, curr.module)
+                })
+            }
+            return arr;
+        }, [] as DataWithDuration[]);
 
     // extract relevant keys and remove duplicates
     const keys = dedup(barData.flatMap(f => Object.keys(f).filter(f => f !== "module" && f !== "totalDuration")));
