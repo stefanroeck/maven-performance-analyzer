@@ -33,7 +33,7 @@ export const ModulesCard: FunctionComponent<Props> = ({ data }) => {
             // first join multiple occurrences of the same plugin 
             const existing = arr.find(e => e.module === curr.module && e.plugin === curr.plugin);
             if (existing) {
-                existing.duration += curr.duration;
+                return [...arr.filter(f => f !== existing), { ...curr, duration: existing.duration + curr.duration }];
             } else {
                 arr.push(curr);
             }
