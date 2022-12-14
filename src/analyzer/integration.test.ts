@@ -24,7 +24,7 @@ describe("parser and analyzer", () => {
 
         const result = analyze(parse(content));
 
-        expect(result.mavenPlugins.length).toEqual(421);
+        expect(result.mavenPlugins.length).toEqual(412);
         expect(dedup(result.mavenPlugins.map(r => r.thread))).toEqual(["main"]);
 
         expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(143028);
@@ -82,7 +82,7 @@ describe("parser and analyzer", () => {
 
         const result = analyze(parse(content));
 
-        expect(result.mavenPlugins.length).toEqual(65);
+        expect(result.mavenPlugins.length).toEqual(27);
         expect(result.mavenPlugins.map(r => r.thread).filter((t, idx, arr) => arr.indexOf(t) === idx)).toEqual(["main"]);
         expect(durationSumForPlugin(result.mavenPlugins, "maven-compiler-plugin")).toEqual(25000);
         expect(durationSumForPlugin(result.mavenPlugins, "maven-javadoc-plugin")).toEqual(71000);

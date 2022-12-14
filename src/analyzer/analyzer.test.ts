@@ -151,4 +151,30 @@ describe("analyzer", () => {
         expect(analysis.stats.threads).toEqual(2);
     })
 
+    it("does not return durations with 0", () => {
+        const lines = [{
+            module: "m1",
+            plugin: "p1",
+            goal: "g1",
+            startTime: new Date("2022-01-01 10:00:00"),
+        }, {
+            module: "m1",
+            plugin: "p2",
+            goal: "g2",
+            startTime: new Date("2022-01-01 10:00:00"),
+        }];
+
+        const analysis = analyze({
+            lines,
+            lastTimestamps: [{ thread: undefined, lastTimestamp: new Date("2022-01-01 10:00:00") }],
+            compiledSources: [],
+            statistics: {},
+            downloads: [],
+            tests: [],
+        });
+
+        expect(analysis.mavenPlugins).toEqual<MavenPluginStats[]>([]);
+
+    })
+
 })

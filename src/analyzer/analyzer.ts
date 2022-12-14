@@ -53,6 +53,8 @@ export interface AnalyzerResult {
     messages: AnalyzerMessages;
 }
 
+const MINIMUM_DURATION_IN_MS = 0;
+
 export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, downloads, tests }: ParserResult): AnalyzerResult => {
     const aggregatedCompiledSources: ModuleStats[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
@@ -109,7 +111,7 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
                 duration: nextStartTime && isValid(nextStartTime) ? (nextStartTime.getTime() - startTime.getTime()) : 0,
             };
         });
-    });
+    }).filter(p => p.duration > MINIMUM_DURATION_IN_MS);
 
     const stats: GeneralStats = {
         multiThreaded: ifDefinedOrDefault(statistics.multiThreadedThreads, t => t > 0, false),
