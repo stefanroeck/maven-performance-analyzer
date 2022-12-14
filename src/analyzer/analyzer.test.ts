@@ -1,4 +1,4 @@
-import { analyze, MavenPluginStats } from "./analyzer"
+import { analyze, AnalyzerMessages, GeneralStats, MavenPluginStats } from "./analyzer"
 
 describe("analyzer", () => {
 
@@ -20,9 +20,7 @@ describe("analyzer", () => {
             lines,
             lastTimestamps: [{ thread: undefined, lastTimestamp: new Date("2022-01-01 10:00:15") }],
             compiledSources: [],
-            statistics: {
-                multiThreadedBuild: false,
-            },
+            statistics: {},
             downloads: [],
             tests: [],
         });
@@ -43,14 +41,29 @@ describe("analyzer", () => {
     })
 
     it("analyzes empty result", () => {
-        expect(analyze({
+        const analysis = analyze({
             lines: [],
             compiledSources: [],
             lastTimestamps: [],
-            statistics: { multiThreadedBuild: false },
+            statistics: {},
             downloads: [],
             tests: [],
-        }).mavenPlugins).toEqual([]);
+        });
+
+        expect(analysis.mavenPlugins).toEqual([]);
+        expect(analysis.modules).toEqual([]);
+        expect(analysis.messages).toEqual<AnalyzerMessages>({
+            error: "No metrics could be found. Please make sure to provide a valid maven log file with timestamp information as described above.",
+            info: undefined,
+        });
+        expect(analysis.tests).toEqual({ "errors": 0, "failures": 0, "skipped": 0, "total": 0 });
+        expect(analysis.stats).toEqual<GeneralStats>({
+            multiThreaded: false,
+            threads: 1,
+            totalDownloadedBytes: 0,
+            totalBuildTime: undefined,
+            status: "unknown",
+        });
     })
 
     it("calculates duration for multiple threads", () => {
@@ -99,8 +112,7 @@ describe("analyzer", () => {
             ],
             compiledSources: [],
             statistics: {
-                multiThreadedBuild: true,
-                threads: 2,
+                multiThreadedThreads: 2,
             },
             downloads: [],
             tests: [],
@@ -135,6 +147,8 @@ describe("analyzer", () => {
             startTime: lines[3].startTime,
             duration: 11000,
         });
+        expect(analysis.stats.multiThreaded).toBeTruthy();
+        expect(analysis.stats.threads).toEqual(2);
     })
 
 })

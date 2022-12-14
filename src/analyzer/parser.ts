@@ -1,3 +1,4 @@
+import { ifDefined } from "../utils/utils";
 import { isValid } from "./dateUtils";
 import { dedup } from "../utils/arrayUtils";
 import { parse as parseDate, parseISO } from 'date-fns'
@@ -36,20 +37,12 @@ export interface LastTimestamp {
     lastTimestamp: Date;
 }
 
-interface AbstractParserStatistics {
+interface ParserStatistics {
     totalBuildTime?: string;
     buildStatus?: "success" | "failed";
-    multiThreadedBuild: boolean;
+    multiThreadedThreads?: number;
 }
 
-interface SingleThreadedParserStatistics extends AbstractParserStatistics {
-    multiThreadedBuild: false;
-}
-
-interface MulitThreaderParserStatistics extends AbstractParserStatistics {
-    multiThreadedBuild: true;
-    threads: number;
-}
 
 export interface FileDownload {
     timestamp: Date | undefined;
@@ -57,8 +50,6 @@ export interface FileDownload {
     resourceUrl: string;
     sizeInBytes: number;
 }
-
-export type ParserStatistics = SingleThreadedParserStatistics | MulitThreaderParserStatistics;
 
 export interface TestStatistic {
     total: number;
@@ -106,7 +97,7 @@ const downloadedResourceRegexp = /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+
 const testRegexp = /.*Tests run: (?<total>\d+), Failures: (?<failures>\d+), Errors: (?<errors>\d+), Skipped: (?<skipped>\d+)$/m;
 
 export const parse = (logContent: string): ParserResult => {
-    console.time("parser");
+    console.time("parser total");
     try {
         const logLines = logContent.split("\n");
         console.log(`Split string with ${logContent.length} chars into ${logLines.length} lines`);
@@ -131,7 +122,7 @@ export const parse = (logContent: string): ParserResult => {
             downloads: collectDownloads(logLines),
         }
     } finally {
-        console.timeEnd("parser");
+        console.timeEnd("parser total");
     }
 }
 
@@ -140,14 +131,9 @@ const matchGroupsAndProcess = <T>(line: string, regExp: RegExp, process: (groups
     return ifDefined(match?.groups, (g) => process(g));
 }
 
-const ifDefined = <T, R>(value: T | undefined, func: (t: T) => R, def: R | undefined = undefined): R | undefined => {
-    if (value !== undefined) {
-        return func(value);
-    }
-    return def;
-};
-
 const findLastTimeStamps = (lines: string[], threads: string[]): LastTimestamp[] => {
+    console.time("parsing last timestamps");
+
     const lastTimestamps: LastTimestamp[] = [];
     if (threads.length > 0) {
         threads.forEach(thread => {
@@ -179,6 +165,8 @@ const findLastTimeStamps = (lines: string[], threads: string[]): LastTimestamp[]
             lastTimestamps.push({ lastTimestamp });
         }
     }
+    console.timeEnd("parsing last timestamps");
+
     return lastTimestamps;
 }
 
@@ -200,6 +188,7 @@ export const parseTimestamp = (timestamp: string): Date => {
 
 function collectCompiledResources(lines: string[]): StatisticLine[] {
     // TODO: Support multithreaded builds
+    console.time("parsing compiler messages");
     let module = undefined;
     let fileOrigin: FileOrigin | undefined;
     const result: StatisticLine[] = [];
@@ -243,39 +232,55 @@ function collectCompiledResources(lines: string[]): StatisticLine[] {
             }
         }
     }
-
+    console.timeEnd("parsing compiler messages");
     return result;
 }
 
 const collectStatistics = (logLines: string[]): ParserStatistics => {
+    console.time("parsing general statistics");
 
-    return logLines.reduce((prev, line) => {
-        const threads: number | undefined = matchGroupsAndProcess(line, multiThreadedParserLineRegexp, groups => parseInt(groups.threads));
-        if (threads !== undefined) {
-            return { ...prev, threads, multiThreadedBuild: true };
+    // look for stats that are at the beginning first
+    const intermediateResult: ParserStatistics = logLines.reduce((prev, line) => {
+
+        if (prev.multiThreadedThreads === undefined) {
+            const threads: number | undefined = matchGroupsAndProcess(line, multiThreadedParserLineRegexp, groups => parseInt(groups.threads));
+            if (threads !== undefined) {
+                return { ...prev, multiThreadedThreads: threads };
+            }
+        }
+        return prev;
+    }, {} as ParserStatistics);
+
+    // Reverse and look for results that are rather at thee end
+    const finalResults: ParserStatistics = logLines.reduceRight((prev, line) => {
+
+        if (prev.totalBuildTime === undefined) {
+            const totalBuildTime: string | undefined = matchGroupsAndProcess(line, totalTimeRegexp, groups => groups.totalTime);
+            if (totalBuildTime !== undefined) {
+                return { ...prev, totalBuildTime };
+            }
         }
 
-        const totalBuildTime: string | undefined = matchGroupsAndProcess(line, totalTimeRegexp, groups => groups.totalTime);
-        if (totalBuildTime !== undefined) {
-            return { ...prev, totalBuildTime };
-        }
-
-        if (line.match(buildSuccessRegexp)) {
-            return { ...prev, buildStatus: "success" };
-        }
-
-        if (line.match(buildFailedRegexp)) {
-            return { ...prev, buildStatus: "failed" };
+        if (prev.buildStatus === undefined) {
+            if (line.match(buildSuccessRegexp)) {
+                return { ...prev, buildStatus: "success" };
+            }
+            if (line.match(buildFailedRegexp)) {
+                return { ...prev, buildStatus: "failed" };
+            }
         }
 
         return prev;
-    }, {
-        multiThreadedBuild: false,
-    } as ParserStatistics);
+    }, intermediateResult);
+
+    console.timeEnd("parsing general statistics");
+    return finalResults;
 };
 
 const collectDownloads = (logLines: string[]): FileDownload[] => {
-    return logLines.map(line => matchGroupsAndProcess(line, downloadedResourceRegexp, (groups) => {
+    console.time("parsing downloads");
+
+    const result = logLines.map(line => matchGroupsAndProcess(line, downloadedResourceRegexp, (groups) => {
         const a: FileDownload = {
             repository: groups.repo,
             resourceUrl: groups.res,
@@ -284,10 +289,14 @@ const collectDownloads = (logLines: string[]): FileDownload[] => {
         }
         return a;
     })).filter(l => l) as FileDownload[];
+    console.timeEnd("parsing downloads");
+    return result;
 };
 
 const collectTests = (logLines: string[]): TestStatistic[] => {
-    return logLines.map(line => matchGroupsAndProcess(line, testRegexp, (groups) => {
+    console.time("parsing tests");
+
+    const result = logLines.map(line => matchGroupsAndProcess(line, testRegexp, (groups) => {
         const a: TestStatistic = {
             total: parseInt(groups.total),
             errors: parseInt(groups.errors),
@@ -296,6 +305,8 @@ const collectTests = (logLines: string[]): TestStatistic[] => {
         }
         return a;
     })).filter(l => l) as TestStatistic[];
+    console.timeEnd("parsing tests");
+    return result;
 };
 
 

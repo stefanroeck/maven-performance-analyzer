@@ -1,4 +1,5 @@
 import { dedup } from "../utils/arrayUtils";
+import { ifDefinedOrDefault } from "../utils/utils";
 import { isValid } from "./dateUtils";
 import { ParserResult } from "./parser";
 
@@ -39,7 +40,7 @@ export interface TestStats {
     skipped: number;
 }
 
-interface AnalyzerMessages {
+export interface AnalyzerMessages {
     info?: string;
     error?: string;
 }
@@ -111,8 +112,8 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
     });
 
     const stats: GeneralStats = {
-        multiThreaded: statistics.multiThreadedBuild,
-        threads: statistics.multiThreadedBuild ? statistics.threads : 1,
+        multiThreaded: ifDefinedOrDefault(statistics.multiThreadedThreads, t => t > 0, false),
+        threads: ifDefinedOrDefault(statistics.multiThreadedThreads, t => t, 1),
         status: statistics.buildStatus === "success" ? "success" : statistics.buildStatus === "failed" ? "failed" : "unknown",
         totalBuildTime: statistics.totalBuildTime,
         totalDownloadedBytes: downloads.map(d => d.sizeInBytes).reduce((prev, curr) => prev + curr, 0),
