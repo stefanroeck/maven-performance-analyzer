@@ -194,11 +194,11 @@ describe("parser and analyzer", () => {
         });
     })
 
-    function durationSumForPlugin(result: MavenPluginStats[], plugin: string): number {
+    function durationSumForPlugin(result: readonly MavenPluginStats[], plugin: string): number {
         return result.filter(r => r.plugin === plugin).reduce((prev, curr) => prev + curr.duration, 0);
     }
 
-    function durationSumForModule(result: MavenPluginStats[], module: string): number {
+    function durationSumForModule(result: readonly MavenPluginStats[], module: string): number {
         return result.filter(r => r.module === module).reduce((prev, curr) => prev + curr.duration, 0);
     }
 })

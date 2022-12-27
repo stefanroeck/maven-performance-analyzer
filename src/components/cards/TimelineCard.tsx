@@ -9,7 +9,7 @@ import { dedup } from '../../utils/arrayUtils';
 import { grey } from '@mui/material/colors';
 
 interface Props {
-    data: MavenPluginStats[];
+    data: ReadonlyArray<MavenPluginStats>;
 }
 
 interface DataWithDuration {
@@ -20,7 +20,6 @@ interface DataWithDuration {
 }
 
 export const TimelineCard: FunctionComponent<Props> = ({ data }) => {
-
     const barData = data.reduce((arr, { thread, module, duration, startTime }) => {
         const existing = arr.find(e => e.thread === thread && e.module === module);
         if (existing) {

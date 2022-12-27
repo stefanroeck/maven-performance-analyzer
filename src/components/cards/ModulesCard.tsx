@@ -7,7 +7,7 @@ import { axisWithDuration, basicBarCharProps, defaultMargin, diagramHeight, muiD
 import { dedup } from '../../utils/arrayUtils';
 
 interface Props {
-    data: MavenPluginStats[];
+    data: ReadonlyArray<MavenPluginStats>;
 }
 
 
@@ -17,7 +17,7 @@ interface DataWithDuration extends BarDatum {
     totalDuration: number;
 }
 
-const totalDuration = (data: MavenPluginStats[], module: string) => {
+const totalDuration = (data: ReadonlyArray<MavenPluginStats>, module: string) => {
     return data.filter(d => d.module === module).reduce((sum, d) => sum + d.duration, 0);
 }
 

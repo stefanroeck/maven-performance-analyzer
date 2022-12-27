@@ -1,56 +1,56 @@
-import { dedup } from "../utils/arrayUtils";
+import { dedup, replace } from "../utils/arrayUtils";
 import { ifDefinedOrDefault } from "../utils/utils";
 import { isValid } from "./dateUtils";
 import { ParserResult } from "./parser";
 
 export interface Location {
-    startLine: number;
-    endLine: number;
+    readonly startLine: number;
+    readonly endLine: number;
 }
 
 export interface MavenPluginStats {
-    plugin: string;
-    module: string;
-    startTime: Date;
-    duration: number;
-    thread: string;
-    location?: Location;
+    readonly plugin: string;
+    readonly module: string;
+    readonly startTime: Date;
+    readonly duration: number;
+    readonly thread: string;
+    readonly location?: Location;
 }
 
 export interface ModuleStats {
-    module: string;
-    compiledSources: number;
-    compiledTestSources: number;
-    copiedResources: number;
-    copiedTestResources: number;
+    readonly module: string;
+    readonly compiledSources: number;
+    readonly compiledTestSources: number;
+    readonly copiedResources: number;
+    readonly copiedTestResources: number;
 }
 
 export interface GeneralStats {
-    status: "success" | "failed" | "unknown";
-    multiThreaded: boolean;
-    threads: number;
-    totalBuildTime?: string;
-    totalDownloadedBytes: number;
+    readonly status: "success" | "failed" | "unknown";
+    readonly multiThreaded: boolean;
+    readonly threads: number;
+    readonly totalBuildTime?: string;
+    readonly totalDownloadedBytes: number;
 }
 
 export interface TestStats {
-    total: number;
-    failures: number;
-    errors: number;
-    skipped: number;
+    readonly total: number;
+    readonly failures: number;
+    readonly errors: number;
+    readonly skipped: number;
 }
 
 export interface AnalyzerMessages {
-    info?: string;
-    error?: string;
+    readonly info?: string;
+    readonly error?: string;
 }
 
 export interface AnalyzerResult {
-    mavenPlugins: MavenPluginStats[];
-    modules: ModuleStats[];
-    stats: GeneralStats;
-    tests: TestStats;
-    messages: AnalyzerMessages;
+    readonly mavenPlugins: ReadonlyArray<MavenPluginStats>;
+    readonly modules: ReadonlyArray<ModuleStats>;
+    readonly stats: GeneralStats;
+    readonly tests: TestStats;
+    readonly messages: AnalyzerMessages;
 }
 
 const MINIMUM_DURATION_IN_MS = 0;
@@ -59,20 +59,21 @@ export const analyze = ({ lines, lastTimestamps, compiledSources, statistics, do
     const aggregatedCompiledSources: ModuleStats[] = compiledSources.reduce((arr, curr) => {
         const existing = arr.find(c => c.module === curr.module);
         if (existing) {
+            let updatedExisting: ModuleStats | undefined;
             if (curr.type === "source") {
                 switch (curr.compileMode) {
-                    case "main": existing.compiledSources += curr.compiledSources; break;
-                    case "test": existing.compiledTestSources += curr.compiledSources; break;
+                    case "main": updatedExisting = { ...existing, compiledSources: existing.compiledSources + curr.compiledSources }; break;
+                    case "test": updatedExisting = { ...existing, compiledTestSources: existing.compiledTestSources + curr.compiledSources }; break;
                 }
             } else {
                 switch (curr.compileMode) {
-                    case "main": existing.copiedResources += curr.copiedResources; break;
-                    case "test": existing.copiedTestResources += curr.copiedResources; break;
+                    case "main": updatedExisting = { ...existing, copiedResources: existing.copiedResources + curr.copiedResources }; break;
+                    case "test": updatedExisting = { ...existing, copiedTestResources: existing.copiedTestResources + curr.copiedResources }; break;
                 }
             }
-
+            arr = replace(arr, existing, updatedExisting);
         } else {
-            const analyzedModule: ModuleStats = {
+            const analyzedModule = {
                 module: curr.module,
                 compiledSources: 0,
                 compiledTestSources: 0,

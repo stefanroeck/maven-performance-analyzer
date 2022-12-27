@@ -6,7 +6,7 @@ import { ExpandableCard } from './ExpandableCard';
 import { axisWithDuration, basicBarCharProps, diagramHeight, muiColorGradients } from './diagramUtils';
 
 interface Props {
-    data: MavenPluginStats[];
+    data: ReadonlyArray<MavenPluginStats>;
 }
 
 export interface DataWithDuration extends BarDatum {

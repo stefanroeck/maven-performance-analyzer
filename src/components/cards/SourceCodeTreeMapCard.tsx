@@ -10,7 +10,7 @@ import { labelForTreeMapNode, labels, SourceCodeType, TreeMapNode } from './sour
 import { colorFor, defsForAllColors, fillsForAllColors } from './sourceCodeTreeMapColors';
 
 interface Props {
-    data: ModuleStats[];
+    data: ReadonlyArray<ModuleStats>;
 }
 
 type ShowFilesType = "source" | "resource";
