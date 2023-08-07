@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 
 
 export const Header = () => {
-    const version = `v${process.env.REACT_APP_VERSION || ""}`;
+    const version = `v${import.meta.env.VITE_APP_VERSION || ""}`;
 
     return <Box sx={{ color: "#111", borderBottom: "1px solid gray", padding: "0 20px", whiteSpace: "nowrap" }}>
         <img alt="Logo" src="./logo.png" height="120px" />
