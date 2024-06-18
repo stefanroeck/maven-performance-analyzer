@@ -8,6 +8,10 @@ export default defineConfig(() => {
       outDir: "build",
     },
     plugins: [react(), eslint()],
+    // Helps with esm compatibility issues for nivo, see https://github.com/plouc/nivo/issues/2310
+    resolve: {
+      mainFields: ["module", "browser", "jsnext:main", "jsnext"],
+    },
     test: {
       globals: true,
       environment: "jsdom",
