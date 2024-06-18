@@ -36,8 +36,20 @@ export const HelpCard = () => {
       onExpanded={setExpanded}
     >
       <Typography variant="body2">
+        Append the following JVM arguments to the maven build command line:
+      </Typography>
+      <TextField
+        multiline
+        fullWidth
+        value={
+          '-Dorg.slf4j.simpleLogger.showThreadName=true -Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat="yyyy-MM-dd HH:mm:ss,SSS"'
+        }
+        InputProps={{ readOnly: true }}
+        sx={{ backgroundColor: grey[100] }}
+      />
+      <Typography variant="body2" mt={2}>
         {
-          "The maven log file layout can be configured via the log config file which is typically located in %MAVEN_HOME%/conf/logging/simplelogger.properties"
+          "Alternatively, for global configuration adjust the maven logger config which is typically located in %MAVEN_HOME%/conf/logging/simplelogger.properties"
         }
       </Typography>
       <TextField
