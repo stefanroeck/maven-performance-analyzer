@@ -4,12 +4,14 @@ import { useAnalyzerInBackground } from "./analyzer/useAnalyzerInBackground";
 import MainPage from "./MainPage";
 
 export const MemoryAnalyzerApp = () => {
-    const [input, setInput] = useState<string>("");
-    const { result, isBusy } = useAnalyzerInBackground(input);
+  const [input, setInput] = useState<string>("");
+  const { result, isBusy } = useAnalyzerInBackground(input);
 
-    return (
-        <AnalyzerContext.Provider value={{ analyzerResult: result, setAnalyzerInput: setInput, isBusy }}>
-            <MainPage />
-        </AnalyzerContext.Provider>
-    );
-}
+  return (
+    <AnalyzerContext.Provider
+      value={{ analyzerResult: result, setAnalyzerInput: setInput, isBusy }}
+    >
+      <MainPage />
+    </AnalyzerContext.Provider>
+  );
+};

@@ -1,7 +1,10 @@
 import MainPage from "./MainPage";
 import userEvent from "@testing-library/user-event";
 import { render, screen } from "@testing-library/react";
-import { AnalyzerContext, AnalyzerContextState } from "./analyzer/analyzerContext";
+import {
+  AnalyzerContext,
+  AnalyzerContextState,
+} from "./analyzer/analyzerContext";
 import { act } from "react-dom/test-utils";
 
 describe("MemoryAnalyzerApp", () => {

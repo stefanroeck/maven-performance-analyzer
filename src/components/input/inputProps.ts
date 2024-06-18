@@ -1,5 +1,5 @@
 export interface InputProps {
-    visible: boolean;
-    disabled: boolean;
-    onSelected: (content: string) => void;
+  visible: boolean;
+  disabled: boolean;
+  onSelected: (content: string) => void;
 }
