@@ -82,7 +82,7 @@ const anyMavenLogWithTimestamp =
 
 const anyPluginRegexp = /^.*---.*@.*---$/;
 const mavenCompilerPluginCompilingRegexp =
-  /^.*Compiling (\d*) source files to.*$/;
+  /^.*Compiling (\d*) source files .*$/;
 const mavenResourcePluginCopyingRegexp = /^.*Copying (\d*) resource.*$/;
 
 /* Statistics */
