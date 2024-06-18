@@ -62,7 +62,7 @@ describe("parser and analyzer", () => {
     expect(result.stats?.threads).toEqual(1);
     expect(result.stats?.totalBuildTime).toEqual("04:20 min");
     expect(result.stats?.status).toEqual("success");
-    expect(result.stats?.totalDownloadedBytes).toEqual(13773414.4);
+    expect(result.stats?.totalDownloadedBytes).toEqual(449536);
     expect(result.tests).toEqual<TestStatistic>({
       errors: 0,
       failures: 0,
@@ -258,6 +258,35 @@ describe("parser and analyzer", () => {
       total: 1711868,
       skipped: 515,
     });
+  });
+
+  it("tracks backend newer maven log", () => {
+    const content = readFileSync(
+      __dirname + "/testfiles/tracksBackendKotlin.log",
+      "utf8",
+    );
+
+    const result = analyze(parse(content));
+
+    expect(result.mavenPlugins.length).toEqual(11);
+    expect(
+      result.mavenPlugins
+        .map((r) => r.thread)
+        .filter((t, idx, arr) => arr.indexOf(t) === idx),
+    ).toEqual(["main"]);
+    expect(durationSumForPlugin(result.mavenPlugins, "compiler")).toEqual(89);
+    expect(durationSumForPlugin(result.mavenPlugins, "kotlin")).toEqual(10669);
+
+    expect(result.modules).toHaveLength(1);
+    expect(result.modules).toEqual([
+      {
+        compiledSources: 0,
+        compiledTestSources: 0,
+        copiedResources: 2,
+        copiedTestResources: 3,
+        module: "tracks-backend",
+      },
+    ]);
   });
 
   function durationSumForPlugin(

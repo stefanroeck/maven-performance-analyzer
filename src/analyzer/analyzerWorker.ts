@@ -9,6 +9,7 @@ onmessage = (event) => {
     const parsed = parse(content);
     analyzed = analyze(parsed);
   } catch (err) {
+    console.error(err);
     analyzed = {
       messages: {
         error: err ? err.toString() : "Unknown error",

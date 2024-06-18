@@ -71,34 +71,34 @@ export interface ParserResult {
 // breaks the logic of named capturing groups.
 
 const mavenGoalExecutionRegexp =
-  /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---/;
+  /^\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*--- (?<plugin>.*):(?<version>.*):(?<goal>.*) @ (?<module>.*) ---$/;
 
 const mavenCompilerPluginRegexp =
-  /.*--- maven-compiler-plugin:.*:(compile|testCompile).*@ (.*) ---/;
+  /^.*--- (maven-)?compiler(-plugin)?:.*:(?<task>compile|testCompile).*@ (?<module>.*) ---$/;
 const mavenResourcePluginRegexp =
-  /.*--- maven-resources-plugin:.*:(resources|testResources).*@ (.*) ---/;
+  /^.*--- (maven-)?resources(-plugin)?:.*:(?<task>resources|testResources).*@ (?<module>.*) ---$/;
 const anyMavenLogWithTimestamp =
-  /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*/;
+  /^\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)\]? (\[(?<thread>[A-Z0-9a-z- _]*)\])? ?\[[A-Z]*\].*$/;
 
-const anyPluginRegexp = /.*---.*@.*---/;
+const anyPluginRegexp = /^.*---.*@.*---$/;
 const mavenCompilerPluginCompilingRegexp =
-  /.*Compiling (\d*) source files to.*/;
-const mavenResourcePluginCopyingRegexp = /.*Copying (\d*) resource.*/;
+  /^.*Compiling (\d*) source files to.*$/;
+const mavenResourcePluginCopyingRegexp = /^.*Copying (\d*) resource.*$/;
 
 /* Statistics */
 const multiThreadedParserLineRegexp =
-  /.*Using the MultiThreadedBuilder implementation with a thread count of (?<threads>\d+)/;
-const totalTimeRegexp = /.*Total time: {2}(?<totalTime>.+)/;
-const buildSuccessRegexp = /.*BUILD SUCCESS/;
-const buildFailedRegexp = /.*BUILD FAILURE/;
+  /^.*Using the MultiThreadedBuilder implementation with a thread count of (?<threads>\d+)$/;
+const totalTimeRegexp = /^.*Total time: {2}(?<totalTime>.+)$/;
+const buildSuccessRegexp = /^.*BUILD SUCCESS$/;
+const buildFailedRegexp = /^.*BUILD FAILURE$/;
 
 /* Downloads */
 // Downloaded from central: https://repo.maven.apache.org/maven2/org/eclipse/jetty/websocket/websocket-api/9.4.44.v20210927/websocket-api-9.4.44.v20210927.jar (52 kB at 32 kB/s)
 const downloadedResourceRegexp =
-  /\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)?\]?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)/;
+  /^\[?(?<date>\d+-\d+-\d+[ |T]\d+:\d+:\d+[.,]?\d+Z?)?\]?.*Downloaded from (?<repo>[a-zA-Z]+): (?<res>[a-zA-Z0-9-:/.]+) \((?<size>[\d.]+ [a-zA-Z]+).+\)$/;
 
 const testRegexp =
-  /.*Tests run: (?<total>\d+), Failures: (?<failures>\d+), Errors: (?<errors>\d+), Skipped: (?<skipped>\d+)$/m;
+  /^.*Tests run: (?<total>\d+), Failures: (?<failures>\d+), Errors: (?<errors>\d+), Skipped: (?<skipped>\d+)$/m;
 
 export const parse = (logContent: string): ParserResult => {
   console.time("parser total");
@@ -227,18 +227,37 @@ function collectCompiledResources(lines: string[]): StatisticLine[] {
   const result: StatisticLine[] = [];
   for (let i = 0; i < lines.length; i++) {
     const line = lines[i];
-    const matchCompilerPluginModule = line.match(mavenCompilerPluginRegexp);
-    const matchResourcesPluginModule = line.match(mavenResourcePluginRegexp);
+
+    const matchCompilerPluginModule = matchGroupsAndProcess(
+      line,
+      mavenCompilerPluginRegexp,
+      (groups) => {
+        return {
+          task: groups.task,
+          module: groups.module,
+        };
+      },
+    );
+    const matchResourcesPluginModule = matchGroupsAndProcess(
+      line,
+      mavenResourcePluginRegexp,
+      (groups) => {
+        return {
+          task: groups.task,
+          module: groups.module,
+        };
+      },
+    );
     if (matchCompilerPluginModule) {
-      const mode = matchCompilerPluginModule[1] as "compile" | "testCompile";
+      const mode = matchCompilerPluginModule.task as "compile" | "testCompile";
       fileOrigin = mode === "compile" ? "main" : "test";
-      module = matchCompilerPluginModule[2];
+      module = matchCompilerPluginModule.module;
     } else if (matchResourcesPluginModule) {
-      const mode = matchResourcesPluginModule[1] as
+      const mode = matchResourcesPluginModule.task as
         | "resources"
         | "testResources";
       fileOrigin = mode === "resources" ? "main" : "test";
-      module = matchResourcesPluginModule[2];
+      module = matchResourcesPluginModule.module;
     } else if (line.match(anyPluginRegexp)) {
       module = undefined;
       fileOrigin = undefined;
@@ -289,7 +308,7 @@ const collectStatistics = (logLines: string[]): ParserStatistics => {
     return prev;
   }, {} as ParserStatistics);
 
-  // Reverse and look for results that are rather at thee end
+  // Reverse and look for results that are rather at the end
   const finalResults: ParserStatistics = logLines.reduceRight((prev, line) => {
     if (prev.totalBuildTime === undefined) {
       const totalBuildTime: string | undefined = matchGroupsAndProcess(
