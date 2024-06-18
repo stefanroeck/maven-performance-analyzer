@@ -1,12 +1,21 @@
-import { analyze } from "./analyzer";
+import { AnalyzerResult, analyze } from "./analyzer";
 import { parse } from "./parser";
 
 onmessage = (event) => {
   console.log("running inside worker");
   const content = event.data;
-  const parsed = parse(content);
-  //console.log("parsed", parsed);
-  const analyzed = analyze(parsed);
-  //console.log("analyzed", analyzed);
+  let analyzed: AnalyzerResult;
+  try {
+    const parsed = parse(content);
+    analyzed = analyze(parsed);
+  } catch (err) {
+    analyzed = {
+      messages: {
+        error: err ? err.toString() : "Unknown error",
+      },
+      mavenPlugins: [],
+      modules: [],
+    };
+  }
   postMessage(JSON.stringify(analyzed));
 };

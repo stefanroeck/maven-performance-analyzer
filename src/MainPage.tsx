@@ -22,9 +22,12 @@ const MainPage = () => {
       <Box sx={{ margin: "20px" }}>
         <HelpCard />
         <InputCard />
-        {analyzerResult && (
+        {analyzerResult?.stats && analyzerResult?.tests && (
           <>
-            <StatisticsCard data={analyzerResult} />
+            <StatisticsCard
+              generalStats={analyzerResult.stats}
+              testStats={analyzerResult.tests}
+            />
           </>
         )}
         {!hasError && mavenPluginsStats && mavenPluginsStats.length > 0 && (

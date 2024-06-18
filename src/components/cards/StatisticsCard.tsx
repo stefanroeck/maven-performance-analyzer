@@ -3,7 +3,7 @@ import { green, grey, red } from "@mui/material/colors";
 import { styled } from "@mui/system";
 import { FunctionComponent } from "react";
 import { OverridableComponent } from "@mui/types";
-import { AnalyzerResult } from "../../analyzer/analyzer";
+import { GeneralStats, TestStats } from "../../analyzer/analyzer";
 import { ExpandableCard } from "./ExpandableCard";
 import SuccessIcon from "@mui/icons-material/CheckCircleOutline";
 import ErrorIcon from "@mui/icons-material/ErrorOutline";
@@ -13,7 +13,8 @@ import MultiThreadIcon from "@mui/icons-material/FilterNone";
 import DownloadIcon from "@mui/icons-material/FileDownloadOutlined";
 
 interface Props {
-  data: AnalyzerResult;
+  testStats: TestStats;
+  generalStats: GeneralStats;
 }
 
 const StatsContainer = styled("div")({
@@ -75,20 +76,22 @@ const formatBytes = (bytes: number) => {
   return bytes > ONE_MB
     ? `${(bytes / ONE_MB).toFixed(2)} MB`
     : bytes > ONE_KB
-    ? `${(bytes / ONE_KB).toFixed(2)} KB`
-    : `${bytes} Bytes`;
+      ? `${(bytes / ONE_KB).toFixed(2)} KB`
+      : `${bytes} Bytes`;
 };
 
-export const StatisticsCard: FunctionComponent<Props> = ({ data }) => {
-  const { stats, tests } = data;
+export const StatisticsCard: FunctionComponent<Props> = ({
+  testStats,
+  generalStats,
+}) => {
   const {
     totalBuildTime: totalDuration,
     multiThreaded,
     threads,
     status,
     totalDownloadedBytes,
-  } = stats;
-  const { total: totalTests } = tests;
+  } = generalStats;
+  const { total: totalTests } = testStats;
   return (
     <ExpandableCard title="Statistics" subheader="" expanded={true}>
       <Divider />

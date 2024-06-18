@@ -48,8 +48,8 @@ export interface AnalyzerMessages {
 export interface AnalyzerResult {
   readonly mavenPlugins: ReadonlyArray<MavenPluginStats>;
   readonly modules: ReadonlyArray<ModuleStats>;
-  readonly stats: GeneralStats;
-  readonly tests: TestStats;
+  readonly stats?: GeneralStats;
+  readonly tests?: TestStats;
   readonly messages: AnalyzerMessages;
 }
 
@@ -145,8 +145,9 @@ export const analyze = ({
       const threadLines = lines.filter(
         (l) => l.thread === undefined || l.thread === thread,
       );
-      const lastTimestamp = lastTimestamps.find((t) => t.thread === thread)
-        ?.lastTimestamp;
+      const lastTimestamp = lastTimestamps.find(
+        (t) => t.thread === thread,
+      )?.lastTimestamp;
       return threadLines.map(({ module, plugin, startTime }, idx) => {
         const nextStartTime: Date | undefined =
           idx < threadLines.length - 1
@@ -177,8 +178,8 @@ export const analyze = ({
       statistics.buildStatus === "success"
         ? "success"
         : statistics.buildStatus === "failed"
-        ? "failed"
-        : "unknown",
+          ? "failed"
+          : "unknown",
     totalBuildTime: statistics.totalBuildTime,
     totalDownloadedBytes: downloads
       .map((d) => d.sizeInBytes)
@@ -217,8 +218,8 @@ const determineMessages = (
   const errorText = noMetricsFound
     ? "No metrics could be found. Please make sure to provide a valid maven log file with timestamp information as described above."
     : multiThreadedNoThreads
-    ? `This seems to be a multi-threaded build with ${stats.threads} threads but the thread name cannot be found in the log file. Please make sure to configure maven logger as described above.`
-    : undefined;
+      ? `This seems to be a multi-threaded build with ${stats.threads} threads but the thread name cannot be found in the log file. Please make sure to configure maven logger as described above.`
+      : undefined;
   const showInfo = modules.length > 0 && mavenPlugins.length === 0;
   const infoText = showInfo
     ? "Durations cannot be calculated. Please make sure that the log file contains timestamps in the expected format yyyy-MM-dd HH:mm:ss,SSS"
