@@ -58,11 +58,11 @@ describe("parser and analyzer", () => {
       copiedResources: 4,
       copiedTestResources: 11,
     });
-    expect(result.stats.multiThreaded).toEqual(false);
-    expect(result.stats.threads).toEqual(1);
-    expect(result.stats.totalBuildTime).toEqual("04:20 min");
-    expect(result.stats.status).toEqual("success");
-    expect(result.stats.totalDownloadedBytes).toEqual(13773414.4);
+    expect(result.stats?.multiThreaded).toEqual(false);
+    expect(result.stats?.threads).toEqual(1);
+    expect(result.stats?.totalBuildTime).toEqual("04:20 min");
+    expect(result.stats?.status).toEqual("success");
+    expect(result.stats?.totalDownloadedBytes).toEqual(13773414.4);
     expect(result.tests).toEqual<TestStatistic>({
       errors: 0,
       failures: 0,
@@ -150,11 +150,11 @@ describe("parser and analyzer", () => {
       )
       .reduce((prev, curr) => prev + curr.duration, 0);
     expect(duration).toEqual(35);
-    expect(result.stats.multiThreaded).toEqual(true);
-    expect(result.stats.threads).toEqual(4);
-    expect(result.stats.totalBuildTime).toEqual("34.008 s (Wall Clock)");
-    expect(result.stats.status).toEqual("failed");
-    expect(result.stats.totalDownloadedBytes).toEqual(0);
+    expect(result.stats?.multiThreaded).toEqual(true);
+    expect(result.stats?.threads).toEqual(4);
+    expect(result.stats?.totalBuildTime).toEqual("34.008 s (Wall Clock)");
+    expect(result.stats?.status).toEqual("failed");
+    expect(result.stats?.totalDownloadedBytes).toEqual(0);
   });
 
   it("guava log", () => {

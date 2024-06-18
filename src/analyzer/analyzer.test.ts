@@ -167,8 +167,8 @@ describe("analyzer", () => {
       startTime: lines[3].startTime,
       duration: 11000,
     });
-    expect(analysis.stats.multiThreaded).toBeTruthy();
-    expect(analysis.stats.threads).toEqual(2);
+    expect(analysis.stats?.multiThreaded).toBeTruthy();
+    expect(analysis.stats?.threads).toEqual(2);
   });
 
   it("does not return durations with 0", () => {
