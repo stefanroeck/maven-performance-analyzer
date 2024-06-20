@@ -1,4 +1,10 @@
-import { FileDownload, LastTimestamp, parse, parseTimestamp } from "./parser";
+import {
+  FileDownload,
+  LastTimestamp,
+  SourceStatisticLine,
+  parse,
+  parseTimestamp,
+} from "./parser";
 
 describe("parser", () => {
   it("parses single line with millis", () => {
@@ -186,5 +192,37 @@ describe("parser", () => {
         lastTimestamp: new Date("2022-11-08 19:00:15"),
       },
     ]);
+  });
+
+  it("parses maven compiler plugin duration", () => {
+    const lines = `
+2022-11-08 22:23:14,189 [INFO] --- maven-compiler-plugin:3.10.1:compile (default-compile) @ surefire-api ---
+2022-11-08 22:23:14,205 [INFO] Changes detected - recompiling the module!
+2022-11-08 22:23:14,238 [INFO] Compiling 111 source files to /Users/Stefan/git/maven-surefire/surefire-api/target/classes
+2022-11-08 22:23:18,330 [INFO] 
+2022-11-08 22:23:18,330 [INFO] --- maven-resources-plugin:3.2.0:testResources (default-testResources) @ surefire-api ---
+    `;
+
+    const result = parse(lines);
+
+    const sourceStatistic = result.compiledSources[0] as SourceStatisticLine;
+    expect(sourceStatistic.module).toEqual("surefire-api");
+    expect(sourceStatistic.compiledSources).toEqual(111);
+  });
+
+  it("parses newer maven compiler plugin duration", () => {
+    const lines = `
+2024-06-17 14:38:21,394 [main] [INFO] --- compiler:3.13.0:compile (default-compile) @ camel-management-api ---
+2024-06-17 14:38:21,408 [main] [INFO] Recompiling the module because of changed dependency.
+2024-06-17 14:38:21,409 [main] [INFO] Compiling 116 source files with javac [debug deprecation release 17] to target/classes
+2024-06-17 14:38:21,660 [main] [INFO] 
+2024-06-17 14:38:21,662 [main] [INFO] --- camel-package:4.7.0-SNAPSHOT:generate (generate) @ camel-management-api ---
+    `;
+
+    const result = parse(lines);
+
+    const sourceStatistic = result.compiledSources[0] as SourceStatisticLine;
+    expect(sourceStatistic.module).toEqual("camel-management-api");
+    expect(sourceStatistic.compiledSources).toEqual(116);
   });
 });
