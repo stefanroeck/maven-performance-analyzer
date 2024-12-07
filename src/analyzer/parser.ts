@@ -110,7 +110,6 @@ export const parse = (logContent: string): ParserResult => {
     const mavenGoalExecutionLines: MavenGoalExecutionLine[] = logLines
       .map((line) =>
         matchGroupsAndProcess(line, mavenGoalExecutionRegexp, (groups) => {
-          //@ts-ignore
           const { date, goal, plugin, thread, module } = groups;
           return {
             startTime: parseTimestamp(date),
@@ -143,6 +142,7 @@ export const parse = (logContent: string): ParserResult => {
 const matchGroupsAndProcess = <T>(
   line: string,
   regExp: RegExp,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   process: (groups: any) => T,
 ): T | undefined => {
   const match = line.match(regExp);

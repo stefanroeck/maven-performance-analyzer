@@ -77,6 +77,8 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
     }),
   };
 
+  const tooltipWithLabel = memo(TooltipWithLabel);
+
   return (
     <ExpandableCard
       title="Source Code"
@@ -103,7 +105,7 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
           value="value"
           innerPadding={0}
           label={labelForTreeMapNode}
-          tooltip={TooltipWithLabel}
+          tooltip={tooltipWithLabel}
           orientLabel={false}
           nodeOpacity={1}
           borderColor={"white"}
@@ -123,7 +125,9 @@ export const SourceCodeTreeMapCard: FunctionComponent<Props> = ({ data }) => {
 };
 
 // Custom tooltip to also render the moduleId for the leaf nodes
-const TooltipWithLabel = memo<TooltipProps<TreeMapNode>>(({ node }) => {
+const TooltipWithLabel: FunctionComponent<TooltipProps<TreeMapNode>> = ({
+  node,
+}) => {
   const theme = useTheme();
 
   const value = node.value;
@@ -143,4 +147,4 @@ const TooltipWithLabel = memo<TooltipProps<TreeMapNode>>(({ node }) => {
   );
 
   return <div style={theme.tooltip.container}>{content}</div>;
-});
+};

@@ -2,6 +2,7 @@ import { readFileSync } from "fs";
 import { dedup } from "../utils/arrayUtils";
 import { analyze, MavenPluginStats } from "./analyzer";
 import { parse, TestStatistic } from "./parser";
+import { describe, it, expect } from "vitest";
 
 describe("parser and analyzer", () => {
   it("empty input", () => {

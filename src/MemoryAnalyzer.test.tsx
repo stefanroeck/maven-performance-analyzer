@@ -1,11 +1,11 @@
 import MainPage from "./MainPage";
 import userEvent from "@testing-library/user-event";
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import {
   AnalyzerContext,
   AnalyzerContextState,
 } from "./analyzer/analyzerContext";
-import { act } from "react-dom/test-utils";
+import { describe, expect, it } from "vitest";
 
 describe("MemoryAnalyzerApp", () => {
   const analyzerContext: AnalyzerContextState = {
