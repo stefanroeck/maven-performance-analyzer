@@ -6,6 +6,7 @@ import {
   AnalyzerContextState,
 } from "./analyzer/analyzerContext";
 import { act } from "react-dom/test-utils";
+import { describe, expect, it } from "vitest";
 
 describe("MemoryAnalyzerApp", () => {
   const analyzerContext: AnalyzerContextState = {
