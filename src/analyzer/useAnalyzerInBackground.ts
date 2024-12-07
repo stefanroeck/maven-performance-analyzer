@@ -17,13 +17,16 @@ export const useAnalyzerInBackground = (content: string) => {
         setIsBusy(true);
         worker.postMessage(content);
         worker.onmessage = (message) => {
-          const result = JSON.parse(message.data, (key: string, value: any) => {
-            // convert date-strings to Date objects again
-            if (key === "startTime") {
-              return new Date(value);
-            }
-            return value;
-          }) as AnalyzerResult;
+          const result = JSON.parse(
+            message.data,
+            (key: string, value: string | number | Date) => {
+              // convert date-strings to Date objects again
+              if (key === "startTime") {
+                return new Date(value);
+              }
+              return value;
+            },
+          ) as AnalyzerResult;
 
           console.log("Received result from web worker");
           setIsBusy(false);

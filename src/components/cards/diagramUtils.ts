@@ -1,4 +1,4 @@
-import { BarSvgProps } from "@nivo/bar";
+import { BarDatum, BarSvgProps } from "@nivo/bar";
 import {
   amber,
   blue,
@@ -37,7 +37,7 @@ export const defaultMargin = {
 };
 // a comment
 export const basicBarCharProps: Partial<
-  Omit<BarSvgProps<any>, "height" | "width">
+  Omit<BarSvgProps<BarDatum>, "height" | "width">
 > = {
   padding: 0.3,
   innerPadding: 0,

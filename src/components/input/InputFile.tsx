@@ -14,7 +14,7 @@ export const InputFile: FunctionComponent<InputProps> = ({
     if (files && files.length > 0) {
       setSelectedFile(files[0]);
       const reader = new FileReader();
-      reader.onload = (e) => {
+      reader.onload = () => {
         if (typeof reader.result === "string" && reader.result !== null) {
           onSelected(reader.result);
         }
