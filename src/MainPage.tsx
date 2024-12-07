@@ -1,4 +1,4 @@
-import { Box } from "@mui/system";
+import { Box } from "@mui/material";
 import { useContext } from "react";
 import { MavenPluginsCard } from "./components/cards/MavenPluginsCard";
 import { InputCard } from "./components/input/InputCard";

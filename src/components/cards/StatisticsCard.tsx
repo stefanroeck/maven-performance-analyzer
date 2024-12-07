@@ -1,6 +1,5 @@
-import { Divider, SvgIconTypeMap, Typography } from "@mui/material";
+import { Divider, SvgIconTypeMap, Typography, styled } from "@mui/material";
 import { green, grey, red } from "@mui/material/colors";
-import { styled } from "@mui/system";
 import { FunctionComponent } from "react";
 import { OverridableComponent } from "@mui/types";
 import { GeneralStats, TestStats } from "../../analyzer/analyzer";
